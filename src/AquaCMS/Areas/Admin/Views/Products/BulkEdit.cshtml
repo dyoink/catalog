@@ -1,0 +1,95 @@
+@model List<Product>
+@{
+    ViewData["Title"] = $"Chỉnh sửa hàng loạt ({Model.Count} sản phẩm)";
+}
+
+<div class="space-y-6">
+    <div class="flex items-center justify-between">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900">Chỉnh sửa hàng loạt</h1>
+            <p class="text-gray-500 mt-1">Cập nhật giá và trạng thái cho @Model.Count sản phẩm cùng lúc</p>
+        </div>
+        <a href="@Url.Action("Index")" class="text-gray-500 hover:text-gray-700 flex items-center gap-1">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Quay lại
+        </a>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">@TempData["Error"]</div>
+    }
+
+    <form method="post" asp-action="BulkEdit">
+        @Html.AntiForgeryToken()
+
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+                        <tr>
+                            <th class="px-4 py-3 text-left">Sản phẩm</th>
+                            <th class="px-4 py-3 text-left">SKU</th>
+                            <th class="px-4 py-3 text-left">Danh mục</th>
+                            <th class="px-4 py-3 text-left w-44">Giá (VNĐ)</th>
+                            <th class="px-4 py-3 text-left w-40">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            var p = Model[i];
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">
+                                    <input type="hidden" name="ids[@i]" value="@p.Id" />
+                                    <div class="flex items-center gap-3">
+                                        @if (!string.IsNullOrEmpty(p.Image))
+                                        {
+                                            <img src="@p.Image" alt="" class="w-10 h-10 rounded-lg object-cover" />
+                                        }
+                                        else
+                                        {
+                                            <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center">
+                                                <i data-lucide="image" class="w-4 h-4 text-gray-300"></i>
+                                            </div>
+                                        }
+                                        <span class="font-medium text-gray-800 line-clamp-1">@p.Name</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-500">@(p.Sku ?? "—")</td>
+                                <td class="px-4 py-3 text-gray-500">@(p.Category?.Name ?? "—")</td>
+                                <td class="px-4 py-3">
+                                    <input type="number" name="prices[@i]" value="@p.Price" step="1000" min="0"
+                                           class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                                           placeholder="Liên hệ" />
+                                </td>
+                                <td class="px-4 py-3">
+                                    <select name="statuses[@i]"
+                                            class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50">
+                                        <option value="Available" selected="@(p.Status == ProductStatus.Available)">Còn hàng</option>
+                                        <option value="OutOfStock" selected="@(p.Status == ProductStatus.OutOfStock)">Hết hàng</option>
+                                        <option value="Hidden" selected="@(p.Status == ProductStatus.Hidden)">Ẩn</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 mt-6">
+            <button type="submit"
+                    class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow flex items-center gap-2">
+                <i data-lucide="save" class="w-5 h-5"></i> Lưu tất cả (@Model.Count sản phẩm)
+            </button>
+            <a href="@Url.Action("Index")"
+               class="px-6 py-3 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                Hủy
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>lucide.createIcons();</script>
+}

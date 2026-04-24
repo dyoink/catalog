@@ -1,0 +1,117 @@
+@model PaginatedList<Banner>
+@{
+    ViewData["Title"] = "Quản lý Banner";
+}
+
+<div class="space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900">Quản lý Banner</h1>
+            <p class="text-gray-500 mt-1">@Model.TotalCount banner</p>
+        </div>
+        <a href="/admin/banners/create"
+           class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:opacity-90 transition">
+            <i data-lucide="plus" class="w-4 h-4"></i> Thêm Banner
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-5 h-5"></i> @TempData["Success"]
+        </div>
+    }
+
+    @* Banner grid *@
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach (var banner in Model.Items)
+        {
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-md transition">
+                @* Preview ảnh *@
+                <div class="relative h-40 bg-gray-100">
+                    @if (!string.IsNullOrEmpty(banner.Image))
+                    {
+                        <img src="@banner.Image" alt="@banner.Title" class="w-full h-full object-cover" />
+                    }
+                    else
+                    {
+                        <div class="w-full h-full flex items-center justify-center text-gray-300">
+                            <i data-lucide="image" class="w-12 h-12"></i>
+                        </div>
+                    }
+                    @* Status badge *@
+                    <div class="absolute top-3 right-3">
+                        @if (banner.IsActive)
+                        {
+                            <span class="px-2 py-1 bg-green-500 text-white rounded-full text-xs font-medium shadow-sm">Hiển thị</span>
+                        }
+                        else
+                        {
+                            <span class="px-2 py-1 bg-gray-500 text-white rounded-full text-xs font-medium shadow-sm">Ẩn</span>
+                        }
+                    </div>
+                    @* Sort order badge *@
+                    <div class="absolute top-3 left-3">
+                        <span class="px-2 py-1 bg-black/60 text-white rounded-full text-xs">#@banner.SortOrder</span>
+                    </div>
+                </div>
+
+                @* Info *@
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 truncate">@banner.Title</h3>
+                    @if (!string.IsNullOrEmpty(banner.Subtitle))
+                    {
+                        <p class="text-sm text-gray-500 mt-1 truncate">@banner.Subtitle</p>
+                    }
+                    @if (!string.IsNullOrEmpty(banner.LinkUrl))
+                    {
+                        <p class="text-xs text-primary mt-1 truncate">
+                            <i data-lucide="link" class="w-3 h-3 inline"></i> @banner.LinkUrl
+                        </p>
+                    }
+
+                    @* Actions *@
+                    <div class="flex items-center gap-2 mt-4 pt-3 border-t">
+                        <a href="/admin/banners/edit/@banner.Id"
+                           class="flex-1 text-center py-2 text-sm text-primary hover:bg-primary/5 rounded-lg transition font-medium">
+                            <i data-lucide="pencil" class="w-4 h-4 inline"></i> Sửa
+                        </a>
+                        <form method="post" action="/admin/banners/delete/@banner.Id"
+                              onsubmit="return confirm('Xóa banner này?');" class="flex-1">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="w-full py-2 text-sm text-red-500 hover:bg-red-50 rounded-lg transition font-medium">
+                                <i data-lucide="trash-2" class="w-4 h-4 inline"></i> Xóa
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (Model.TotalCount == 0)
+    {
+        <div class="text-center py-16 text-gray-400 bg-white rounded-xl shadow-sm">
+            <i data-lucide="image" class="w-16 h-16 mx-auto mb-4 opacity-50"></i>
+            <p class="text-lg">Chưa có banner nào</p>
+            <a href="/admin/banners/create" class="text-primary hover:underline text-sm mt-2 inline-block">Thêm banner đầu tiên →</a>
+        </div>
+    }
+
+    @if (Model.TotalPages > 1)
+    {
+        <div class="flex justify-center">
+            <div class="flex items-center space-x-1">
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <a href="?page=@i"
+                       class="px-3 py-1.5 rounded text-sm @(i == Model.PageIndex ? "bg-primary text-white" : "text-gray-600 hover:bg-gray-100")">@i</a>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>lucide.createIcons();</script>
+}

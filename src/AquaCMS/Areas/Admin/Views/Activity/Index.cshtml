@@ -1,0 +1,220 @@
+@model AquaCMS.Models.Common.PaginatedList<AquaCMS.Models.Entities.ActivityLog>
+@{
+    ViewData["Title"] = "Nhật ký hoạt động";
+    var entityType = (string?)ViewBag.EntityType;
+    var action = (string?)ViewBag.Action;
+    var severity = (string?)ViewBag.Severity;
+    var search = (string?)ViewBag.Search;
+}
+
+<div class="space-y-6">
+
+    <!-- Header -->
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                <i data-lucide="history" class="w-7 h-7 text-primary"></i>
+                Nhật ký hoạt động
+            </h1>
+            <p class="text-gray-500 mt-1">Theo dõi mọi thao tác CRUD của admin để truy vết &amp; debug.</p>
+        </div>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <a href="?" class="block p-4 rounded-xl bg-white border border-gray-200 hover:shadow-md transition">
+            <div class="flex items-center gap-2 text-gray-500 text-xs uppercase font-semibold">
+                <i data-lucide="layers" class="w-4 h-4"></i> Tổng
+            </div>
+            <div class="text-2xl font-bold text-gray-900 mt-1">@ViewBag.CountTotal</div>
+        </a>
+        <a href="?severity=Info" class="block p-4 rounded-xl bg-white border-2 @(severity=="Info"?"border-blue-400":"border-blue-100") hover:shadow-md transition">
+            <div class="flex items-center gap-2 text-blue-600 text-xs uppercase font-semibold">
+                <i data-lucide="info" class="w-4 h-4"></i> Info
+            </div>
+            <div class="text-2xl font-bold text-blue-700 mt-1">@ViewBag.CountInfo</div>
+        </a>
+        <a href="?severity=Success" class="block p-4 rounded-xl bg-white border-2 @(severity=="Success"?"border-green-400":"border-green-100") hover:shadow-md transition">
+            <div class="flex items-center gap-2 text-green-600 text-xs uppercase font-semibold">
+                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Success
+            </div>
+            <div class="text-2xl font-bold text-green-700 mt-1">@ViewBag.CountSuccess</div>
+        </a>
+        <a href="?severity=Warning" class="block p-4 rounded-xl bg-white border-2 @(severity=="Warning"?"border-amber-400":"border-amber-100") hover:shadow-md transition">
+            <div class="flex items-center gap-2 text-amber-600 text-xs uppercase font-semibold">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i> Warning
+            </div>
+            <div class="text-2xl font-bold text-amber-700 mt-1">@ViewBag.CountWarning</div>
+        </a>
+        <a href="?severity=Error" class="block p-4 rounded-xl bg-white border-2 @(severity=="Error"?"border-red-400":"border-red-100") hover:shadow-md transition">
+            <div class="flex items-center gap-2 text-red-600 text-xs uppercase font-semibold">
+                <i data-lucide="x-circle" class="w-4 h-4"></i> Error
+            </div>
+            <div class="text-2xl font-bold text-red-700 mt-1">@ViewBag.CountError</div>
+        </a>
+    </div>
+
+    <!-- Filters -->
+    <form method="get" class="bg-white rounded-xl border border-gray-200 p-4 space-y-3">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Tìm kiếm</label>
+                <div class="relative">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-2.5 text-gray-400"></i>
+                    <input type="text" name="search" value="@search" placeholder="User, mô tả, ID..."
+                           class="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary" />
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Đối tượng</label>
+                <select name="entityType" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary">
+                    <option value="">— Tất cả —</option>
+                    @foreach (var t in new[] { "Product", "Post", "Partner", "Banner", "User", "SiteSettings", "Auth" })
+                    {
+                        <option value="@t" selected="@(entityType==t)">@t</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Hành động</label>
+                <select name="action" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary">
+                    <option value="">— Tất cả —</option>
+                    @foreach (var a in new[] { "CREATE", "UPDATE", "DELETE", "LOGIN", "IMPORT", "EXPORT", "ERROR", "CHANGE_PASSWORD" })
+                    {
+                        <option value="@a" selected="@(action==a)">@a</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Mức độ</label>
+                <select name="severity" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary">
+                    <option value="">— Tất cả —</option>
+                    <option value="Info" selected="@(severity=="Info")">Info</option>
+                    <option value="Success" selected="@(severity=="Success")">Success</option>
+                    <option value="Warning" selected="@(severity=="Warning")">Warning</option>
+                    <option value="Error" selected="@(severity=="Error")">Error</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex items-center justify-between">
+            <div class="flex flex-wrap gap-2">
+                <button type="submit" class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 inline-flex items-center gap-1.5">
+                    <i data-lucide="filter" class="w-4 h-4"></i> Lọc
+                </button>
+                <a href="@Url.Action("Index")" class="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm font-semibold hover:bg-gray-200 inline-flex items-center gap-1.5">
+                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Xóa lọc
+                </a>
+            </div>
+            <span class="text-xs text-gray-500">Tổng kết quả: <strong>@Model.TotalCount</strong></span>
+        </div>
+    </form>
+
+    <!-- Table -->
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+                    <tr>
+                        <th class="px-4 py-3 text-left w-32">Thời gian</th>
+                        <th class="px-4 py-3 text-left w-24">Mức độ</th>
+                        <th class="px-4 py-3 text-left">Người dùng</th>
+                        <th class="px-4 py-3 text-left">Hành động</th>
+                        <th class="px-4 py-3 text-left">Đối tượng</th>
+                        <th class="px-4 py-3 text-left hidden md:table-cell">Mô tả</th>
+                        <th class="px-4 py-3 text-left hidden lg:table-cell w-32">IP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var log in Model.Items)
+                    {
+                        var sev = log.Severity ?? "Info";
+
+                        var rowBg = sev switch
+                        {
+                            "Error"   => "bg-red-50/60 hover:bg-red-50 border-l-4 border-red-500",
+                            "Warning" => "bg-amber-50/60 hover:bg-amber-50 border-l-4 border-amber-500",
+                            "Success" => "bg-green-50/40 hover:bg-green-50 border-l-4 border-green-500",
+                            _         => "hover:bg-blue-50/40 border-l-4 border-blue-300"
+                        };
+
+                        var sevBadge = sev switch
+                        {
+                            "Error"   => ("x-circle", "bg-red-100 text-red-700 border-red-200"),
+                            "Warning" => ("alert-triangle", "bg-amber-100 text-amber-700 border-amber-200"),
+                            "Success" => ("check-circle-2", "bg-green-100 text-green-700 border-green-200"),
+                            _         => ("info", "bg-blue-100 text-blue-700 border-blue-200")
+                        };
+
+                        var actionColor = log.Action.ToUpperInvariant() switch
+                        {
+                            "CREATE"          => "bg-emerald-100 text-emerald-700",
+                            "UPDATE"          => "bg-blue-100 text-blue-700",
+                            "DELETE" or "BULK_DELETE" => "bg-rose-100 text-rose-700",
+                            "LOGIN"           => "bg-indigo-100 text-indigo-700",
+                            "IMPORT" or "EXPORT" => "bg-violet-100 text-violet-700",
+                            "ERROR"           => "bg-red-100 text-red-700",
+                            "CHANGE_PASSWORD" => "bg-yellow-100 text-yellow-800",
+                            _                 => "bg-gray-100 text-gray-700"
+                        };
+
+                        <tr class="border-b border-gray-100 transition-colors @rowBg">
+                            <td class="px-4 py-3 text-xs text-gray-500 whitespace-nowrap font-mono">
+                                @log.CreatedAt.ToLocalTime().ToString("dd/MM HH:mm:ss")
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full border text-xs font-semibold @sevBadge.Item2">
+                                    <i data-lucide="@sevBadge.Item1" class="w-3 h-3"></i> @sev
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 font-medium text-gray-800">@log.UserName</td>
+                            <td class="px-4 py-3"><span class="px-2 py-1 rounded text-xs font-bold @actionColor">@log.Action</span></td>
+                            <td class="px-4 py-3 text-gray-700">
+                                <span class="font-medium">@log.EntityType</span>
+                                @if (!string.IsNullOrEmpty(log.EntityId))
+                                {
+                                    <div class="text-[10px] text-gray-400 font-mono mt-0.5">@(log.EntityId.Length > 8 ? log.EntityId.Substring(0, 8) + "…" : log.EntityId)</div>
+                                }
+                            </td>
+                            <td class="px-4 py-3 text-gray-600 hidden md:table-cell max-w-md">
+                                <div class="line-clamp-2" title="@log.Description">@log.Description</div>
+                            </td>
+                            <td class="px-4 py-3 text-xs text-gray-400 hidden lg:table-cell font-mono">@log.IpAddress</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if (Model.Items.Count == 0)
+        {
+            <div class="text-center py-16 text-gray-400">
+                <i data-lucide="inbox" class="w-16 h-16 mx-auto mb-3 opacity-40"></i>
+                <p class="font-medium">Không có hoạt động nào khớp bộ lọc</p>
+            </div>
+        }
+    </div>
+
+    @if (Model.TotalPages > 1)
+    {
+        <div class="flex justify-center items-center gap-2">
+            @{
+                string PageUrl(int p) =>
+                    Url.Action("Index", new { page = p, entityType, action, severity, search }) ?? "#";
+            }
+            @if (Model.HasPreviousPage)
+            {
+                <a href="@PageUrl(Model.PageIndex - 1)" class="px-3 py-1.5 rounded-lg text-sm bg-white text-gray-600 border hover:bg-gray-50">‹</a>
+            }
+            @for (int i = Math.Max(1, Model.PageIndex - 3); i <= Math.Min(Model.TotalPages, Model.PageIndex + 3); i++)
+            {
+                <a href="@PageUrl(i)"
+                   class="px-3 py-1.5 rounded-lg text-sm @(i == Model.PageIndex ? "bg-primary text-white font-semibold" : "bg-white text-gray-600 border hover:bg-gray-50")">@i</a>
+            }
+            @if (Model.HasNextPage)
+            {
+                <a href="@PageUrl(Model.PageIndex + 1)" class="px-3 py-1.5 rounded-lg text-sm bg-white text-gray-600 border hover:bg-gray-50">›</a>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts { <script>lucide.createIcons();</script> }

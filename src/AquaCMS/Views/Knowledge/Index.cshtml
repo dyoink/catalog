@@ -1,0 +1,115 @@
+@model PaginatedList<Post>
+@*
+    Trang danh sách kiến thức (/kien-thuc).
+*@
+@{
+    var categories = ViewData["Categories"] as List<KnowledgeCategory> ?? new();
+    var currentCat = ViewData["CurrentCategory"] as string;
+}
+
+<div class="max-w-7xl mx-auto px-4 py-8">
+    @* Breadcrumb *@
+    <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="/" class="hover:text-primary transition">Trang chủ</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li class="text-gray-800 font-medium">Kiến thức</li>
+        </ol>
+    </nav>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+        @* Sidebar danh mục *@
+        <aside class="lg:w-64 shrink-0">
+            <div class="bg-white rounded-xl shadow-sm p-5">
+                <h3 class="font-bold text-gray-800 mb-4">Chuyên mục</h3>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="/kien-thuc"
+                           class="block px-3 py-2 rounded-lg text-sm transition
+                                  @(currentCat == null ? "bg-primary/10 text-primary font-medium" : "text-gray-600 hover:bg-gray-50")">
+                            Tất cả
+                        </a>
+                    </li>
+                    @foreach (var cat in categories)
+                    {
+                        <li>
+                            <a href="/kien-thuc?category=@cat.Slug"
+                               class="block px-3 py-2 rounded-lg text-sm transition
+                                      @(currentCat == cat.Slug ? "bg-primary/10 text-primary font-medium" : "text-gray-600 hover:bg-gray-50")">
+                                @cat.Name (@cat.Posts.Count)
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </aside>
+
+        @* Main content *@
+        <div class="flex-1">
+            <h1 class="text-2xl font-bold text-gray-900 mb-6">Kiến thức</h1>
+
+            @if (Model.Items.Count == 0)
+            {
+                <div class="text-center py-20 bg-white rounded-xl">
+                    <i data-lucide="book-x" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+                    <h3 class="text-lg font-medium text-gray-600">Chưa có bài viết nào</h3>
+                </div>
+            }
+            else
+            {
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    @foreach (var post in Model.Items)
+                    {
+                        <a href="@post.SeoUrl"
+                           class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden">
+                            @if (!string.IsNullOrEmpty(post.Image))
+                            {
+                                <div class="aspect-[16/9] overflow-hidden">
+                                    <img src="@post.Image" alt="@post.Title"
+                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" />
+                                </div>
+                            }
+                            <div class="p-5">
+                                @if (post.KnowledgeCategory != null)
+                                {
+                                    <span class="text-xs text-primary font-medium uppercase">@post.KnowledgeCategory.Name</span>
+                                }
+                                <h3 class="font-semibold text-gray-800 group-hover:text-primary transition line-clamp-2 mt-1 mb-2">
+                                    @post.Title
+                                </h3>
+                                @if (!string.IsNullOrEmpty(post.Excerpt))
+                                {
+                                    <p class="text-sm text-gray-500 line-clamp-2">@post.Excerpt</p>
+                                }
+                                <div class="flex items-center gap-4 mt-3 text-xs text-gray-400">
+                                    <span>@post.Author</span>
+                                    @if (!string.IsNullOrEmpty(post.ReadTime))
+                                    {
+                                        <span>@post.ReadTime</span>
+                                    }
+                                    <span>@post.ViewCount lượt xem</span>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+
+                @* Phân trang *@
+                @if (Model.TotalPages > 1)
+                {
+                    <nav class="flex justify-center mt-10">
+                        <div class="flex items-center space-x-1">
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                <a href="?page=@i&category=@currentCat"
+                                   class="px-3 py-2 rounded-lg text-sm @(i == Model.PageIndex ? "bg-primary text-white" : "text-gray-600 hover:bg-gray-100")">
+                                    @i
+                                </a>
+                            }
+                        </div>
+                    </nav>
+                }
+            }
+        </div>
+    </div>
+</div>

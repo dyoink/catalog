@@ -1,0 +1,9 @@
+@model Product
+@* Edit view — reuse Create form layout *@
+@{
+    ViewData["Title"] = $"Sửa: {Model.Name}";
+    ViewData["Categories"] = ViewData["Categories"];
+}
+
+@* Reuse Create view since form structure is identical *@
+<partial name="Create" model="Model" />

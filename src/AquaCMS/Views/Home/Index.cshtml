@@ -1,0 +1,226 @@
+﻿@model HomeViewModel
+@*
+    Trang chủ — Banners, Danh mục, Sản phẩm nổi bật, Bài viết mới.
+    SEO: JSON-LD Organization structured data.
+*@
+
+@* ===== HERO BANNER SECTION ===== *@
+@{
+    var heroBg = !string.IsNullOrEmpty(Model.Settings.HeroBackgroundImage)
+        ? $"background-image: url('{Model.Settings.HeroBackgroundImage}'); background-size: cover; background-position: center;"
+        : null;
+    var heroTitle = !string.IsNullOrEmpty(Model.Settings.HeroTitle)
+        ? Model.Settings.HeroTitle
+        : Model.Banners.FirstOrDefault()?.Title;
+    var heroSubtitle = !string.IsNullOrEmpty(Model.Settings.HeroSubtitle)
+        ? Model.Settings.HeroSubtitle
+        : Model.Banners.FirstOrDefault()?.Subtitle;
+    var heroDesc = !string.IsNullOrEmpty(Model.Settings.HeroDescription)
+        ? Model.Settings.HeroDescription
+        : Model.Banners.FirstOrDefault()?.Description;
+    var heroBtnText = !string.IsNullOrEmpty(Model.Settings.HeroButtonText) ? Model.Settings.HeroButtonText : "Xem sản phẩm";
+    var heroBtnUrl = !string.IsNullOrEmpty(Model.Settings.HeroButtonUrl) ? Model.Settings.HeroButtonUrl
+        : (Model.Banners.FirstOrDefault()?.LinkUrl ?? "/san-pham");
+    var heroImage = Model.Banners.FirstOrDefault()?.Image;
+}
+@if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(heroTitle))
+{
+    <section class="relative bg-gradient-to-br from-sky-50 to-sky-100 overflow-hidden" style="@heroBg">
+        @if (!string.IsNullOrEmpty(heroBg))
+        {
+            <div class="absolute inset-0 bg-black/30"></div>
+        }
+        <div class="relative max-w-7xl mx-auto px-4 py-16 sm:py-24 lg:py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    @if (!string.IsNullOrEmpty(heroSubtitle))
+                    {
+                        <p class="@(string.IsNullOrEmpty(heroBg) ? "text-primary" : "text-white/90") font-semibold text-sm uppercase tracking-wide mb-2">
+                            @heroSubtitle
+                        </p>
+                    }
+                    <h1 class="text-4xl sm:text-5xl font-extrabold @(string.IsNullOrEmpty(heroBg) ? "text-gray-900" : "text-white") leading-tight mb-4">
+                        @heroTitle
+                    </h1>
+                    @if (!string.IsNullOrEmpty(heroDesc))
+                    {
+                        <div class="text-lg @(string.IsNullOrEmpty(heroBg) ? "text-gray-600" : "text-white/90") mb-8 max-w-lg">
+                            @Html.Raw(heroDesc)
+                        </div>
+                    }
+                    <a href="@heroBtnUrl"
+                       class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow-lg">
+                        @heroBtnText
+                    </a>
+                </div>
+                @if (!string.IsNullOrEmpty(heroImage) && string.IsNullOrEmpty(heroBg))
+                {
+                    <div class="relative">
+                        <img src="@heroImage" alt="@heroTitle"
+                             class="w-full rounded-2xl shadow-2xl object-cover max-h-96"
+                             loading="eager" />
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@* ===== DANH MỤC SẢN PHẨM ===== *@
+@if (Model.Categories.Count > 0)
+{
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-3">Danh mục sản phẩm</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">Khám phá các giải pháp thiết bị nuôi trồng thủy sản</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            @foreach (var cat in Model.Categories)
+            {
+                <a href="/danh-muc/@cat.Slug"
+                   class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    @if (!string.IsNullOrEmpty(cat.Image))
+                    {
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="@cat.Image"
+                                 alt="@cat.Name"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 loading="lazy" />
+                        </div>
+                    }
+                    <div class="p-4 text-center">
+                        <h3 class="font-semibold text-gray-800 group-hover:text-primary transition">@cat.Name</h3>
+                        <p class="text-sm text-gray-400 mt-1">@cat.Products.Count sản phẩm</p>
+                    </div>
+                </a>
+            }
+        </div>
+    </section>
+}
+
+@* ===== SẢN PHẨM NỔI BẬT ===== *@
+@if (Model.FeaturedProducts.Count > 0)
+{
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Sản phẩm nổi bật</h2>
+                    <p class="text-gray-500 mt-2">Được lựa chọn nhiều nhất</p>
+                </div>
+                <a href="/san-pham" class="text-primary hover:underline font-medium flex items-center gap-1">
+                    Xem tất cả
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                @foreach (var product in Model.FeaturedProducts)
+                {
+                    <partial name="_ProductCard" model="product" />
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@* ===== BÀI VIẾT MỚI NHẤT ===== *@
+@if (Model.LatestPosts.Count > 0)
+{
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="flex items-center justify-between mb-12">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900">Kiến thức mới</h2>
+                <p class="text-gray-500 mt-2">Bài viết & hướng dẫn kỹ thuật</p>
+            </div>
+            <a href="/kien-thuc" class="text-primary hover:underline font-medium flex items-center gap-1">
+                Xem tất cả
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach (var post in Model.LatestPosts.Take(3))
+            {
+                <a href="@post.SeoUrl"
+                   class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden">
+                    @if (!string.IsNullOrEmpty(post.Image))
+                    {
+                        <div class="aspect-[16/9] overflow-hidden">
+                            <img src="@post.Image"
+                                 alt="@post.Title"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                                 loading="lazy" />
+                        </div>
+                    }
+                    <div class="p-5">
+                        <h3 class="font-semibold text-gray-800 group-hover:text-primary transition line-clamp-2 mb-2">
+                            @post.Title
+                        </h3>
+                        @if (!string.IsNullOrEmpty(post.Excerpt))
+                        {
+                            <p class="text-sm text-gray-500 line-clamp-2">@post.Excerpt</p>
+                        }
+                        <div class="flex items-center gap-4 mt-3 text-xs text-gray-400">
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="user" class="w-3 h-3"></i> @post.Author
+                            </span>
+                            @if (!string.IsNullOrEmpty(post.ReadTime))
+                            {
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3 h-3"></i> @post.ReadTime
+                                </span>
+                            }
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </section>
+}
+
+@* ===== ABOUT SECTION (dynamic from settings) ===== *@
+@if (!string.IsNullOrEmpty(Model.Settings.AboutTitle) || !string.IsNullOrEmpty(Model.Settings.AboutContent))
+{
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            @if (!string.IsNullOrEmpty(Model.Settings.AboutImage))
+            {
+                <img src="@Model.Settings.AboutImage" alt="@Model.Settings.AboutTitle"
+                     class="w-full rounded-2xl shadow-lg object-cover" loading="lazy" />
+            }
+            <div>
+                @if (!string.IsNullOrEmpty(Model.Settings.AboutTitle))
+                {
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">@Model.Settings.AboutTitle</h2>
+                }
+                @if (!string.IsNullOrEmpty(Model.Settings.AboutContent))
+                {
+                    <div class="prose max-w-none text-gray-700">@Html.Raw(Model.Settings.AboutContent)</div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@* ===== JSON-LD: Organization (SEO structured data) ===== *@
+@section StructuredData {
+    @{
+        var jsonLd = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "Organization",
+            ["name"] = Model.Settings.CompanyName ?? "",
+            ["url"] = $"{Context.Request.Scheme}://{Context.Request.Host}"
+        };
+        if (!string.IsNullOrEmpty(Model.Settings.Logo)) jsonLd["logo"] = Model.Settings.Logo;
+        if (!string.IsNullOrEmpty(Model.Settings.Phone)) jsonLd["telephone"] = Model.Settings.Phone;
+        if (!string.IsNullOrEmpty(Model.Settings.Email)) jsonLd["email"] = Model.Settings.Email;
+        var sameAs = new List<string>();
+        if (!string.IsNullOrEmpty(Model.Settings.Facebook)) sameAs.Add(Model.Settings.Facebook);
+        if (!string.IsNullOrEmpty(Model.Settings.Youtube)) sameAs.Add(Model.Settings.Youtube);
+        if (sameAs.Count > 0) jsonLd["sameAs"] = sameAs;
+    }
+    <script type="application/ld+json">@Html.Raw(System.Text.Json.JsonSerializer.Serialize(jsonLd))</script>
+}

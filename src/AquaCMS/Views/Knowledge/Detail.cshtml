@@ -1,0 +1,85 @@
+@model Post
+@*
+    Chi tiết bài viết kiến thức (/kien-thuc/{slug}).
+    SEO: Article JSON-LD.
+*@
+
+<div class="max-w-4xl mx-auto px-4 py-8">
+    @* Breadcrumb *@
+    <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="/" class="hover:text-primary transition">Trang chủ</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li><a href="/kien-thuc" class="hover:text-primary transition">Kiến thức</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li class="text-gray-800 font-medium truncate max-w-[200px]">@Model.Title</li>
+        </ol>
+    </nav>
+
+    <article class="bg-white rounded-2xl shadow-sm p-6 lg:p-10">
+        @* Category + Meta *@
+        @if (Model.KnowledgeCategory != null)
+        {
+            <a href="/kien-thuc?category=@Model.KnowledgeCategory.Slug"
+               class="text-sm text-primary font-medium uppercase tracking-wide hover:underline">
+                @Model.KnowledgeCategory.Name
+            </a>
+        }
+
+        <h1 class="text-3xl font-bold text-gray-900 mt-2 mb-4">@Model.Title</h1>
+
+        @* Author info *@
+        <div class="flex items-center gap-4 text-sm text-gray-500 pb-6 border-b mb-8">
+            <span class="flex items-center gap-1">
+                <i data-lucide="user" class="w-4 h-4"></i> @Model.Author
+            </span>
+            @if (Model.PublishedAt.HasValue)
+            {
+                <span class="flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> @Model.PublishedAt.Value.ToString("dd/MM/yyyy")
+                </span>
+            }
+            @if (!string.IsNullOrEmpty(Model.ReadTime))
+            {
+                <span class="flex items-center gap-1">
+                    <i data-lucide="clock" class="w-4 h-4"></i> @Model.ReadTime
+                </span>
+            }
+            <span class="flex items-center gap-1">
+                <i data-lucide="eye" class="w-4 h-4"></i> @Model.ViewCount lượt xem
+            </span>
+        </div>
+
+        @* Featured image *@
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="@Model.Image" alt="@Model.Title"
+                 class="w-full rounded-xl mb-8 max-h-96 object-cover" loading="eager" />
+        }
+
+        @* Content HTML *@
+        <div class="prose max-w-none">
+            @Html.Raw(Model.Content ?? "")
+        </div>
+    </article>
+</div>
+
+@section StructuredData {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Article",
+        "headline": "@Model.Title",
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            @:"image": "@Model.Image",
+        }
+        "author": { "@@type": "Person", "name": "@Model.Author" },
+        @if (Model.PublishedAt.HasValue)
+        {
+            @:"datePublished": "@Model.PublishedAt.Value.ToString("yyyy-MM-dd")",
+        }
+        "dateModified": "@Model.UpdatedAt.ToString("yyyy-MM-dd")"
+    }
+    </script>
+}

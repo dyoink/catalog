@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = (string?)ViewBag.Title ?? "Lỗi";
+    var code = (int)(ViewBag.StatusCode ?? 500);
+    var message = (string?)ViewBag.Message ?? "Đã có lỗi không xác định.";
+}
+
+<section class="min-h-[60vh] flex items-center justify-center px-4 py-16">
+    <div class="max-w-lg w-full text-center">
+        <div class="text-9xl font-bold text-primary mb-4">@code</div>
+        <h1 class="text-3xl font-bold text-gray-800 mb-3">@ViewData["Title"]</h1>
+        <p class="text-gray-600 mb-8">@message</p>
+        <div class="flex gap-3 justify-center">
+            <a href="/" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition font-medium">
+                <i data-lucide="home" class="inline w-4 h-4 mr-1"></i>
+                Về trang chủ
+            </a>
+            <button onclick="history.back()" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition font-medium">
+                <i data-lucide="arrow-left" class="inline w-4 h-4 mr-1"></i>
+                Quay lại
+            </button>
+        </div>
+    </div>
+</section>

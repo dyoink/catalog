@@ -1,0 +1,285 @@
+@model Product
+@*
+    Admin: Form thêm/sửa sản phẩm — dùng chung cho Create và Edit.
+    Bao gồm: thông tin cơ bản, SEO fields, content blocks editor.
+*@
+@{
+    var isEdit = Model.Id != Guid.Empty;
+    ViewData["Title"] = isEdit ? $"Sửa: {Model.Name}" : "Thêm sản phẩm mới";
+    var categories = ViewData["Categories"] as List<Category> ?? new();
+}
+
+<div class="max-w-4xl space-y-6">
+    @* Header *@
+    <div class="flex items-center gap-4">
+        <a href="/admin/products" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition">
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </a>
+        <h1 class="text-2xl font-bold text-gray-900">@ViewData["Title"]</h1>
+    </div>
+
+    <form method="post"
+          action="@(isEdit ? $"/admin/products/edit/{Model.Id}" : "/admin/products/create")"
+          enctype="multipart/form-data"
+          class="space-y-6">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+
+        @* ===== THÔNG TIN CƠ BẢN ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3">Thông tin cơ bản</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                @* Tên sản phẩm *@
+                <div class="md:col-span-2">
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700 mb-1">
+                        Tên sản phẩm <span class="text-red-500">*</span>
+                    </label>
+                    <input asp-for="Name" required
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                           placeholder="VD: Máy sục khí ao tôm 750W" />
+                </div>
+
+                @* Slug *@
+                <div>
+                    <label asp-for="Slug" class="block text-sm font-medium text-gray-700 mb-1">Slug (URL)</label>
+                    <input asp-for="Slug"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="Tự động tạo từ tên" />
+                    <p class="text-xs text-gray-400 mt-1">Để trống để tự động tạo từ tên sản phẩm</p>
+                </div>
+
+                @* SKU *@
+                <div>
+                    <label asp-for="Sku" class="block text-sm font-medium text-gray-700 mb-1">Mã SKU</label>
+                    <input asp-for="Sku"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="VD: MAY-SUC-KHI-750" />
+                </div>
+
+                @* Danh mục *@
+                <div>
+                    <label asp-for="CategoryId" class="block text-sm font-medium text-gray-700 mb-1">Danh mục</label>
+                    <select asp-for="CategoryId"
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50">
+                        <option value="">— Chọn danh mục —</option>
+                        @foreach (var cat in categories)
+                        {
+                            <option value="@cat.Id" selected="@(Model.CategoryId == cat.Id)">@cat.Name</option>
+                        }
+                    </select>
+                </div>
+
+                @* Giá *@
+                <div>
+                    <label asp-for="Price" class="block text-sm font-medium text-gray-700 mb-1">Giá (VNĐ)</label>
+                    <input asp-for="Price" type="number" step="1000" min="0"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="Để trống = Liên hệ báo giá" />
+                </div>
+
+                @* Trạng thái *@
+                <div>
+                    <label asp-for="Status" class="block text-sm font-medium text-gray-700 mb-1">Trạng thái</label>
+                    <select asp-for="Status"
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50">
+                        <option value="Available" selected="@(Model.Status == ProductStatus.Available)">Hiển thị</option>
+                        <option value="Hidden" selected="@(Model.Status == ProductStatus.Hidden)">Ẩn</option>
+                        <option value="OutOfStock" selected="@(Model.Status == ProductStatus.OutOfStock)">Hết hàng</option>
+                    </select>
+                </div>
+
+                @* Nổi bật *@
+                <div class="flex items-center gap-2 pt-6">
+                    <input asp-for="IsFeatured" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                    <label asp-for="IsFeatured" class="text-sm text-gray-700">Sản phẩm nổi bật</label>
+                </div>
+            </div>
+
+            @* Mô tả ngắn *@
+            <div>
+                <label asp-for="Description" class="block text-sm font-medium text-gray-700 mb-1">Mô tả ngắn</label>
+                <textarea asp-for="Description" rows="3"
+                          class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                          placeholder="Mô tả tóm tắt sản phẩm (hiện ở trang detail)"></textarea>
+            </div>
+        </div>
+
+        @* ===== HÌNH ẢNH & VIDEO ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3">Hình ảnh & Video</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label asp-for="Image" class="block text-sm font-medium text-gray-700 mb-1">URL ảnh đại diện</label>
+                    <input asp-for="Image" id="img-url"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://... hoặc /uploads/..." />
+                    <img id="img-preview" src="@(Model.Image ?? "")" alt="Preview"
+                         class="mt-2 w-32 h-32 rounded-lg object-cover border @(string.IsNullOrEmpty(Model.Image) ? "hidden" : "")" />
+                    <label class="block text-xs text-gray-500 mt-2">Hoặc upload trực tiếp (≤ 20MB):</label>
+                    <input type="file" name="imageFile" accept="image/*" data-preview="#img-preview" data-crop="1:1"
+                           class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+                </div>
+                <div>
+                    <label asp-for="VideoUrl" class="block text-sm font-medium text-gray-700 mb-1">URL video (YouTube)</label>
+                    <input asp-for="VideoUrl" type="url"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://youtube.com/..." />
+                </div>
+            </div>
+        </div>
+
+        @* ===== SEO ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3">SEO</h2>
+
+            <div>
+                <label asp-for="MetaTitle" class="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
+                <input asp-for="MetaTitle"
+                       class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                       placeholder="Để trống = dùng tên sản phẩm" />
+            </div>
+            <div>
+                <label asp-for="MetaDesc" class="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+                <textarea asp-for="MetaDesc" rows="2"
+                          class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                          placeholder="Để trống = dùng mô tả ngắn"></textarea>
+            </div>
+        </div>
+
+        @* ===== CONTENT BLOCKS (visual editor) ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5"
+             x-data="contentBlocksEditor(@Html.Raw(Json.Serialize(Model.ContentBlocks ?? System.Text.Json.JsonDocument.Parse("[]"))))">
+            <div class="flex items-center justify-between border-b pb-3">
+                <h2 class="font-bold text-gray-800 text-lg">Nội dung chi tiết (Content Blocks)</h2>
+                <button type="button" @@click="toggleRaw()" class="text-xs text-gray-500 hover:text-gray-700">
+                    <span x-show="!showRaw">Xem JSON thô</span>
+                    <span x-show="showRaw">Quay về visual</span>
+                </button>
+            </div>
+
+            <div x-show="!showRaw" class="space-y-2">
+                <template x-for="(block, idx) in blocks" :key="idx">
+                    <div class="cb-block">
+                        <div class="flex items-center gap-2 mb-2">
+                            <select x-model="block.type" class="text-sm border border-gray-200 rounded px-2 py-1">
+                                <option value="heading">Tiêu đề</option>
+                                <option value="paragraph">Đoạn văn</option>
+                                <option value="image">Ảnh</option>
+                                <option value="list">Danh sách</option>
+                                <option value="video">Video</option>
+                            </select>
+                            <span class="text-xs text-gray-400" x-text="'#' + (idx+1)"></span>
+                            <div class="ml-auto flex items-center gap-1">
+                                <button type="button" @@click="move(idx,-1)" :disabled="idx===0" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30"><i data-lucide="arrow-up" class="w-4 h-4"></i></button>
+                                <button type="button" @@click="move(idx,1)" :disabled="idx===blocks.length-1" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30"><i data-lucide="arrow-down" class="w-4 h-4"></i></button>
+                                <button type="button" @@click="remove(idx)" class="p-1 text-red-400 hover:text-red-600"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                            </div>
+                        </div>
+                        <template x-if="block.type==='heading'">
+                            <input type="text" x-model="block.content" placeholder="Tiêu đề" class="w-full text-lg font-bold px-3 py-2 border border-gray-200 rounded" />
+                        </template>
+                        <template x-if="block.type==='paragraph'">
+                            <textarea x-model="block.content" rows="3" placeholder="Nội dung đoạn văn..." class="w-full px-3 py-2 border border-gray-200 rounded text-sm"></textarea>
+                        </template>
+                        <template x-if="block.type==='image'">
+                            <div class="space-y-2">
+                                <input type="url" x-model="block.url" placeholder="URL ảnh" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" />
+                                <input type="text" x-model="block.alt" placeholder="Mô tả (alt)" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" />
+                                <img :src="block.url" x-show="block.url" class="max-h-32 rounded" />
+                            </div>
+                        </template>
+                        <template x-if="block.type==='list'">
+                            <textarea x-model="block.content" rows="4" placeholder="Mỗi dòng một mục" class="w-full px-3 py-2 border border-gray-200 rounded text-sm"></textarea>
+                        </template>
+                        <template x-if="block.type==='video'">
+                            <input type="url" x-model="block.url" placeholder="URL video YouTube/MP4" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" />
+                        </template>
+                    </div>
+                </template>
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" @@click="add('heading')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Tiêu đề</button>
+                    <button type="button" @@click="add('paragraph')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Đoạn văn</button>
+                    <button type="button" @@click="add('image')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Ảnh</button>
+                    <button type="button" @@click="add('list')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Danh sách</button>
+                    <button type="button" @@click="add('video')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Video</button>
+                </div>
+            </div>
+
+            <textarea x-show="showRaw" x-model="rawJson" rows="10"
+                      class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm font-mono"></textarea>
+
+            @* Hidden actual submitted field *@
+            <textarea name="contentBlocksJson" :value="submitJson()" class="hidden"></textarea>
+        </div>
+
+        @* ===== SUBMIT ===== *@
+        <div class="flex items-center gap-3">
+            <button type="submit"
+                    class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow flex items-center gap-2">
+                <i data-lucide="save" class="w-5 h-5"></i>
+                @(isEdit ? "Cập nhật" : "Thêm sản phẩm")
+            </button>
+            <a href="/admin/products" class="px-6 py-3 text-gray-500 hover:text-gray-700 transition">
+                Hủy
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        lucide.createIcons();
+
+        // Sync image URL input -> preview when typing
+        document.getElementById('img-url')?.addEventListener('input', function (e) {
+            var preview = document.getElementById('img-preview');
+            if (!preview) return;
+            if (e.target.value) { preview.src = e.target.value; preview.classList.remove('hidden'); }
+            else { preview.classList.add('hidden'); }
+        });
+
+        // Alpine component for visual content blocks editor
+        function contentBlocksEditor(initial) {
+            var blocks = [];
+            try {
+                if (Array.isArray(initial)) blocks = initial;
+                else if (initial && typeof initial === 'object') blocks = []; // empty doc
+            } catch (e) { blocks = []; }
+            return {
+                blocks: blocks,
+                showRaw: false,
+                rawJson: JSON.stringify(blocks, null, 2),
+                add(type) {
+                    var b = { type: type, content: '' };
+                    if (type === 'image' || type === 'video') { b.url = ''; b.alt = ''; }
+                    this.blocks.push(b);
+                    this.$nextTick(() => lucide.createIcons());
+                },
+                remove(idx) { this.blocks.splice(idx, 1); },
+                move(idx, dir) {
+                    var to = idx + dir;
+                    if (to < 0 || to >= this.blocks.length) return;
+                    var t = this.blocks[idx]; this.blocks[idx] = this.blocks[to]; this.blocks[to] = t;
+                },
+                toggleRaw() {
+                    if (!this.showRaw) {
+                        this.rawJson = JSON.stringify(this.blocks, null, 2);
+                    } else {
+                        try { this.blocks = JSON.parse(this.rawJson); }
+                        catch (e) { alert('JSON không hợp lệ: ' + e.message); return; }
+                    }
+                    this.showRaw = !this.showRaw;
+                    this.$nextTick(() => lucide.createIcons());
+                },
+                submitJson() {
+                    try {
+                        if (this.showRaw) return this.rawJson || '[]';
+                        return JSON.stringify(this.blocks);
+                    } catch (e) { return '[]'; }
+                }
+            };
+        }
+    </script>
+}

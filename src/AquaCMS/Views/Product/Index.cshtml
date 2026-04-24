@@ -1,0 +1,156 @@
+@model ProductListViewModel
+@*
+    Trang danh sách sản phẩm (/san-pham) và danh mục (/danh-muc/{slug}).
+    Bao gồm: search bar, sidebar danh mục, grid sản phẩm, phân trang.
+*@
+
+<div class="max-w-7xl mx-auto px-4 py-8">
+    @* ===== BREADCRUMB ===== *@
+    <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="/" class="hover:text-primary transition">Trang chủ</a></li>
+            <li><span class="mx-1">/</span></li>
+            @if (Model.CurrentCategory != null)
+            {
+                <li><a href="/san-pham" class="hover:text-primary transition">Sản phẩm</a></li>
+                <li><span class="mx-1">/</span></li>
+                <li class="text-gray-800 font-medium">@Model.CurrentCategory.Name</li>
+            }
+            else
+            {
+                <li class="text-gray-800 font-medium">Sản phẩm</li>
+            }
+        </ol>
+    </nav>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+        @* ===== SIDEBAR — Danh mục + Tìm kiếm ===== *@
+        <aside class="lg:w-64 shrink-0">
+            @* Search box *@
+            <form action="/san-pham" method="get" class="mb-6">
+                <div class="relative">
+                    <input type="text" name="search" value="@Model.SearchQuery"
+                           placeholder="Tìm kiếm sản phẩm..."
+                           class="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg
+                                  text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" />
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                </div>
+            </form>
+
+            @* Danh mục filter *@
+            <div class="bg-white rounded-xl shadow-sm p-5">
+                <h3 class="font-bold text-gray-800 mb-4">Danh mục</h3>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="/san-pham"
+                           class="block px-3 py-2 rounded-lg text-sm transition
+                                  @(Model.CurrentCategory == null ? "bg-primary/10 text-primary font-medium" : "text-gray-600 hover:bg-gray-50")">
+                            Tất cả
+                            <span class="text-gray-400 ml-1">(@Model.Products.TotalCount)</span>
+                        </a>
+                    </li>
+                    @foreach (var cat in Model.Categories)
+                    {
+                        var isActive = Model.CurrentCategory?.Id == cat.Id;
+                        <li>
+                            <a href="/danh-muc/@cat.Slug"
+                               class="block px-3 py-2 rounded-lg text-sm transition
+                                      @(isActive ? "bg-primary/10 text-primary font-medium" : "text-gray-600 hover:bg-gray-50")">
+                                @cat.Name
+                                <span class="text-gray-400 ml-1">(@cat.Products.Count)</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </aside>
+
+        @* ===== MAIN CONTENT — Product Grid ===== *@
+        <div class="flex-1">
+            @* Header + count *@
+            <div class="flex items-center justify-between mb-6">
+                <h1 class="text-2xl font-bold text-gray-900">@Model.PageTitle</h1>
+                <span class="text-sm text-gray-500">
+                    @Model.Products.TotalCount sản phẩm
+                </span>
+            </div>
+
+            @if (Model.Products.Items.Count == 0)
+            {
+                @* Empty state *@
+                <div class="text-center py-20 bg-white rounded-xl">
+                    <i data-lucide="search-x" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+                    <h3 class="text-lg font-medium text-gray-600 mb-2">Không tìm thấy sản phẩm</h3>
+                    <p class="text-gray-400">Thử tìm kiếm với từ khóa khác</p>
+                </div>
+            }
+            else
+            {
+                @* Product Grid *@
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    @foreach (var product in Model.Products.Items)
+                    {
+                        <partial name="_ProductCard" model="product" />
+                    }
+                </div>
+
+                @* ===== PHÂN TRANG ===== *@
+                @if (Model.Products.TotalPages > 1)
+                {
+                    <nav aria-label="Phân trang" class="flex justify-center mt-10">
+                        <ul class="flex items-center space-x-1">
+                            @* Trang trước *@
+                            @if (Model.Products.HasPreviousPage)
+                            {
+                                <li>
+                                    <a href="?page=@(Model.Products.PageIndex - 1)&search=@Model.SearchQuery"
+                                       class="px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition">
+                                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                    </a>
+                                </li>
+                            }
+
+                            @* Số trang *@
+                            @for (int i = 1; i <= Model.Products.TotalPages; i++)
+                            {
+                                var isCurrentPage = i == Model.Products.PageIndex;
+                                <li>
+                                    <a href="?page=@i&search=@Model.SearchQuery"
+                                       class="px-3 py-2 rounded-lg text-sm font-medium transition
+                                              @(isCurrentPage ? "bg-primary text-white" : "text-gray-600 hover:bg-gray-100")">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+
+                            @* Trang sau *@
+                            @if (Model.Products.HasNextPage)
+                            {
+                                <li>
+                                    <a href="?page=@(Model.Products.PageIndex + 1)&search=@Model.SearchQuery"
+                                       class="px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition">
+                                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@* ===== Breadcrumb JSON-LD (SEO) ===== *@
+@section StructuredData {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "@Context.Request.Scheme://@Context.Request.Host/" },
+            { "@@type": "ListItem", "position": 2, "name": "@Model.PageTitle", "item": "@Context.Request.Scheme://@Context.Request.Host/san-pham" }
+        ]
+    }
+    </script>
+}

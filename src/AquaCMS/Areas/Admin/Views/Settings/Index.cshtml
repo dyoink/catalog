@@ -1,0 +1,536 @@
+@model SiteSettings
+@{
+    ViewData["Title"] = "Cài đặt hệ thống";
+}
+
+<div class="max-w-4xl space-y-6">
+    <div>
+        <h1 class="text-2xl font-bold text-gray-900">Cài đặt hệ thống</h1>
+        <p class="text-gray-500 mt-1">CMS — Toàn quyền cấu hình trang web: giao diện, module, mạng xã hội</p>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-5 h-5"></i> @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center gap-2">
+            <i data-lucide="alert-circle" class="w-5 h-5"></i> @TempData["Error"]
+        </div>
+    }
+
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+
+        @* ===== Thông tin doanh nghiệp ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="building" class="w-5 h-5 text-gray-400"></i> Thông tin doanh nghiệp
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="md:col-span-2">
+                    <label asp-for="CompanyName" class="block text-sm font-medium text-gray-700 mb-1">Tên công ty</label>
+                    <input asp-for="CompanyName"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50 focus:border-primary" />
+                </div>
+                <div>
+                    <label asp-for="Phone" class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại</label>
+                    <input asp-for="Phone"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="Email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input asp-for="Email" type="email"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div class="md:col-span-2">
+                    <label asp-for="Address" class="block text-sm font-medium text-gray-700 mb-1">Địa chỉ</label>
+                    <input asp-for="Address"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div class="md:col-span-2">
+                    <label asp-for="Logo" class="block text-sm font-medium text-gray-700 mb-1">URL Logo</label>
+                    <input asp-for="Logo"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://... hoặc /uploads/..." />
+                    @if (!string.IsNullOrEmpty(Model.Logo))
+                    {
+                        <img src="@Model.Logo" alt="Logo" class="mt-2 h-12 object-contain" />
+                    }
+                    <label class="block text-xs text-gray-500 mt-2">Hoặc upload trực tiếp:</label>
+                    <input type="file" name="logoFile" accept="image/*"
+                           class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+                </div>
+            </div>
+        </div>
+
+        @* ===== Mạng xã hội + Floating Buttons Toggle ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="share-2" class="w-5 h-5 text-gray-400"></i> Mạng xã hội & Nút nổi
+            </h2>
+            <p class="text-sm text-gray-500">Nhập link mạng xã hội và bật/tắt nút nổi (floating buttons) ở góc phải màn hình.</p>
+
+            @* Zalo *@
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center pt-7">
+                    <input asp-for="ShowZalo" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                </div>
+                <div class="flex-1">
+                    <label asp-for="Zalo" class="block text-sm font-medium text-gray-700 mb-1">Zalo</label>
+                    <input asp-for="Zalo"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://zalo.me/..." />
+                    <p class="text-xs text-gray-400 mt-1">Bật toggle = hiện nút Zalo nổi ở góc phải màn hình</p>
+                </div>
+            </div>
+
+            @* Facebook *@
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center pt-7">
+                    <input asp-for="ShowFacebook" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                </div>
+                <div class="flex-1">
+                    <label asp-for="Facebook" class="block text-sm font-medium text-gray-700 mb-1">Facebook</label>
+                    <input asp-for="Facebook"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://facebook.com/..." />
+                </div>
+            </div>
+
+            @* Telegram *@
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center pt-7">
+                    <input asp-for="ShowTelegram" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                </div>
+                <div class="flex-1">
+                    <label asp-for="Telegram" class="block text-sm font-medium text-gray-700 mb-1">Telegram</label>
+                    <input asp-for="Telegram"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://t.me/..." />
+                </div>
+            </div>
+
+            @* YouTube *@
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center pt-7">
+                    <input asp-for="ShowYoutube" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                </div>
+                <div class="flex-1">
+                    <label asp-for="Youtube" class="block text-sm font-medium text-gray-700 mb-1">YouTube</label>
+                    <input asp-for="Youtube"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://youtube.com/..." />
+                </div>
+            </div>
+
+            @* TikTok *@
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center pt-7">
+                    <input asp-for="ShowTiktok" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                </div>
+                <div class="flex-1">
+                    <label asp-for="Tiktok" class="block text-sm font-medium text-gray-700 mb-1">TikTok</label>
+                    <input asp-for="Tiktok"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                           placeholder="https://tiktok.com/..." />
+                </div>
+            </div>
+
+            @* Hotline *@
+            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <input asp-for="ShowHotline" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                <div>
+                    <span class="text-sm font-medium text-gray-700">Hiện nút Hotline nổi</span>
+                    <p class="text-xs text-gray-400">Sử dụng số điện thoại ở phần "Thông tin doanh nghiệp"</p>
+                </div>
+            </div>
+        </div>
+
+        @* ===== Thanh toán ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="credit-card" class="w-5 h-5 text-gray-400"></i> Thông tin thanh toán
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div>
+                    <label asp-for="BankName" class="block text-sm font-medium text-gray-700 mb-1">Ngân hàng</label>
+                    <input asp-for="BankName"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="BankNumber" class="block text-sm font-medium text-gray-700 mb-1">Số tài khoản</label>
+                    <input asp-for="BankNumber"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="BankOwner" class="block text-sm font-medium text-gray-700 mb-1">Chủ tài khoản</label>
+                    <input asp-for="BankOwner"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+            </div>
+        </div>
+
+        @* ===== Giao diện ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="palette" class="w-5 h-5 text-gray-400"></i> Giao diện
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label asp-for="PrimaryColor" class="block text-sm font-medium text-gray-700 mb-1">Màu chính</label>
+                    <div class="flex items-center gap-2">
+                        <input asp-for="PrimaryColor"
+                               class="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                        <input type="color" value="@Model.PrimaryColor"
+                               onchange="document.getElementById('PrimaryColor').value = this.value"
+                               class="w-10 h-10 rounded-lg border border-gray-200 cursor-pointer" />
+                    </div>
+                </div>
+                <div>
+                    <label asp-for="BackgroundColor" class="block text-sm font-medium text-gray-700 mb-1">Màu nền</label>
+                    <div class="flex items-center gap-2">
+                        <input asp-for="BackgroundColor"
+                               class="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                        <input type="color" value="@Model.BackgroundColor"
+                               onchange="document.getElementById('BackgroundColor').value = this.value"
+                               class="w-10 h-10 rounded-lg border border-gray-200 cursor-pointer" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label asp-for="HeroBackgroundImage" class="block text-sm font-medium text-gray-700 mb-1">Hình nền Hero (URL)</label>
+                <input asp-for="HeroBackgroundImage"
+                       class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                       placeholder="https://... hoặc /uploads/..." />
+                @if (!string.IsNullOrEmpty(Model.HeroBackgroundImage))
+                {
+                    <img src="@Model.HeroBackgroundImage" alt="Hero BG" class="mt-2 h-20 rounded-lg object-cover" />
+                }
+                <label class="block text-xs text-gray-500 mt-2">Hoặc upload trực tiếp:</label>
+                <input type="file" name="heroImageFile" accept="image/*"
+                       class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+            </div>
+            <div>
+                <label asp-for="FooterText" class="block text-sm font-medium text-gray-700 mb-1">Footer text</label>
+                <input asp-for="FooterText"
+                       class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
+                       placeholder="VD: Giải pháp thiết bị nuôi trồng thủy sản hàng đầu" />
+            </div>
+            <div class="flex items-center gap-2">
+                <input asp-for="ShowFooter" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                <label asp-for="ShowFooter" class="text-sm text-gray-700">Hiển thị footer</label>
+            </div>
+        </div>
+
+        @* ===== CMS — Module trang chủ ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 text-gray-400"></i> Trang chủ — Module bật/tắt
+            </h2>
+            <p class="text-sm text-gray-500">Bật hoặc tắt các phần hiển thị trên trang chủ. Admin toàn quyền điều chỉnh.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowBanners" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                    <div>
+                        <span class="text-sm font-medium text-gray-800">Banner / Hero</span>
+                        <p class="text-xs text-gray-400">Phần banner đầu trang</p>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowCategories" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                    <div>
+                        <span class="text-sm font-medium text-gray-800">Danh mục sản phẩm</span>
+                        <p class="text-xs text-gray-400">Grid danh mục trên trang chủ</p>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowFeaturedProducts" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                    <div>
+                        <span class="text-sm font-medium text-gray-800">Sản phẩm nổi bật</span>
+                        <p class="text-xs text-gray-400">Section sản phẩm featured</p>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowLatestPosts" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                    <div>
+                        <span class="text-sm font-medium text-gray-800">Bài viết mới nhất</span>
+                        <p class="text-xs text-gray-400">Section kiến thức / blog</p>
+                    </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowPartners" type="checkbox" class="rounded text-primary focus:ring-primary w-5 h-5" />
+                    <div>
+                        <span class="text-sm font-medium text-gray-800">Đối tác</span>
+                        <p class="text-xs text-gray-400">Logo đối tác trên trang chủ</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-3 border-t">
+                <div>
+                    <label asp-for="FeaturedProductsCount" class="block text-sm font-medium text-gray-700 mb-1">Số sản phẩm nổi bật</label>
+                    <input asp-for="FeaturedProductsCount" type="number" min="1" max="24"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="LatestPostsCount" class="block text-sm font-medium text-gray-700 mb-1">Số bài viết mới</label>
+                    <input asp-for="LatestPostsCount" type="number" min="1" max="12"
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+            </div>
+        </div>
+
+        @* ===== CMS — Navbar toggles ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="navigation" class="w-5 h-5 text-gray-400"></i> Menu điều hướng
+            </h2>
+            <p class="text-sm text-gray-500">Bật/tắt các mục trên thanh điều hướng (navbar).</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowNavProducts" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                    <span class="text-sm text-gray-700">Sản phẩm</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowNavKnowledge" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                    <span class="text-sm text-gray-700">Kiến thức</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowNavPartners" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                    <span class="text-sm text-gray-700">Đối tác</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                    <input asp-for="ShowNavCart" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                    <span class="text-sm text-gray-700">Giỏ hàng</span>
+                </label>
+            </div>
+        </div>
+
+        @* ===== Hero Section (trang chủ) ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="megaphone" class="w-5 h-5 text-gray-400"></i> Hero Section (banner đầu trang)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label asp-for="HeroTitle" class="block text-sm font-medium text-gray-700 mb-1">Tiêu đề chính</label>
+                    <input asp-for="HeroTitle" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="HeroSubtitle" class="block text-sm font-medium text-gray-700 mb-1">Tiêu đề phụ</label>
+                    <input asp-for="HeroSubtitle" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div class="md:col-span-2">
+                    <label asp-for="HeroDescription" class="block text-sm font-medium text-gray-700 mb-1">Mô tả ngắn</label>
+                    <textarea asp-for="HeroDescription" rows="3" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"></textarea>
+                </div>
+                <div>
+                    <label asp-for="HeroButtonText" class="block text-sm font-medium text-gray-700 mb-1">Text nút CTA</label>
+                    <input asp-for="HeroButtonText" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" placeholder="Xem sản phẩm" />
+                </div>
+                <div>
+                    <label asp-for="HeroButtonUrl" class="block text-sm font-medium text-gray-700 mb-1">URL nút CTA</label>
+                    <input asp-for="HeroButtonUrl" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" placeholder="/san-pham" />
+                </div>
+            </div>
+        </div>
+
+        @* ===== About Section ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="info" class="w-5 h-5 text-gray-400"></i> Giới thiệu công ty
+            </h2>
+            <div>
+                <label asp-for="AboutTitle" class="block text-sm font-medium text-gray-700 mb-1">Tiêu đề</label>
+                <input asp-for="AboutTitle" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+            </div>
+            <div>
+                <label asp-for="AboutContent" class="block text-sm font-medium text-gray-700 mb-1">Nội dung (HTML cho phép)</label>
+                <textarea asp-for="AboutContent" rows="6" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"></textarea>
+                <p class="text-xs text-gray-500 mt-1">Hỗ trợ HTML cơ bản (đã sanitize chống XSS): &lt;p&gt;, &lt;strong&gt;, &lt;ul&gt;, &lt;a&gt;, &lt;img&gt;...</p>
+            </div>
+            <div>
+                <label asp-for="AboutImage" class="block text-sm font-medium text-gray-700 mb-1">Hình ảnh giới thiệu (URL)</label>
+                <input asp-for="AboutImage" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                @if (!string.IsNullOrEmpty(Model.AboutImage))
+                {
+                    <img src="@Model.AboutImage" alt="About" class="mt-2 h-20 rounded-lg object-cover" />
+                }
+                <label class="block text-xs text-gray-500 mt-2">Hoặc upload trực tiếp:</label>
+                <input type="file" name="aboutImageFile" accept="image/*"
+                       class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+            </div>
+        </div>
+
+        @* ===== SEO Defaults ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="search" class="w-5 h-5 text-gray-400"></i> SEO mặc định
+            </h2>
+            <div>
+                <label asp-for="DefaultMetaTitle" class="block text-sm font-medium text-gray-700 mb-1">
+                    Meta Title mặc định <span class="text-xs text-gray-400">(tối đa 70 ký tự)</span>
+                </label>
+                <input asp-for="DefaultMetaTitle" maxlength="70" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+            </div>
+            <div>
+                <label asp-for="DefaultMetaDescription" class="block text-sm font-medium text-gray-700 mb-1">
+                    Meta Description mặc định <span class="text-xs text-gray-400">(tối đa 160 ký tự)</span>
+                </label>
+                <textarea asp-for="DefaultMetaDescription" maxlength="160" rows="2" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"></textarea>
+            </div>
+            <div>
+                <label asp-for="DefaultOgImage" class="block text-sm font-medium text-gray-700 mb-1">OG Image (URL — chia sẻ Facebook/Zalo)</label>
+                <input asp-for="DefaultOgImage" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" placeholder="1200x630px khuyến nghị" />
+                @if (!string.IsNullOrEmpty(Model.DefaultOgImage))
+                {
+                    <img src="@Model.DefaultOgImage" alt="OG" class="mt-2 h-20 rounded-lg object-cover" />
+                }
+                <label class="block text-xs text-gray-500 mt-2">Hoặc upload trực tiếp:</label>
+                <input type="file" name="ogImageFile" accept="image/*"
+                       class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label asp-for="GoogleAnalyticsId" class="block text-sm font-medium text-gray-700 mb-1">Google Analytics ID</label>
+                    <input asp-for="GoogleAnalyticsId" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" placeholder="G-XXXXXXXXXX" />
+                </div>
+                <div>
+                    <label asp-for="FacebookPixelId" class="block text-sm font-medium text-gray-700 mb-1">Facebook Pixel ID</label>
+                    <input asp-for="FacebookPixelId" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+            </div>
+        </div>
+
+        @* ===== Email / SMTP ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="mail" class="w-5 h-5 text-gray-400"></i> Email / SMTP
+            </h2>
+            <p class="text-xs text-gray-500 -mt-2">
+                Cấu hình SMTP để gửi email thông báo. Mọi lỗi gửi email đều được log,
+                <strong>không ảnh hưởng</strong> các chức năng khác.
+            </p>
+
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-700">
+                <input asp-for="EmailEnabled" type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                Bật gửi email
+            </label>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label asp-for="SmtpHost" class="block text-sm font-medium text-gray-700 mb-1">SMTP Host</label>
+                    <input asp-for="SmtpHost" placeholder="smtp.gmail.com" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="SmtpPort" class="block text-sm font-medium text-gray-700 mb-1">Port</label>
+                    <input asp-for="SmtpPort" type="number" min="1" max="65535" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="SmtpUser" class="block text-sm font-medium text-gray-700 mb-1">SMTP User</label>
+                    <input asp-for="SmtpUser" autocomplete="off" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="SmtpPassword" class="block text-sm font-medium text-gray-700 mb-1">SMTP Password / App Password</label>
+                    <input asp-for="SmtpPassword" type="password" autocomplete="new-password" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="SmtpFromEmail" class="block text-sm font-medium text-gray-700 mb-1">From Email</label>
+                    <input asp-for="SmtpFromEmail" type="email" placeholder="noreply@@yourdomain.com" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="SmtpFromName" class="block text-sm font-medium text-gray-700 mb-1">From Name</label>
+                    <input asp-for="SmtpFromName" placeholder="AquaCMS" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div>
+                    <label asp-for="NotificationEmail" class="block text-sm font-medium text-gray-700 mb-1">Email nhận thông báo (admin)</label>
+                    <input asp-for="NotificationEmail" type="email" placeholder="admin@@yourdomain.com" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+                </div>
+                <div class="flex items-end">
+                    <label class="flex items-center gap-2 text-sm font-medium text-gray-700">
+                        <input asp-for="SmtpUseSsl" type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                        Dùng SSL/TLS (port 465 = SSL on connect, port 587 = STARTTLS)
+                    </label>
+                </div>
+            </div>
+
+            <div class="border-t pt-4 flex items-center gap-3">
+                <input id="test-email-to" type="email" placeholder="email-test@@example.com"
+                       class="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm" />
+                <button type="button" id="btn-test-email"
+                        class="bg-gray-700 text-white px-4 py-2.5 rounded-lg text-sm hover:bg-gray-800 flex items-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i> Gửi email test
+                </button>
+            </div>
+            <div id="test-email-result" class="hidden text-sm rounded-lg px-4 py-2"></div>
+        </div>
+
+        @* ===== Footer extras ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+            <h2 class="font-bold text-gray-800 text-lg border-b pb-3 flex items-center gap-2">
+                <i data-lucide="layout" class="w-5 h-5 text-gray-400"></i> Footer (mở rộng)
+            </h2>
+            <div>
+                <label asp-for="FooterAboutText" class="block text-sm font-medium text-gray-700 mb-1">Đoạn giới thiệu ở footer (HTML)</label>
+                <textarea asp-for="FooterAboutText" rows="3" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"></textarea>
+            </div>
+            <div>
+                <label asp-for="CopyrightText" class="block text-sm font-medium text-gray-700 mb-1">Dòng copyright</label>
+                <input asp-for="CopyrightText" class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" placeholder="© 2025 Công ty XYZ. All rights reserved." />
+            </div>
+        </div>
+
+        @* ===== Submit ===== *@
+        <div class="flex items-center gap-3">
+            <button type="submit"
+                    class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow flex items-center gap-2">
+                <i data-lucide="save" class="w-5 h-5"></i> Lưu cài đặt
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        lucide.createIcons();
+
+        // Test email button
+        document.getElementById('btn-test-email')?.addEventListener('click', async function () {
+            var to = document.getElementById('test-email-to').value.trim();
+            var resultEl = document.getElementById('test-email-result');
+            resultEl.className = 'text-sm rounded-lg px-4 py-2 bg-gray-100 text-gray-700';
+            resultEl.classList.remove('hidden');
+            resultEl.textContent = 'Đang gửi...';
+            if (!to) { resultEl.textContent = 'Nhập email người nhận trước.'; return; }
+            try {
+                var token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+                var fd = new FormData();
+                fd.append('__RequestVerificationToken', token || '');
+                fd.append('to', to);
+                var resp = await fetch('/admin/settings/test-email', { method: 'POST', body: fd });
+                var data = await resp.json();
+                if (data.success) {
+                    resultEl.className = 'text-sm rounded-lg px-4 py-2 bg-green-50 text-green-700 border border-green-200';
+                    resultEl.textContent = 'Gửi thành công! Kiểm tra inbox.';
+                } else {
+                    resultEl.className = 'text-sm rounded-lg px-4 py-2 bg-red-50 text-red-700 border border-red-200';
+                    resultEl.textContent = 'Lỗi: ' + (data.error || 'không gửi được.');
+                }
+            } catch (e) {
+                resultEl.className = 'text-sm rounded-lg px-4 py-2 bg-red-50 text-red-700 border border-red-200';
+                resultEl.textContent = 'Lỗi network: ' + e.message;
+            }
+        });
+    </script>
+}

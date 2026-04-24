@@ -1,0 +1,7 @@
+/*
+ * Placeholder: Tailwind CSS production build output.
+ * Run `npm install && npm run build:css` in src/AquaCMS to generate the real file.
+ * Until then, this minimal CSS prevents 404 in Production env.
+ */
+:root { --color-primary: #55B3D9; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }

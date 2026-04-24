@@ -1,0 +1,106 @@
+@model AquaCMS.Models.Entities.ChatSession
+@{ ViewData["Title"] = $"Chat: {Model.GuestId}"; }
+
+<div class="max-w-3xl space-y-4" data-guest-id="@Model.GuestId">
+    <div class="flex items-center gap-3">
+        <a href="/admin/messages" class="p-2 text-gray-400 hover:text-gray-600 rounded-lg"><i data-lucide="arrow-left" class="w-5 h-5"></i></a>
+        <div>
+            <h1 class="text-xl font-bold text-gray-900">Chat với @Model.GuestId</h1>
+            <p class="text-xs text-gray-500">Tạo lúc @Model.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")
+                · <span id="chat-status" class="text-gray-400">Đang kết nối...</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="chat-list" class="bg-white rounded-xl shadow-sm p-6 space-y-3 max-h-[60vh] overflow-y-auto">
+        @foreach (var msg in Model.Messages)
+        {
+            <div class="flex @(msg.IsFromAdmin ? "justify-end" : "justify-start")">
+                <div class="max-w-[70%] rounded-2xl px-4 py-2 @(msg.IsFromAdmin ? "bg-primary text-white" : "bg-gray-100 text-gray-800")">
+                    <p class="text-sm whitespace-pre-wrap">@msg.Text</p>
+                    <p class="text-[10px] opacity-70 mt-1">@msg.CreatedAt.ToLocalTime().ToString("HH:mm dd/MM")</p>
+                </div>
+            </div>
+        }
+        @if (!Model.Messages.Any())
+        {
+            <p id="chat-empty" class="text-center text-gray-400 py-8">Chưa có tin nhắn</p>
+        }
+    </div>
+
+    <form id="reply-form" class="flex gap-2">
+        <input id="reply-input" type="text" maxlength="4000" required
+               placeholder="Nhập câu trả lời..."
+               class="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50" />
+        <button type="submit" class="bg-primary text-white px-5 rounded-lg hover:opacity-90 flex items-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i> Gửi
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+<script>
+lucide.createIcons();
+(function () {
+    var guestId = document.querySelector('[data-guest-id]')?.getAttribute('data-guest-id');
+    var statusEl = document.getElementById('chat-status');
+    var list = document.getElementById('chat-list');
+    var form = document.getElementById('reply-form');
+    var input = document.getElementById('reply-input');
+
+    function appendMessage(text, isFromAdmin, at) {
+        document.getElementById('chat-empty')?.remove();
+        var wrap = document.createElement('div');
+        wrap.className = 'flex ' + (isFromAdmin ? 'justify-end' : 'justify-start');
+        var bubble = document.createElement('div');
+        bubble.className = 'max-w-[70%] rounded-2xl px-4 py-2 ' +
+            (isFromAdmin ? 'bg-primary text-white' : 'bg-gray-100 text-gray-800');
+        var p = document.createElement('p');
+        p.className = 'text-sm whitespace-pre-wrap';
+        p.textContent = text;
+        bubble.appendChild(p);
+        if (at) {
+            var meta = document.createElement('p');
+            meta.className = 'text-[10px] opacity-70 mt-1';
+            meta.textContent = new Date(at).toLocaleString('vi-VN');
+            bubble.appendChild(meta);
+        }
+        wrap.appendChild(bubble);
+        list.appendChild(wrap);
+        list.scrollTop = list.scrollHeight;
+    }
+
+    if (typeof signalR === 'undefined') { statusEl.textContent = 'SignalR không khả dụng'; return; }
+
+    var conn = new signalR.HubConnectionBuilder()
+        .withUrl('/hubs/chat')
+        .withAutomaticReconnect([0, 2000, 5000, 10000, 30000])
+        .build();
+
+    conn.on('ReceiveMessage', function (m) {
+        if (!m || m.guestId !== guestId) return;
+        appendMessage(m.text, !!m.isFromAdmin, m.at);
+    });
+    conn.onreconnecting(function () { statusEl.textContent = 'Kết nối lại...'; });
+    conn.onreconnected(function () { statusEl.textContent = 'Đã kết nối'; conn.invoke('JoinAsAdmin').catch(function(){}); });
+    conn.onclose(function () { statusEl.textContent = 'Mất kết nối'; });
+
+    conn.start().then(function () {
+        statusEl.textContent = 'Đã kết nối';
+        return conn.invoke('JoinAsAdmin');
+    }).catch(function (err) { statusEl.textContent = 'Lỗi kết nối'; console.warn(err); });
+
+    form?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = (input.value || '').trim();
+        if (!text) return;
+        if (conn.state !== signalR.HubConnectionState.Connected) {
+            statusEl.textContent = 'Mất kết nối — không gửi được';
+            return;
+        }
+        conn.invoke('SendFromAdmin', guestId, text).catch(function (err) { console.warn(err); });
+        input.value = '';
+    });
+})();
+</script>
+}

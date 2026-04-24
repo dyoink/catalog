@@ -1,0 +1,8 @@
+@* Edit dùng chung template với Create *@
+@model Post
+@{
+    ViewData["Title"] = $"Sửa: {Model.Title}";
+    var categories = ViewData["Categories"] as List<KnowledgeCategory> ?? new();
+}
+
+@await Html.PartialAsync("Create", Model)

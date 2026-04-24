@@ -1,0 +1,308 @@
+@model ProductDetailViewModel
+@*
+    Chi tiết sản phẩm (/san-pham/{slug}).
+    SEO: Product JSON-LD, Breadcrumb JSON-LD, meta title/description, Open Graph.
+*@
+
+<div class="max-w-7xl mx-auto px-4 py-8">
+    @* ===== BREADCRUMB ===== *@
+    <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            @foreach (var crumb in Model.Breadcrumbs)
+            {
+                @if (!crumb.IsActive)
+                {
+                    <li><a href="@crumb.Url" class="hover:text-primary transition">@crumb.Label</a></li>
+                    <li><span class="mx-1">/</span></li>
+                }
+                else
+                {
+                    <li class="text-gray-800 font-medium truncate max-w-[200px]">@crumb.Label</li>
+                }
+            }
+        </ol>
+    </nav>
+
+    @* ===== PRODUCT MAIN SECTION ===== *@
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-2xl shadow-sm p-6 lg:p-10">
+        @* Ảnh sản phẩm *@
+        <div>
+            @if (!string.IsNullOrEmpty(Model.Product.Image))
+            {
+                <div class="aspect-square rounded-xl overflow-hidden bg-gray-50">
+                    <img src="@Model.Product.Image"
+                         alt="@Model.Product.Name"
+                         class="w-full h-full object-cover"
+                         loading="eager" />
+                </div>
+            }
+            else
+            {
+                <div class="aspect-square rounded-xl bg-gray-100 flex items-center justify-center">
+                    <i data-lucide="image-off" class="w-20 h-20 text-gray-300"></i>
+                </div>
+            }
+
+            @* Video nếu có *@
+            @if (!string.IsNullOrEmpty(Model.Product.VideoUrl))
+            {
+                <div class="mt-4">
+                    <a href="@Model.Product.VideoUrl" target="_blank" rel="noopener noreferrer"
+                       class="flex items-center gap-2 text-primary hover:underline font-medium">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        Xem video sản phẩm
+                    </a>
+                </div>
+            }
+        </div>
+
+        @* Thông tin sản phẩm *@
+        <div class="flex flex-col">
+            @* Danh mục *@
+            @if (Model.Product.Category != null)
+            {
+                <a href="/danh-muc/@Model.Product.Category.Slug"
+                   class="text-sm text-primary font-medium uppercase tracking-wide mb-2 hover:underline w-fit">
+                    @Model.Product.Category.Name
+                </a>
+            }
+
+            @* Tên sản phẩm *@
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">@Model.Product.Name</h1>
+
+            @* SKU + Trạng thái *@
+            <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
+                @if (!string.IsNullOrEmpty(Model.Product.Sku))
+                {
+                    <span>SKU: <strong class="text-gray-700">@Model.Product.Sku</strong></span>
+                }
+                @if (Model.Product.Status == ProductStatus.OutOfStock)
+                {
+                    <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded-full text-xs font-medium">Hết hàng</span>
+                }
+                else
+                {
+                    <span class="bg-green-100 text-green-600 px-2 py-0.5 rounded-full text-xs font-medium">Còn hàng</span>
+                }
+            </div>
+
+            @* Giá *@
+            <div class="text-3xl font-bold mb-6 @(Model.Product.Price.HasValue ? "text-primary" : "text-gray-600")">
+                @PriceHelper.FormatPrice(Model.Product.Price)
+            </div>
+
+            @* Mô tả ngắn *@
+            @if (!string.IsNullOrEmpty(Model.Product.Description))
+            {
+                <div class="prose prose-sm text-gray-600 mb-8 max-w-none">
+                    <p>@Model.Product.Description</p>
+                </div>
+            }
+
+            @* Nút hành động *@
+            <div class="flex flex-wrap gap-3 mt-auto">
+                <button type="button"
+                        class="add-to-cart-btn bg-primary text-white px-8 py-3 rounded-lg font-semibold
+                               hover:opacity-90 transition shadow flex items-center gap-2"
+                        data-product-id="@Model.Product.Id"
+                        data-product-name="@Model.Product.Name"
+                        data-product-price="@Model.Product.Price"
+                        data-product-image="@Model.Product.Image">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    Thêm vào giỏ hàng
+                </button>
+
+                <a href="https://zalo.me/0353785710"
+                   target="_blank" rel="noopener noreferrer"
+                   class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold
+                          hover:bg-blue-700 transition shadow flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Liên hệ Zalo
+                </a>
+            </div>
+
+            @* Thống kê *@
+            <div class="flex items-center gap-6 mt-8 pt-6 border-t text-sm text-gray-400">
+                <span class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    @Model.Product.ViewCount lượt xem
+                </span>
+                <span class="flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    @Model.Product.CreatedAt.ToString("dd/MM/yyyy")
+                </span>
+            </div>
+        </div>
+    </div>
+
+    @* ===== CONTENT BLOCKS (JSONB) ===== *@
+    @if (Model.Product.ContentBlocks != null)
+    {
+        <section class="mt-12 bg-white rounded-2xl shadow-sm p-6 lg:p-10">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Thông tin chi tiết</h2>
+            <div id="content-blocks" class="prose max-w-none">
+                @* Content blocks sẽ được render bằng JS từ JSON *@
+            </div>
+        </section>
+    }
+
+    @* ===== SẢN PHẨM LIÊN QUAN ===== *@
+    @if (Model.RelatedProducts.Count > 0)
+    {
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Sản phẩm liên quan</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                @foreach (var related in Model.RelatedProducts)
+                {
+                    <partial name="_ProductCard" model="related" />
+                }
+            </div>
+        </section>
+    }
+</div>
+
+@* ===== STRUCTURED DATA (SEO) ===== *@
+@section StructuredData {
+    @* Product JSON-LD *@
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Product",
+        "name": "@Model.Product.Name",
+        @if (!string.IsNullOrEmpty(Model.Product.Description))
+        {
+            @:"description": "@Html.Raw(Model.Product.Description.Replace("\"", "\\\""))",
+        }
+        @if (!string.IsNullOrEmpty(Model.Product.Image))
+        {
+            @:"image": "@Model.Product.Image",
+        }
+        @if (!string.IsNullOrEmpty(Model.Product.Sku))
+        {
+            @:"sku": "@Model.Product.Sku",
+        }
+        "offers": {
+            "@@type": "Offer",
+            @if (Model.Product.Price.HasValue)
+            {
+                @:"price": "@Model.Product.Price.Value",
+                @:"priceCurrency": "VND",
+            }
+            "availability": "@(Model.Product.Status == ProductStatus.OutOfStock ? "https://schema.org/OutOfStock" : "https://schema.org/InStock")"
+        }
+    }
+    </script>
+
+    @* Breadcrumb JSON-LD *@
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            @for (int i = 0; i < Model.Breadcrumbs.Count; i++)
+            {
+                var b = Model.Breadcrumbs[i];
+                <text>{ "@@type": "ListItem", "position": @(i + 1), "name": "@b.Label"@(b.Url != null ? $", \"item\": \"{Context.Request.Scheme}://{Context.Request.Host}{b.Url}\"" : "") }</text>
+                if (i < Model.Breadcrumbs.Count - 1) { <text>,</text> }
+            }
+        ]
+    }
+    </script>
+}
+
+@* ===== Client-side scripts ===== *@
+@section Scripts {
+    <script>
+        // Render content blocks từ JSONB
+        (function() {
+            var raw = '@Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Product.ContentBlocks))';
+            if (!raw || raw === 'null') return;
+
+            try {
+                var blocks = JSON.parse(raw);
+                if (!Array.isArray(blocks)) return;
+
+                var container = document.getElementById('content-blocks');
+                if (!container) return;
+
+                blocks.forEach(function(block) {
+                    switch (block.type) {
+                        case 'heading':
+                            var h = document.createElement('h3');
+                            h.className = 'text-xl font-bold mt-6 mb-3';
+                            h.textContent = block.content || '';
+                            container.appendChild(h);
+                            break;
+                        case 'paragraph':
+                            var p = document.createElement('p');
+                            p.className = 'mb-4 text-gray-700 leading-relaxed';
+                            p.textContent = block.content || '';
+                            container.appendChild(p);
+                            break;
+                        case 'image':
+                            var img = document.createElement('img');
+                            img.src = block.url || '';
+                            img.alt = block.caption || '';
+                            img.className = 'rounded-lg my-4 max-w-full';
+                            img.loading = 'lazy';
+                            container.appendChild(img);
+                            if (block.caption) {
+                                var cap = document.createElement('p');
+                                cap.className = 'text-sm text-gray-500 text-center mt-1 mb-4';
+                                cap.textContent = block.caption;
+                                container.appendChild(cap);
+                            }
+                            break;
+                        case 'list':
+                            var ul = document.createElement('ul');
+                            ul.className = 'list-disc pl-6 mb-4 space-y-1';
+                            (block.items || []).forEach(function(item) {
+                                var li = document.createElement('li');
+                                li.className = 'text-gray-700';
+                                li.textContent = item;
+                                ul.appendChild(li);
+                            });
+                            container.appendChild(ul);
+                            break;
+                        case 'table':
+                            var table = document.createElement('table');
+                            table.className = 'w-full border-collapse mb-4';
+                            if (block.headers) {
+                                var thead = document.createElement('thead');
+                                var tr = document.createElement('tr');
+                                block.headers.forEach(function(h) {
+                                    var th = document.createElement('th');
+                                    th.className = 'border border-gray-200 bg-gray-50 px-4 py-2 text-left font-medium text-sm';
+                                    th.textContent = h;
+                                    tr.appendChild(th);
+                                });
+                                thead.appendChild(tr);
+                                table.appendChild(thead);
+                            }
+                            if (block.rows) {
+                                var tbody = document.createElement('tbody');
+                                block.rows.forEach(function(row) {
+                                    var tr = document.createElement('tr');
+                                    row.forEach(function(cell) {
+                                        var td = document.createElement('td');
+                                        td.className = 'border border-gray-200 px-4 py-2 text-sm';
+                                        td.textContent = cell;
+                                        tr.appendChild(td);
+                                    });
+                                    tbody.appendChild(tr);
+                                });
+                                table.appendChild(tbody);
+                            }
+                            container.appendChild(table);
+                            break;
+                    }
+                });
+
+                // Re-render lucide icons for dynamic content
+                if (window.lucide) lucide.createIcons();
+            } catch (e) {
+                console.warn('Content blocks parse error:', e);
+            }
+        })();
+    </script>
+}

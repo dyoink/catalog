@@ -1,0 +1,67 @@
+@model Product
+@*
+    Partial view: Card sản phẩm — dùng chung cho listing, trang chủ, related products.
+    Hiển thị: ảnh, tên, danh mục, giá, nút xem chi tiết.
+*@
+<article class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+    @* Ảnh sản phẩm *@
+    <a href="@Model.SeoUrl" class="block aspect-[4/3] overflow-hidden relative">
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="@Model.Image"
+                 alt="@Model.Name"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                 loading="lazy" />
+        }
+        else
+        {
+            <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+                <i data-lucide="image-off" class="w-12 h-12 text-gray-300"></i>
+            </div>
+        }
+
+        @* Badge trạng thái *@
+        @if (Model.Status == ProductStatus.OutOfStock)
+        {
+            <span class="absolute top-3 right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                Hết hàng
+            </span>
+        }
+        @if (Model.IsFeatured)
+        {
+            <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                Nổi bật
+            </span>
+        }
+    </a>
+
+    @* Thông tin sản phẩm *@
+    <div class="p-4 flex-1 flex flex-col">
+        @* Danh mục *@
+        @if (Model.Category != null)
+        {
+            <a href="/danh-muc/@Model.Category.Slug"
+               class="text-xs text-primary font-medium uppercase tracking-wide mb-1 hover:underline">
+                @Model.Category.Name
+            </a>
+        }
+
+        @* Tên sản phẩm *@
+        <h3 class="font-semibold text-gray-800 group-hover:text-primary transition line-clamp-2 mb-2">
+            <a href="@Model.SeoUrl">@Model.Name</a>
+        </h3>
+
+        @* Giá *@
+        <div class="mt-auto pt-3 flex items-center justify-between">
+            <span class="font-bold text-lg @(Model.Price.HasValue ? "text-primary" : "text-gray-500")">
+                @PriceHelper.FormatPrice(Model.Price)
+            </span>
+
+            <a href="@Model.SeoUrl"
+               class="text-sm text-primary hover:underline font-medium flex items-center gap-1">
+                Chi tiết
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </div>
+</article>

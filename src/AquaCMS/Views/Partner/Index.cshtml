@@ -1,0 +1,81 @@
+@model PaginatedList<Partner>
+@*
+    Trang danh sách đối tác (/doi-tac).
+*@
+@{
+    var categories = ViewData["Categories"] as List<PartnerCategory> ?? new();
+}
+
+<div class="max-w-7xl mx-auto px-4 py-8">
+    @* Breadcrumb *@
+    <nav aria-label="Breadcrumb" class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="/" class="hover:text-primary transition">Trang chủ</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li class="text-gray-800 font-medium">Đối tác</li>
+        </ol>
+    </nav>
+
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Đối tác chiến lược</h1>
+
+    @if (Model.Items.Count == 0)
+    {
+        <div class="text-center py-20 bg-white rounded-xl">
+            <i data-lucide="handshake" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+            <h3 class="text-lg font-medium text-gray-600">Chưa có đối tác nào</h3>
+        </div>
+    }
+    else
+    {
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach (var partner in Model.Items)
+            {
+                <a href="@partner.SeoUrl"
+                   class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden">
+                    @if (!string.IsNullOrEmpty(partner.Image))
+                    {
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="@partner.Image" alt="@partner.Name"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" />
+                        </div>
+                    }
+                    <div class="p-5">
+                        @if (partner.PartnerCategory != null)
+                        {
+                            <span class="text-xs text-primary font-medium uppercase">@partner.PartnerCategory.Name</span>
+                        }
+                        <h3 class="font-semibold text-gray-800 group-hover:text-primary transition mt-1 mb-2">
+                            @partner.Name
+                        </h3>
+                        @if (!string.IsNullOrEmpty(partner.Description))
+                        {
+                            <p class="text-sm text-gray-500 line-clamp-2">@partner.Description</p>
+                        }
+                        @if (!string.IsNullOrEmpty(partner.Location))
+                        {
+                            <div class="flex items-center gap-1 mt-3 text-xs text-gray-400">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> @partner.Location
+                            </div>
+                        }
+                    </div>
+                </a>
+            }
+        </div>
+
+        @* Phân trang *@
+        @if (Model.TotalPages > 1)
+        {
+            <nav class="flex justify-center mt-10">
+                <div class="flex items-center space-x-1">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <a href="?page=@i"
+                           class="px-3 py-2 rounded-lg text-sm @(i == Model.PageIndex ? "bg-primary text-white" : "text-gray-600 hover:bg-gray-100")">
+                            @i
+                        </a>
+                    }
+                </div>
+            </nav>
+        }
+    }
+</div>

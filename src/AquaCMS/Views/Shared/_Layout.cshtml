@@ -1,0 +1,370 @@
+﻿@using AquaCMS.Services.Interfaces
+@inject ISettingsService SettingsService
+@{
+    var s = await SettingsService.GetSettingsAsync();
+    var pageTitle = ViewData["Title"]?.ToString() ?? s.DefaultMetaTitle ?? s.CompanyName ?? "Trang chủ";
+    var pageDesc = ViewData["MetaDescription"]?.ToString() ?? s.DefaultMetaDescription ?? "";
+    var ogImage = ViewData["OgImage"]?.ToString() ?? s.DefaultOgImage;
+}
+<!DOCTYPE html>
+<html lang="@L.CurrentCulture">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@pageTitle</title>
+    <meta name="description" content="@pageDesc" />
+    @if (ViewData["CanonicalUrl"] != null)
+    {
+        <link rel="canonical" href="@ViewData["CanonicalUrl"]" />
+    }
+
+    <meta property="og:title" content="@pageTitle" />
+    <meta property="og:description" content="@pageDesc" />
+    <meta property="og:type" content="@(ViewData["OgType"] ?? "website")" />
+    <meta property="og:site_name" content="@s.CompanyName" />
+    @if (!string.IsNullOrEmpty(ogImage))
+    {
+        <meta property="og:image" content="@ogImage" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="@ogImage" />
+    }
+    <meta name="twitter:title" content="@pageTitle" />
+    <meta name="twitter:description" content="@pageDesc" />
+
+    <meta name="robots" content="index, follow" />
+
+    @* Tailwind: production = file build sẵn, dev = CDN runtime cho hot reload *@
+    <environment include="Production">
+        <link href="~/css/tailwind.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+    <environment include="Development,Staging">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: 'var(--color-primary, #55B3D9)',
+                            surface: 'var(--color-surface, #F9F9F9)',
+                        }
+                    }
+                }
+            }
+        </script>
+    </environment>
+
+    <style>
+        :root {
+            --color-primary: @s.PrimaryColor;
+            --color-surface: @s.BackgroundColor;
+        }
+    </style>
+
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4/dist/htmx.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    @* Google Analytics 4 *@
+    @if (!string.IsNullOrEmpty(s.GoogleAnalyticsId))
+    {
+        <script async src="https://www.googletagmanager.com/gtag/js?id=@s.GoogleAnalyticsId"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '@s.GoogleAnalyticsId');
+        </script>
+    }
+
+    @* Facebook Pixel *@
+    @if (!string.IsNullOrEmpty(s.FacebookPixelId))
+    {
+        <script>
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '@s.FacebookPixelId');
+            fbq('track', 'PageView');
+        </script>
+    }
+
+    @await RenderSectionAsync("StructuredData", required: false)
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body class="bg-surface min-h-screen flex flex-col text-gray-800">
+
+    @* ===== NAVBAR ===== *@
+    <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-sm shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center space-x-2 text-white font-bold text-xl">
+                    @if (!string.IsNullOrEmpty(s.Logo))
+                    {
+                        <img src="@s.Logo" alt="@s.CompanyName" class="h-8 object-contain" />
+                    }
+                    else
+                    {
+                        <i data-lucide="box" class="w-7 h-7"></i>
+                    }
+                    <span>@s.CompanyName</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                        @L.T("nav.home")
+                    </a>
+                    @if (s.ShowNavProducts)
+                    {
+                        <a href="/san-pham" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                            @L.T("nav.products")
+                        </a>
+                    }
+                    @if (s.ShowNavKnowledge)
+                    {
+                        <a href="/kien-thuc" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                            @L.T("nav.knowledge")
+                        </a>
+                    }
+                    @if (s.ShowNavPartners)
+                    {
+                        <a href="/doi-tac" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                            @L.T("nav.partners")
+                        </a>
+                    }
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <div x-data="{ open: false, query: '' }" class="relative hidden md:block" @@click.outside="open = false">
+                        <div class="flex items-center bg-white/15 rounded-full px-3 py-1.5 focus-within:bg-white/25 transition">
+                            <i data-lucide="search" class="w-4 h-4 text-white/70"></i>
+                            <input type="text"
+                                   x-model="query"
+                                   @@input.debounce.300ms="if(query.length >= 2) { $refs.results.classList.remove('hidden'); htmx.ajax('GET', '/api/search/suggest?q=' + encodeURIComponent(query), {target: '#search-results'}); open = true } else { open = false }"
+                                   @@keydown.enter="if(query.length >= 2) window.location.href = '/san-pham?search=' + encodeURIComponent(query)"
+                                   placeholder="@L.T("nav.search.placeholder")"
+                                   class="bg-transparent text-white placeholder-white/60 text-sm ml-2 w-40 focus:w-56 transition-all outline-none" />
+                        </div>
+                        <div x-ref="results" x-show="open" x-cloak
+                             id="search-results"
+                             class="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                            <div class="p-3 text-sm text-gray-500">@L.T("nav.search.hint")</div>
+                        </div>
+                    </div>
+
+                    @if (s.ShowNavCart)
+                    {
+                        <a href="/gio-hang" class="relative p-2 text-white hover:bg-white/10 rounded-full transition" title="@L.T("nav.cart")">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span id="cart-badge"
+                                  class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                        </a>
+                    }
+
+                    @* Language switcher *@
+                    @{
+                        var otherLang = L.CurrentCulture == "vi" ? "en" : "vi";
+                        var returnUrl = Context.Request.Path + Context.Request.QueryString;
+                    }
+                    <a href="/dat-ngon-ngu/@otherLang?returnUrl=@Uri.EscapeDataString(returnUrl)"
+                       class="hidden md:inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-white bg-white/15 hover:bg-white/25 rounded-full transition"
+                       title="@L.T("lang.switch")">
+                        <i data-lucide="globe" class="w-3.5 h-3.5"></i> @otherLang.ToUpper()
+                    </a>
+
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-white" aria-label="@L.T("nav.menu")">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-1">
+                <a href="/" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@L.T("nav.home")</a>
+                @if (s.ShowNavProducts)
+                {
+                    <a href="/san-pham" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@L.T("nav.products")</a>
+                }
+                @if (s.ShowNavKnowledge)
+                {
+                    <a href="/kien-thuc" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@L.T("nav.knowledge")</a>
+                }
+                @if (s.ShowNavPartners)
+                {
+                    <a href="/doi-tac" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@L.T("nav.partners")</a>
+                }
+                @if (s.ShowNavCart)
+                {
+                    <a href="/gio-hang" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@L.T("nav.cart")</a>
+                }
+                @{
+                    var otherLangM = L.CurrentCulture == "vi" ? "en" : "vi";
+                    var returnUrlM = Context.Request.Path + Context.Request.QueryString;
+                }
+                <a href="/dat-ngon-ngu/@otherLangM?returnUrl=@Uri.EscapeDataString(returnUrlM)"
+                   class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">
+                    <i data-lucide="globe" class="w-4 h-4 inline"></i> @L.T("lang.switch")
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-1">
+        @RenderBody()
+    </main>
+
+    @* ===== FOOTER (dynamic) ===== *@
+    @if (s.ShowFooter)
+    {
+        <footer class="bg-gray-800 text-gray-300">
+            <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-white font-bold text-lg mb-4">@s.CompanyName</h3>
+                        <div class="text-sm leading-relaxed">
+                            @if (!string.IsNullOrEmpty(s.FooterAboutText))
+                            {
+                                @Html.Raw(s.FooterAboutText)
+                            }
+                            else
+                            {
+                                @(s.FooterText ?? "Giải pháp thiết bị nuôi trồng thủy sản hàng đầu.")
+                            }
+                        </div>
+                        @if (!string.IsNullOrEmpty(s.Address))
+                        {
+                            <p class="text-sm mt-3 flex items-start gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0"></i>
+                                @s.Address
+                            </p>
+                        }
+                    </div>
+
+                    <div>
+                        <h3 class="text-white font-bold text-lg mb-4">Liên kết</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="/san-pham" class="hover:text-white transition">Sản phẩm</a></li>
+                            <li><a href="/kien-thuc" class="hover:text-white transition">Kiến thức</a></li>
+                            <li><a href="/doi-tac" class="hover:text-white transition">Đối tác</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-white font-bold text-lg mb-4">Liên hệ</h3>
+                        <ul class="space-y-2 text-sm">
+                            @if (!string.IsNullOrEmpty(s.Phone))
+                            {
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="phone" class="w-4 h-4"></i>
+                                    <a href="tel:@s.Phone" class="hover:text-white transition">@s.Phone</a>
+                                </li>
+                            }
+                            @if (!string.IsNullOrEmpty(s.Email))
+                            {
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                    <a href="mailto:@s.Email" class="hover:text-white transition">@s.Email</a>
+                                </li>
+                            }
+                        </ul>
+                        @* Social icons in footer *@
+                        <div class="flex items-center gap-3 mt-4">
+                            @if (s.ShowFacebook && !string.IsNullOrEmpty(s.Facebook))
+                            {
+                                <a href="@s.Facebook" target="_blank" rel="noopener" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" title="Facebook">
+                                    <i data-lucide="facebook" class="w-4 h-4"></i>
+                                </a>
+                            }
+                            @if (s.ShowYoutube && !string.IsNullOrEmpty(s.Youtube))
+                            {
+                                <a href="@s.Youtube" target="_blank" rel="noopener" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" title="YouTube">
+                                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                                </a>
+                            }
+                            @if (s.ShowTiktok && !string.IsNullOrEmpty(s.Tiktok))
+                            {
+                                <a href="@s.Tiktok" target="_blank" rel="noopener" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" title="TikTok">
+                                    <i data-lucide="music" class="w-4 h-4"></i>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                    <p>@(string.IsNullOrEmpty(s.CopyrightText) ? $"© {DateTime.Now.Year} {s.CompanyName}" : s.CopyrightText)</p>
+                </div>
+            </div>
+        </footer>
+    }
+
+    @* ===== FLOATING SOCIAL BUTTONS (dynamic from SiteSettings) ===== *@
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-3 z-40">
+        @if (s.ShowZalo && !string.IsNullOrEmpty(s.Zalo))
+        {
+            <a href="@s.Zalo" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+               title="Zalo" aria-label="Liên hệ Zalo">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+        }
+        @if (s.ShowFacebook && !string.IsNullOrEmpty(s.Facebook))
+        {
+            <a href="@s.Facebook" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+               title="Facebook" aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+        }
+        @if (s.ShowTelegram && !string.IsNullOrEmpty(s.Telegram))
+        {
+            <a href="@s.Telegram" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-[#0088cc] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+               title="Telegram" aria-label="Telegram">
+                <i data-lucide="send" class="w-5 h-5"></i>
+            </a>
+        }
+        @if (s.ShowHotline && !string.IsNullOrEmpty(s.Phone))
+        {
+            <a href="tel:@s.Phone"
+               class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform animate-pulse"
+               title="Hotline: @s.Phone" aria-label="Gọi hotline">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+            </a>
+        }
+        <button id="scroll-top-btn"
+                class="hidden w-12 h-12 bg-gray-600 text-white rounded-full items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                aria-label="Lên đầu trang">
+            <i data-lucide="chevron-up" class="w-5 h-5"></i>
+        </button>
+    </div>
+
+    @* ===== Live chat widget (SignalR) ===== *@
+    <partial name="_ChatWidget" />
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu')?.classList.toggle('hidden');
+        });
+
+        var scrollBtn = document.getElementById('scroll-top-btn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn?.classList.remove('hidden');
+                scrollBtn?.classList.add('flex');
+            } else {
+                scrollBtn?.classList.add('hidden');
+                scrollBtn?.classList.remove('flex');
+            }
+        });
+        scrollBtn?.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,137 @@
+@*
+    Chat widget công khai — kết nối SignalR /hubs/chat.
+    GuestId tự sinh và lưu localStorage. An toàn: nếu SignalR fail, fallback im lặng.
+*@
+<div id="chat-widget" class="fixed bottom-24 right-6 z-40">
+    <button id="chat-toggle" class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform"
+            aria-label="Mở chat">
+        <i data-lucide="message-square" class="w-6 h-6"></i>
+        <span id="chat-badge" class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+    </button>
+
+    <div id="chat-panel" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col"
+         style="max-height: 70vh;">
+        <div class="bg-primary text-white px-4 py-3 rounded-t-xl flex items-center justify-between">
+            <div>
+                <p class="font-semibold text-sm">Hỗ trợ trực tuyến</p>
+                <p class="text-xs opacity-80" id="chat-status">Đang kết nối...</p>
+            </div>
+            <button id="chat-close" class="text-white/80 hover:text-white" aria-label="Đóng">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-3 space-y-2 bg-gray-50" style="min-height: 240px; max-height: 50vh;">
+            <div class="text-center text-xs text-gray-400 py-2">Bắt đầu cuộc trò chuyện...</div>
+        </div>
+
+        <form id="chat-form" class="border-t p-2 flex gap-2">
+            <input id="chat-input" type="text" maxlength="4000" required autocomplete="off"
+                   placeholder="Nhập tin nhắn..."
+                   class="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none" />
+            <button type="submit" class="bg-primary text-white px-3 rounded-lg hover:opacity-90" aria-label="Gửi">
+                <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@@microsoft/signalr@@8.0.7/dist/browser/signalr.min.js"></script>
+<script>
+(function () {
+    // GuestId persistent
+    var GUEST_KEY = 'aquacms_guest_id';
+    var guestId = localStorage.getItem(GUEST_KEY);
+    if (!guestId) {
+        guestId = 'g_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+        try { localStorage.setItem(GUEST_KEY, guestId); } catch (e) { /* private mode */ }
+    }
+
+    var toggleBtn = document.getElementById('chat-toggle');
+    var panel = document.getElementById('chat-panel');
+    var closeBtn = document.getElementById('chat-close');
+    var msgList = document.getElementById('chat-messages');
+    var form = document.getElementById('chat-form');
+    var input = document.getElementById('chat-input');
+    var statusEl = document.getElementById('chat-status');
+    var badge = document.getElementById('chat-badge');
+    var unread = 0;
+
+    function setStatus(text, color) {
+        if (statusEl) { statusEl.textContent = text; }
+    }
+    function appendMessage(text, isFromAdmin, at) {
+        if (!msgList) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'flex ' + (isFromAdmin ? 'justify-start' : 'justify-end');
+        var bubble = document.createElement('div');
+        bubble.className = 'max-w-[85%] rounded-2xl px-3 py-2 text-sm ' +
+            (isFromAdmin ? 'bg-white text-gray-800 border' : 'bg-primary text-white');
+        bubble.textContent = text;
+        wrap.appendChild(bubble);
+        msgList.appendChild(wrap);
+        msgList.scrollTop = msgList.scrollHeight;
+    }
+
+    toggleBtn?.addEventListener('click', function () {
+        panel?.classList.toggle('hidden');
+        unread = 0;
+        badge?.classList.add('hidden');
+    });
+    closeBtn?.addEventListener('click', function () { panel?.classList.add('hidden'); });
+
+    if (typeof signalR === 'undefined') {
+        setStatus('Chat tạm thời không khả dụng');
+        return;
+    }
+
+    var connection = new signalR.HubConnectionBuilder()
+        .withUrl('/hubs/chat')
+        .withAutomaticReconnect([0, 2000, 5000, 10000, 30000])
+        .configureLogging(signalR.LogLevel.Warning)
+        .build();
+
+    connection.on('ReceiveMessage', function (m) {
+        if (!m) return;
+        // Only show messages relevant to this guest
+        if (m.guestId !== guestId) return;
+        appendMessage(m.text, !!m.isFromAdmin, m.at);
+        if (m.isFromAdmin && panel?.classList.contains('hidden')) {
+            unread += 1;
+            if (badge) {
+                badge.textContent = unread > 9 ? '9+' : unread;
+                badge.classList.remove('hidden');
+            }
+        }
+    });
+
+    connection.onreconnecting(function () { setStatus('Đang kết nối lại...'); });
+    connection.onreconnected(function () {
+        setStatus('Đã kết nối');
+        connection.invoke('JoinAsGuest', guestId).catch(function () {});
+    });
+    connection.onclose(function () { setStatus('Mất kết nối'); });
+
+    connection.start().then(function () {
+        setStatus('Đã kết nối');
+        return connection.invoke('JoinAsGuest', guestId);
+    }).catch(function (err) {
+        setStatus('Chat tạm thời không khả dụng');
+        console.warn('Chat connect failed:', err);
+    });
+
+    form?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = (input?.value || '').trim();
+        if (!text) return;
+        if (connection.state !== signalR.HubConnectionState.Connected) {
+            setStatus('Mất kết nối — không gửi được');
+            return;
+        }
+        connection.invoke('SendFromGuest', guestId, text).catch(function (err) {
+            console.warn('Send failed:', err);
+        });
+        input.value = '';
+    });
+})();
+</script>

@@ -1,0 +1,448 @@
+@*
+    Admin Dashboard — thống kê tổng quan, biểu đồ, hoạt động gần đây.
+*@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="space-y-8">
+    @* Page header *@
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+            <p class="text-gray-500 mt-1">Tổng quan hệ thống AquaCMS</p>
+        </div>
+        <div class="text-sm text-gray-400">
+            <i data-lucide="calendar" class="w-4 h-4 inline"></i>
+            @DateTime.Now.ToString("dddd, dd/MM/yyyy", new System.Globalization.CultureInfo("vi-VN"))
+        </div>
+    </div>
+
+    @* ===== ROW 1: MAIN STAT CARDS ===== *@
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <a href="/admin/products" class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition group">
+            <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition">
+                    <i data-lucide="package" class="w-5 h-5 text-blue-500"></i>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-primary transition"></i>
+            </div>
+            <p class="text-2xl font-bold text-gray-900">@ViewData["TotalProducts"]</p>
+            <p class="text-sm text-gray-500 mt-0.5">Sản phẩm</p>
+            <div class="flex items-center gap-2 mt-2 text-xs">
+                <span class="text-green-500">@ViewData["VisibleProducts"] hiển thị</span>
+                <span class="text-gray-300">|</span>
+                <span class="text-red-400">@ViewData["OutOfStockProducts"] hết hàng</span>
+            </div>
+        </a>
+
+        <a href="/admin/knowledge" class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition group">
+            <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition">
+                    <i data-lucide="file-text" class="w-5 h-5 text-green-500"></i>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-primary transition"></i>
+            </div>
+            <p class="text-2xl font-bold text-gray-900">@ViewData["TotalPosts"]</p>
+            <p class="text-sm text-gray-500 mt-0.5">Bài viết</p>
+            <p class="text-xs text-green-500 mt-2">@ViewData["PublishedPosts"] đã xuất bản</p>
+        </a>
+
+        <a href="/admin/partners" class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition group">
+            <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center group-hover:bg-purple-100 transition">
+                    <i data-lucide="handshake" class="w-5 h-5 text-purple-500"></i>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-primary transition"></i>
+            </div>
+            <p class="text-2xl font-bold text-gray-900">@ViewData["TotalPartners"]</p>
+            <p class="text-sm text-gray-500 mt-0.5">Đối tác</p>
+            <p class="text-xs text-gray-400 mt-2">Đang hoạt động</p>
+        </a>
+
+        <a href="/admin/messages" class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition group">
+            <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-100 transition">
+                    <i data-lucide="message-square" class="w-5 h-5 text-amber-500"></i>
+                </div>
+                @if ((int)(ViewData["TotalMessages"] ?? 0) > 0)
+                {
+                    <span class="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></span>
+                }
+            </div>
+            <p class="text-2xl font-bold text-gray-900">@ViewData["TotalMessages"]</p>
+            <p class="text-sm text-gray-500 mt-0.5">Tin nhắn chưa đọc</p>
+        </a>
+    </div>
+
+    @* ===== ROW 2: Traffic overview ===== *@
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+        <div class="bg-gradient-to-br from-primary to-blue-600 rounded-xl shadow-sm p-5 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="eye" class="w-5 h-5 opacity-80"></i>
+                <span class="text-sm opacity-80">Hôm nay</span>
+            </div>
+            <p class="text-3xl font-bold">@(ViewData["TodayViews"] ?? 0)</p>
+            <p class="text-sm opacity-70 mt-1">lượt xem</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl shadow-sm p-5 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="trending-up" class="w-5 h-5 opacity-80"></i>
+                <span class="text-sm opacity-80">7 ngày qua</span>
+            </div>
+            <p class="text-3xl font-bold">@(ViewData["WeeklyViews"] ?? 0)</p>
+            <p class="text-sm opacity-70 mt-1">lượt xem</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl shadow-sm p-5 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="bar-chart-3" class="w-5 h-5 opacity-80"></i>
+                <span class="text-sm opacity-80">30 ngày qua</span>
+            </div>
+            <p class="text-3xl font-bold">@(ViewData["MonthlyViews"] ?? 0)</p>
+            <p class="text-sm opacity-70 mt-1">lượt xem</p>
+        </div>
+    </div>
+
+    @* ===== ROW 3: Chart + Quick actions ===== *@
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6">
+            <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <i data-lucide="activity" class="w-5 h-5 text-primary"></i>
+                Lượt xem 7 ngày gần nhất
+            </h3>
+            <div class="relative" style="height: 250px;">
+                <canvas id="viewsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+            <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <i data-lucide="zap" class="w-5 h-5 text-primary"></i>
+                Thao tác nhanh
+            </h3>
+            <div class="space-y-2">
+                <a href="/admin/products/create" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-50 text-blue-700 text-sm font-medium hover:bg-blue-100 transition w-full">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i> Thêm sản phẩm
+                </a>
+                <a href="/admin/knowledge/create" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-green-50 text-green-700 text-sm font-medium hover:bg-green-100 transition w-full">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i> Viết bài mới
+                </a>
+                <a href="/admin/partners/create" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-purple-50 text-purple-700 text-sm font-medium hover:bg-purple-100 transition w-full">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i> Thêm đối tác
+                </a>
+                <a href="/admin/banners/create" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-amber-50 text-amber-700 text-sm font-medium hover:bg-amber-100 transition w-full">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i> Thêm banner
+                </a>
+                <div class="border-t my-3"></div>
+                <div class="grid grid-cols-2 gap-2 text-center">
+                    <div class="p-3 bg-gray-50 rounded-lg">
+                        <p class="text-lg font-bold text-gray-800">@ViewData["TotalCategories"]</p>
+                        <p class="text-xs text-gray-500">Danh mục</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-lg">
+                        <p class="text-lg font-bold text-gray-800">@ViewData["TotalBanners"]</p>
+                        <p class="text-xs text-gray-500">Banner</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-lg">
+                        <p class="text-lg font-bold text-gray-800">@ViewData["TotalUsers"]</p>
+                        <p class="text-xs text-gray-500">Người dùng</p>
+                    </div>
+                    <a href="/" target="_blank" class="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                        <i data-lucide="external-link" class="w-5 h-5 mx-auto text-gray-600"></i>
+                        <p class="text-xs text-gray-500 mt-1">Xem trang</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* ===== ROW 3.5: ADVANCED ANALYTICS — Traffic source / Device / Conversion ===== *@
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        @* Top Traffic Sources *@
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-6">
+            <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center gap-2">
+                <i data-lucide="globe" class="w-5 h-5 text-primary"></i>
+                Nguồn truy cập (30 ngày)
+            </h3>
+            @{
+                var sources = ViewData["TrafficSources"] as IEnumerable<AquaCMS.Areas.Admin.Controllers.DashboardController.TrafficSource>;
+                var sourceTotal = sources?.Sum(s => s.Count) ?? 0;
+            }
+            @if (sources != null && sources.Any())
+            {
+                <div class="space-y-3">
+                    @foreach (var src in sources)
+                    {
+                        var pct = sourceTotal > 0 ? (src.Count * 100.0 / sourceTotal) : 0;
+                        var color = src.Name switch
+                        {
+                            "Google" => "bg-blue-500",
+                            "Facebook" => "bg-indigo-500",
+                            "Zalo" => "bg-sky-500",
+                            "YouTube" => "bg-red-500",
+                            "Instagram" => "bg-pink-500",
+                            "TikTok" => "bg-gray-800",
+                            "Trực tiếp" => "bg-emerald-500",
+                            _ => "bg-amber-500"
+                        };
+                        <div>
+                            <div class="flex items-center justify-between text-sm mb-1">
+                                <span class="font-medium text-gray-700 dark:text-gray-200 truncate">@src.Name</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-xs">@src.Count (@pct.ToString("0.0")%)</span>
+                            </div>
+                            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden">
+                                <div class="@color h-full rounded-full transition-all" style="width: @(pct.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture))%"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-sm text-gray-400 text-center py-6">Chưa có dữ liệu lượt truy cập</p>
+            }
+        </div>
+
+        @* Device Breakdown (doughnut) *@
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-6">
+            <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center gap-2">
+                <i data-lucide="smartphone" class="w-5 h-5 text-primary"></i>
+                Thiết bị (30 ngày)
+            </h3>
+            @{
+                var devices = ViewData["DeviceStats"] as IEnumerable<AquaCMS.Areas.Admin.Controllers.DashboardController.DeviceStat>;
+            }
+            @if (devices != null && devices.Any())
+            {
+                <div class="relative" style="height: 200px;">
+                    <canvas id="deviceChart"></canvas>
+                </div>
+                <div class="mt-3 space-y-1 text-sm">
+                    @foreach (var d in devices)
+                    {
+                        <div class="flex items-center justify-between text-gray-600 dark:text-gray-300">
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="@(d.Name == "Mobile" ? "smartphone" : d.Name == "Tablet" ? "tablet" : d.Name == "Desktop" ? "monitor" : "help-circle")" class="w-4 h-4"></i>
+                                @d.Name
+                            </span>
+                            <span class="font-semibold">@d.Count</span>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-sm text-gray-400 text-center py-6">Chưa có dữ liệu thiết bị</p>
+            }
+        </div>
+
+        @* Conversion Rate *@
+        <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-sm p-6 text-white">
+            <h3 class="font-bold mb-4 flex items-center gap-2">
+                <i data-lucide="target" class="w-5 h-5 opacity-90"></i>
+                Tỉ lệ chuyển đổi (30 ngày)
+            </h3>
+            <div class="text-5xl font-bold mb-1">@((double)(ViewData["ConversionRate"] ?? 0.0))%</div>
+            <p class="text-sm opacity-80 mb-4">Khách xem trang → vào giỏ hàng</p>
+            <div class="grid grid-cols-2 gap-3 pt-3 border-t border-white/20">
+                <div>
+                    <div class="text-2xl font-bold">@(ViewData["UniqueVisitors"] ?? 0)</div>
+                    <div class="text-xs opacity-75">Khách duy nhất</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold">@(ViewData["ConvertedVisitors"] ?? 0)</div>
+                    <div class="text-xs opacity-75">Đã vào giỏ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* ===== ROW 3.6: Top Pages ===== *@
+    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-6">
+        <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center gap-2">
+            <i data-lucide="bar-chart-horizontal" class="w-5 h-5 text-primary"></i>
+            Trang được xem nhiều nhất (30 ngày)
+        </h3>
+        @{
+            var topPages = ViewData["TopPages"] as IEnumerable<AquaCMS.Areas.Admin.Controllers.DashboardController.TopPage>;
+            var maxPageViews = topPages?.Select(p => p.Count).DefaultIfEmpty(0).Max() ?? 1;
+        }
+        @if (topPages != null && topPages.Any())
+        {
+            <div class="space-y-2">
+                @foreach (var pg in topPages)
+                {
+                    var w = (pg.Count * 100.0 / Math.Max(maxPageViews, 1));
+                    <div class="flex items-center gap-3 group">
+                        <a href="@pg.Path" target="_blank" class="text-sm text-gray-700 dark:text-gray-200 hover:text-primary truncate w-1/3 font-mono" title="@pg.Path">
+                            @pg.Path
+                        </a>
+                        <div class="flex-1 h-7 bg-gray-100 dark:bg-gray-800 rounded relative overflow-hidden">
+                            <div class="absolute inset-y-0 left-0 bg-gradient-to-r from-primary/80 to-primary/40 rounded transition-all"
+                                 style="width: @(w.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture))%"></div>
+                            <span class="absolute inset-0 flex items-center px-3 text-xs font-semibold text-gray-700 dark:text-gray-200">@pg.Count lượt</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="text-sm text-gray-400 text-center py-6">Chưa có dữ liệu lượt xem</p>
+        }
+    </div>
+
+    @* ===== ROW 4: Top products + Recent posts ===== *@
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-6">
+            <h3 class="font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center gap-2">
+                <i data-lucide="trophy" class="w-5 h-5 text-primary"></i>
+                Sản phẩm xem nhiều nhất
+            </h3>
+            <div class="space-y-3">
+                @if (ViewData["TopProducts"] is IEnumerable<dynamic> topProducts)
+                {
+                    var rank = 1;
+                    foreach (var p in topProducts)
+                    {
+                        <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition">
+                            <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold
+                                @(rank == 1 ? "bg-yellow-100 text-yellow-700" : rank == 2 ? "bg-gray-100 text-gray-600" : rank == 3 ? "bg-amber-50 text-amber-600" : "bg-gray-50 text-gray-400")">
+                                @rank
+                            </span>
+                            @if (!string.IsNullOrEmpty((string)p.Image))
+                            {
+                                <img src="@p.Image" alt="" class="w-8 h-8 rounded object-cover" />
+                            }
+                            else
+                            {
+                                <div class="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">
+                                    <i data-lucide="image-off" class="w-3 h-3 text-gray-300"></i>
+                                </div>
+                            }
+                            <div class="flex-1 min-w-0">
+                                <a href="@p.SeoUrl" target="_blank" class="text-sm font-medium text-gray-700 hover:text-primary truncate block">@p.Name</a>
+                            </div>
+                            <span class="text-sm text-gray-400 flex items-center gap-1">
+                                <i data-lucide="eye" class="w-3.5 h-3.5"></i> @p.ViewCount
+                            </span>
+                        </div>
+                        rank++;
+                    }
+                }
+                else
+                {
+                    <p class="text-sm text-gray-400 text-center py-4">Chưa có dữ liệu</p>
+                }
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+            <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <i data-lucide="clock" class="w-5 h-5 text-primary"></i>
+                Bài viết gần đây
+            </h3>
+            <div class="space-y-3">
+                @if (ViewData["RecentPosts"] is IEnumerable<dynamic> recentPosts)
+                {
+                    foreach (var post in recentPosts)
+                    {
+                        <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition">
+                            <div class="flex-1 min-w-0">
+                                <a href="/admin/knowledge/edit/@post.Id" class="text-sm font-medium text-gray-700 hover:text-primary truncate block">@post.Title</a>
+                                <p class="text-xs text-gray-400 mt-0.5">
+                                    @(((DateTime)post.CreatedAt).ToString("dd/MM/yyyy HH:mm"))
+                                </p>
+                            </div>
+                            @if ((bool)post.IsPublished)
+                            {
+                                <span class="px-2 py-0.5 bg-green-100 text-green-600 rounded-full text-xs">Đã xuất bản</span>
+                            }
+                            else
+                            {
+                                <span class="px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full text-xs">Nháp</span>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-sm text-gray-400 text-center py-4">Chưa có bài viết</p>
+                }
+            </div>
+            <a href="/admin/knowledge" class="block mt-4 text-center text-sm text-primary hover:underline">
+                Xem tất cả bài viết →
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        lucide.createIcons();
+
+        // Chart.js — Biểu đồ lượt xem 7 ngày
+        var ctx = document.getElementById('viewsChart');
+        if (ctx && typeof Chart !== 'undefined') {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [@Html.Raw(ViewData["ChartLabels"])],
+                    datasets: [{
+                        label: 'Lượt xem',
+                        data: [@Html.Raw(ViewData["ChartData"])],
+                        borderColor: '#55B3D9',
+                        backgroundColor: 'rgba(85, 179, 217, 0.1)',
+                        borderWidth: 2.5,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#55B3D9',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { ticks: { font: { size: 11 } }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        // Device doughnut chart
+        @{
+            var devs = ViewData["DeviceStats"] as IEnumerable<AquaCMS.Areas.Admin.Controllers.DashboardController.DeviceStat>;
+            var devLabels = string.Join(",", (devs ?? Enumerable.Empty<AquaCMS.Areas.Admin.Controllers.DashboardController.DeviceStat>()).Select(d => $"\"{d.Name}\""));
+            var devData = string.Join(",", (devs ?? Enumerable.Empty<AquaCMS.Areas.Admin.Controllers.DashboardController.DeviceStat>()).Select(d => d.Count.ToString()));
+        }
+        var devCtx = document.getElementById('deviceChart');
+        if (devCtx && typeof Chart !== 'undefined') {
+            new Chart(devCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [@Html.Raw(devLabels)],
+                    datasets: [{
+                        data: [@Html.Raw(devData)],
+                        backgroundColor: ['#55B3D9', '#10B981', '#8B5CF6', '#F59E0B'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+    </script>
+}

@@ -1,0 +1,58 @@
+/* Admin-specific overrides */
+.ql-editor {
+    min-height: 280px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.ql-toolbar.ql-snow {
+    border-color: #e5e7eb;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.ql-container.ql-snow {
+    border-color: #e5e7eb;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+.ql-snow .ql-tooltip {
+    z-index: 1000;
+}
+
+/* Cropper modal */
+.cropper-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cropper-modal-box {
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    width: min(90vw, 720px);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+.cropper-modal-image-wrap {
+    max-height: 60vh;
+    overflow: hidden;
+}
+.cropper-modal-image-wrap img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Content blocks editor */
+.cb-block {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    background: #fff;
+    margin-bottom: 0.5rem;
+}
+.cb-block .cb-handle {
+    cursor: move;
+    color: #9ca3af;
+}

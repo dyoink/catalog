@@ -1,0 +1,59 @@
+@model AquaCMS.Services.Interfaces.SearchSuggestionResult
+
+@if (Model.Products.Count == 0 && Model.Posts.Count == 0)
+{
+    <div class="p-3 text-sm text-gray-500 text-center">Không tìm thấy kết quả</div>
+}
+else
+{
+    <div class="max-h-96 overflow-y-auto">
+        @if (Model.Products.Count > 0)
+        {
+            <div class="border-b">
+                <div class="px-3 py-2 bg-gray-50 text-xs font-bold text-gray-500 uppercase">
+                    Sản phẩm (@Model.TotalProducts)
+                </div>
+                @foreach (var item in Model.Products)
+                {
+                    <a href="@item.Url" class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 transition">
+                        @if (!string.IsNullOrEmpty(item.Image))
+                        {
+                            <img src="@item.Image" alt="" class="w-10 h-10 rounded object-cover" />
+                        }
+                        <div class="flex-1 min-w-0">
+                            <div class="text-sm font-medium text-gray-800 line-clamp-1">@item.Title</div>
+                            @if (!string.IsNullOrEmpty(item.Subtitle))
+                            {
+                                <div class="text-xs text-primary">@item.Subtitle</div>
+                            }
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+        @if (Model.Posts.Count > 0)
+        {
+            <div>
+                <div class="px-3 py-2 bg-gray-50 text-xs font-bold text-gray-500 uppercase">
+                    Bài viết (@Model.TotalPosts)
+                </div>
+                @foreach (var item in Model.Posts)
+                {
+                    <a href="@item.Url" class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 transition">
+                        @if (!string.IsNullOrEmpty(item.Image))
+                        {
+                            <img src="@item.Image" alt="" class="w-10 h-10 rounded object-cover" />
+                        }
+                        <div class="flex-1 min-w-0">
+                            <div class="text-sm font-medium text-gray-800 line-clamp-1">@item.Title</div>
+                            @if (!string.IsNullOrEmpty(item.Subtitle))
+                            {
+                                <div class="text-xs text-gray-500 line-clamp-1">@item.Subtitle</div>
+                            }
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+}

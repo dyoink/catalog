@@ -1,0 +1,47 @@
+@model List<AquaCMS.Models.Entities.ChatSession>
+@{ ViewData["Title"] = "Tin nhắn khách hàng"; }
+
+<div class="space-y-6">
+    <div>
+        <h1 class="text-2xl font-bold text-gray-900">Tin nhắn khách hàng</h1>
+        <p class="text-gray-500 mt-1">@Model.Count phiên chat gần đây</p>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+        <table class="w-full text-sm">
+            <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+                <tr>
+                    <th class="px-4 py-3 text-left">Khách</th>
+                    <th class="px-4 py-3 text-left">Tin nhắn cuối</th>
+                    <th class="px-4 py-3 text-center">Chưa đọc</th>
+                    <th class="px-4 py-3 text-left hidden md:table-cell">Cập nhật</th>
+                    <th class="px-4 py-3 text-right">Mở</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                @foreach (var s in Model)
+                {
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 font-medium">@s.GuestId</td>
+                        <td class="px-4 py-3 text-gray-600 truncate max-w-xs">@s.LastMessage</td>
+                        <td class="px-4 py-3 text-center">
+                            @if (s.UnreadCount > 0)
+                            {
+                                <span class="px-2 py-1 bg-red-50 text-red-600 rounded-full text-xs font-medium">@s.UnreadCount</span>
+                            }
+                        </td>
+                        <td class="px-4 py-3 text-xs text-gray-400 hidden md:table-cell">@s.UpdatedAt.ToLocalTime().ToString("dd/MM HH:mm")</td>
+                        <td class="px-4 py-3 text-right">
+                            <a href="/admin/messages/detail/@s.Id" class="px-3 py-1.5 bg-primary text-white rounded-lg text-xs font-medium">Xem</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @if (Model.Count == 0)
+        {
+            <div class="text-center py-12 text-gray-400"><i data-lucide="message-square" class="w-12 h-12 mx-auto mb-3 opacity-50"></i><p>Chưa có tin nhắn nào</p></div>
+        }
+    </div>
+</div>
+@section Scripts { <script>lucide.createIcons();</script> }
