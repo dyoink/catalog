@@ -23,12 +23,11 @@ public class AccountController : Controller
 
     /// <summary>
     /// GET /dang-nhap — Hiển thị form đăng nhập.
-    /// Nếu đã đăng nhập → redirect về admin dashboard.
     /// </summary>
-    [HttpGet]
+    [HttpGet("/dang-nhap")]
     public IActionResult Login(string? returnUrl)
     {
-        // Đã đăng nhập rồi → redirect
+        // ... (giữ nguyên code cũ)
         if (User.Identity?.IsAuthenticated == true)
             return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
 
@@ -37,13 +36,13 @@ public class AccountController : Controller
 
     /// <summary>
     /// POST /dang-nhap — Xử lý đăng nhập.
-    /// Tạo cookie chứa claims (userId, email, role, name).
     /// </summary>
-    [HttpPost]
-    [ValidateAntiForgeryToken] // Chống CSRF
-    [EnableRateLimiting("login")] // Chống brute-force: 5 attempts/phút
+    [HttpPost("/dang-nhap")]
+    [ValidateAntiForgeryToken]
+    [EnableRateLimiting("login")]
     public async Task<IActionResult> Login(LoginViewModel model)
     {
+        // ... (giữ nguyên code cũ)
         if (!ModelState.IsValid)
             return View(model);
 

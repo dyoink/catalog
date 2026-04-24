@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9Mx8iOeDKrU=",
+  "dgSpecHash": "O5rcJWrRcfE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tranc\\OneDrive\\Máy tính\\CatalogaWeb\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+  "projectFilePath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tranc\\.nuget\\packages\\anglesharp\\0.17.1\\anglesharp.0.17.1.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\anglesharp.css\\0.17.0\\anglesharp.css.0.17.0.nupkg.sha512",
@@ -65,9 +65,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "C:\\Users\\tranc\\OneDrive\\Máy tính\\CatalogaWeb\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+      "projectPath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\tranc\\OneDrive\\Máy tính\\CatalogaWeb\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+      "filePath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
       "libraryId": "Microsoft.AspNetCore.SignalR",
       "targetGraphs": [
         "net10.0"

@@ -4,63 +4,119 @@
     SEO: JSON-LD Organization structured data.
 *@
 
-@* ===== HERO BANNER SECTION ===== *@
-@{
-    var heroBg = !string.IsNullOrEmpty(Model.Settings.HeroBackgroundImage)
-        ? $"background-image: url('{Model.Settings.HeroBackgroundImage}'); background-size: cover; background-position: center;"
-        : null;
-    var heroTitle = !string.IsNullOrEmpty(Model.Settings.HeroTitle)
-        ? Model.Settings.HeroTitle
-        : Model.Banners.FirstOrDefault()?.Title;
-    var heroSubtitle = !string.IsNullOrEmpty(Model.Settings.HeroSubtitle)
-        ? Model.Settings.HeroSubtitle
-        : Model.Banners.FirstOrDefault()?.Subtitle;
-    var heroDesc = !string.IsNullOrEmpty(Model.Settings.HeroDescription)
-        ? Model.Settings.HeroDescription
-        : Model.Banners.FirstOrDefault()?.Description;
-    var heroBtnText = !string.IsNullOrEmpty(Model.Settings.HeroButtonText) ? Model.Settings.HeroButtonText : "Xem sản phẩm";
-    var heroBtnUrl = !string.IsNullOrEmpty(Model.Settings.HeroButtonUrl) ? Model.Settings.HeroButtonUrl
-        : (Model.Banners.FirstOrDefault()?.LinkUrl ?? "/san-pham");
-    var heroImage = Model.Banners.FirstOrDefault()?.Image;
+@section Head {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .hero-swiper { width: 100%; height: auto; overflow: hidden; position: relative; }
+        .swiper-wrapper { display: flex !important; flex-direction: row !important; }
+        .swiper-slide { flex-shrink: 0; width: 100%; height: 100%; position: relative; }
+        
+        /* Đưa nút vào trong banner */
+        .hero-swiper .swiper-button-next, 
+        .hero-swiper .swiper-button-prev {
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.15);
+            border-radius: 50%;
+            color: white !important;
+            transition: all 0.3s;
+            z-index: 20;
+        }
+        .hero-swiper .swiper-button-next:after, 
+        .hero-swiper .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+        .hero-swiper .swiper-button-next:hover, 
+        .hero-swiper .swiper-button-prev:hover {
+            background: rgba(0,0,0,0.4);
+            transform: scale(1.1);
+        }
+        .hero-swiper .swiper-button-prev { left: 24px !important; }
+        .hero-swiper .swiper-button-next { right: 24px !important; }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @@keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .swiper-pagination-bullet-active { background: white !important; }
+    </style>
 }
-@if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(heroTitle))
+
+@* ===== HERO BANNER SLIDER ===== *@
+@if (Model.Settings.ShowBanners && Model.Banners.Count > 0)
 {
-    <section class="relative bg-gradient-to-br from-sky-50 to-sky-100 overflow-hidden" style="@heroBg">
-        @if (!string.IsNullOrEmpty(heroBg))
+    <section class="relative group overflow-hidden">
+        <!-- Swiper Container -->
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                @foreach (var banner in Model.Banners)
+                {
+                    <div class="swiper-slide relative bg-gradient-to-br from-sky-50 to-sky-100 overflow-hidden min-h-[500px] flex items-center" 
+                         style="@(!string.IsNullOrEmpty(banner.Image) ? $"background-image: url('{banner.Image}'); background-size: cover; background-position: center;" : "")">
+                        
+                        @if (!string.IsNullOrEmpty(banner.Image))
+                        {
+                            <div class="absolute inset-0 bg-black/40"></div>
+                        }
+
+                        <div class="relative max-w-7xl mx-auto px-4 py-24 sm:py-32 w-full">
+                            <div class="max-w-2xl">
+                                @if (!string.IsNullOrEmpty(banner.Subtitle))
+                                {
+                                    <p class="text-white/90 font-semibold text-sm uppercase tracking-wider mb-3 animate-fade-in-up">
+                                        @banner.Subtitle
+                                    </p>
+                                }
+                                <h2 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up" style="animation-delay: 100ms">
+                                    @banner.Title
+                                </h2>
+                                @if (!string.IsNullOrEmpty(banner.Description))
+                                {
+                                    <div class="text-lg text-white/80 mb-10 line-clamp-3 animate-fade-in-up" style="animation-delay: 200ms">
+                                        @Html.Raw(banner.Description)
+                                    </div>
+                                }
+                                <a href="@(banner.LinkUrl ?? "/san-pham")"
+                                   class="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl animate-fade-in-up" style="animation-delay: 300ms; background-color: #2563eb;">
+                                    Khám phá ngay
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            
+            <!-- Pagination -->
+            <div class="swiper-pagination !bottom-8"></div>
+        </div>
+    </section>
+}
+else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.HeroTitle))
+{
+    @* Fallback cho trường hợp chỉ có SiteSettings Hero *@
+    <section class="relative bg-gradient-to-br from-sky-50 to-sky-100 overflow-hidden min-h-[450px] flex items-center" 
+             style="@(!string.IsNullOrEmpty(Model.Settings.HeroBackgroundImage) ? $"background-image: url('{Model.Settings.HeroBackgroundImage}'); background-size: cover; background-position: center;" : "")">
+        @if (!string.IsNullOrEmpty(Model.Settings.HeroBackgroundImage))
         {
             <div class="absolute inset-0 bg-black/30"></div>
         }
-        <div class="relative max-w-7xl mx-auto px-4 py-16 sm:py-24 lg:py-32">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    @if (!string.IsNullOrEmpty(heroSubtitle))
-                    {
-                        <p class="@(string.IsNullOrEmpty(heroBg) ? "text-primary" : "text-white/90") font-semibold text-sm uppercase tracking-wide mb-2">
-                            @heroSubtitle
-                        </p>
-                    }
-                    <h1 class="text-4xl sm:text-5xl font-extrabold @(string.IsNullOrEmpty(heroBg) ? "text-gray-900" : "text-white") leading-tight mb-4">
-                        @heroTitle
-                    </h1>
-                    @if (!string.IsNullOrEmpty(heroDesc))
-                    {
-                        <div class="text-lg @(string.IsNullOrEmpty(heroBg) ? "text-gray-600" : "text-white/90") mb-8 max-w-lg">
-                            @Html.Raw(heroDesc)
-                        </div>
-                    }
-                    <a href="@heroBtnUrl"
-                       class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow-lg">
-                        @heroBtnText
-                    </a>
-                </div>
-                @if (!string.IsNullOrEmpty(heroImage) && string.IsNullOrEmpty(heroBg))
-                {
-                    <div class="relative">
-                        <img src="@heroImage" alt="@heroTitle"
-                             class="w-full rounded-2xl shadow-2xl object-cover max-h-96"
-                             loading="eager" />
-                    </div>
-                }
+        <div class="relative max-w-7xl mx-auto px-4 py-20 sm:py-32 w-full">
+             <div class="max-w-2xl">
+                <h1 class="text-4xl sm:text-6xl font-extrabold @(string.IsNullOrEmpty(Model.Settings.HeroBackgroundImage) ? "text-gray-900" : "text-white") mb-6">
+                    @Model.Settings.HeroTitle
+                </h1>
+                <a href="@(Model.Settings.HeroButtonUrl ?? "/san-pham")" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-bold" style="background-color: #2563eb;">
+                    @Model.Settings.HeroButtonText
+                </a>
             </div>
         </div>
     </section>
@@ -223,4 +279,31 @@
         if (sameAs.Count > 0) jsonLd["sameAs"] = sameAs;
     }
     <script type="application/ld+json">@Html.Raw(System.Text.Json.JsonSerializer.Serialize(jsonLd))</script>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.hero-swiper', {
+                loop: true,
+                speed: 800,
+                autoplay: {
+                    delay: 10000, // 10 giây
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Mặc định là trượt ngang (slide)
+                grabCursor: true,
+                watchSlidesProgress: true,
+            });
+        });
+    </script>
 }

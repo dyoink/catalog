@@ -72,7 +72,7 @@ public class DashboardController : Controller
             .Where(p => p.Status != ProductStatus.Hidden)
             .OrderByDescending(p => p.ViewCount)
             .Take(5)
-            .Select(p => new { p.Name, p.ViewCount, p.Slug, p.Image })
+            .Select(p => new { p.Name, p.ViewCount, p.Slug, p.Image, p.ShortId })
             .ToListAsync();
 
         // ===== Bài viết mới nhất =====

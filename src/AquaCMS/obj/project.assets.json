@@ -3122,11 +3122,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tranc\\OneDrive\\Máy tính\\CatalogaWeb\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+      "projectUniqueName": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
       "projectName": "AquaCMS",
-      "projectPath": "C:\\Users\\tranc\\OneDrive\\Máy tính\\CatalogaWeb\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+      "projectPath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
       "packagesPath": "C:\\Users\\tranc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tranc\\OneDrive\\Máy tính\\CatalogaWeb\\CatalogaWeb\\src\\AquaCMS\\obj\\",
+      "outputPath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

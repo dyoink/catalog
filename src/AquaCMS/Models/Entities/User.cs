@@ -1,4 +1,4 @@
-﻿namespace AquaCMS.Models.Entities;
+namespace AquaCMS.Models.Entities;
 
 using System.ComponentModel.DataAnnotations;
 

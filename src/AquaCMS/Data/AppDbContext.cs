@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using AquaCMS.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,14 +32,11 @@ public class AppDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         // ===================================================
-        // PostgreSQL: Extensions & Enums
+        // PostgreSQL: Extensions
         // ===================================================
         modelBuilder.HasPostgresExtension("uuid-ossp");
         modelBuilder.HasPostgresExtension("pg_trgm");
         modelBuilder.HasPostgresExtension("unaccent");
-
-        modelBuilder.HasPostgresEnum<UserRole>("user_role");
-        modelBuilder.HasPostgresEnum<ProductStatus>("product_status");
 
         // ===================================================
         // User
@@ -52,7 +49,9 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Name).HasColumnName("name").HasMaxLength(100).IsRequired();
             entity.Property(e => e.Email).HasColumnName("email").HasMaxLength(255).IsRequired();
             entity.Property(e => e.PasswordHash).HasColumnName("password_hash").HasMaxLength(255).IsRequired();
-            entity.Property(e => e.Role).HasColumnName("role").IsRequired();
+            entity.Property(e => e.Role).HasColumnName("role")
+                  .HasConversion<string>() // Lưu dạng TEXT
+                  .IsRequired();
             entity.Property(e => e.Avatar).HasColumnName("avatar").HasMaxLength(500);
             entity.Property(e => e.IsActive).HasColumnName("is_active").HasDefaultValue(true);
             entity.Property(e => e.LastLoginAt).HasColumnName("last_login_at");
@@ -96,7 +95,9 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Image).HasColumnName("image").HasMaxLength(500);
             entity.Property(e => e.VideoUrl).HasColumnName("video_url").HasMaxLength(500);
-            entity.Property(e => e.Status).HasColumnName("status").IsRequired();
+            entity.Property(e => e.Status).HasColumnName("status")
+                  .HasConversion<string>() // Lưu dạng TEXT
+                  .IsRequired();
             // JSONB — EF Core tự serialize/deserialize JsonDocument
             entity.Property(e => e.ContentBlocks).HasColumnName("content_blocks")
                   .HasColumnType("jsonb").HasDefaultValueSql("'[]'::jsonb");

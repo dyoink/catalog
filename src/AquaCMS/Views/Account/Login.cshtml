@@ -29,7 +29,7 @@
         }
 
         @* Form đăng nhập *@
-        <form asp-action="Login" asp-controller="Account" method="post"
+        <form asp-controller="Account" asp-action="Login" asp-area="" method="post"
               class="bg-white rounded-2xl shadow-sm p-8 space-y-5">
             <input type="hidden" asp-for="ReturnUrl" />
 

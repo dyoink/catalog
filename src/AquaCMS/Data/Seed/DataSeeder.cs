@@ -69,7 +69,7 @@ public static class DataSeeder
 
         // ===== Seed Admin User =====
         logger.LogInformation("⏳ Checking for admin user...");
-        var hasAdmin = await db.Users.AnyAsync(u => u.Role == UserRole.SUPER_ADMIN);
+        var hasAdmin = await db.Users.AnyAsync(u => u.Email == "admin@aquacms.com");
         logger.LogInformation("✅ Admin check completed");
         if (!hasAdmin)
         {

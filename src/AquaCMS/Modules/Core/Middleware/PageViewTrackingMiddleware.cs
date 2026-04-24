@@ -38,7 +38,7 @@ public class PageViewTrackingMiddleware
         _logger = logger;
     }
 
-    public async Task InvokeAsync(HttpContext ctx, AppDbContext db)
+    public async Task InvokeAsync(HttpContext ctx)
     {
         await _next(ctx);
 
@@ -92,26 +92,30 @@ public class PageViewTrackingMiddleware
             if (ua.Length > 500) ua = ua[..500];
             if (path.Length > 500) path = path[..500];
 
-            // Detect entity type theo URL pattern (chỉ để báo cáo, không cần FK)
+            // Detect entity type theo URL pattern
             string? entityType = null;
             if (path.StartsWith("/san-pham/", StringComparison.OrdinalIgnoreCase)) entityType = "product";
             else if (path.StartsWith("/kien-thuc/", StringComparison.OrdinalIgnoreCase)) entityType = "post";
             else if (path.StartsWith("/doi-tac/", StringComparison.OrdinalIgnoreCase)) entityType = "partner";
 
-            db.PageViews.Add(new Models.Entities.PageView
+            // TẠO SCOPE RIÊNG ĐỂ TRÁNH CONCURRENCY LỖI DB CONTEXT
+            using (var scope = ctx.RequestServices.CreateScope())
             {
-                Path = path,
-                EntityType = entityType,
-                IpAddress = ip,
-                UserAgent = string.IsNullOrEmpty(ua) ? null : ua,
-                Referrer = string.IsNullOrEmpty(referrer) ? null : referrer,
-                ViewedAt = DateOnly.FromDateTime(DateTime.UtcNow)
-            });
-            await db.SaveChangesAsync();
+                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                db.PageViews.Add(new Models.Entities.PageView
+                {
+                    Path = path,
+                    EntityType = entityType,
+                    IpAddress = ip,
+                    UserAgent = string.IsNullOrEmpty(ua) ? null : ua,
+                    Referrer = string.IsNullOrEmpty(referrer) ? null : referrer,
+                    ViewedAt = DateOnly.FromDateTime(DateTime.UtcNow)
+                });
+                await db.SaveChangesAsync();
+            }
         }
         catch (Exception ex)
         {
-            // Không bao giờ throw — analytics không nên ảnh hưởng UX
             _logger.LogWarning(ex, "PageView tracking failed for {Path}", ctx.Request.Path);
         }
     }
