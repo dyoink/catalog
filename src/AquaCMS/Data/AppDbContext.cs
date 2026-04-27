@@ -323,7 +323,8 @@ public class AppDbContext : DbContext
             entity.Property(e => e.SmtpFromEmail).HasColumnName("smtp_from_email").HasMaxLength(255);
             entity.Property(e => e.SmtpFromName).HasColumnName("smtp_from_name").HasMaxLength(255);
             entity.Property(e => e.NotificationEmail).HasColumnName("notification_email").HasMaxLength(255);
-            entity.Property(e => e.UpdatedAt).HasColumnName("updated_at").HasDefaultValueSql("NOW()");
+            entity.Property(e => e.ChatAutoReplyMessage).HasColumnName("chat_auto_reply_message");
+            entity.Property(e => e.UpdatedAt).HasColumnName("updated_at").HasDefaultValueSql("CURRENT_TIMESTAMP");
         });
 
         // ===================================================

@@ -122,6 +122,8 @@ public class SettingsController : Controller
             existing.SmtpFromName = settings.SmtpFromName;
             existing.NotificationEmail = settings.NotificationEmail;
 
+            existing.ChatAutoReplyMessage = settings.ChatAutoReplyMessage;
+
             // Files
             if (logoFile is { Length: > 0 })
                 existing.Logo = await _upload.UploadImageAsync(logoFile, "settings") ?? existing.Logo;

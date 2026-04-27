@@ -51,16 +51,20 @@ public class MessagesController : Controller
 
         ViewData["Title"] = $"Chat: {session.GuestId}";
 
-        // Reset unread count khi admin mở
+        // Reset unread count và đánh dấu tất cả message đã đọc
         try
         {
             await _db.ChatSessions
                 .Where(s => s.Id == id)
                 .ExecuteUpdateAsync(s => s.SetProperty(x => x.UnreadCount, 0));
+
+            await _db.ChatMessages
+                .Where(m => m.SessionId == id && !m.IsRead && !m.IsFromAdmin)
+                .ExecuteUpdateAsync(m => m.SetProperty(x => x.IsRead, true));
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Lỗi reset unread count cho session {Id}", id);
+            _logger.LogError(ex, "Lỗi reset unread count/messages cho session {Id}", id);
         }
 
         return View(session);

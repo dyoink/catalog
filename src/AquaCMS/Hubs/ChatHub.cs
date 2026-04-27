@@ -8,9 +8,6 @@ namespace AquaCMS.Hubs;
 
 /// <summary>
 /// SignalR hub cho chat realtime giữa khách hàng (guest) và admin.
-/// Không yêu cầu auth cho guest — admin có thể là anonymous on this hub
-/// nhưng các action gửi từ admin được tag IsFromAdmin=true ở client.
-/// Mọi method bọc try/catch + log để không bao giờ kill connection.
 /// </summary>
 public class ChatHub : Hub
 {
@@ -18,22 +15,29 @@ public class ChatHub : Hub
 
     private readonly AppDbContext _db;
     private readonly IEmailService _email;
+    private readonly ISettingsService _settingsService;
     private readonly ILogger<ChatHub> _logger;
 
-    public ChatHub(AppDbContext db, IEmailService email, ILogger<ChatHub> logger)
+    public ChatHub(AppDbContext db, IEmailService email, ISettingsService settingsService, ILogger<ChatHub> logger)
     {
         _db = db;
         _email = email;
+        _settingsService = settingsService;
         _logger = logger;
     }
 
-    /// <summary>Guest tham gia phiên chat của chính mình (group = guestId).</summary>
+    private static string GuestGroup(string guestId) => $"guest:{guestId}";
+
+    /// <summary>Guest tham gia phiên chat (group = guestId).</summary>
     public async Task JoinAsGuest(string guestId)
     {
         try
         {
             if (string.IsNullOrWhiteSpace(guestId)) return;
             await Groups.AddToGroupAsync(Context.ConnectionId, GuestGroup(guestId));
+            
+            // Yêu cầu của bạn: Không hiện lại tin nhắn cũ khi khách F5/kết nối lại
+            await Clients.Caller.SendAsync("ReceiveHistory", new List<object>());
         }
         catch (Exception ex) { _logger.LogError(ex, "JoinAsGuest failed"); }
     }
@@ -43,14 +47,13 @@ public class ChatHub : Hub
     {
         try
         {
-            // Best-effort: admin auth check via Context.User
             if (Context.User?.Identity?.IsAuthenticated != true) return;
             await Groups.AddToGroupAsync(Context.ConnectionId, AdminGroup);
         }
         catch (Exception ex) { _logger.LogError(ex, "JoinAsAdmin failed"); }
     }
 
-    /// <summary>Guest gửi tin nhắn — tạo session nếu chưa có, broadcast cho admin.</summary>
+    /// <summary>Guest gửi tin nhắn — broadcast cho admin và khách.</summary>
     public async Task SendFromGuest(string guestId, string text)
     {
         try
@@ -59,9 +62,12 @@ public class ChatHub : Hub
             text = text.Trim();
             if (text.Length > 4000) text = text[..4000];
 
+            var shouldAutoReply = false;
             var session = await _db.ChatSessions.FirstOrDefaultAsync(c => c.GuestId == guestId);
+            
             if (session == null)
             {
+                shouldAutoReply = true;
                 session = new ChatSession
                 {
                     Id = Guid.NewGuid(),
@@ -70,6 +76,14 @@ public class ChatHub : Hub
                     UpdatedAt = DateTime.UtcNow
                 };
                 _db.ChatSessions.Add(session);
+            }
+            else
+            {
+                // Nếu khách quay lại nhắn tin sau hơn 10 phút kể từ tin nhắn cuối
+                if ((DateTime.UtcNow - session.UpdatedAt).TotalMinutes >= 10)
+                {
+                    shouldAutoReply = true;
+                }
             }
 
             var msg = new ChatMessage
@@ -94,7 +108,7 @@ public class ChatHub : Hub
             await Clients.Group(GuestGroup(guestId)).SendAsync("ReceiveMessage", payload);
             await Clients.Group(AdminGroup).SendAsync("ReceiveMessage", payload);
 
-            // Notify admin via email (fire-and-forget, isolated)
+            // Notify admin qua email
             _ = Task.Run(async () =>
             {
                 try
@@ -105,6 +119,36 @@ public class ChatHub : Hub
                 }
                 catch (Exception ex) { _logger.LogError(ex, "Email notify failed"); }
             });
+
+            // Gửi tin nhắn tự động (Auto Reply)
+            if (shouldAutoReply)
+            {
+                var settings = await _settingsService.GetSettingsAsync();
+                if (!string.IsNullOrWhiteSpace(settings.ChatAutoReplyMessage))
+                {
+                    await Task.Delay(1500);
+
+                    var replyMsg = new ChatMessage
+                    {
+                        Id = Guid.NewGuid(),
+                        SessionId = session.Id,
+                        SenderId = "admin",
+                        IsFromAdmin = true,
+                        Text = settings.ChatAutoReplyMessage,
+                        IsRead = false,
+                        CreatedAt = DateTime.UtcNow
+                    };
+                    _db.ChatMessages.Add(replyMsg);
+                    
+                    session.LastMessage = settings.ChatAutoReplyMessage;
+                    session.UpdatedAt = DateTime.UtcNow;
+                    await _db.SaveChangesAsync();
+
+                    var replyPayload = new { session = session.Id, guestId, text = settings.ChatAutoReplyMessage, isFromAdmin = true, at = replyMsg.CreatedAt };
+                    await Clients.Group(GuestGroup(guestId)).SendAsync("ReceiveMessage", replyPayload);
+                    await Clients.Group(AdminGroup).SendAsync("ReceiveMessage", replyPayload);
+                }
+            }
         }
         catch (Exception ex)
         {
@@ -112,7 +156,7 @@ public class ChatHub : Hub
         }
     }
 
-    /// <summary>Admin trả lời guest cụ thể.</summary>
+    /// <summary>Admin trả lời guest.</summary>
     public async Task SendFromAdmin(string guestId, string text)
     {
         try
@@ -120,7 +164,6 @@ public class ChatHub : Hub
             if (Context.User?.Identity?.IsAuthenticated != true) return;
             if (string.IsNullOrWhiteSpace(guestId) || string.IsNullOrWhiteSpace(text)) return;
             text = text.Trim();
-            if (text.Length > 4000) text = text[..4000];
 
             var session = await _db.ChatSessions.FirstOrDefaultAsync(c => c.GuestId == guestId);
             if (session == null) return;
@@ -139,7 +182,6 @@ public class ChatHub : Hub
 
             session.LastMessage = text;
             session.UpdatedAt = DateTime.UtcNow;
-            // admin reply resets unread (admin has read this thread)
             session.UnreadCount = 0;
 
             await _db.SaveChangesAsync();
@@ -153,6 +195,4 @@ public class ChatHub : Hub
             _logger.LogError(ex, "SendFromAdmin failed");
         }
     }
-
-    private static string GuestGroup(string guestId) => $"guest:{guestId}";
 }

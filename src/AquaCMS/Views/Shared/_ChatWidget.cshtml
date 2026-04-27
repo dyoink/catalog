@@ -56,11 +56,35 @@
     var statusEl = document.getElementById('chat-status');
     var badge = document.getElementById('chat-badge');
     var unread = 0;
+    var STORAGE_KEY = 'aquacms_chat_session_msgs';
 
     function setStatus(text, color) {
         if (statusEl) { statusEl.textContent = text; }
     }
-    function appendMessage(text, isFromAdmin, at) {
+
+    function saveMessageLocal(text, isFromAdmin) {
+        try {
+            var msgs = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]');
+            msgs.push({ text: text, isFromAdmin: isFromAdmin, at: new Date() });
+            // Chỉ giữ tối đa 50 tin nhắn gần nhất trong session
+            if (msgs.length > 50) msgs.shift();
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(msgs));
+        } catch (e) { console.error('Storage error', e); }
+    }
+
+    function loadMessagesLocal() {
+        try {
+            var msgs = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]');
+            if (msgs.length > 0 && msgList) {
+                msgList.innerHTML = '';
+                msgs.forEach(function (m) {
+                    appendMessage(m.text, m.isFromAdmin, m.at, false); // false = không lưu lại lần nữa
+                });
+            }
+        } catch (e) { }
+    }
+
+    function appendMessage(text, isFromAdmin, at, shouldSave = true) {
         if (!msgList) return;
         var wrap = document.createElement('div');
         wrap.className = 'flex ' + (isFromAdmin ? 'justify-start' : 'justify-end');
@@ -71,7 +95,14 @@
         wrap.appendChild(bubble);
         msgList.appendChild(wrap);
         msgList.scrollTop = msgList.scrollHeight;
+
+        if (shouldSave) {
+            saveMessageLocal(text, isFromAdmin);
+        }
     }
+
+    // Load tin nhắn từ session ngay khi khởi tạo
+    loadMessagesLocal();
 
     toggleBtn?.addEventListener('click', function () {
         panel?.classList.toggle('hidden');

@@ -90,5 +90,8 @@ public class SiteSettings
     /// <summary>Email nhận thông báo (tin nhắn mới, đơn hàng...).</summary>
     public string? NotificationEmail { get; set; }
 
+    // ===== Chat Auto Reply =====
+    public string? ChatAutoReplyMessage { get; set; }
+
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }

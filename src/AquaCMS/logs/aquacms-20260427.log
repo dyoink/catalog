@@ -290,3 +290,1567 @@
 2026-04-27 13:54:38.452 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 3.6518 ms
 2026-04-27 13:57:23.031 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 169907.7271 ms
 2026-04-27 13:57:23.036 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4993 ms
+2026-04-27 13:57:35.517 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 13:57:35.554 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 13:57:35.928 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 13:57:35.941 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 13:57:35.945 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 13:57:35.946 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 13:57:36.006 +07:00 [INF] ✅ Admin check completed
+2026-04-27 13:57:36.007 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 13:57:36.008 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 13:57:36.056 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 13:57:36.057 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 13:57:36.065 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 13:57:36.066 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 13:57:36.081 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 13:57:36.082 +07:00 [INF] ✅ Test data check completed
+2026-04-27 13:57:36.083 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 13:57:39.089 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 54.9323 ms
+2026-04-27 13:57:39.551 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 13:57:39.993 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 668.7193 ms
+2026-04-27 13:57:54.895 +07:00 [INF] Cập nhật SiteSettings
+2026-04-27 13:57:55.010 +07:00 [INF] HTTP POST /admin/Settings responded 302 in 395.4860 ms
+2026-04-27 13:57:55.031 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 16.8724 ms
+2026-04-27 13:57:56.276 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 4.9580 ms
+2026-04-27 13:59:00.568 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 81474.0083 ms
+2026-04-27 13:59:00.620 +07:00 [INF] HTTP GET / responded 200 in 478.2789 ms
+2026-04-27 13:59:00.766 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8014 ms
+2026-04-27 13:59:06.474 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 56.4556 ms
+2026-04-27 13:59:06.474 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 58.4051 ms
+2026-04-27 13:59:06.474 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 57.0944 ms
+2026-04-27 13:59:06.474 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 57.1979 ms
+2026-04-27 14:02:14.878 +07:00 [INF] HTTP GET /admin responded 200 in 228.0094 ms
+2026-04-27 14:02:32.262 +07:00 [INF] HTTP GET /san-pham responded 200 in 68.9629 ms
+2026-04-27 14:02:32.384 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 211550.3929 ms
+2026-04-27 14:02:32.393 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8497 ms
+2026-04-27 14:02:33.045 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 86.0979 ms
+2026-04-27 14:02:33.240 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3391 ms
+2026-04-27 14:02:33.261 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 830.4101 ms
+2026-04-27 14:02:34.889 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 14.3180 ms
+2026-04-27 14:02:34.895 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1619.8070 ms
+2026-04-27 14:02:35.051 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3133 ms
+2026-04-27 14:02:35.831 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 13.0777 ms
+2026-04-27 14:02:35.838 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 760.0642 ms
+2026-04-27 14:02:35.958 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3890 ms
+2026-04-27 14:02:36.602 +07:00 [INF] HTTP GET /san-pham responded 200 in 44.2666 ms
+2026-04-27 14:02:36.723 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5233 ms
+2026-04-27 14:02:36.755 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 752.1785 ms
+2026-04-27 14:02:37.353 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 11.5795 ms
+2026-04-27 14:02:37.492 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4227 ms
+2026-04-27 14:02:37.516 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 744.2063 ms
+2026-04-27 14:02:37.992 +07:00 [INF] HTTP GET /san-pham responded 200 in 12.1034 ms
+2026-04-27 14:02:38.149 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4048 ms
+2026-04-27 14:02:38.172 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 639.9084 ms
+2026-04-27 14:02:38.643 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 10.5734 ms
+2026-04-27 14:02:38.812 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3328 ms
+2026-04-27 14:02:38.834 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 647.1857 ms
+2026-04-27 14:02:39.152 +07:00 [INF] HTTP GET /san-pham responded 200 in 13.4189 ms
+2026-04-27 14:02:39.323 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2755 ms
+2026-04-27 14:02:39.345 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 496.5295 ms
+2026-04-27 14:02:39.500 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 11.3184 ms
+2026-04-27 14:02:39.601 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2104 ms
+2026-04-27 14:02:39.614 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 256.3634 ms
+2026-04-27 14:02:39.729 +07:00 [INF] HTTP GET /san-pham responded 200 in 10.1329 ms
+2026-04-27 14:02:39.844 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3177 ms
+2026-04-27 14:02:39.879 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 245.5078 ms
+2026-04-27 14:02:41.614 +07:00 [INF] HTTP GET /admin responded 200 in 44.2332 ms
+2026-04-27 14:28:03.912 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1524017.8597 ms
+2026-04-27 14:52:53.805 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3770 ms
+2026-04-27 15:47:28.033 +07:00 [INF] HTTP GET /admin/settings responded 200 in 58.5206 ms
+2026-04-27 15:48:03.655 +07:00 [INF] HTTP GET /admin responded 200 in 71.0904 ms
+2026-04-27 15:51:17.731 +07:00 [INF] HTTP GET / responded 200 in 44.8668 ms
+2026-04-27 15:51:17.931 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 4.1287 ms
+2026-04-27 15:51:17.932 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.0620 ms
+2026-04-27 15:51:17.932 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 3.0066 ms
+2026-04-27 15:51:17.932 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.0076 ms
+2026-04-27 15:51:17.940 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.9143 ms
+2026-04-27 15:51:17.972 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3504158.8534 ms
+2026-04-27 15:51:30.851 +07:00 [INF] HTTP GET /danh-muc/may-cho-tom-an responded 200 in 86.8117 ms
+2026-04-27 15:51:31.032 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2640 ms
+2026-04-27 15:51:31.057 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 13037.5792 ms
+2026-04-27 15:51:58.672 +07:00 [INF] HTTP GET / responded 200 in 15.7531 ms
+2026-04-27 15:51:58.901 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.7636 ms
+2026-04-27 15:51:58.901 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3939 ms
+2026-04-27 15:51:58.901 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.1345 ms
+2026-04-27 15:51:58.902 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.8445 ms
+2026-04-27 15:51:58.915 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6311 ms
+2026-04-27 15:51:58.950 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 27877.2092 ms
+2026-04-27 15:55:31.838 +07:00 [INF] HTTP GET / responded 200 in 45.0458 ms
+2026-04-27 15:55:31.876 +07:00 [INF] HTTP GET /js/site.js responded 200 in 13.3959 ms
+2026-04-27 15:55:31.876 +07:00 [INF] HTTP GET /css/site.css responded 200 in 13.6628 ms
+2026-04-27 15:55:32.728 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.7131 ms
+2026-04-27 15:55:32.728 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.6806 ms
+2026-04-27 15:55:32.729 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0280 ms
+2026-04-27 15:55:32.732 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0056 ms
+2026-04-27 15:55:32.734 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2287 ms
+2026-04-27 15:55:33.126 +07:00 [INF] HTTP GET /favicon.ico responded 200 in 2.4912 ms
+2026-04-27 15:55:53.655 +07:00 [INF] HTTP GET /admin/messages responded 200 in 37.5847 ms
+2026-04-27 15:55:58.008 +07:00 [INF] HTTP GET /admin/messages/detail/ae9f5a7a-d313-4248-9b79-151eb2c54a66 responded 200 in 85.8414 ms
+2026-04-27 15:55:58.146 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2339 ms
+2026-04-27 15:56:16.907 +07:00 [INF] HTTP GET /admin responded 200 in 39.8731 ms
+2026-04-27 15:56:17.146 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 18988.8055 ms
+2026-04-27 15:56:18.771 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.0440 ms
+2026-04-27 15:56:21.022 +07:00 [INF] HTTP GET /admin responded 200 in 30.3485 ms
+2026-04-27 15:56:22.517 +07:00 [INF] HTTP GET /admin responded 200 in 28.0753 ms
+2026-04-27 15:56:25.430 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.9756 ms
+2026-04-27 15:56:27.619 +07:00 [INF] HTTP GET /admin/messages/detail/ae9f5a7a-d313-4248-9b79-151eb2c54a66 responded 200 in 12.2628 ms
+2026-04-27 15:56:27.763 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2705 ms
+2026-04-27 15:56:30.799 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.3991 ms
+2026-04-27 15:56:30.962 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3184.4598 ms
+2026-04-27 16:01:25.572 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 352757.5078 ms
+2026-04-27 16:01:25.576 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 566615.7100 ms
+2026-04-27 16:02:05.786 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 16:02:05.822 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 16:02:06.196 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 16:02:06.210 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 16:02:06.215 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 16:02:06.216 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 16:02:06.262 +07:00 [INF] ✅ Admin check completed
+2026-04-27 16:02:06.263 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 16:02:06.264 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 16:02:06.313 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 16:02:06.314 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 16:02:06.323 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 16:02:06.324 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 16:02:06.339 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 16:02:06.341 +07:00 [INF] ✅ Test data check completed
+2026-04-27 16:02:06.342 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 16:02:24.928 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 70.0278 ms
+2026-04-27 16:02:24.928 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 68.1166 ms
+2026-04-27 16:02:31.663 +07:00 [INF] HTTP GET /admin/messages responded 200 in 185.6094 ms
+2026-04-27 16:02:34.094 +07:00 [INF] HTTP GET /admin/profile responded 200 in 115.2339 ms
+2026-04-27 16:02:34.900 +07:00 [INF] HTTP GET /admin/profile responded 200 in 16.2301 ms
+2026-04-27 16:02:37.715 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 16:02:37.759 +07:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:37.782 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:37.795 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:37.857 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 342.1879 ms
+2026-04-27 16:02:40.141 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:40.146 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:40.181 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:40.198 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 63.3085 ms
+2026-04-27 16:02:41.012 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:41.016 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.027 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.046 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 38.7973 ms
+2026-04-27 16:02:41.168 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:41.173 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.183 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.200 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 35.3015 ms
+2026-04-27 16:02:41.339 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:41.343 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.352 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.373 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 37.0797 ms
+2026-04-27 16:02:41.512 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:41.518 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.530 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.551 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 42.5277 ms
+2026-04-27 16:02:41.674 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:41.678 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.687 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.706 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 34.2805 ms
+2026-04-27 16:02:41.851 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:41.856 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.864 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:41.899 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 51.1317 ms
+2026-04-27 16:02:42.014 +07:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:42.018 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:42.028 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:42.046 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 35.3131 ms
+2026-04-27 16:02:42.187 +07:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:42.190 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:42.199 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:42.218 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 42.0932 ms
+2026-04-27 16:02:42.352 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.about_content, s.about_image, s.about_title, s.address, s.background_color, s.bank_name, s.bank_number, s.bank_owner, s."ChatAutoReplyMessage", s.company_name, s.copyright_text, s.default_meta_description, s.default_meta_title, s.default_og_image, s.email, s.email_enabled, s.facebook, s.facebook_pixel_id, s.featured_products_count, s.footer_about_text, s.footer_text, s.google_analytics_id, s.hero_background_image, s.hero_button_text, s.hero_button_url, s.hero_description, s.hero_subtitle, s.hero_title, s.latest_posts_count, s.logo, s.notification_email, s.phone, s.primary_color, s.show_banners, s.show_categories, s.show_facebook, s.show_featured_products, s.show_footer, s.show_hotline, s.show_latest_posts, s.show_nav_cart, s.show_nav_knowledge, s.show_nav_partners, s.show_nav_products, s.show_partners, s.show_telegram, s.show_tiktok, s.show_youtube, s.show_zalo, s.smtp_from_email, s.smtp_from_name, s.smtp_host, s.smtp_password, s.smtp_port, s.smtp_use_ssl, s.smtp_user, s.telegram, s.tiktok, s.updated_at, s.youtube, s.zalo
+FROM site_settings AS s
+LIMIT 1
+2026-04-27 16:02:42.357 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:42.366 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column s.ChatAutoReplyMessage does not exist
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AquaCMS.Services.SettingsService.GetSettingsAsync() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\SettingsService.cs:line 36
+   at AquaCMS.Areas.Admin.Controllers.SettingsController.Index() in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\SettingsController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.ChatAutoReplyMessage does not exist
+    Position: 134
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2026-04-27 16:02:42.391 +07:00 [ERR] HTTP GET /admin/settings responded 500 in 41.8272 ms
+2026-04-27 16:03:30.519 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2580 ms
+2026-04-27 16:03:30.523 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8808 ms
+2026-04-27 16:03:30.541 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 65609.3488 ms
+2026-04-27 16:03:30.541 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 65607.7798 ms
+2026-04-27 16:04:00.534 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 30004.7004 ms
+2026-04-27 16:04:00.534 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 30010.4917 ms
+2026-04-27 16:04:27.232 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 16:04:27.273 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 16:04:27.600 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 16:04:27.611 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 16:04:27.616 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 16:04:27.617 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 16:04:27.652 +07:00 [INF] ✅ Admin check completed
+2026-04-27 16:04:27.653 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 16:04:27.655 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 16:04:27.698 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 16:04:27.699 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 16:04:27.707 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 16:04:27.708 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 16:04:27.723 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 16:04:27.724 +07:00 [INF] ✅ Test data check completed
+2026-04-27 16:04:27.725 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 16:04:28.172 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 48.5836 ms
+2026-04-27 16:04:28.172 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 47.2611 ms
+2026-04-27 16:05:45.697 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 16:05:46.379 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 78200.4248 ms
+2026-04-27 16:05:46.605 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5248 ms
+2026-04-27 16:05:46.622 +07:00 [INF] HTTP GET / responded 200 in 976.0321 ms
+2026-04-27 16:05:46.704 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 104.2918 ms
+2026-04-27 16:05:46.705 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 102.3712 ms
+2026-04-27 16:05:46.705 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 104.7877 ms
+2026-04-27 16:05:46.705 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 104.7434 ms
+2026-04-27 16:05:52.530 +07:00 [INF] HTTP GET /admin responded 200 in 292.7939 ms
+2026-04-27 16:05:52.559 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5869.3685 ms
+2026-04-27 16:05:54.418 +07:00 [INF] HTTP GET /admin/settings responded 200 in 304.0245 ms
+2026-04-27 16:09:51.622 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 323442.6456 ms
+2026-04-27 16:09:51.624 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4248 ms
+2026-04-27 16:10:07.127 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 16:10:07.162 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 16:10:07.468 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 16:10:07.481 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 16:10:07.486 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 16:10:07.487 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 16:10:07.525 +07:00 [INF] ✅ Admin check completed
+2026-04-27 16:10:07.526 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 16:10:07.528 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 16:10:07.573 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 16:10:07.574 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 16:10:07.582 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 16:10:07.584 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 16:10:07.600 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 16:10:07.600 +07:00 [INF] ✅ Test data check completed
+2026-04-27 16:10:07.601 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 16:10:07.882 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 41.4380 ms
+2026-04-27 16:10:20.070 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 16:10:20.439 +07:00 [INF] HTTP GET /admin/settings responded 200 in 642.7527 ms
+2026-04-27 16:10:58.102 +07:00 [INF] Cập nhật SiteSettings
+2026-04-27 16:10:58.207 +07:00 [INF] HTTP POST /admin/settings responded 302 in 362.1598 ms
+2026-04-27 16:10:58.229 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 16.2723 ms
+2026-04-27 16:11:06.960 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 59073.4444 ms
+2026-04-27 16:11:07.016 +07:00 [INF] HTTP GET / responded 200 in 486.8728 ms
+2026-04-27 16:11:07.248 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6045 ms
+2026-04-27 16:11:07.316 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 73.2748 ms
+2026-04-27 16:11:07.316 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 74.2238 ms
+2026-04-27 16:11:07.316 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 72.0096 ms
+2026-04-27 16:11:07.316 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 70.4208 ms
+2026-04-27 16:11:35.479 +07:00 [INF] Cập nhật SiteSettings
+2026-04-27 16:11:35.487 +07:00 [INF] HTTP POST /admin/Settings responded 302 in 18.8134 ms
+2026-04-27 16:11:35.504 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 9.5837 ms
+2026-04-27 16:11:40.625 +07:00 [INF] HTTP GET / responded 200 in 22.0173 ms
+2026-04-27 16:11:40.632 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 33299.6276 ms
+2026-04-27 16:11:40.829 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.8327 ms
+2026-04-27 16:11:40.829 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.8300 ms
+2026-04-27 16:11:40.831 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.4682 ms
+2026-04-27 16:11:40.832 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.0187 ms
+2026-04-27 16:11:40.833 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6253 ms
+2026-04-27 16:11:52.804 +07:00 [INF] HTTP GET / responded 200 in 20.0594 ms
+2026-04-27 16:11:52.981 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4209 ms
+2026-04-27 16:11:52.983 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 4.3342 ms
+2026-04-27 16:11:52.985 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 3.5654 ms
+2026-04-27 16:11:52.985 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 3.8739 ms
+2026-04-27 16:11:52.989 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6916 ms
+2026-04-27 16:12:04.547 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 23631.7866 ms
+2026-04-27 16:12:12.619 +07:00 [INF] HTTP GET / responded 200 in 23.4234 ms
+2026-04-27 16:12:12.906 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.8346 ms
+2026-04-27 16:12:12.906 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2650 ms
+2026-04-27 16:12:12.907 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.5803 ms
+2026-04-27 16:12:12.909 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4467 ms
+2026-04-27 16:12:12.920 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3618 ms
+2026-04-27 16:12:24.556 +07:00 [INF] HTTP GET / responded 200 in 13.8198 ms
+2026-04-27 16:12:24.566 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 31476.3812 ms
+2026-04-27 16:12:24.748 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1178 ms
+2026-04-27 16:12:24.748 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.5058 ms
+2026-04-27 16:12:24.748 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0881 ms
+2026-04-27 16:12:24.748 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1224 ms
+2026-04-27 16:12:24.749 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4714 ms
+2026-04-27 16:12:41.232 +07:00 [INF] HTTP GET /admin responded 200 in 207.2283 ms
+2026-04-27 16:12:42.650 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 17827.8415 ms
+2026-04-27 16:12:47.355 +07:00 [INF] HTTP GET /admin/settings responded 200 in 2.2957 ms
+2026-04-27 16:13:01.448 +07:00 [INF] HTTP GET / responded 200 in 15.7021 ms
+2026-04-27 16:13:01.748 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5609 ms
+2026-04-27 16:13:02.343 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3859 ms
+2026-04-27 16:13:02.343 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4383 ms
+2026-04-27 16:13:02.343 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6801 ms
+2026-04-27 16:13:02.343 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4513 ms
+2026-04-27 16:13:26.103 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 73098.3509 ms
+2026-04-27 16:13:29.514 +07:00 [INF] HTTP GET /admin/messages responded 200 in 34.4072 ms
+2026-04-27 16:13:33.920 +07:00 [INF] HTTP GET /admin/messages/detail/ae9f5a7a-d313-4248-9b79-151eb2c54a66 responded 200 in 76.7210 ms
+2026-04-27 16:13:34.048 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3315 ms
+2026-04-27 16:13:37.581 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.2477 ms
+2026-04-27 16:13:37.725 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3664.4951 ms
+2026-04-27 16:13:38.457 +07:00 [INF] HTTP GET /admin/messages/detail/ae9f5a7a-d313-4248-9b79-151eb2c54a66 responded 200 in 10.7987 ms
+2026-04-27 16:13:38.612 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2172 ms
+2026-04-27 16:13:44.783 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.8342 ms
+2026-04-27 16:13:44.814 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6191.8778 ms
+2026-04-27 16:14:01.707 +07:00 [INF] HTTP GET / responded 200 in 13.7236 ms
+2026-04-27 16:14:01.715 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 59819.3765 ms
+2026-04-27 16:14:01.938 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2012 ms
+2026-04-27 16:14:01.938 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1354 ms
+2026-04-27 16:14:01.938 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2602 ms
+2026-04-27 16:14:01.938 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0042 ms
+2026-04-27 16:14:01.940 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6279 ms
+2026-04-27 16:14:10.593 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.6414 ms
+2026-04-27 16:14:14.250 +07:00 [INF] HTTP GET /admin/messages/detail/4712fbe7-54b6-449e-a962-a82247f7173f responded 200 in 22.0719 ms
+2026-04-27 16:14:14.379 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3165 ms
+2026-04-27 16:14:23.649 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.3903 ms
+2026-04-27 16:14:23.872 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 9478.9818 ms
+2026-04-27 16:14:25.382 +07:00 [INF] HTTP GET /admin/messages/detail/ae9f5a7a-d313-4248-9b79-151eb2c54a66 responded 200 in 23.0831 ms
+2026-04-27 16:14:25.547 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2525 ms
+2026-04-27 16:14:27.758 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.1840 ms
+2026-04-27 16:14:27.984 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2428.3625 ms
+2026-04-27 16:21:33.073 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 451048.7600 ms
+2026-04-27 16:22:42.722 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 16:22:42.765 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 16:22:43.085 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 16:22:43.098 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 16:22:43.103 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 16:22:43.104 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 16:22:43.142 +07:00 [INF] ✅ Admin check completed
+2026-04-27 16:22:43.143 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 16:22:43.144 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 16:22:43.189 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 16:22:43.201 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 16:22:43.210 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 16:22:43.211 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 16:22:43.225 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 16:22:43.226 +07:00 [INF] ✅ Test data check completed
+2026-04-27 16:22:43.227 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 16:22:51.274 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 16:22:52.197 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 16.7251 ms
+2026-04-27 16:22:52.226 +07:00 [INF] HTTP GET / responded 200 in 1032.6290 ms
+2026-04-27 16:22:52.355 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 179.2261 ms
+2026-04-27 16:22:52.356 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 180.1770 ms
+2026-04-27 16:22:52.356 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 180.1640 ms
+2026-04-27 16:22:52.356 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 180.1759 ms
+2026-04-27 16:22:52.410 +07:00 [ERR] JoinAsGuest failed
+System.InvalidOperationException: The LINQ expression 'DbSet<ChatMessage>()
+    .Where(m => m.SenderId == __guestId_0 || m.IsFromAdmin && m.Session != null && m.Session.GuestId == __guestId_0)
+    .OrderBy(m => m.CreatedAt)
+    .TakeLast(__p_1)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AquaCMS.Hubs.ChatHub.JoinAsGuest(String guestId) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Hubs\ChatHub.cs:line 41
+2026-04-27 16:23:11.144 +07:00 [INF] HTTP GET /admin/messages responded 200 in 50.4921 ms
+2026-04-27 16:23:30.964 +07:00 [INF] HTTP GET /admin/messages responded 200 in 6.8279 ms
+2026-04-27 16:23:35.218 +07:00 [INF] HTTP GET /admin/messages/detail/4712fbe7-54b6-449e-a962-a82247f7173f responded 200 in 61.0857 ms
+2026-04-27 16:23:35.425 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7580 ms
+2026-04-27 16:23:46.404 +07:00 [INF] HTTP GET /admin/settings responded 200 in 358.1508 ms
+2026-04-27 16:23:46.635 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 11198.0167 ms
+2026-04-27 16:24:33.393 +07:00 [INF] HTTP GET /admin/messages responded 200 in 6.2712 ms
+2026-04-27 16:24:36.086 +07:00 [INF] HTTP GET /admin/messages/detail/4712fbe7-54b6-449e-a962-a82247f7173f responded 200 in 13.6966 ms
+2026-04-27 16:24:36.257 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4271 ms
+2026-04-27 16:24:54.547 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.5351 ms
+2026-04-27 16:24:54.761 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 18488.6363 ms
+2026-04-27 16:35:49.011 +07:00 [INF] HTTP GET /kien-thuc/cach-su-dung-may-cho-tom-an-hieu-qua-3 responded 200 in 117.3237 ms
+2026-04-27 16:35:49.174 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3791 ms
+2026-04-27 16:35:49.191 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 776969.3751 ms
+2026-04-27 16:35:49.217 +07:00 [ERR] JoinAsGuest failed
+System.InvalidOperationException: The LINQ expression 'DbSet<ChatMessage>()
+    .Where(m => m.SenderId == __guestId_0 || m.IsFromAdmin && m.Session != null && m.Session.GuestId == __guestId_0)
+    .OrderBy(m => m.CreatedAt)
+    .TakeLast(__p_1)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AquaCMS.Hubs.ChatHub.JoinAsGuest(String guestId) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Hubs\ChatHub.cs:line 41
+2026-04-27 16:35:54.229 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5020.6547 ms
+2026-04-27 16:47:33.428 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 16:47:33.461 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 16:47:33.795 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 16:47:33.809 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 16:47:33.813 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 16:47:33.814 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 16:47:33.863 +07:00 [INF] ✅ Admin check completed
+2026-04-27 16:47:33.864 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 16:47:33.866 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 16:47:33.923 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 16:47:33.923 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 16:47:33.931 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 16:47:33.933 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 16:47:33.950 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 16:47:33.952 +07:00 [INF] ✅ Test data check completed
+2026-04-27 16:47:33.953 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 16:48:52.570 +07:00 [INF] HTTP GET /admin/messages responded 200 in 246.4520 ms
+2026-04-27 16:48:58.157 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 16:48:58.841 +07:00 [INF] HTTP GET / responded 200 in 766.4857 ms
+2026-04-27 16:48:58.869 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 12.5716 ms
+2026-04-27 16:48:58.955 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 103.7338 ms
+2026-04-27 16:48:58.956 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 103.9711 ms
+2026-04-27 16:48:58.956 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 106.8462 ms
+2026-04-27 16:48:58.956 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 104.8602 ms
+2026-04-27 16:49:01.288 +07:00 [INF] HTTP GET / responded 200 in 20.7874 ms
+2026-04-27 16:49:01.441 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6908 ms
+2026-04-27 16:49:01.443 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 4.5953 ms
+2026-04-27 16:49:01.443 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 6.5334 ms
+2026-04-27 16:49:01.443 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 4.5583 ms
+2026-04-27 16:49:01.443 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 6.4631 ms
+2026-04-27 16:49:01.453 +07:00 [INF] Đã xóa dữ liệu chat tạm thời của khách: g_gwj0983qdmodtuj64
+2026-04-27 16:49:01.462 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2513.7406 ms
+2026-04-27 16:49:13.532 +07:00 [INF] HTTP GET /admin responded 200 in 208.0733 ms
+2026-04-27 16:49:18.961 +07:00 [INF] Đã xóa dữ liệu chat tạm thời của khách: g_gwj0983qdmodtuj64
+2026-04-27 16:49:18.963 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 17456.5650 ms
+2026-04-27 16:49:21.159 +07:00 [INF] HTTP GET /admin/messages responded 200 in 8.0970 ms
+2026-04-27 16:49:27.568 +07:00 [INF] HTTP GET / responded 200 in 17.5419 ms
+2026-04-27 16:49:27.841 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6688 ms
+2026-04-27 16:49:28.659 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6096 ms
+2026-04-27 16:49:28.659 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3571 ms
+2026-04-27 16:49:28.659 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.5152 ms
+2026-04-27 16:49:28.659 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2232 ms
+2026-04-27 16:49:30.140 +07:00 [INF] HTTP GET /admin/messages responded 200 in 5.2381 ms
+2026-04-27 16:49:34.424 +07:00 [INF] HTTP GET / responded 200 in 15.0719 ms
+2026-04-27 16:49:34.434 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6446.3739 ms
+2026-04-27 16:49:34.621 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.8854 ms
+2026-04-27 16:49:34.621 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.8550 ms
+2026-04-27 16:49:34.621 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.4830 ms
+2026-04-27 16:49:34.621 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.4927 ms
+2026-04-27 16:49:34.622 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4823 ms
+2026-04-27 16:49:38.881 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.4704 ms
+2026-04-27 16:49:53.236 +07:00 [INF] HTTP GET /san-pham responded 200 in 89.5697 ms
+2026-04-27 16:49:53.413 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6099 ms
+2026-04-27 16:49:53.464 +07:00 [INF] Đã xóa dữ liệu chat tạm thời của khách: g_gwj0983qdmodtuj64
+2026-04-27 16:49:53.465 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 18775.8492 ms
+2026-04-27 16:49:56.910 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.4721 ms
+2026-04-27 16:56:18.493 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6413 ms
+2026-04-27 16:56:18.517 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 385044.0547 ms
+2026-04-27 16:56:48.503 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 30003.8117 ms
+2026-04-27 16:58:44.696 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 16:58:44.732 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 16:58:45.049 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 16:58:45.062 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 16:58:45.066 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 16:58:45.067 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 16:58:45.102 +07:00 [INF] ✅ Admin check completed
+2026-04-27 16:58:45.104 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 16:58:45.105 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 16:58:45.150 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 16:58:45.151 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 16:58:45.159 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 16:58:45.160 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 16:58:45.175 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 16:58:45.176 +07:00 [INF] ✅ Test data check completed
+2026-04-27 16:58:45.176 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 16:59:18.474 +07:00 [INF] HTTP GET /admin/messages responded 200 in 209.1811 ms
+2026-04-27 16:59:21.348 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 16:59:22.017 +07:00 [INF] HTTP GET /san-pham responded 200 in 783.1763 ms
+2026-04-27 16:59:22.082 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 12.3654 ms
+2026-04-27 16:59:22.758 +07:00 [INF] HTTP GET / responded 200 in 146.4978 ms
+2026-04-27 16:59:22.970 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8394 ms
+2026-04-27 16:59:23.026 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 914.0121 ms
+2026-04-27 16:59:23.047 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 87.7819 ms
+2026-04-27 16:59:23.047 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 86.4277 ms
+2026-04-27 16:59:23.047 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 86.5471 ms
+2026-04-27 16:59:23.047 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 88.6028 ms
+2026-04-27 16:59:32.138 +07:00 [INF] HTTP GET /admin/messages responded 200 in 11.2637 ms
+2026-04-27 16:59:41.461 +07:00 [INF] HTTP GET /san-pham responded 200 in 14.3697 ms
+2026-04-27 16:59:41.663 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4269 ms
+2026-04-27 16:59:41.695 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 18620.1040 ms
+2026-04-27 16:59:48.747 +07:00 [INF] HTTP GET /admin/messages/detail/183ebbe0-5cbe-4750-a653-74ebd55e2b24 responded 200 in 83.3118 ms
+2026-04-27 16:59:48.871 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4306 ms
+2026-04-27 16:59:57.383 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 15639.9642 ms
+2026-04-27 17:00:02.891 +07:00 [INF] HTTP GET / responded 200 in 22.9670 ms
+2026-04-27 17:00:03.187 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3218 ms
+2026-04-27 17:00:03.864 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.2090 ms
+2026-04-27 17:00:03.864 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.6042 ms
+2026-04-27 17:00:03.864 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.6192 ms
+2026-04-27 17:00:03.864 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.9437 ms
+2026-04-27 17:00:20.313 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.9174 ms
+2026-04-27 17:00:20.346 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 31467.9988 ms
+2026-04-27 17:00:53.437 +07:00 [INF] HTTP GET /admin responded 200 in 187.4130 ms
+2026-04-27 17:00:55.468 +07:00 [INF] HTTP GET /admin/products responded 200 in 80.8780 ms
+2026-04-27 17:00:56.917 +07:00 [INF] HTTP GET /admin responded 200 in 33.9736 ms
+2026-04-27 17:00:59.970 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.6231 ms
+2026-04-27 17:01:01.930 +07:00 [INF] HTTP GET /admin/messages/detail/183ebbe0-5cbe-4750-a653-74ebd55e2b24 responded 200 in 12.0292 ms
+2026-04-27 17:01:02.061 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2925 ms
+2026-04-27 17:01:03.264 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.7017 ms
+2026-04-27 17:01:03.390 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1318.7136 ms
+2026-04-27 17:01:04.508 +07:00 [INF] HTTP GET /admin responded 200 in 27.3944 ms
+2026-04-27 17:01:05.738 +07:00 [INF] HTTP GET /admin responded 200 in 31.2320 ms
+2026-04-27 17:01:10.365 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.2268 ms
+2026-04-27 17:01:13.072 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.2234 ms
+2026-04-27 17:01:13.410 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.6801 ms
+2026-04-27 17:01:13.564 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.7644 ms
+2026-04-27 17:01:13.869 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.1898 ms
+2026-04-27 17:01:14.695 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.2462 ms
+2026-04-27 17:01:15.089 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.0887 ms
+2026-04-27 17:01:15.532 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.8893 ms
+2026-04-27 17:01:15.802 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.4632 ms
+2026-04-27 17:01:15.983 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.9855 ms
+2026-04-27 17:01:16.309 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.2844 ms
+2026-04-27 17:01:16.628 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.9212 ms
+2026-04-27 17:01:16.938 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.3433 ms
+2026-04-27 17:01:18.525 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.6510 ms
+2026-04-27 17:01:19.153 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.9724 ms
+2026-04-27 17:01:19.557 +07:00 [INF] HTTP GET /admin/messages responded 200 in 2.6318 ms
+2026-04-27 17:01:33.563 +07:00 [INF] HTTP GET /admin responded 200 in 37.0495 ms
+2026-04-27 17:01:34.989 +07:00 [INF] HTTP GET /admin responded 200 in 29.3427 ms
+2026-04-27 17:01:35.892 +07:00 [INF] HTTP GET /admin responded 200 in 25.7957 ms
+2026-04-27 17:01:36.746 +07:00 [INF] HTTP GET /admin responded 200 in 22.2882 ms
+2026-04-27 17:01:37.101 +07:00 [INF] HTTP GET /admin responded 200 in 24.9422 ms
+2026-04-27 17:01:41.861 +07:00 [INF] HTTP GET /admin responded 200 in 30.5469 ms
+2026-04-27 17:01:44.326 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.7515 ms
+2026-04-27 17:01:45.318 +07:00 [INF] HTTP GET /admin/messages/detail/183ebbe0-5cbe-4750-a653-74ebd55e2b24 responded 200 in 11.2904 ms
+2026-04-27 17:01:45.509 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4355 ms
+2026-04-27 17:01:47.034 +07:00 [INF] HTTP GET /admin responded 200 in 32.8551 ms
+2026-04-27 17:01:47.254 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1730.7541 ms
+2026-04-27 17:01:48.572 +07:00 [INF] HTTP GET /admin responded 200 in 29.5080 ms
+2026-04-27 17:01:49.510 +07:00 [INF] HTTP GET /admin responded 200 in 29.8916 ms
+2026-04-27 17:01:50.051 +07:00 [INF] HTTP GET /admin responded 200 in 25.4438 ms
+2026-04-27 17:01:52.595 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.2323 ms
+2026-04-27 17:01:54.397 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.1592 ms
+2026-04-27 17:01:55.301 +07:00 [INF] HTTP GET /admin responded 200 in 30.0298 ms
+2026-04-27 17:01:56.134 +07:00 [INF] HTTP GET /admin responded 200 in 33.1537 ms
+2026-04-27 17:01:56.604 +07:00 [INF] HTTP GET /admin responded 200 in 22.3679 ms
+2026-04-27 17:01:56.926 +07:00 [INF] HTTP GET /admin responded 200 in 27.3555 ms
+2026-04-27 17:01:57.230 +07:00 [INF] HTTP GET /admin responded 200 in 28.7580 ms
+2026-04-27 17:02:03.365 +07:00 [INF] HTTP GET /admin responded 200 in 39.4418 ms
+2026-04-27 17:02:03.840 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 120495.3467 ms
+2026-04-27 17:04:05.877 +07:00 [INF] HTTP GET /admin responded 200 in 67.3093 ms
