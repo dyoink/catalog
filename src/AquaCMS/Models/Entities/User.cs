@@ -1,6 +1,7 @@
-namespace AquaCMS.Models.Entities;
-
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AquaCMS.Models.Entities;
 
 /// <summary>
 /// Entity người dùng quản trị.

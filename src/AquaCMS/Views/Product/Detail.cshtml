@@ -87,8 +87,8 @@
             </div>
 
             @* Giá *@
-            <div class="text-3xl font-bold mb-6 @(Model.Product.Price.HasValue ? "text-primary" : "text-gray-600")">
-                @PriceHelper.FormatPrice(Model.Product.Price)
+            <div class="text-3xl font-bold mb-6 @(Model.Product.Price.HasValue && Model.Product.ShowPrice ? "text-primary" : "text-gray-600")">
+                @PriceHelper.FormatPrice(Model.Product.Price, Model.Product.ShowPrice)
             </div>
 
             @* Mô tả ngắn *@

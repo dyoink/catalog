@@ -1,0 +1,797 @@
+2026-04-25 13:30:49.759 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 13:30:49.804 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 13:30:50.221 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 13:30:50.242 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 13:30:50.248 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 13:30:50.249 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 13:30:50.310 +07:00 [INF] ✅ Admin check completed
+2026-04-25 13:30:50.312 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 13:30:50.313 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 13:30:50.378 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 13:30:50.380 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 13:30:50.391 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 13:30:50.393 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 13:30:50.414 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 13:30:50.415 +07:00 [INF] ✅ Test data check completed
+2026-04-25 13:30:50.417 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 13:30:50.680 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5088: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-04-25 13:30:50.700 +07:00 [FTL] Terminated
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5088: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 131
+2026-04-25 13:33:48.341 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 13:33:48.384 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 13:33:48.818 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 13:33:48.832 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 13:33:48.836 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 13:33:48.837 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 13:33:48.879 +07:00 [INF] ✅ Admin check completed
+2026-04-25 13:33:48.880 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 13:33:48.881 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 13:33:48.934 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 13:33:48.935 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 13:33:48.946 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 13:33:48.947 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 13:33:48.966 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 13:33:48.968 +07:00 [INF] ✅ Test data check completed
+2026-04-25 13:33:48.969 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 13:33:49.176 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5088: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-04-25 13:33:49.193 +07:00 [FTL] Terminated
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5088: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 131
+2026-04-25 16:31:02.668 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 16:31:02.711 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 16:31:03.079 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 16:31:03.097 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 16:31:03.103 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 16:31:03.104 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 16:31:03.152 +07:00 [INF] ✅ Admin check completed
+2026-04-25 16:31:03.153 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 16:31:03.155 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 16:31:03.208 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 16:31:03.209 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 16:31:03.218 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 16:31:03.219 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 16:31:03.238 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 16:31:03.240 +07:00 [INF] ✅ Test data check completed
+2026-04-25 16:31:03.242 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 16:31:10.006 +07:00 [INF] HTTP GET /admin/products/edit/dd2340b4-c403-45f4-b46c-2a2f22b04d82 responded 200 in 669.7700 ms
+2026-04-25 16:31:19.896 +07:00 [INF] HTTP GET /admin/categories responded 200 in 113.8224 ms
+2026-04-25 16:31:20.055 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 16:31:20.303 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 352.2351 ms
+2026-04-25 16:31:20.303 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 351.9029 ms
+2026-04-25 16:31:20.303 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 352.2253 ms
+2026-04-25 16:31:20.303 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 384.4563 ms
+2026-04-25 16:31:22.009 +07:00 [INF] HTTP GET /admin/products responded 200 in 114.0627 ms
+2026-04-25 16:31:39.775 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-04-25 16:31:39.781 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AquaCMS.Services.ProductService.GetRelatedProductsAsync(Guid productId, Nullable`1 categoryId, Int32 count) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\ProductService.cs:line 98
+   at AquaCMS.Controllers.ProductController.Detail(String slugAndId) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Controllers\ProductController.cs:line 126
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-25 16:31:39.853 +07:00 [ERR] HTTP GET /san-pham/he-thong-loc-tuan-hoan-ras-10 responded 500 in 155.8066 ms
+2026-04-25 16:31:42.249 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-04-25 16:31:42.253 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AquaCMS.Services.ProductService.GetRelatedProductsAsync(Guid productId, Nullable`1 categoryId, Int32 count) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\ProductService.cs:line 98
+   at AquaCMS.Controllers.ProductController.Detail(String slugAndId) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Controllers\ProductController.cs:line 126
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-25 16:31:42.265 +07:00 [ERR] HTTP GET /san-pham/he-thong-loc-tuan-hoan-ras-10 responded 500 in 32.9928 ms
+2026-04-25 16:37:22.174 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 16:37:22.214 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 16:37:22.590 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 16:37:22.605 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 16:37:22.610 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 16:37:22.611 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 16:37:22.651 +07:00 [INF] ✅ Admin check completed
+2026-04-25 16:37:22.652 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 16:37:22.654 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 16:37:22.703 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 16:37:22.705 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 16:37:22.713 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 16:37:22.714 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 16:37:22.729 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 16:37:22.731 +07:00 [INF] ✅ Test data check completed
+2026-04-25 16:37:22.732 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 16:38:44.704 +07:00 [INF] HTTP GET /admin/products responded 200 in 708.4606 ms
+2026-04-25 16:38:52.446 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 16:38:52.886 +07:00 [INF] HTTP GET /san-pham/he-thong-loc-tuan-hoan-ras-10 responded 200 in 559.6565 ms
+2026-04-25 16:38:52.976 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 11.6079 ms
+2026-04-25 16:38:58.262 +07:00 [INF] HTTP GET /san-pham/bo-loc-drum-filter-1 responded 200 in 36.8708 ms
+2026-04-25 16:38:58.451 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8010 ms
+2026-04-25 16:38:58.491 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5480.7666 ms
+2026-04-25 16:39:04.803 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 148.4331 ms
+2026-04-25 16:39:04.968 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6694 ms
+2026-04-25 16:39:04.998 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6496.3716 ms
+2026-04-25 16:39:07.346 +07:00 [INF] HTTP GET /san-pham responded 200 in 62.4183 ms
+2026-04-25 16:39:07.531 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4534 ms
+2026-04-25 16:39:07.561 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2546.1282 ms
+2026-04-25 16:39:10.820 +07:00 [INF] HTTP GET /doi-tac responded 200 in 138.5193 ms
+2026-04-25 16:39:11.011 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6553 ms
+2026-04-25 16:39:11.040 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3463.3782 ms
+2026-04-25 16:39:14.254 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 4.3369 ms
+2026-04-25 16:39:14.270 +07:00 [INF] HTTP GET /doi-tac responded 200 in 7.8447 ms
+2026-04-25 16:39:14.284 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3226.4909 ms
+2026-04-25 16:39:14.455 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5003 ms
+2026-04-25 16:39:16.002 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 1.9347 ms
+2026-04-25 16:39:16.020 +07:00 [INF] HTTP GET /doi-tac responded 200 in 9.6495 ms
+2026-04-25 16:39:16.032 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1545.3404 ms
+2026-04-25 16:39:16.233 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4591 ms
+2026-04-25 16:39:17.335 +07:00 [INF] HTTP GET / responded 200 in 196.8306 ms
+2026-04-25 16:39:17.614 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5400 ms
+2026-04-25 16:39:17.651 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 46.0988 ms
+2026-04-25 16:39:17.652 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 47.0398 ms
+2026-04-25 16:39:17.652 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 46.7294 ms
+2026-04-25 16:39:17.652 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 44.5834 ms
+2026-04-25 16:39:17.666 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1392.3402 ms
+2026-04-25 16:39:18.876 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 1.0193 ms
+2026-04-25 16:39:18.900 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1167.3953 ms
+2026-04-25 16:39:19.081 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3280 ms
+2026-04-25 16:39:19.091 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 18.6674 ms
+2026-04-25 16:39:19.091 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 17.1476 ms
+2026-04-25 16:39:19.091 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 15.9384 ms
+2026-04-25 16:39:19.091 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 16.1473 ms
+2026-04-25 16:39:19.774 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5735 ms
+2026-04-25 16:39:19.799 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 663.9735 ms
+2026-04-25 16:39:19.995 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2467 ms
+2026-04-25 16:39:19.995 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3121 ms
+2026-04-25 16:39:19.995 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7027 ms
+2026-04-25 16:39:19.995 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.4340 ms
+2026-04-25 16:39:20.001 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5928 ms
+2026-04-25 16:39:21.014 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.7945 ms
+2026-04-25 16:39:21.036 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 947.0514 ms
+2026-04-25 16:39:21.244 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.1186 ms
+2026-04-25 16:39:21.244 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.9995 ms
+2026-04-25 16:39:21.244 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9850 ms
+2026-04-25 16:39:21.245 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8117 ms
+2026-04-25 16:39:21.265 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 23.1747 ms
+2026-04-25 16:39:22.482 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5901 ms
+2026-04-25 16:39:22.507 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1173.5233 ms
+2026-04-25 16:39:22.684 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.4949 ms
+2026-04-25 16:39:22.684 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2262 ms
+2026-04-25 16:39:22.684 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4894 ms
+2026-04-25 16:39:22.684 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2979 ms
+2026-04-25 16:39:22.684 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4226 ms
+2026-04-25 16:39:23.364 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5687 ms
+2026-04-25 16:39:23.382 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 610.2014 ms
+2026-04-25 16:39:23.568 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8354 ms
+2026-04-25 16:39:23.568 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1781 ms
+2026-04-25 16:39:23.568 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1491 ms
+2026-04-25 16:39:23.568 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2021 ms
+2026-04-25 16:39:23.573 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6648 ms
+2026-04-25 16:39:24.439 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.8568 ms
+2026-04-25 16:39:24.459 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 754.8673 ms
+2026-04-25 16:39:24.634 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.5723 ms
+2026-04-25 16:39:24.634 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6038 ms
+2026-04-25 16:39:24.634 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9958 ms
+2026-04-25 16:39:24.635 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1841 ms
+2026-04-25 16:39:24.636 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4004 ms
+2026-04-25 16:39:25.094 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.2777 ms
+2026-04-25 16:39:25.111 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 392.1982 ms
+2026-04-25 16:39:25.271 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7228 ms
+2026-04-25 16:39:25.271 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8009 ms
+2026-04-25 16:39:25.271 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.0685 ms
+2026-04-25 16:39:25.271 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0761 ms
+2026-04-25 16:39:25.283 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3432 ms
+2026-04-25 16:39:26.730 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5425 ms
+2026-04-25 16:39:26.750 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1420.1447 ms
+2026-04-25 16:39:26.944 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3265 ms
+2026-04-25 16:39:26.945 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9774 ms
+2026-04-25 16:39:26.945 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0588 ms
+2026-04-25 16:39:26.945 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0621 ms
+2026-04-25 16:39:26.951 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3617 ms
+2026-04-25 16:39:28.738 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 10.2646 ms
+2026-04-25 16:39:28.882 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3285 ms
+2026-04-25 16:39:28.904 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1874.4336 ms
+2026-04-25 16:39:30.491 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.3240 ms
+2026-04-25 16:39:30.509 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 11.2053 ms
+2026-04-25 16:39:30.523 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1583.9938 ms
+2026-04-25 16:39:30.690 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3666 ms
+2026-04-25 16:39:32.069 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6230 ms
+2026-04-25 16:39:32.069 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0278 ms
+2026-04-25 16:39:32.069 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0518 ms
+2026-04-25 16:39:32.069 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8869 ms
+2026-04-25 16:39:32.073 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7307 ms
+2026-04-25 16:39:32.132 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1408.2115 ms
+2026-04-25 16:39:32.673 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5063 ms
+2026-04-25 16:39:32.702 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 516.5344 ms
+2026-04-25 16:39:32.896 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3209 ms
+2026-04-25 16:39:32.896 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8647 ms
+2026-04-25 16:39:32.896 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9265 ms
+2026-04-25 16:39:32.897 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4466 ms
+2026-04-25 16:39:32.908 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4508 ms
+2026-04-25 16:39:34.162 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.3878 ms
+2026-04-25 16:39:34.180 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1204.6454 ms
+2026-04-25 16:39:34.363 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.9666 ms
+2026-04-25 16:39:34.364 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9402 ms
+2026-04-25 16:39:34.364 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2422 ms
+2026-04-25 16:39:34.365 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2628 ms
+2026-04-25 16:39:34.365 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.5991 ms
+2026-04-25 16:39:35.479 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 10.1371 ms
+2026-04-25 16:39:35.613 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2302 ms
+2026-04-25 16:39:35.635 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1185.2506 ms
+2026-04-25 16:39:37.590 +07:00 [INF] HTTP GET /san-pham responded 200 in 10.1416 ms
+2026-04-25 16:39:37.774 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2840 ms
+2026-04-25 16:39:37.812 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2148.4636 ms
+2026-04-25 16:39:38.701 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0073 ms
+2026-04-25 16:39:38.702 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4205 ms
+2026-04-25 16:39:38.702 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6210 ms
+2026-04-25 16:39:38.702 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1770 ms
+2026-04-25 16:39:38.707 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8061 ms
+2026-04-25 16:39:38.750 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 921.1003 ms
+2026-04-25 16:40:09.871 +07:00 [INF] HTTP GET /doi-tac responded 200 in 10.2551 ms
+2026-04-25 16:40:10.108 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 31281.7676 ms
+2026-04-25 16:40:10.115 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2464 ms
+2026-04-25 16:40:11.296 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 8.1877 ms
+2026-04-25 16:40:11.485 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2265 ms
+2026-04-25 16:40:11.512 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1355.8041 ms
+2026-04-25 16:40:12.114 +07:00 [INF] HTTP GET /san-pham responded 200 in 10.4017 ms
+2026-04-25 16:40:12.291 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2209 ms
+2026-04-25 16:40:12.315 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 790.3968 ms
+2026-04-25 16:40:13.107 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0866 ms
+2026-04-25 16:40:13.107 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.7767 ms
+2026-04-25 16:40:13.107 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9481 ms
+2026-04-25 16:40:13.108 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1500 ms
+2026-04-25 16:40:13.110 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3654 ms
+2026-04-25 16:40:13.160 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 830.4327 ms
+2026-04-25 16:42:33.683 +07:00 [INF] HTTP GET / responded 200 in 58.4906 ms
+2026-04-25 16:42:33.693 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 140521.3791 ms
+2026-04-25 16:42:33.885 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.0823 ms
+2026-04-25 16:42:33.885 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.8633 ms
+2026-04-25 16:42:33.886 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.8998 ms
+2026-04-25 16:42:33.887 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.1754 ms
+2026-04-25 16:42:33.887 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3314 ms
+2026-04-25 16:42:36.425 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.2740 ms
+2026-04-25 16:42:36.446 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2458.7709 ms
+2026-04-25 16:42:36.601 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.0199 ms
+2026-04-25 16:42:36.601 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9481 ms
+2026-04-25 16:42:36.601 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7687 ms
+2026-04-25 16:42:36.601 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9255 ms
+2026-04-25 16:42:36.604 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3449 ms
+2026-04-25 16:42:37.426 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.2212 ms
+2026-04-25 16:42:37.443 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 753.5077 ms
+2026-04-25 16:42:37.608 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9075 ms
+2026-04-25 16:42:37.608 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.9380 ms
+2026-04-25 16:42:37.609 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8642 ms
+2026-04-25 16:42:37.609 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7700 ms
+2026-04-25 16:42:37.612 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4074 ms
+2026-04-25 16:42:38.071 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.4529 ms
+2026-04-25 16:42:38.100 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 382.0845 ms
+2026-04-25 16:42:38.311 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.7440 ms
+2026-04-25 16:42:38.311 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.5521 ms
+2026-04-25 16:42:38.311 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.7061 ms
+2026-04-25 16:42:38.312 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8887 ms
+2026-04-25 16:42:38.314 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6652 ms
+2026-04-25 16:42:38.990 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.2320 ms
+2026-04-25 16:42:39.006 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 618.9978 ms
+2026-04-25 16:42:39.167 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.8744 ms
+2026-04-25 16:42:39.167 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9241 ms
+2026-04-25 16:42:39.168 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0594 ms
+2026-04-25 16:42:39.168 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9921 ms
+2026-04-25 16:42:39.175 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3299 ms
+2026-04-25 16:42:39.746 +07:00 [INF] HTTP GET /san-pham responded 200 in 9.9374 ms
+2026-04-25 16:42:39.871 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1776 ms
+2026-04-25 16:42:39.898 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 631.6190 ms
+2026-04-25 16:42:40.780 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.2312 ms
+2026-04-25 16:42:40.796 +07:00 [INF] HTTP GET /san-pham responded 200 in 8.8705 ms
+2026-04-25 16:42:40.811 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 885.6774 ms
+2026-04-25 16:42:40.983 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2252 ms
+2026-04-25 16:42:46.318 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.2201 ms
+2026-04-25 16:42:46.336 +07:00 [INF] HTTP GET /san-pham responded 200 in 12.7057 ms
+2026-04-25 16:42:46.349 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5330.2352 ms
+2026-04-25 16:42:46.537 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2354 ms
+2026-04-25 16:42:48.000 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1701 ms
+2026-04-25 16:42:48.029 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.9630 ms
+2026-04-25 16:42:48.030 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0590 ms
+2026-04-25 16:42:48.030 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2003 ms
+2026-04-25 16:42:48.030 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1453.6552 ms
+2026-04-25 16:42:48.031 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.7596 ms
+2026-04-25 16:42:49.803 +07:00 [INF] HTTP GET / responded 200 in 10.8426 ms
+2026-04-25 16:42:49.809 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1707.8169 ms
+2026-04-25 16:42:49.930 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3319 ms
+2026-04-25 16:42:49.958 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.8385 ms
+2026-04-25 16:42:49.958 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.8107 ms
+2026-04-25 16:42:49.958 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.7623 ms
+2026-04-25 16:42:49.959 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1401 ms
+2026-04-25 16:42:50.877 +07:00 [INF] HTTP GET / responded 200 in 25.6624 ms
+2026-04-25 16:42:50.883 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 879.3576 ms
+2026-04-25 16:42:51.020 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1721 ms
+2026-04-25 16:42:51.054 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.8044 ms
+2026-04-25 16:42:51.054 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.7407 ms
+2026-04-25 16:42:51.054 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.7288 ms
+2026-04-25 16:42:51.054 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8987 ms
+2026-04-25 16:42:57.224 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6106.1416 ms
+2026-04-25 16:42:57.228 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1555 ms
+2026-04-25 16:43:07.767 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 16:43:07.808 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 16:43:08.157 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 16:43:08.187 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 16:43:08.191 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 16:43:08.192 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 16:43:08.235 +07:00 [INF] ✅ Admin check completed
+2026-04-25 16:43:08.236 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 16:43:08.237 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 16:43:08.289 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 16:43:08.290 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 16:43:08.299 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 16:43:08.300 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 16:43:08.315 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 16:43:08.317 +07:00 [INF] ✅ Test data check completed
+2026-04-25 16:43:08.318 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 16:43:12.713 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 50.4496 ms
+2026-04-25 16:43:50.221 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 16:43:50.921 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 38203.1138 ms
+2026-04-25 16:43:51.116 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.1258 ms
+2026-04-25 16:43:51.203 +07:00 [INF] HTTP GET / responded 200 in 1033.9698 ms
+2026-04-25 16:43:51.237 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 126.2435 ms
+2026-04-25 16:43:51.238 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 129.0663 ms
+2026-04-25 16:43:51.238 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 125.5673 ms
+2026-04-25 16:43:51.238 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 125.4122 ms
+2026-04-25 16:43:53.036 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 9.4757 ms
+2026-04-25 16:43:53.051 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1886.3820 ms
+2026-04-25 16:43:53.228 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4336 ms
+2026-04-25 16:43:53.234 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 6.9601 ms
+2026-04-25 16:43:53.234 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 7.9076 ms
+2026-04-25 16:43:53.234 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 6.9623 ms
+2026-04-25 16:43:53.235 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 7.1864 ms
+2026-04-25 16:43:53.979 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 1.1108 ms
+2026-04-25 16:43:53.998 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 687.9321 ms
+2026-04-25 16:43:54.171 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.6080 ms
+2026-04-25 16:43:54.171 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.6535 ms
+2026-04-25 16:43:54.171 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6758 ms
+2026-04-25 16:43:54.171 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4197 ms
+2026-04-25 16:43:54.179 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7808 ms
+2026-04-25 16:43:54.706 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.8208 ms
+2026-04-25 16:43:54.722 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 436.3719 ms
+2026-04-25 16:43:54.870 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3300 ms
+2026-04-25 16:43:54.870 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.6167 ms
+2026-04-25 16:43:54.870 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.2719 ms
+2026-04-25 16:43:54.870 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.2714 ms
+2026-04-25 16:43:54.870 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.5981 ms
+2026-04-25 16:43:55.264 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5414 ms
+2026-04-25 16:43:55.282 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 330.9476 ms
+2026-04-25 16:43:55.439 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.4390 ms
+2026-04-25 16:43:55.439 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.5053 ms
+2026-04-25 16:43:55.439 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.5877 ms
+2026-04-25 16:43:55.439 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.6786 ms
+2026-04-25 16:43:55.440 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6030 ms
+2026-04-25 16:43:55.830 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5223 ms
+2026-04-25 16:43:55.847 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 329.6858 ms
+2026-04-25 16:43:55.996 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.4228 ms
+2026-04-25 16:43:55.996 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4184 ms
+2026-04-25 16:43:55.996 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4521 ms
+2026-04-25 16:43:55.996 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6632 ms
+2026-04-25 16:43:55.998 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4192 ms
+2026-04-25 16:43:56.178 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.4099 ms
+2026-04-25 16:43:56.196 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 109.2024 ms
+2026-04-25 16:43:56.366 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2714 ms
+2026-04-25 16:43:56.367 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3058 ms
+2026-04-25 16:43:56.367 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4809 ms
+2026-04-25 16:43:56.369 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.9954 ms
+2026-04-25 16:43:56.375 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3895 ms
+2026-04-25 16:43:56.928 +07:00 [INF] HTTP GET /san-pham responded 200 in 107.1801 ms
+2026-04-25 16:43:57.183 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5031 ms
+2026-04-25 16:43:57.215 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 738.9668 ms
+2026-04-25 16:43:58.606 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3982 ms
+2026-04-25 16:43:58.606 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4906 ms
+2026-04-25 16:43:58.606 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2860 ms
+2026-04-25 16:43:58.606 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.5229 ms
+2026-04-25 16:43:58.608 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8059 ms
+2026-04-25 16:43:58.643 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1388.7626 ms
+2026-04-25 16:43:59.271 +07:00 [INF] HTTP GET /san-pham responded 200 in 14.8954 ms
+2026-04-25 16:43:59.440 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3329 ms
+2026-04-25 16:43:59.472 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 776.3028 ms
+2026-04-25 16:44:00.990 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.7328 ms
+2026-04-25 16:44:00.990 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0426 ms
+2026-04-25 16:44:00.990 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.7598 ms
+2026-04-25 16:44:00.990 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0486 ms
+2026-04-25 16:44:00.991 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4204 ms
+2026-04-25 16:44:01.031 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1542.0150 ms
+2026-04-25 16:44:22.396 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 21308.6940 ms
+2026-04-25 16:44:22.583 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.1647 ms
+2026-04-25 16:44:22.584 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.1535 ms
+2026-04-25 16:44:22.584 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.3664 ms
+2026-04-25 16:44:22.584 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.5433 ms
+2026-04-25 16:44:22.585 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3317 ms
+2026-04-25 16:44:24.156 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 95.9503 ms
+2026-04-25 16:44:24.278 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2814 ms
+2026-04-25 16:44:24.304 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1621.7372 ms
+2026-04-25 16:44:25.801 +07:00 [INF] HTTP GET /san-pham responded 200 in 12.4086 ms
+2026-04-25 16:44:25.969 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4108 ms
+2026-04-25 16:44:26.009 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1672.9717 ms
+2026-04-25 16:44:26.621 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 10.2368 ms
+2026-04-25 16:44:26.732 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2199 ms
+2026-04-25 16:44:26.753 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 721.5721 ms
+2026-04-25 16:44:27.382 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.3576 ms
+2026-04-25 16:44:27.405 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 14.8513 ms
+2026-04-25 16:44:27.420 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 648.6168 ms
+2026-04-25 16:44:27.542 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2800 ms
+2026-04-25 16:44:28.915 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2496 ms
+2026-04-25 16:44:28.948 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9493 ms
+2026-04-25 16:44:28.948 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3228 ms
+2026-04-25 16:44:28.948 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0602 ms
+2026-04-25 16:44:28.949 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4352 ms
+2026-04-25 16:44:28.951 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1366.5795 ms
+2026-04-25 16:44:29.931 +07:00 [INF] HTTP GET /san-pham responded 200 in 10.7110 ms
+2026-04-25 16:44:30.095 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2866 ms
+2026-04-25 16:44:30.133 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1111.2242 ms
+2026-04-25 16:44:30.575 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 8.8525 ms
+2026-04-25 16:44:30.749 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2190 ms
+2026-04-25 16:44:30.777 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 620.2496 ms
+2026-04-25 16:44:31.918 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 9.3557 ms
+2026-04-25 16:44:31.925 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1135.0166 ms
+2026-04-25 16:44:32.105 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3031 ms
+2026-04-25 16:44:33.521 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0449 ms
+2026-04-25 16:44:33.521 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2949 ms
+2026-04-25 16:44:33.522 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.5205 ms
+2026-04-25 16:44:33.523 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.6170 ms
+2026-04-25 16:44:33.523 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3870 ms
+2026-04-25 16:44:33.561 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1417.9952 ms
+2026-04-25 16:44:49.666 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.7348 ms
+2026-04-25 16:45:03.637 +07:00 [INF] HTTP GET / responded 200 in 16.4010 ms
+2026-04-25 16:45:03.652 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 30037.5076 ms
+2026-04-25 16:45:03.699 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.9085 ms
+2026-04-25 16:45:03.968 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.8920 ms
+2026-04-25 16:45:03.970 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.0765 ms
+2026-04-25 16:45:03.970 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0887 ms
+2026-04-25 16:45:03.973 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.4159 ms
+2026-04-25 16:45:03.977 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4194 ms
+2026-04-25 16:46:24.597 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 80440.4512 ms
+2026-04-25 16:46:24.599 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3276 ms
+2026-04-25 16:47:12.633 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 16:47:12.701 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 16:47:13.154 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 16:47:13.168 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 16:47:13.173 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 16:47:13.174 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 16:47:13.216 +07:00 [INF] ✅ Admin check completed
+2026-04-25 16:47:13.217 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 16:47:13.218 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 16:47:13.275 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 16:47:13.276 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 16:47:13.285 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 16:47:13.286 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 16:47:13.303 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 16:47:13.305 +07:00 [INF] ✅ Test data check completed
+2026-04-25 16:47:13.306 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 16:47:25.767 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 84.7357 ms
+2026-04-25 16:48:19.160 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 16:48:20.073 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 54299.5942 ms
+2026-04-25 16:48:20.258 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 142.6406 ms
+2026-04-25 16:48:20.455 +07:00 [INF] HTTP GET / responded 200 in 1350.5132 ms
+2026-04-25 16:48:20.458 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.2779 ms
+2026-04-25 16:48:20.462 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 9.5434 ms
+2026-04-25 16:48:20.462 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 9.9308 ms
+2026-04-25 16:48:20.462 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 9.3950 ms
+2026-04-25 16:48:20.467 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 18.1380 ms
+2026-04-25 16:48:25.237 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 13.3208 ms
+2026-04-25 16:48:25.276 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4683.9575 ms
+2026-04-25 16:48:25.310 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.2768 ms
+2026-04-25 16:48:25.576 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.6415 ms
+2026-04-25 16:48:25.576 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.8730 ms
+2026-04-25 16:48:25.577 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.0312 ms
+2026-04-25 16:48:25.579 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 4.4805 ms
+2026-04-25 16:48:25.583 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.9005 ms
+2026-04-25 16:48:42.990 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 8.7214 ms
+2026-04-25 16:48:43.206 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 17477.8052 ms
+2026-04-25 16:48:43.444 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 12.1036 ms
+2026-04-25 16:48:43.993 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.0002 ms
+2026-04-25 16:48:43.994 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.3809 ms
+2026-04-25 16:48:43.994 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.8566 ms
+2026-04-25 16:48:43.994 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.7963 ms
+2026-04-25 16:48:44.001 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 2.4842 ms
+2026-04-25 16:48:49.641 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.6443 ms
+2026-04-25 16:48:49.671 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5545.9621 ms
+2026-04-25 16:48:49.705 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.9869 ms
+2026-04-25 16:48:49.986 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.7727 ms
+2026-04-25 16:48:49.987 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.3081 ms
+2026-04-25 16:48:49.988 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.6642 ms
+2026-04-25 16:48:49.987 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.8024 ms
+2026-04-25 16:48:49.999 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 2.4238 ms
+2026-04-25 16:51:03.671 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 133464.8276 ms
+2026-04-25 16:51:28.744 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 16:51:28.786 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 16:51:29.146 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 16:51:29.178 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 16:51:29.184 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 16:51:29.185 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 16:51:29.255 +07:00 [INF] ✅ Admin check completed
+2026-04-25 16:51:29.256 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 16:51:29.258 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 16:51:29.312 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 16:51:29.313 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 16:51:29.323 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 16:51:29.324 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 16:51:29.339 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 16:51:29.340 +07:00 [INF] ✅ Test data check completed
+2026-04-25 16:51:29.341 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 16:51:29.734 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 63.3245 ms
+2026-04-25 16:52:36.807 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 16:52:37.655 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 67914.8517 ms
+2026-04-25 16:52:37.785 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 102.3865 ms
+2026-04-25 16:52:38.043 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 2.3228 ms
+2026-04-25 16:52:38.051 +07:00 [INF] HTTP GET / responded 200 in 1290.4397 ms
+2026-04-25 16:52:38.055 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 28.1055 ms
+2026-04-25 16:52:38.056 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 27.4222 ms
+2026-04-25 16:52:38.058 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 30.2969 ms
+2026-04-25 16:52:38.062 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 25.2051 ms
+2026-04-25 16:52:44.280 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 11.5583 ms
+2026-04-25 16:52:44.306 +07:00 [INF] HTTP GET / responded 200 in 20.2903 ms
+2026-04-25 16:52:44.320 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6029.3746 ms
+2026-04-25 16:52:44.527 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.8575 ms
+2026-04-25 16:52:44.527 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.6413 ms
+2026-04-25 16:52:44.527 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.6416 ms
+2026-04-25 16:52:44.527 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.5123 ms
+2026-04-25 16:52:44.530 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.0132 ms
+2026-04-25 16:52:45.312 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 1.1668 ms
+2026-04-25 16:52:45.332 +07:00 [INF] HTTP GET / responded 200 in 14.3329 ms
+2026-04-25 16:52:45.348 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 740.5365 ms
+2026-04-25 16:52:45.523 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.7184 ms
+2026-04-25 16:52:45.523 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.6995 ms
+2026-04-25 16:52:45.523 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.7057 ms
+2026-04-25 16:52:45.524 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5240 ms
+2026-04-25 16:52:45.524 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.2456 ms
+2026-04-25 16:52:46.400 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.5381 ms
+2026-04-25 16:52:46.418 +07:00 [INF] HTTP GET / responded 200 in 11.9777 ms
+2026-04-25 16:52:46.431 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 825.1626 ms
+2026-04-25 16:52:46.600 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3502 ms
+2026-04-25 16:52:46.600 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3992 ms
+2026-04-25 16:52:46.600 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3274 ms
+2026-04-25 16:52:46.601 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.6444 ms
+2026-04-25 16:52:46.601 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.9653 ms
+2026-04-25 16:52:47.169 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.6861 ms
+2026-04-25 16:52:47.186 +07:00 [INF] HTTP GET / responded 200 in 10.0206 ms
+2026-04-25 16:52:47.199 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 516.3792 ms
+2026-04-25 16:52:47.368 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8183 ms
+2026-04-25 16:52:47.368 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.2317 ms
+2026-04-25 16:52:47.368 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2113 ms
+2026-04-25 16:52:47.369 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4089 ms
+2026-04-25 16:52:47.370 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.5502 ms
+2026-04-25 16:52:47.813 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.3256 ms
+2026-04-25 16:52:47.831 +07:00 [INF] HTTP GET / responded 200 in 12.5683 ms
+2026-04-25 16:52:47.844 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 375.4152 ms
+2026-04-25 16:52:48.001 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2306 ms
+2026-04-25 16:52:48.001 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2681 ms
+2026-04-25 16:52:48.001 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2668 ms
+2026-04-25 16:52:48.002 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2948 ms
+2026-04-25 16:52:48.002 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3346 ms
+2026-04-25 16:52:48.842 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 155.8496 ms
+2026-04-25 16:52:49.053 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5249 ms
+2026-04-25 16:52:49.079 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 993.2053 ms
+2026-04-25 16:52:49.766 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.7112 ms
+2026-04-25 16:52:49.782 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 9.0309 ms
+2026-04-25 16:52:49.795 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 698.6639 ms
+2026-04-25 16:52:49.968 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2541 ms
+2026-04-25 16:52:50.574 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.4166 ms
+2026-04-25 16:52:50.593 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 12.0455 ms
+2026-04-25 16:52:50.605 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 606.5878 ms
+2026-04-25 16:52:50.773 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3708 ms
+2026-04-25 16:52:51.659 +07:00 [INF] HTTP GET / responded 200 in 13.0409 ms
+2026-04-25 16:52:51.884 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1329 ms
+2026-04-25 16:52:51.884 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9311 ms
+2026-04-25 16:52:51.884 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.4704 ms
+2026-04-25 16:52:51.886 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.0307 ms
+2026-04-25 16:52:51.898 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3393 ms
+2026-04-25 16:52:51.933 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1123.4905 ms
+2026-04-25 16:52:52.809 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.6491 ms
+2026-04-25 16:52:52.827 +07:00 [INF] HTTP GET / responded 200 in 11.6861 ms
+2026-04-25 16:52:52.840 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 848.8882 ms
+2026-04-25 16:52:53.001 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.4264 ms
+2026-04-25 16:52:53.001 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0756 ms
+2026-04-25 16:52:53.002 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1295 ms
+2026-04-25 16:52:53.002 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1315 ms
+2026-04-25 16:52:53.013 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4283 ms
+2026-04-25 16:52:54.106 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.2511 ms
+2026-04-25 16:52:54.123 +07:00 [INF] HTTP GET / responded 200 in 11.8188 ms
+2026-04-25 16:52:54.136 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1080.2643 ms
+2026-04-25 16:52:54.300 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3849 ms
+2026-04-25 16:52:54.300 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2575 ms
+2026-04-25 16:52:54.301 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0688 ms
+2026-04-25 16:52:54.301 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.4072 ms
+2026-04-25 16:52:54.307 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2931 ms
+2026-04-25 16:52:59.425 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.2472 ms
+2026-04-25 16:52:59.445 +07:00 [INF] HTTP GET / responded 200 in 11.3111 ms
+2026-04-25 16:52:59.458 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5064.9569 ms
+2026-04-25 16:52:59.630 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2023 ms
+2026-04-25 16:52:59.630 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1245 ms
+2026-04-25 16:52:59.633 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2480 ms
+2026-04-25 16:52:59.634 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2446 ms
+2026-04-25 16:52:59.634 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.4921 ms
+2026-04-25 16:53:01.904 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.3633 ms
+2026-04-25 16:53:01.922 +07:00 [INF] HTTP GET / responded 200 in 10.2602 ms
+2026-04-25 16:53:01.935 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2204.8726 ms
+2026-04-25 16:53:02.115 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1265 ms
+2026-04-25 16:53:02.115 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7648 ms
+2026-04-25 16:53:02.119 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5862 ms
+2026-04-25 16:53:02.127 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 12.9246 ms
+2026-04-25 16:53:02.127 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 12.8291 ms
+2026-04-25 16:53:12.716 +07:00 [INF] HTTP GET / responded 200 in 10.7211 ms
+2026-04-25 16:53:12.724 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 10494.2309 ms
+2026-04-25 16:53:12.927 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1429 ms
+2026-04-25 16:53:12.928 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0545 ms
+2026-04-25 16:53:12.928 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3930 ms
+2026-04-25 16:53:12.928 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2604 ms
+2026-04-25 16:53:12.947 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3162 ms
+2026-04-25 16:53:13.906 +07:00 [INF] HTTP GET /danh-muc/hoa-chat-xu-ly responded 200 in 89.3926 ms
+2026-04-25 16:53:14.022 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2151 ms
+2026-04-25 16:53:14.043 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1025.2721 ms
+2026-04-25 16:53:14.640 +07:00 [INF] HTTP GET /san-pham/chlorine-ca-ocl-70-18 responded 200 in 71.0036 ms
+2026-04-25 16:53:14.770 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1669 ms
+2026-04-25 16:53:14.796 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 732.7874 ms
+2026-04-25 17:03:57.434 +07:00 [INF] HTTP GET /admin responded 200 in 244.8578 ms
+2026-04-25 17:03:58.129 +07:00 [INF] HTTP GET /admin/categories responded 200 in 30.6505 ms
+2026-04-25 17:03:58.160 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 10.1605 ms
+2026-04-25 17:03:58.175 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.7728 ms
+2026-04-25 17:03:58.175 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.8290 ms
+2026-04-25 17:03:58.176 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9786 ms
+2026-04-25 17:03:59.075 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 225.4582 ms
+2026-04-25 17:03:59.940 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 26.0299 ms
+2026-04-25 17:04:02.940 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 91.0982 ms
+2026-04-25 17:04:07.522 +07:00 [INF] HTTP GET /admin/partners responded 200 in 52.9007 ms
+2026-04-25 17:04:08.362 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 4.8925 ms
+2026-04-25 17:04:09.908 +07:00 [INF] HTTP GET /admin/partners responded 200 in 10.5099 ms
+2026-04-25 17:04:15.819 +07:00 [INF] HTTP GET /admin/partners/edit/ef75ed45-4fb5-4c59-ab32-1d23d2083b4f responded 200 in 107.1845 ms
+2026-04-25 17:04:30.459 +07:00 [INF] HTTP GET /admin/products responded 200 in 76.9855 ms
+2026-04-25 17:04:32.396 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 88.9918 ms
+2026-04-25 17:04:37.965 +07:00 [INF] HTTP GET /admin/products responded 200 in 15.5870 ms
+2026-04-25 17:04:58.716 +07:00 [INF] HTTP GET / responded 200 in 14.9442 ms
+2026-04-25 17:04:58.941 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.0886 ms
+2026-04-25 17:04:58.941 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1099 ms
+2026-04-25 17:04:58.944 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.3935 ms
+2026-04-25 17:04:58.944 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0312 ms
+2026-04-25 17:04:58.954 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2964 ms
+2026-04-25 17:04:58.991 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 704171.4545 ms
+2026-04-25 18:07:56.897 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3777851.3610 ms

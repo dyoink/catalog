@@ -50,7 +50,7 @@ public class SearchService : ISearchService
                     Title = p.Name,
                     Url = $"/san-pham/{p.Slug}-{p.ShortId}",
                     Image = p.Image,
-                    Subtitle = p.Price.HasValue ? PriceHelper.FormatPrice(p.Price) : "Liên hệ"
+                    Subtitle = PriceHelper.FormatPrice(p.Price, p.ShowPrice)
                 })
                 .ToListAsync();
             result.Products = products;

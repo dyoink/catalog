@@ -214,19 +214,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.SignalR/1.2.9": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
         "type": "package",
         "compile": {
@@ -1387,19 +1374,6 @@
         "lib/netstandard2.1/MailKit.xml",
         "mailkit.4.16.0.nupkg.sha512",
         "mailkit.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.SignalR/1.2.9": {
-      "sha512": "stJwCxfcXqY982p+4dRzlK1Qv2ISrpJrVRzUWvr9PximZXBMSYFVCtOPy9LI2WsjHH/zEL4jSh3Qn2fYZomyKg==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.signalr/1.2.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.xml",
-        "microsoft.aspnetcore.signalr.1.2.9.nupkg.sha512",
-        "microsoft.aspnetcore.signalr.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
@@ -3108,7 +3082,6 @@
       "HtmlSanitizer >= 9.0.892",
       "Isopoh.Cryptography.Argon2 >= 2.0.0",
       "MailKit >= 4.16.0",
-      "Microsoft.AspNetCore.SignalR >= 1.2.9",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.*",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.*",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.*",
@@ -3180,10 +3153,6 @@
           "MailKit": {
             "target": "Package",
             "version": "[4.16.0, )"
-          },
-          "Microsoft.AspNetCore.SignalR": {
-            "target": "Package",
-            "version": "[1.2.9, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -3642,17 +3611,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "libraryId": "Microsoft.AspNetCore.SignalR",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }

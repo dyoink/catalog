@@ -130,6 +130,7 @@ public class ProductsController : Controller
             existing.Sku = product.Sku;
             existing.CategoryId = product.CategoryId;
             existing.Price = product.Price;
+            existing.ShowPrice = product.ShowPrice;
             existing.Description = product.Description;
             existing.VideoUrl = product.VideoUrl;
             existing.Status = product.Status;

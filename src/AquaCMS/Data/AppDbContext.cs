@@ -50,9 +50,10 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Email).HasColumnName("email").HasMaxLength(255).IsRequired();
             entity.Property(e => e.PasswordHash).HasColumnName("password_hash").HasMaxLength(255).IsRequired();
             entity.Property(e => e.Role).HasColumnName("role")
-                  .HasConversion<string>() // Lưu dạng TEXT
+                  .HasConversion<string>()
                   .IsRequired();
             entity.Property(e => e.Avatar).HasColumnName("avatar").HasMaxLength(500);
+
             entity.Property(e => e.IsActive).HasColumnName("is_active").HasDefaultValue(true);
             entity.Property(e => e.LastLoginAt).HasColumnName("last_login_at");
             entity.Property(e => e.CreatedAt).HasColumnName("created_at").HasDefaultValueSql("NOW()");
@@ -92,11 +93,16 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Sku).HasColumnName("sku").HasMaxLength(100);
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
             entity.Property(e => e.Price).HasColumnName("price").HasColumnType("decimal(18,0)");
+            entity.Property(e => e.ShowPrice).HasColumnName("show_price").HasDefaultValue(true);
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Image).HasColumnName("image").HasMaxLength(500);
             entity.Property(e => e.VideoUrl).HasColumnName("video_url").HasMaxLength(500);
             entity.Property(e => e.Status).HasColumnName("status")
-                  .HasConversion<string>() // Lưu dạng TEXT
+                  .HasConversion(
+                      v => v == ProductStatus.Available ? "available" :
+                           v == ProductStatus.OutOfStock ? "out_of_stock" : "hidden",
+                      v => v == "available" ? ProductStatus.Available :
+                           v == "out_of_stock" ? ProductStatus.OutOfStock : ProductStatus.Hidden)
                   .IsRequired();
             // JSONB — EF Core tự serialize/deserialize JsonDocument
             entity.Property(e => e.ContentBlocks).HasColumnName("content_blocks")

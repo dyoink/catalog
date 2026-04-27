@@ -1,0 +1,292 @@
+2026-04-27 13:00:23.154 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 13:00:23.188 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 13:00:23.562 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 13:00:23.592 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 13:00:23.599 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 13:00:23.601 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 13:00:23.643 +07:00 [INF] ✅ Admin check completed
+2026-04-27 13:00:23.645 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 13:00:23.646 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 13:00:23.701 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 13:00:23.702 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 13:00:23.713 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 13:00:23.714 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 13:00:23.737 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 13:00:23.738 +07:00 [INF] ✅ Test data check completed
+2026-04-27 13:00:23.739 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 13:02:34.694 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 13:02:35.447 +07:00 [INF] HTTP GET /css/site.css responded 304 in 5.6473 ms
+2026-04-27 13:02:35.459 +07:00 [INF] HTTP GET /js/site.js responded 200 in 20.0320 ms
+2026-04-27 13:02:35.662 +07:00 [INF] HTTP GET / responded 200 in 1042.8530 ms
+2026-04-27 13:02:35.936 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 15.1156 ms
+2026-04-27 13:02:36.013 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 101.9757 ms
+2026-04-27 13:02:36.014 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 102.0578 ms
+2026-04-27 13:02:36.014 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 103.3271 ms
+2026-04-27 13:02:36.014 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 104.7850 ms
+2026-04-27 13:02:40.410 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 12.5813 ms
+2026-04-27 13:02:40.447 +07:00 [INF] HTTP GET / responded 200 in 29.8936 ms
+2026-04-27 13:02:40.473 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4452.9614 ms
+2026-04-27 13:02:40.640 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5221 ms
+2026-04-27 13:02:40.641 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 4.8402 ms
+2026-04-27 13:02:40.641 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 3.4974 ms
+2026-04-27 13:02:40.641 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 3.7064 ms
+2026-04-27 13:02:40.642 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 4.0659 ms
+2026-04-27 13:02:41.320 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.7942 ms
+2026-04-27 13:02:41.344 +07:00 [INF] HTTP GET / responded 200 in 17.0440 ms
+2026-04-27 13:02:41.354 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 632.0506 ms
+2026-04-27 13:02:41.494 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2136 ms
+2026-04-27 13:02:41.522 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2243 ms
+2026-04-27 13:02:41.522 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2062 ms
+2026-04-27 13:02:41.522 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2392 ms
+2026-04-27 13:02:41.536 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2127 ms
+2026-04-27 13:02:42.120 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5411 ms
+2026-04-27 13:02:42.144 +07:00 [INF] HTTP GET / responded 200 in 16.0962 ms
+2026-04-27 13:02:42.153 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 581.3848 ms
+2026-04-27 13:02:42.306 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0048 ms
+2026-04-27 13:02:42.306 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.5412 ms
+2026-04-27 13:02:42.306 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.5412 ms
+2026-04-27 13:02:42.306 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9124 ms
+2026-04-27 13:02:42.307 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3437 ms
+2026-04-27 13:02:42.938 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.3767 ms
+2026-04-27 13:02:42.961 +07:00 [INF] HTTP GET / responded 200 in 15.6767 ms
+2026-04-27 13:02:42.976 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 579.9265 ms
+2026-04-27 13:02:43.244 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.4094 ms
+2026-04-27 13:02:43.244 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1057 ms
+2026-04-27 13:02:43.244 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2138 ms
+2026-04-27 13:02:43.244 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0744 ms
+2026-04-27 13:02:43.246 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3466 ms
+2026-04-27 13:24:53.641 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1330279.6529 ms
+2026-04-27 13:24:53.642 +07:00 [INF] HTTP GET / responded 200 in 78.5725 ms
+2026-04-27 13:24:53.843 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.6356 ms
+2026-04-27 13:24:53.843 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 3.3183 ms
+2026-04-27 13:24:53.844 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.5539 ms
+2026-04-27 13:24:53.844 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.6775 ms
+2026-04-27 13:24:53.848 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6385 ms
+2026-04-27 13:24:53.936 +07:00 [INF] HTTP GET /favicon.ico responded 304 in 0.7333 ms
+2026-04-27 13:24:58.881 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4946.0347 ms
+2026-04-27 13:24:58.884 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2915 ms
+2026-04-27 13:25:18.265 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 13:25:18.303 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 13:25:18.635 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 13:25:18.667 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 13:25:18.672 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 13:25:18.673 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 13:25:18.725 +07:00 [INF] ✅ Admin check completed
+2026-04-27 13:25:18.728 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 13:25:18.731 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 13:25:18.793 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 13:25:18.794 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 13:25:18.803 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 13:25:18.804 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 13:25:18.820 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 13:25:18.820 +07:00 [INF] ✅ Test data check completed
+2026-04-27 13:25:18.821 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 13:25:21.722 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 13:25:22.735 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 23.4813 ms
+2026-04-27 13:25:22.782 +07:00 [INF] HTTP GET / responded 200 in 1130.7385 ms
+2026-04-27 13:25:22.857 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 150.8088 ms
+2026-04-27 13:25:22.858 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 152.8262 ms
+2026-04-27 13:25:22.858 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 151.5354 ms
+2026-04-27 13:25:22.858 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 151.6745 ms
+2026-04-27 13:42:32.214 +07:00 [INF] HTTP GET / responded 200 in 86.4047 ms
+2026-04-27 13:42:32.225 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1029468.3856 ms
+2026-04-27 13:42:32.485 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 3.2521 ms
+2026-04-27 13:42:32.485 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.4943 ms
+2026-04-27 13:42:32.485 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 3.1252 ms
+2026-04-27 13:42:32.485 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.7142 ms
+2026-04-27 13:42:32.486 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.9736 ms
+2026-04-27 13:42:55.789 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 23227.8568 ms
+2026-04-27 13:42:55.791 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4601 ms
+2026-04-27 13:43:09.475 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 13:43:09.514 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 13:43:09.840 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 13:43:09.854 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 13:43:09.858 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 13:43:09.859 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 13:43:09.898 +07:00 [INF] ✅ Admin check completed
+2026-04-27 13:43:09.899 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 13:43:09.900 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 13:43:09.959 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 13:43:09.959 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 13:43:09.969 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 13:43:09.970 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 13:43:09.984 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 13:43:09.986 +07:00 [INF] ✅ Test data check completed
+2026-04-27 13:43:09.987 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 13:43:11.070 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 46.1019 ms
+2026-04-27 13:43:17.851 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 13:43:18.511 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 7435.1327 ms
+2026-04-27 13:43:18.700 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7482 ms
+2026-04-27 13:43:18.744 +07:00 [INF] HTTP GET / responded 200 in 958.8597 ms
+2026-04-27 13:43:18.802 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 105.4171 ms
+2026-04-27 13:43:18.802 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 106.7250 ms
+2026-04-27 13:43:18.802 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 104.7612 ms
+2026-04-27 13:43:18.802 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 106.0790 ms
+2026-04-27 13:43:26.433 +07:00 [INF] HTTP GET / responded 200 in 23.4365 ms
+2026-04-27 13:43:26.442 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 7704.3418 ms
+2026-04-27 13:43:26.626 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3349 ms
+2026-04-27 13:43:26.629 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 6.6259 ms
+2026-04-27 13:43:26.630 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 5.7125 ms
+2026-04-27 13:43:26.630 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 5.5115 ms
+2026-04-27 13:43:26.630 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 6.8549 ms
+2026-04-27 13:43:27.217 +07:00 [INF] HTTP GET / responded 200 in 18.3690 ms
+2026-04-27 13:43:27.226 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 519.1095 ms
+2026-04-27 13:43:27.410 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.5717 ms
+2026-04-27 13:43:27.410 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.5313 ms
+2026-04-27 13:43:27.410 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6370 ms
+2026-04-27 13:43:27.410 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9805 ms
+2026-04-27 13:43:27.411 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3145 ms
+2026-04-27 13:43:27.533 +07:00 [INF] HTTP GET / responded 200 in 11.9084 ms
+2026-04-27 13:43:27.540 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 34.4091 ms
+2026-04-27 13:43:27.687 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1899 ms
+2026-04-27 13:43:27.717 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.5464 ms
+2026-04-27 13:43:27.717 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4560 ms
+2026-04-27 13:43:27.717 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.5579 ms
+2026-04-27 13:43:27.717 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.5634 ms
+2026-04-27 13:43:27.842 +07:00 [INF] HTTP GET / responded 200 in 12.0199 ms
+2026-04-27 13:43:27.849 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 80.0429 ms
+2026-04-27 13:43:27.993 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2131 ms
+2026-04-27 13:43:28.026 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2602 ms
+2026-04-27 13:43:28.026 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2725 ms
+2026-04-27 13:43:28.026 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2984 ms
+2026-04-27 13:43:28.026 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2984 ms
+2026-04-27 13:43:28.140 +07:00 [INF] HTTP GET / responded 200 in 10.0415 ms
+2026-04-27 13:43:28.147 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 73.3014 ms
+2026-04-27 13:43:28.303 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3501 ms
+2026-04-27 13:43:28.303 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3550 ms
+2026-04-27 13:43:28.303 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4196 ms
+2026-04-27 13:43:28.303 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3496 ms
+2026-04-27 13:43:28.309 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2907 ms
+2026-04-27 13:43:28.455 +07:00 [INF] HTTP GET / responded 200 in 13.1407 ms
+2026-04-27 13:43:28.461 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 78.0787 ms
+2026-04-27 13:43:28.628 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3251 ms
+2026-04-27 13:43:28.628 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8182 ms
+2026-04-27 13:43:28.628 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3828 ms
+2026-04-27 13:43:28.628 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1842 ms
+2026-04-27 13:43:28.635 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3261 ms
+2026-04-27 13:43:28.766 +07:00 [INF] HTTP GET / responded 200 in 11.4052 ms
+2026-04-27 13:43:28.771 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 62.1301 ms
+2026-04-27 13:43:28.942 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2597 ms
+2026-04-27 13:43:28.942 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1942 ms
+2026-04-27 13:43:28.942 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0087 ms
+2026-04-27 13:43:28.942 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9765 ms
+2026-04-27 13:43:28.943 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2804 ms
+2026-04-27 13:43:29.095 +07:00 [INF] HTTP GET / responded 200 in 10.9996 ms
+2026-04-27 13:43:29.101 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 73.7506 ms
+2026-04-27 13:43:29.295 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.0376 ms
+2026-04-27 13:43:29.295 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.9716 ms
+2026-04-27 13:43:29.296 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.5280 ms
+2026-04-27 13:43:29.297 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 3.1958 ms
+2026-04-27 13:43:29.303 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4293 ms
+2026-04-27 13:43:29.435 +07:00 [INF] HTTP GET / responded 200 in 11.8964 ms
+2026-04-27 13:43:29.442 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 43.7034 ms
+2026-04-27 13:43:29.623 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1811 ms
+2026-04-27 13:43:29.623 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1640 ms
+2026-04-27 13:43:29.623 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3263 ms
+2026-04-27 13:43:29.623 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2555 ms
+2026-04-27 13:43:29.632 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8605 ms
+2026-04-27 13:47:08.634 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 218898.9625 ms
+2026-04-27 13:47:08.637 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2511 ms
+2026-04-27 13:47:22.157 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 13:47:22.193 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 13:47:22.524 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 13:47:22.538 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 13:47:22.544 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 13:47:22.545 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 13:47:22.586 +07:00 [INF] ✅ Admin check completed
+2026-04-27 13:47:22.587 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 13:47:22.588 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 13:47:22.674 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 13:47:22.676 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 13:47:22.688 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 13:47:22.689 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 13:47:22.708 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 13:47:22.709 +07:00 [INF] ✅ Test data check completed
+2026-04-27 13:47:22.710 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 13:47:24.087 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 58.9313 ms
+2026-04-27 13:47:25.197 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 13:47:26.042 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1951.2060 ms
+2026-04-27 13:47:26.242 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8168 ms
+2026-04-27 13:47:26.313 +07:00 [INF] HTTP GET / responded 200 in 1177.0910 ms
+2026-04-27 13:47:26.355 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 117.7859 ms
+2026-04-27 13:47:26.356 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 116.5371 ms
+2026-04-27 13:47:26.356 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 119.1564 ms
+2026-04-27 13:47:26.356 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 118.8591 ms
+2026-04-27 13:48:00.202 +07:00 [INF] HTTP GET /admin responded 302 in 14.4583 ms
+2026-04-27 13:48:00.264 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 56.5650 ms
+2026-04-27 13:48:00.419 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3739 ms
+2026-04-27 13:48:00.439 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 34152.7131 ms
+2026-04-27 13:48:03.689 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-04-27 13:48:03.723 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 1058.4274 ms
+2026-04-27 13:48:03.968 +07:00 [INF] HTTP GET /admin responded 200 in 238.1715 ms
+2026-04-27 13:48:03.973 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3514.4486 ms
+2026-04-27 13:48:04.001 +07:00 [INF] HTTP GET /css/admin.css responded 200 in 6.1981 ms
+2026-04-27 13:48:08.539 +07:00 [INF] HTTP GET /admin/settings responded 200 in 315.4306 ms
+2026-04-27 13:48:23.524 +07:00 [INF] HTTP GET /admin responded 200 in 38.0547 ms
+2026-04-27 13:48:28.647 +07:00 [INF] HTTP GET / responded 200 in 24.1998 ms
+2026-04-27 13:48:28.946 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3880 ms
+2026-04-27 13:48:29.647 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.8618 ms
+2026-04-27 13:48:29.647 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.6268 ms
+2026-04-27 13:48:29.647 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.7324 ms
+2026-04-27 13:48:29.648 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.7641 ms
+2026-04-27 13:51:39.584 +07:00 [INF] Cập nhật SiteSettings
+2026-04-27 13:51:39.653 +07:00 [INF] HTTP POST /admin/settings responded 302 in 136.6482 ms
+2026-04-27 13:51:39.669 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 10.0918 ms
+2026-04-27 13:51:43.256 +07:00 [INF] HTTP GET / responded 200 in 16.2069 ms
+2026-04-27 13:51:43.264 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 194168.7427 ms
+2026-04-27 13:51:43.488 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.2041 ms
+2026-04-27 13:51:43.488 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.4235 ms
+2026-04-27 13:51:43.492 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 2.1236 ms
+2026-04-27 13:51:43.492 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 3.5755 ms
+2026-04-27 13:51:43.492 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6319 ms
+2026-04-27 13:52:22.102 +07:00 [INF] HTTP GET / responded 200 in 16.1415 ms
+2026-04-27 13:52:22.110 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 38510.6144 ms
+2026-04-27 13:52:22.286 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 7.2818 ms
+2026-04-27 13:52:22.286 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 7.5002 ms
+2026-04-27 13:52:22.286 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 7.5791 ms
+2026-04-27 13:52:22.286 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 8.1689 ms
+2026-04-27 13:52:22.288 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7754 ms
+2026-04-27 13:52:22.937 +07:00 [INF] HTTP GET / responded 200 in 44.5453 ms
+2026-04-27 13:52:22.942 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 598.1245 ms
+2026-04-27 13:52:23.125 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3735 ms
+2026-04-27 13:52:23.125 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1928 ms
+2026-04-27 13:52:23.125 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3517 ms
+2026-04-27 13:52:23.126 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.9422 ms
+2026-04-27 13:52:23.126 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4141 ms
+2026-04-27 13:52:33.374 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 10162.7195 ms
+2026-04-27 13:52:33.378 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6288 ms
+2026-04-27 13:52:46.950 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-27 13:52:46.988 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-27 13:52:47.308 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-27 13:52:47.321 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-27 13:52:47.326 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-27 13:52:47.327 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-27 13:52:47.362 +07:00 [INF] ✅ Admin check completed
+2026-04-27 13:52:47.364 +07:00 [INF] ✅ Admin user already exists
+2026-04-27 13:52:47.365 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-27 13:52:47.410 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-27 13:52:47.411 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-27 13:52:47.419 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-27 13:52:47.420 +07:00 [INF] ⏳ Checking for test data...
+2026-04-27 13:52:47.434 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-27 13:52:47.436 +07:00 [INF] ✅ Test data check completed
+2026-04-27 13:52:47.436 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-27 13:52:49.087 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 50.9985 ms
+2026-04-27 13:52:52.541 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-27 13:52:53.307 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4212.1451 ms
+2026-04-27 13:52:53.494 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.3952 ms
+2026-04-27 13:52:53.564 +07:00 [INF] HTTP GET / responded 200 in 1071.3079 ms
+2026-04-27 13:52:53.601 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 113.8964 ms
+2026-04-27 13:52:53.603 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 112.2743 ms
+2026-04-27 13:52:53.603 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 112.3259 ms
+2026-04-27 13:52:53.603 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 112.4420 ms
+2026-04-27 13:53:01.723 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 355.0341 ms
+2026-04-27 13:54:28.136 +07:00 [INF] Cập nhật SiteSettings
+2026-04-27 13:54:28.209 +07:00 [INF] HTTP POST /admin/Settings responded 302 in 149.7709 ms
+2026-04-27 13:54:28.229 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 16.4655 ms
+2026-04-27 13:54:32.887 +07:00 [INF] HTTP GET / responded 200 in 24.1231 ms
+2026-04-27 13:54:32.893 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 99354.7443 ms
+2026-04-27 13:54:33.062 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3470 ms
+2026-04-27 13:54:38.452 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 3.6518 ms
+2026-04-27 13:57:23.031 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 169907.7271 ms
+2026-04-27 13:57:23.036 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4993 ms

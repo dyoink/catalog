@@ -66,10 +66,6 @@
               "target": "Package",
               "version": "[4.16.0, )"
             },
-            "Microsoft.AspNetCore.SignalR": {
-              "target": "Package",
-              "version": "[1.2.9, )"
-            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

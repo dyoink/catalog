@@ -53,24 +53,90 @@ public class SettingsController : Controller
     {
         try
         {
+            var existing = await _settingsService.GetSettingsAsync();
+
+            // Map manually to avoid overwriting or missing fields
+            existing.CompanyName = settings.CompanyName;
+            existing.Phone = settings.Phone;
+            existing.Email = settings.Email;
+            existing.Address = settings.Address;
+            existing.Logo = settings.Logo;
+
+            existing.Facebook = settings.Facebook;
+            existing.ShowFacebook = settings.ShowFacebook;
+            existing.Zalo = settings.Zalo;
+            existing.ShowZalo = settings.ShowZalo;
+            existing.Youtube = settings.Youtube;
+            existing.ShowYoutube = settings.ShowYoutube;
+            existing.Tiktok = settings.Tiktok;
+            existing.ShowTiktok = settings.ShowTiktok;
+            existing.Telegram = settings.Telegram;
+            existing.ShowTelegram = settings.ShowTelegram;
+            existing.ShowHotline = settings.ShowHotline;
+
+            existing.BackgroundColor = settings.BackgroundColor;
+            existing.PrimaryColor = settings.PrimaryColor;
+            existing.FooterText = settings.FooterText;
+            existing.ShowFooter = settings.ShowFooter;
+
+            existing.ShowBanners = settings.ShowBanners;
+            existing.ShowCategories = settings.ShowCategories;
+            existing.ShowFeaturedProducts = settings.ShowFeaturedProducts;
+            existing.ShowLatestPosts = settings.ShowLatestPosts;
+            existing.ShowPartners = settings.ShowPartners;
+            existing.FeaturedProductsCount = settings.FeaturedProductsCount;
+            existing.LatestPostsCount = settings.LatestPostsCount;
+
+            existing.ShowNavProducts = settings.ShowNavProducts;
+            existing.ShowNavKnowledge = settings.ShowNavKnowledge;
+            existing.ShowNavPartners = settings.ShowNavPartners;
+            existing.ShowNavCart = settings.ShowNavCart;
+
+            existing.HeroTitle = settings.HeroTitle;
+            existing.HeroSubtitle = settings.HeroSubtitle;
+            existing.HeroDescription = _sanitizer.Sanitize(settings.HeroDescription);
+            existing.HeroButtonText = settings.HeroButtonText;
+            existing.HeroButtonUrl = settings.HeroButtonUrl;
+
+            existing.AboutTitle = settings.AboutTitle;
+            existing.AboutContent = _sanitizer.Sanitize(settings.AboutContent);
+
+            existing.DefaultMetaTitle = settings.DefaultMetaTitle;
+            existing.DefaultMetaDescription = settings.DefaultMetaDescription;
+            existing.DefaultOgImage = settings.DefaultOgImage;
+            existing.GoogleAnalyticsId = settings.GoogleAnalyticsId;
+            existing.FacebookPixelId = settings.FacebookPixelId;
+
+            existing.FooterAboutText = _sanitizer.Sanitize(settings.FooterAboutText);
+            existing.CopyrightText = settings.CopyrightText;
+
+            // Email / SMTP
+            existing.EmailEnabled = settings.EmailEnabled;
+            existing.SmtpHost = settings.SmtpHost;
+            existing.SmtpPort = settings.SmtpPort;
+            existing.SmtpUseSsl = settings.SmtpUseSsl;
+            existing.SmtpUser = settings.SmtpUser;
+            if (!string.IsNullOrEmpty(settings.SmtpPassword))
+                existing.SmtpPassword = settings.SmtpPassword;
+            existing.SmtpFromEmail = settings.SmtpFromEmail;
+            existing.SmtpFromName = settings.SmtpFromName;
+            existing.NotificationEmail = settings.NotificationEmail;
+
+            // Files
             if (logoFile is { Length: > 0 })
-                settings.Logo = await _upload.UploadImageAsync(logoFile, "settings") ?? settings.Logo;
+                existing.Logo = await _upload.UploadImageAsync(logoFile, "settings") ?? existing.Logo;
 
             if (heroImageFile is { Length: > 0 })
-                settings.HeroBackgroundImage = await _upload.UploadImageAsync(heroImageFile, "settings") ?? settings.HeroBackgroundImage;
+                existing.HeroBackgroundImage = await _upload.UploadImageAsync(heroImageFile, "settings") ?? existing.HeroBackgroundImage;
 
             if (aboutImageFile is { Length: > 0 })
-                settings.AboutImage = await _upload.UploadImageAsync(aboutImageFile, "settings") ?? settings.AboutImage;
+                existing.AboutImage = await _upload.UploadImageAsync(aboutImageFile, "settings") ?? existing.AboutImage;
 
             if (ogImageFile is { Length: > 0 })
-                settings.DefaultOgImage = await _upload.UploadImageAsync(ogImageFile, "settings") ?? settings.DefaultOgImage;
+                existing.DefaultOgImage = await _upload.UploadImageAsync(ogImageFile, "settings") ?? existing.DefaultOgImage;
 
-            settings.HeroDescription = _sanitizer.Sanitize(settings.HeroDescription);
-            settings.AboutContent = _sanitizer.Sanitize(settings.AboutContent);
-            settings.FooterAboutText = _sanitizer.Sanitize(settings.FooterAboutText);
-
-            await _settingsService.UpdateSettingsAsync(settings);
-            await _activity.LogAsync("UPDATE", "SiteSettings", settings.Id.ToString(), "Cập nhật cài đặt site");
+            await _settingsService.UpdateSettingsAsync(existing);
+            await _activity.LogAsync("UPDATE", "SiteSettings", existing.Id.ToString(), "Cập nhật cài đặt site");
             TempData["Success"] = "Đã cập nhật cài đặt!";
         }
         catch (InvalidOperationException ex)

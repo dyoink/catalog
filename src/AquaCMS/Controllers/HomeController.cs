@@ -32,9 +32,7 @@ public class HomeController : Controller
 
     /// <summary>
     /// GET / — Trang chủ.
-    /// Cache 60 giây cho public (SEO crawler nhận content nhanh).
     /// </summary>
-    [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
     public async Task<IActionResult> Index()
     {
         var settings = await _settingsService.GetSettingsAsync();

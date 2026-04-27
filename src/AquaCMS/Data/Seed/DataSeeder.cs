@@ -67,6 +67,49 @@ public static class DataSeeder
             logger.LogInformation("✅ Cấu trúc Database đã sẵn sàng.");
         }
 
+        // ===== Create Implicit Casts for Enums (EF Core String Mapping) =====
+        try
+        {
+            await db.Database.ExecuteSqlRawAsync(@"
+                DO $$
+                BEGIN
+                    IF EXISTS (SELECT 1 FROM pg_type WHERE typname = 'user_role') AND NOT EXISTS (
+                        SELECT 1 FROM pg_cast c
+                        JOIN pg_type s ON c.castsource = s.oid
+                        JOIN pg_type t ON c.casttarget = t.oid
+                        WHERE s.typname = 'text' AND t.typname = 'user_role'
+                    ) THEN
+                        CREATE CAST (text AS user_role) WITH INOUT AS IMPLICIT;
+                    END IF;
+                END $$;");
+            logger.LogInformation("✅ Checked/Created implicit cast for user_role");
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning("⚠️ Could not create cast for user_role: {Message}", ex.Message);
+        }
+
+        try
+        {
+            await db.Database.ExecuteSqlRawAsync(@"
+                DO $$
+                BEGIN
+                    IF EXISTS (SELECT 1 FROM pg_type WHERE typname = 'product_status') AND NOT EXISTS (
+                        SELECT 1 FROM pg_cast c
+                        JOIN pg_type s ON c.castsource = s.oid
+                        JOIN pg_type t ON c.casttarget = t.oid
+                        WHERE s.typname = 'text' AND t.typname = 'product_status'
+                    ) THEN
+                        CREATE CAST (text AS product_status) WITH INOUT AS IMPLICIT;
+                    END IF;
+                END $$;");
+            logger.LogInformation("✅ Checked/Created implicit cast for product_status");
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning("⚠️ Could not create cast for product_status: {Message}", ex.Message);
+        }
+
         // ===== Seed Admin User =====
         logger.LogInformation("⏳ Checking for admin user...");
         var hasAdmin = await db.Users.AnyAsync(u => u.Email == "admin@aquacms.com");
@@ -168,13 +211,17 @@ public static class DataSeeder
 
     private static async Task SeedTestDataAsync(AppDbContext db, ILogger logger)
     {
-        // Test data seeding disabled to improve startup performance
-        // To enable, remove the return statement below and rebuild
-        logger.LogInformation("⏭️  Test data seeding skipped (disabled for performance)");
-        return;
+        // Kiểm tra xem đã có dữ liệu sản phẩm chưa (SQL Schema chỉ seed Categories, chưa seed Products)
+        if (await db.Products.AnyAsync())
+        {
+            logger.LogInformation("⏭️ Test data already exists, skipping seeding.");
+            return;
+        }
+
+        logger.LogInformation("⏭️  Test data seeding started...");
 
         // ===== Categories =====
-        var categories = new[]
+        var categoriesData = new[]
         {
             new Category { Name = "Máy cho tôm ăn", Slug = "may-cho-tom-an", Image = "https://placehold.co/400x300/55B3D9/FFF?text=M%C3%A1y+cho+t%C3%B4m+%C4%83n", SortOrder = 1 },
             new Category { Name = "Máy sục khí", Slug = "may-suc-khi", Image = "https://placehold.co/400x300/2196F3/FFF?text=M%C3%A1y+s%E1%BB%A5c+kh%C3%AD", SortOrder = 2 },
@@ -183,31 +230,47 @@ public static class DataSeeder
             new Category { Name = "Phụ kiện ao nuôi", Slug = "phu-kien-ao-nuoi", Image = "https://placehold.co/400x300/9C27B0/FFF?text=Ph%E1%BB%A5+ki%E1%BB%87n", SortOrder = 5 },
             new Category { Name = "Hóa chất xử lý", Slug = "hoa-chat-xu-ly", Image = "https://placehold.co/400x300/F44336/FFF?text=H%C3%B3a+ch%E1%BA%A5t", SortOrder = 6 },
         };
-        db.Categories.AddRange(categories);
+
+        foreach (var cat in categoriesData)
+        {
+            if (!await db.Categories.AnyAsync(c => c.Slug == cat.Slug))
+            {
+                db.Categories.Add(cat);
+            }
+        }
         await db.SaveChangesAsync();
+
+        // Get all categories for product reference
+        var categories = await db.Categories.ToListAsync();
+        var catAn = categories.FirstOrDefault(c => c.Slug == "may-cho-tom-an")?.Id ?? categories[0].Id;
+        var catKhi = categories.FirstOrDefault(c => c.Slug == "may-suc-khi")?.Id ?? categories[1].Id;
+        var catDo = categories.FirstOrDefault(c => c.Slug == "thiet-bi-do-luong")?.Id ?? categories[2].Id;
+        var catLoc = categories.FirstOrDefault(c => c.Slug == "he-thong-loc-nuoc")?.Id ?? categories[3].Id;
+        var catPhu = categories.FirstOrDefault(c => c.Slug == "phu-kien-ao-nuoi")?.Id ?? categories[4].Id;
+        var catHoa = categories.FirstOrDefault(c => c.Slug == "hoa-chat-xu-ly")?.Id ?? categories[5].Id;
 
         // ===== Products =====
         var products = new List<Product>();
         var productData = new[]
         {
-            ("Máy cho tôm ăn tự động 360°", categories[0].Id, 12500000m, "Máy cho tôm ăn tự động xoay 360 độ, phân phối đều thức ăn khắp ao nuôi."),
-            ("Máy cho ăn mini 180°", categories[0].Id, 6800000m, "Phiên bản mini cho ao nuôi nhỏ, xoay 180 độ, tiết kiệm điện."),
-            ("Máy cho ăn thông minh IoT", categories[0].Id, 25000000m, "Tích hợp IoT, điều khiển qua app điện thoại, hẹn giờ tự động."),
-            ("Máy sục khí 2HP", categories[1].Id, 8500000m, "Máy sục khí công suất 2HP, tạo oxy cho ao nuôi 1000m²."),
-            ("Máy sục khí 5HP", categories[1].Id, 15000000m, "Máy sục khí công suất lớn 5HP, cho ao nuôi công nghiệp."),
-            ("Máy thổi khí Roots Blower", categories[1].Id, 35000000m, "Roots Blower nhập khẩu, bền bỉ, hiệu suất cao."),
-            ("Bộ đo pH/DO cầm tay", categories[2].Id, 3200000m, "Máy đo pH và oxy hòa tan cầm tay, kết quả nhanh chính xác."),
-            ("Sensor nhiệt độ WiFi", categories[2].Id, 1500000m, "Cảm biến nhiệt độ nước kết nối WiFi, cảnh báo realtime."),
-            ("Bộ test nước 7 chỉ tiêu", categories[2].Id, 890000m, "Bộ kit test nhanh 7 chỉ tiêu: pH, DO, NH3, NO2, kiềm, cứng, Cl."),
-            ("Hệ thống lọc tuần hoàn RAS", categories[3].Id, 85000000m, "Hệ thống lọc tuần hoàn khép kín RAS cho nuôi tôm siêu thâm canh."),
-            ("Bộ lọc drum filter", categories[3].Id, 45000000m, "Lọc thùng quay tự động, loại bỏ cặn lơ lửng hiệu quả."),
-            ("Lọc sinh học moving bed", categories[3].Id, 12000000m, "Hệ thống lọc sinh học giá thể di động, xử lý ammonia."),
-            ("Bạt HDPE lót ao", categories[4].Id, 35000m, "Bạt HDPE 0.5mm lót ao nuôi tôm, chống thấm tuyệt đối. Giá/m²."),
-            ("Ống nước PVC phi 60", categories[4].Id, 45000m, "Ống PVC phi 60mm, chịu áp lực tốt. Giá/mét."),
-            ("Lưới che nắng 70%", categories[4].Id, 28000m, "Lưới che nắng 70%, bảo vệ ao khỏi nhiệt độ cao. Giá/m²."),
-            ("Chlorine Ca(OCl)₂ 70%", categories[5].Id, 280000m, "Chlorine dạng bột, hàm lượng 70%, khử trùng ao nuôi. Giá/kg."),
-            ("Vi sinh xử lý đáy ao", categories[5].Id, 350000m, "Vi sinh Bacillus đậm đặc, xử lý đáy ao, giảm khí độc. Giá/lít."),
-            ("Khoáng tổng hợp cho tôm", categories[5].Id, 180000m, "Khoáng đa vi lượng bổ sung cho tôm, tăng cứng vỏ. Giá/kg."),
+            ("Máy cho tôm ăn tự động 360°", catAn, 12500000m, "Máy cho tôm ăn tự động xoay 360 độ, phân phối đều thức ăn khắp ao nuôi."),
+            ("Máy cho ăn mini 180°", catAn, 6800000m, "Phiên bản mini cho ao nuôi nhỏ, xoay 180 độ, tiết kiệm điện."),
+            ("Máy cho ăn thông minh IoT", catAn, 25000000m, "Tích hợp IoT, điều khiển qua app điện thoại, hẹn giờ tự động."),
+            ("Máy sục khí 2HP", catKhi, 8500000m, "Máy sục khí công suất 2HP, tạo oxy cho ao nuôi 1000m²."),
+            ("Máy sục khí 5HP", catKhi, 15000000m, "Máy sục khí công suất lớn 5HP, cho ao nuôi công nghiệp."),
+            ("Máy thổi khí Roots Blower", catKhi, 35000000m, "Roots Blower nhập khẩu, bền bỉ, hiệu suất cao."),
+            ("Bộ đo pH/DO cầm tay", catDo, 3200000m, "Máy đo pH và oxy hòa tan cầm tay, kết quả nhanh chính xác."),
+            ("Sensor nhiệt độ WiFi", catDo, 1500000m, "Cảm biến nhiệt độ nước kết nối WiFi, cảnh báo realtime."),
+            ("Bộ test nước 7 chỉ tiêu", catDo, 890000m, "Bộ kit test nhanh 7 chỉ tiêu: pH, DO, NH3, NO2, kiềm, cứng, Cl."),
+            ("Hệ thống lọc tuần hoàn RAS", catLoc, 85000000m, "Hệ thống lọc tuần hoàn khép kín RAS cho nuôi tôm siêu thâm canh."),
+            ("Bộ lọc drum filter", catLoc, 45000000m, "Lọc thùng quay tự động, loại bỏ cặn lơ lửng hiệu quả."),
+            ("Lọc sinh học moving bed", catLoc, 12000000m, "Hệ thống lọc sinh học giá thể di động, xử lý ammonia."),
+            ("Bạt HDPE lót ao", catPhu, 35000m, "Bạt HDPE 0.5mm lót ao nuôi tôm, chống thấm tuyệt đối. Giá/m²."),
+            ("Ống nước PVC phi 60", catPhu, 45000m, "Ống PVC phi 60mm, chịu áp lực tốt. Giá/mét."),
+            ("Lưới che nắng 70%", catPhu, 28000m, "Lưới che nắng 70%, bảo vệ ao khỏi nhiệt độ cao. Giá/m²."),
+            ("Chlorine Ca(OCl)₂ 70%", catHoa, 280000m, "Chlorine dạng bột, hàm lượng 70%, khử trùng ao nuôi. Giá/kg."),
+            ("Vi sinh xử lý đáy ao", catHoa, 350000m, "Vi sinh Bacillus đậm đặc, xử lý đáy ao, giảm khí độc. Giá/lít."),
+            ("Khoáng tổng hợp cho tôm", catHoa, 180000m, "Khoáng đa vi lượng bổ sung cho tôm, tăng cứng vỏ. Giá/kg."),
         };
 
         foreach (var (name, catId, price, desc) in productData)

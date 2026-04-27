@@ -31,6 +31,7 @@ try
 
     // 1. Database
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    
     builder.Services.AddDbContext<AppDbContext>(options => {
         options.UseNpgsql(connectionString);
         options.ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.CoreEventId.ManyServiceProvidersCreatedWarning));

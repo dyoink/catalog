@@ -53,8 +53,8 @@
 
         @* Giá *@
         <div class="mt-auto pt-3 flex items-center justify-between">
-            <span class="font-bold text-lg @(Model.Price.HasValue ? "text-primary" : "text-gray-500")">
-                @PriceHelper.FormatPrice(Model.Price)
+            <span class="font-bold text-lg @(Model.Price.HasValue && Model.ShowPrice ? "text-primary" : "text-gray-500")">
+                @PriceHelper.FormatPrice(Model.Price, Model.ShowPrice)
             </span>
 
             <a href="@Model.SeoUrl"

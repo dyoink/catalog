@@ -120,8 +120,8 @@ public class ProductController : Controller
 
         var settings = await _settingsService.GetSettingsAsync();
 
-        // Tăng lượt xem (fire-and-forget, không block response)
-        _ = _productService.IncrementViewCountAsync(product.Id);
+        // Tăng lượt xem (phải await để tránh lỗi concurrency DbContext)
+        await _productService.IncrementViewCountAsync(product.Id);
 
         var related = await _productService.GetRelatedProductsAsync(
             product.Id, product.CategoryId, count: 4);

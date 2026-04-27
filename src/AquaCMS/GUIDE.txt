@@ -1,0 +1,38 @@
+HUONG DAN SU DUNG QUAN TRI VIEN AQUACMS
+======================================
+
+1. TRUY CAP
+-----------
+- Link: /dang-nhap
+- Admin: admin@aquacms.com / Admin@123
+
+2. CHUC NANG CHINH
+------------------
+- Dashboard: Xem thong ke luot xem, thiet bi, nguon truy cap.
+- San pham: Quan ly danh muc va chi tiet san pham, gia ca, ton kho.
+- Kien thuc: Viet bai huong dan ky thuat, tin tuc nganh.
+- Doi tac: Danh sach nha phan phoi, dai ly.
+- Banner: Thay doi anh slider o dau trang chu.
+- Chat: Tra loi khach hang truc tuyen qua SignalR.
+- Cai dat: Cau hinh Hotline, Zalo, Facebook, Logo va mau sac trang web.
+
+3. CAU HINH GOI EMAIL (SMTP)
+----------------------------
+- Buoc 1: Bat "Xac minh 2 lop" cho Gmail cua ban.
+- Buoc 2: Tao "Mat khau ung dung" (App Password) 16 ky tu.
+- Buoc 3: Dien vao Admin:
+  + Host: smtp.gmail.com
+  + Port: 587
+  + User: Email cua ban
+  + Password: Ma 16 ky tu vua tao
+- Buoc 4: Nhấn Luu va dung nut "Gui email test" de kiem tra.
+
+4. QUY TAC ANH
+--------------
+- Kich thuoc: Nen dung anh duoi 1000px, dung luong duoi 2MB.
+- Dinh dang: uu tien .jpg, .png hoac .webp.
+
+5. HO TRO
+---------
+- Neu gap loi "building..." dung im: Hay tat cac cua so dang chay app va dotnet run lai.
+- Neu mail khong gui duoc: Kiem tra lai Mat khau ung dung (khong phai mat khau email thong thuong).

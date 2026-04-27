@@ -2775,3 +2775,1126 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: '<>f__AnonymousType1<stri
 2026-04-25 02:19:33.381 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9796 ms
 2026-04-25 02:19:33.388 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7266 ms
 2026-04-25 02:19:33.388 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8157 ms
+2026-04-25 02:21:35.989 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 02:21:36.023 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 02:21:36.346 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 02:21:36.348 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 02:21:36.387 +07:00 [INF] ✅ Admin check completed
+2026-04-25 02:21:36.388 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 02:21:36.390 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 02:21:36.436 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 02:21:36.437 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 02:21:36.446 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 02:21:36.447 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 02:21:36.451 +07:00 [INF] ⏭️  Test data seeding skipped (disabled for performance)
+2026-04-25 02:21:36.453 +07:00 [INF] ✅ Test data check completed
+2026-04-25 02:21:36.454 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 02:21:42.805 +07:00 [INF] HTTP GET /admin/categories responded 200 in 377.2563 ms
+2026-04-25 02:21:42.996 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 02:21:43.230 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 284.4745 ms
+2026-04-25 02:21:43.230 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 415.7970 ms
+2026-04-25 02:21:43.230 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 284.6983 ms
+2026-04-25 02:21:43.230 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 415.9948 ms
+2026-04-25 02:21:52.042 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 335.0855 ms
+2026-04-25 02:21:52.715 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 30.1556 ms
+2026-04-25 02:21:53.952 +07:00 [INF] HTTP GET /admin/activity responded 200 in 132.3016 ms
+2026-04-25 02:21:54.507 +07:00 [INF] HTTP GET /admin/users responded 200 in 53.3582 ms
+2026-04-25 02:21:55.009 +07:00 [INF] HTTP GET /admin/activity responded 200 in 15.6189 ms
+2026-04-25 02:21:55.646 +07:00 [INF] HTTP GET /admin/profile responded 200 in 30.2169 ms
+2026-04-25 02:22:06.932 +07:00 [INF] HTTP GET /admin responded 200 in 213.5743 ms
+2026-04-25 02:22:06.943 +07:00 [INF] HTTP GET /uploads/products/dd99d33ef00c4ced80d91c6cd8728b38.jpg responded 304 in 2.4476 ms
+2026-04-25 02:22:15.165 +07:00 [INF] HTTP GET /admin/users responded 200 in 10.0447 ms
+2026-04-25 02:22:15.741 +07:00 [INF] HTTP GET /admin/activity responded 200 in 20.0754 ms
+2026-04-25 02:26:15.870 +07:00 [INF] HTTP GET /admin responded 200 in 45.8069 ms
+2026-04-25 02:26:16.755 +07:00 [INF] HTTP GET /admin/products responded 200 in 66.7266 ms
+2026-04-25 02:26:19.023 +07:00 [INF] HTTP GET /uploads/banners/dda965bc9c264afa9d5757cafeff1189.jpg responded 304 in 0.3943 ms
+2026-04-25 02:26:19.023 +07:00 [INF] HTTP GET /uploads/banners/3f84d77f13d0420c806579f819399ea0.png responded 304 in 0.1529 ms
+2026-04-25 02:26:19.035 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 2.2445 ms
+2026-04-25 02:26:19.036 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 2.6541 ms
+2026-04-25 02:26:19.036 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 2.7859 ms
+2026-04-25 02:26:19.038 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 3.7478 ms
+2026-04-25 02:26:19.053 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 16.6720 ms
+2026-04-25 02:26:19.091 +07:00 [INF] HTTP GET / responded 200 in 279.7485 ms
+2026-04-25 02:26:28.564 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 7.3103 ms
+2026-04-25 02:26:28.591 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 9515.9911 ms
+2026-04-25 02:26:28.677 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5375 ms
+2026-04-25 02:26:28.677 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.7336 ms
+2026-04-25 02:26:28.677 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.8661 ms
+2026-04-25 02:26:28.677 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.9157 ms
+2026-04-25 02:26:28.677 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.7773 ms
+2026-04-25 02:26:31.570 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 1.2106 ms
+2026-04-25 02:26:31.585 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2854.6111 ms
+2026-04-25 02:26:31.680 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.2442 ms
+2026-04-25 02:26:31.680 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.2449 ms
+2026-04-25 02:26:31.680 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2442 ms
+2026-04-25 02:26:31.680 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.2903 ms
+2026-04-25 02:26:31.680 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3619 ms
+2026-04-25 02:26:32.641 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.6476 ms
+2026-04-25 02:26:32.659 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 923.5255 ms
+2026-04-25 02:26:32.751 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3018 ms
+2026-04-25 02:26:32.751 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2217 ms
+2026-04-25 02:26:32.751 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3197 ms
+2026-04-25 02:26:32.751 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3319 ms
+2026-04-25 02:26:32.751 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3816 ms
+2026-04-25 02:26:33.579 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.4796 ms
+2026-04-25 02:26:33.592 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 792.3519 ms
+2026-04-25 02:26:33.715 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6309 ms
+2026-04-25 02:26:33.715 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1571 ms
+2026-04-25 02:26:33.715 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.7724 ms
+2026-04-25 02:26:33.716 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.8256 ms
+2026-04-25 02:26:33.717 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.1219 ms
+2026-04-25 02:26:34.487 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.5240 ms
+2026-04-25 02:26:34.502 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 693.9444 ms
+2026-04-25 02:26:34.591 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3340 ms
+2026-04-25 02:26:34.591 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3895 ms
+2026-04-25 02:26:34.591 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2834 ms
+2026-04-25 02:26:34.591 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3914 ms
+2026-04-25 02:26:34.591 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3003 ms
+2026-04-25 02:26:35.027 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.4722 ms
+2026-04-25 02:26:35.038 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 389.3288 ms
+2026-04-25 02:26:35.139 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.4444 ms
+2026-04-25 02:26:35.139 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.6534 ms
+2026-04-25 02:26:35.139 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.6535 ms
+2026-04-25 02:26:35.139 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.6535 ms
+2026-04-25 02:26:35.139 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3635 ms
+2026-04-25 02:26:35.345 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.2687 ms
+2026-04-25 02:26:35.356 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 160.6180 ms
+2026-04-25 02:26:35.439 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0419 ms
+2026-04-25 02:26:35.439 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8955 ms
+2026-04-25 02:26:35.439 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9185 ms
+2026-04-25 02:26:35.439 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.0549 ms
+2026-04-25 02:26:35.440 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3037 ms
+2026-04-25 02:26:35.645 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.4804 ms
+2026-04-25 02:26:35.656 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 163.6051 ms
+2026-04-25 02:26:35.761 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4157 ms
+2026-04-25 02:26:35.761 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2451 ms
+2026-04-25 02:26:35.761 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.2220 ms
+2026-04-25 02:26:35.761 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.4326 ms
+2026-04-25 02:26:35.761 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.3548 ms
+2026-04-25 02:26:36.741 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 915.9487 ms
+2026-04-25 02:26:36.757 +07:00 [INF] HTTP GET /gio-hang responded 200 in 45.5897 ms
+2026-04-25 02:26:36.830 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2093 ms
+2026-04-25 02:26:37.819 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.4585 ms
+2026-04-25 02:26:37.828 +07:00 [INF] HTTP GET /gio-hang responded 200 in 0.7749 ms
+2026-04-25 02:26:37.835 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 976.6918 ms
+2026-04-25 02:26:37.921 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3141 ms
+2026-04-25 02:26:39.069 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.4065 ms
+2026-04-25 02:26:39.077 +07:00 [INF] HTTP GET /gio-hang responded 200 in 0.5118 ms
+2026-04-25 02:26:39.085 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1133.4862 ms
+2026-04-25 02:26:39.160 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2060 ms
+2026-04-25 02:26:44.024 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.6817 ms
+2026-04-25 02:26:44.051 +07:00 [INF] HTTP GET /gio-hang responded 200 in 15.2142 ms
+2026-04-25 02:26:44.055 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4864.4579 ms
+2026-04-25 02:26:44.131 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2227 ms
+2026-04-25 02:26:45.253 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.3182 ms
+2026-04-25 02:26:45.261 +07:00 [INF] HTTP GET /gio-hang responded 200 in 0.8931 ms
+2026-04-25 02:26:45.268 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1104.7424 ms
+2026-04-25 02:26:45.341 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2164 ms
+2026-04-25 02:26:46.203 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 831.9107 ms
+2026-04-25 02:26:46.313 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.5769 ms
+2026-04-25 02:26:46.313 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.8052 ms
+2026-04-25 02:26:46.313 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.7664 ms
+2026-04-25 02:26:46.313 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.8779 ms
+2026-04-25 02:26:46.318 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6487 ms
+2026-04-25 02:26:47.809 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.3070 ms
+2026-04-25 02:26:47.823 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1438.1068 ms
+2026-04-25 02:26:47.941 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.6929 ms
+2026-04-25 02:26:47.941 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8034 ms
+2026-04-25 02:26:47.941 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.9714 ms
+2026-04-25 02:26:47.941 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0318 ms
+2026-04-25 02:26:47.945 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2965 ms
+2026-04-25 02:26:49.285 +07:00 [INF] HTTP GET / responded 200 in 26.5073 ms
+2026-04-25 02:26:49.292 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1297.0180 ms
+2026-04-25 02:26:49.378 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.5941 ms
+2026-04-25 02:26:49.378 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.6752 ms
+2026-04-25 02:26:49.378 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.7756 ms
+2026-04-25 02:26:49.378 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.7291 ms
+2026-04-25 02:26:49.378 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3219 ms
+2026-04-25 02:26:49.445 +07:00 [INF] HTTP GET /favicon.ico responded 304 in 0.1699 ms
+2026-04-25 02:26:52.453 +07:00 [INF] HTTP GET /dat-ngon-ngu/vi responded 302 in 0.3380 ms
+2026-04-25 02:26:52.468 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3020.9904 ms
+2026-04-25 02:26:52.574 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.0862 ms
+2026-04-25 02:26:52.574 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1056 ms
+2026-04-25 02:26:52.574 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.0104 ms
+2026-04-25 02:26:52.574 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.6315 ms
+2026-04-25 02:26:52.577 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3676 ms
+2026-04-25 02:26:54.425 +07:00 [INF] HTTP GET / responded 200 in 14.2061 ms
+2026-04-25 02:26:54.432 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1797.4231 ms
+2026-04-25 02:26:54.515 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.7086 ms
+2026-04-25 02:26:54.515 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.7559 ms
+2026-04-25 02:26:54.515 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.6651 ms
+2026-04-25 02:26:54.515 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.5886 ms
+2026-04-25 02:26:54.518 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2438 ms
+2026-04-25 02:26:56.253 +07:00 [INF] HTTP GET /dat-ngon-ngu/en responded 302 in 0.3311 ms
+2026-04-25 02:26:56.274 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1700.1156 ms
+2026-04-25 02:26:56.388 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.8120 ms
+2026-04-25 02:26:56.388 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9212 ms
+2026-04-25 02:26:56.388 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8562 ms
+2026-04-25 02:26:56.388 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.9394 ms
+2026-04-25 02:26:56.390 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2570 ms
+2026-04-25 02:27:00.311 +07:00 [INF] HTTP GET / responded 200 in 14.6291 ms
+2026-04-25 02:27:00.319 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3868.9780 ms
+2026-04-25 02:27:00.402 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.7301 ms
+2026-04-25 02:27:00.402 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 0.8081 ms
+2026-04-25 02:27:00.402 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7077 ms
+2026-04-25 02:27:00.402 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.8370 ms
+2026-04-25 02:27:00.403 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2585 ms
+2026-04-25 11:15:07.685 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 11:15:07.727 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 11:15:08.112 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 11:15:08.114 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 11:15:08.152 +07:00 [INF] ✅ Admin check completed
+2026-04-25 11:15:08.153 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 11:15:08.155 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 11:15:08.216 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 11:15:08.218 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 11:15:08.230 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 11:15:08.231 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 11:15:08.237 +07:00 [INF] ⏭️  Test data seeding skipped (disabled for performance)
+2026-04-25 11:15:08.239 +07:00 [INF] ✅ Test data check completed
+2026-04-25 11:15:08.240 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 11:16:18.542 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 11:16:19.230 +07:00 [INF] HTTP GET /css/site.css responded 200 in 12.0045 ms
+2026-04-25 11:16:19.230 +07:00 [INF] HTTP GET /js/site.js responded 200 in 12.0045 ms
+2026-04-25 11:16:19.440 +07:00 [INF] HTTP GET / responded 200 in 987.0053 ms
+2026-04-25 11:16:19.805 +07:00 [INF] HTTP GET /uploads/banners/dda965bc9c264afa9d5757cafeff1189.jpg responded 200 in 9.0260 ms
+2026-04-25 11:16:19.813 +07:00 [INF] HTTP GET /uploads/banners/3f84d77f13d0420c806579f819399ea0.png responded 200 in 17.3534 ms
+2026-04-25 11:16:19.867 +07:00 [INF] HTTP GET /uploads/products/dd99d33ef00c4ced80d91c6cd8728b38.jpg responded 200 in 12.6055 ms
+2026-04-25 11:16:19.877 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 17.5622 ms
+2026-04-25 11:16:19.969 +07:00 [INF] HTTP GET /favicon.ico responded 200 in 11.2809 ms
+2026-04-25 11:16:19.973 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 120.6085 ms
+2026-04-25 11:16:19.973 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 121.3861 ms
+2026-04-25 11:16:19.973 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 119.3879 ms
+2026-04-25 11:16:19.973 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 121.3562 ms
+2026-04-25 11:16:24.057 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AquaCMS.Data.AppDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-04-25 11:16:24.061 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AquaCMS.Services.ProductService.GetRelatedProductsAsync(Guid productId, Nullable`1 categoryId, Int32 count) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\ProductService.cs:line 98
+   at AquaCMS.Controllers.ProductController.Detail(String slugAndId) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Controllers\ProductController.cs:line 126
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at AquaCMS.Modules.Core.Middleware.PageViewTrackingMiddleware.InvokeAsync(HttpContext ctx) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Modules\Core\Middleware\PageViewTrackingMiddleware.cs:line 43
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-25 11:16:24.094 +07:00 [ERR] HTTP GET /san-pham/may-suc-khi-ao-tom-750w-1 responded 500 in 113.4649 ms
+2026-04-25 11:16:24.153 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4204.0989 ms
+2026-04-25 11:16:42.356 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7458 ms
+2026-04-25 11:16:42.385 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 3.4558 ms
+2026-04-25 11:16:42.385 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 5.5812 ms
+2026-04-25 11:16:42.385 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 3.8425 ms
+2026-04-25 11:16:42.385 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 5.5773 ms
+2026-04-25 11:16:46.635 +07:00 [INF] HTTP GET /admin responded 302 in 6.8256 ms
+2026-04-25 11:16:46.691 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 51.3774 ms
+2026-04-25 11:16:46.794 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6255 ms
+2026-04-25 11:16:46.813 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4382.4518 ms
+2026-04-25 11:33:15.169 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 988341.8503 ms
+2026-04-25 11:36:15.798 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4098 ms
+2026-04-25 11:38:28.305 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2973 ms
+2026-04-25 11:38:28.306 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 132428.5515 ms
+2026-04-25 11:38:58.303 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 29992.0736 ms
+2026-04-25 11:39:28.122 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 11:39:28.157 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 11:39:28.482 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 11:39:28.484 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 11:39:28.521 +07:00 [INF] ✅ Admin check completed
+2026-04-25 11:39:28.522 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 11:39:28.523 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 11:39:28.573 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 11:39:28.574 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 11:39:28.583 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 11:39:28.585 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 11:39:28.603 +07:00 [INF] ⏭️  Test data seeding started...
+2026-04-25 11:39:28.826 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "categories_slug_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.Consume(RelationalDataReader reader, Boolean async, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "categories_slug_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: categories
+    ConstraintName: categories_slug_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.Consume(RelationalDataReader reader, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "categories_slug_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.Consume(RelationalDataReader reader, Boolean async, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "categories_slug_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: categories
+    ConstraintName: categories_slug_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.Consume(RelationalDataReader reader, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 11:39:28.848 +07:00 [WRN] ⚠️ Failed to seed test data: An error occurred while saving the entity changes. See the inner exception for details.
+2026-04-25 11:39:28.849 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 11:39:42.740 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 11:39:43.403 +07:00 [INF] HTTP GET / responded 200 in 732.8052 ms
+2026-04-25 11:39:43.534 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 10.3890 ms
+2026-04-25 11:39:55.984 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5239 ms
+2026-04-25 11:40:44.884 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5982 ms
+2026-04-25 11:40:44.886 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3672 ms
+2026-04-25 11:40:44.899 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 61255.2951 ms
+2026-04-25 11:40:44.899 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 48910.7299 ms
+2026-04-25 11:40:50.717 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5825.7083 ms
+2026-04-25 11:41:01.360 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 11:41:01.394 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 11:41:01.716 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 11:41:01.718 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 11:41:01.754 +07:00 [INF] ✅ Admin check completed
+2026-04-25 11:41:01.755 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 11:41:01.756 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 11:41:01.802 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 11:41:01.803 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 11:41:01.811 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 11:41:01.812 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 11:41:01.823 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 11:41:01.824 +07:00 [INF] ✅ Test data check completed
+2026-04-25 11:41:01.825 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 11:41:11.100 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 42.2595 ms
+2026-04-25 11:41:14.765 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2026-04-25 11:41:15.642 +07:00 [INF] HTTP GET / responded 200 in 923.0028 ms
+2026-04-25 11:41:15.723 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 30.2146 ms
+2026-04-25 11:41:15.821 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 131.1499 ms
+2026-04-25 11:41:15.822 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 134.1086 ms
+2026-04-25 11:41:15.822 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 132.1192 ms
+2026-04-25 11:41:15.822 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 132.0559 ms
+2026-04-25 11:43:19.799 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-04-25 11:43:19.849 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 1295.0292 ms
+2026-04-25 11:43:20.085 +07:00 [INF] HTTP GET /admin responded 200 in 229.7620 ms
+2026-04-25 11:43:20.099 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 128995.1732 ms
+2026-04-25 11:43:20.118 +07:00 [INF] HTTP GET /css/admin.css responded 200 in 4.7529 ms
+2026-04-25 11:43:28.825 +07:00 [INF] HTTP GET /admin/products responded 200 in 86.9801 ms
+2026-04-25 11:43:30.232 +07:00 [INF] HTTP GET /admin/categories responded 200 in 23.5856 ms
+2026-04-25 11:43:30.255 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 4.0762 ms
+2026-04-25 11:43:30.255 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 4.0331 ms
+2026-04-25 11:43:30.263 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.9406 ms
+2026-04-25 11:43:30.263 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9621 ms
+2026-04-25 11:43:46.111 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 64.6514 ms
+2026-04-25 11:43:47.791 +07:00 [INF] HTTP GET /admin/categories responded 200 in 6.0805 ms
+2026-04-25 11:43:47.814 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1117 ms
+2026-04-25 11:43:47.814 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.4625 ms
+2026-04-25 11:43:47.824 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 3.5646 ms
+2026-04-25 11:43:47.824 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 3.7361 ms
+2026-04-25 11:43:50.856 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 1098.8537 ms
+2026-04-25 11:43:51.864 +07:00 [INF] HTTP GET /admin/products responded 200 in 9.8635 ms
+2026-04-25 11:43:54.737 +07:00 [INF] Đã xóa file: /uploads/products/dd99d33ef00c4ced80d91c6cd8728b38.jpg
+2026-04-25 11:43:54.798 +07:00 [INF] Xóa sản phẩm: máy sục khí ao tôm 750W (ID: "6ce01e8a-5408-4155-a8d8-555e792917b0")
+2026-04-25 11:43:54.874 +07:00 [INF] HTTP POST /admin/products/delete/6ce01e8a-5408-4155-a8d8-555e792917b0 responded 302 in 167.4442 ms
+2026-04-25 11:43:54.887 +07:00 [INF] HTTP GET /admin/Products responded 200 in 8.8435 ms
+2026-04-25 11:44:23.762 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.9051 ms
+2026-04-25 11:44:23.786 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.3167 ms
+2026-04-25 11:44:23.787 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.3019 ms
+2026-04-25 11:44:23.792 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 1.1267 ms
+2026-04-25 11:44:23.793 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.1357 ms
+2026-04-25 11:44:32.348 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 46.6446 ms
+2026-04-25 11:44:38.325 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.4231 ms
+2026-04-25 11:44:38.354 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1113 ms
+2026-04-25 11:44:38.355 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.9320 ms
+2026-04-25 11:44:38.365 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9824 ms
+2026-04-25 11:44:38.366 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.0521 ms
+2026-04-25 11:44:58.259 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 6.2129 ms
+2026-04-25 11:44:59.572 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 78.5712 ms
+2026-04-25 11:45:18.069 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 242298.7621 ms
+2026-04-25 11:45:18.070 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3505 ms
+2026-04-25 11:46:26.411 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 11:46:26.449 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 11:46:26.801 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 11:46:26.803 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 11:46:26.841 +07:00 [INF] ✅ Admin check completed
+2026-04-25 11:46:26.842 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 11:46:27.812 +07:00 [ERR] Failed executing DbCommand (19ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (avatar, created_at, email, last_login_at, name, password_hash, role, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-25 11:46:27.838 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type text
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type text
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type text
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type text
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 11:46:27.854 +07:00 [FTL] Terminated
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type text
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type text
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Data.Seed.DataSeeder.SeedAsync(IServiceProvider services) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Data\Seed\DataSeeder.cs:line 85
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 88
+2026-04-25 11:50:05.857 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 11:50:05.900 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 11:50:06.322 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 11:50:06.323 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 11:50:06.373 +07:00 [INF] ✅ Admin check completed
+2026-04-25 11:50:06.374 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 11:50:07.594 +07:00 [ERR] Failed executing DbCommand (27ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (avatar, created_at, email, last_login_at, name, password_hash, role, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-25 11:50:07.631 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 11:50:07.651 +07:00 [FTL] Terminated
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Data.Seed.DataSeeder.SeedAsync(IServiceProvider services) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Data\Seed\DataSeeder.cs:line 85
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 88
+2026-04-25 11:53:50.560 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 11:53:50.610 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 11:53:51.024 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 11:53:51.026 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 11:53:51.082 +07:00 [INF] ✅ Admin check completed
+2026-04-25 11:53:51.083 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 11:53:52.476 +07:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (avatar, created_at, email, last_login_at, name, password_hash, role, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-25 11:53:52.528 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type text
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type text
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type text
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type text
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 11:53:52.556 +07:00 [FTL] Terminated
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type text
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type text
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Data.Seed.DataSeeder.SeedAsync(IServiceProvider services) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Data\Seed\DataSeeder.cs:line 85
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 88
+2026-04-25 12:42:43.834 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 12:42:43.882 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 12:42:44.434 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 12:42:44.435 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 12:42:44.484 +07:00 [INF] ✅ Admin check completed
+2026-04-25 12:42:44.485 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 12:42:45.683 +07:00 [ERR] Failed executing DbCommand (28ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (avatar, created_at, email, last_login_at, name, password_hash, role, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-25 12:42:45.715 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 12:42:45.740 +07:00 [FTL] Terminated
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Data.Seed.DataSeeder.SeedAsync(IServiceProvider services) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Data\Seed\DataSeeder.cs:line 85
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 95
+2026-04-25 12:43:15.463 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 12:43:15.509 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 12:43:15.897 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 12:43:15.899 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 12:43:15.937 +07:00 [INF] ✅ Admin check completed
+2026-04-25 12:43:15.938 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 12:43:16.882 +07:00 [ERR] Failed executing DbCommand (21ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (avatar, created_at, email, last_login_at, name, password_hash, role, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-25 12:43:16.910 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 12:43:16.933 +07:00 [FTL] Terminated
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Data.Seed.DataSeeder.SeedAsync(IServiceProvider services) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Data\Seed\DataSeeder.cs:line 85
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 95
+2026-04-25 12:44:06.923 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 12:44:06.961 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 12:44:07.447 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 12:44:07.448 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 12:44:07.489 +07:00 [INF] ✅ Admin check completed
+2026-04-25 12:44:07.490 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 12:44:08.501 +07:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (avatar, created_at, email, last_login_at, name, password_hash, role, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-25 12:44:08.533 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 12:44:08.557 +07:00 [FTL] Terminated
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42804: column "role" is of type user_role but expression is of type integer
+
+POSITION: 134
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42804
+    MessageText: column "role" is of type user_role but expression is of type integer
+    Hint: You will need to rewrite or cast the expression.
+    Position: 134
+    File: parse_target.c
+    Line: 586
+    Routine: transformAssignedExpr
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Data.Seed.DataSeeder.SeedAsync(IServiceProvider services) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Data\Seed\DataSeeder.cs:line 85
+   at Program.<Main>$(String[] args) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Program.cs:line 95
+2026-04-25 12:45:47.956 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 12:45:47.993 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 12:45:48.474 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 12:45:48.515 +07:00 [INF] ✅ Created implicit cast for user_role
+2026-04-25 12:45:48.521 +07:00 [INF] ✅ Created implicit cast for product_status
+2026-04-25 12:45:48.522 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 12:45:48.567 +07:00 [INF] ✅ Admin check completed
+2026-04-25 12:45:48.568 +07:00 [INF] ⏳ Creating admin user...
+2026-04-25 12:45:49.537 +07:00 [INF] ✅ Seed admin: admin@aquacms.com / Admin@123
+2026-04-25 12:45:49.539 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 12:45:50.156 +07:00 [INF] ✅ Cập nhật password cho: admin@cataloga.com
+2026-04-25 12:45:50.180 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 12:45:50.181 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 12:45:50.195 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 12:45:50.196 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 12:45:50.211 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 12:45:50.212 +07:00 [INF] ✅ Test data check completed
+2026-04-25 12:45:50.213 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 12:56:29.472 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 12:56:29.514 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 12:56:29.866 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 12:56:29.891 +07:00 [ERR] Failed executing DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE CAST (text AS user_role) WITH INOUT AS IMPLICIT;
+2026-04-25 12:56:29.902 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE CAST (text AS product_status) WITH INOUT AS IMPLICIT;
+2026-04-25 12:56:29.906 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 12:56:29.949 +07:00 [INF] ✅ Admin check completed
+2026-04-25 12:56:29.950 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 12:56:29.951 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 12:56:30.001 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 12:56:30.002 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 12:56:30.010 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 12:56:30.011 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 12:56:30.024 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 12:56:30.025 +07:00 [INF] ✅ Test data check completed
+2026-04-25 12:56:30.026 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-25 12:58:27.494 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-25 12:58:27.530 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-25 12:58:27.943 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-25 12:58:27.962 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-25 12:58:27.967 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-25 12:58:27.968 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-25 12:58:28.015 +07:00 [INF] ✅ Admin check completed
+2026-04-25 12:58:28.017 +07:00 [INF] ✅ Admin user already exists
+2026-04-25 12:58:28.018 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-25 12:58:28.074 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-25 12:58:28.075 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-25 12:58:28.085 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-25 12:58:28.085 +07:00 [INF] ⏳ Checking for test data...
+2026-04-25 12:58:28.099 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-25 12:58:28.101 +07:00 [INF] ✅ Test data check completed
+2026-04-25 12:58:28.102 +07:00 [INF] ✅ Database seeding completed successfully!

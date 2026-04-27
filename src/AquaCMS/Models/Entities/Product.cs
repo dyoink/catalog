@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
+using NpgsqlTypes;
 
 namespace AquaCMS.Models.Entities;
 
@@ -33,6 +35,9 @@ public class Product
     /// <summary>Giá sản phẩm — NULL nghĩa là "Liên hệ báo giá"</summary>
     [Range(0, 999_999_999_999, ErrorMessage = "Giá phải >= 0")]
     public decimal? Price { get; set; }
+
+    /// <summary>Có hiển thị giá ra ngoài hay không (nếu không tích -> hiện "Liên hệ")</summary>
+    public bool ShowPrice { get; set; } = true;
 
     /// <summary>Mô tả ngắn cho trang listing</summary>
     [MaxLength(2000)]

@@ -90,9 +90,15 @@
                 </div>
 
                 @* Nổi bật *@
-                <div class="flex items-center gap-2 pt-6">
-                    <input asp-for="IsFeatured" type="checkbox" class="rounded text-primary focus:ring-primary" />
-                    <label asp-for="IsFeatured" class="text-sm text-gray-700">Sản phẩm nổi bật</label>
+                <div class="flex items-center gap-6 pt-6">
+                    <div class="flex items-center gap-2">
+                        <input asp-for="IsFeatured" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                        <label asp-for="IsFeatured" class="text-sm text-gray-700">Sản phẩm nổi bật</label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input asp-for="ShowPrice" type="checkbox" class="rounded text-primary focus:ring-primary" />
+                        <label asp-for="ShowPrice" class="text-sm text-gray-700">Hiển thị giá</label>
+                    </div>
                 </div>
             </div>
 

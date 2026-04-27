@@ -166,7 +166,10 @@
                     @* Language switcher *@
                     @{
                         var otherLang = L.CurrentCulture == "vi" ? "en" : "vi";
-                        var returnUrl = Context.Request.Path + Context.Request.QueryString;
+                        var rawPath = Context.Request.Path.Value;
+                        var returnUrl = string.IsNullOrEmpty(rawPath) || rawPath == "/" 
+                            ? "/" 
+                            : rawPath + Context.Request.QueryString;
                     }
                     <a href="/dat-ngon-ngu/@otherLang?returnUrl=@Uri.EscapeDataString(returnUrl)"
                        class="hidden md:inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-white bg-white/15 hover:bg-white/25 rounded-full transition"
@@ -200,7 +203,10 @@
                 }
                 @{
                     var otherLangM = L.CurrentCulture == "vi" ? "en" : "vi";
-                    var returnUrlM = Context.Request.Path + Context.Request.QueryString;
+                    var rawPathM = Context.Request.Path.Value;
+                    var returnUrlM = string.IsNullOrEmpty(rawPathM) || rawPathM == "/" 
+                        ? "/" 
+                        : rawPathM + Context.Request.QueryString;
                 }
                 <a href="/dat-ngon-ngu/@otherLangM?returnUrl=@Uri.EscapeDataString(returnUrlM)"
                    class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">
@@ -299,22 +305,22 @@
         </footer>
     }
 
-    @* ===== FLOATING SOCIAL BUTTONS (dynamic from SiteSettings) ===== *@
-    <div class="fixed bottom-6 right-6 flex flex-col space-y-3 z-40">
-        @if (s.ShowZalo && !string.IsNullOrEmpty(s.Zalo))
+    @* ===== FLOATING BUTTONS CONTAINER (Right Side) ===== *@
+    <div class="fixed bottom-6 right-6 flex flex-col-reverse items-center space-y-3 space-y-reverse z-40">
+        @* 1. Nút cuộn lên đầu trang (Dưới cùng) *@
+        <button id="scroll-top-btn"
+                class="hidden w-12 h-12 bg-gray-600 text-white rounded-full items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                aria-label="Lên đầu trang">
+            <i data-lucide="chevron-up" class="w-5 h-5"></i>
+        </button>
+
+        @* 2. Các nút mạng xã hội (Ở giữa) *@
+        @if (s.ShowHotline && !string.IsNullOrEmpty(s.Phone))
         {
-            <a href="@s.Zalo" target="_blank" rel="noopener"
-               class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-               title="Zalo" aria-label="Liên hệ Zalo">
-                <i data-lucide="message-circle" class="w-5 h-5"></i>
-            </a>
-        }
-        @if (s.ShowFacebook && !string.IsNullOrEmpty(s.Facebook))
-        {
-            <a href="@s.Facebook" target="_blank" rel="noopener"
-               class="w-12 h-12 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-               title="Facebook" aria-label="Facebook">
-                <i data-lucide="facebook" class="w-5 h-5"></i>
+            <a href="tel:@s.Phone"
+               class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform animate-pulse"
+               title="Hotline: @s.Phone" aria-label="Gọi hotline">
+                <i data-lucide="phone" class="w-5 h-5"></i>
             </a>
         }
         @if (s.ShowTelegram && !string.IsNullOrEmpty(s.Telegram))
@@ -325,23 +331,26 @@
                 <i data-lucide="send" class="w-5 h-5"></i>
             </a>
         }
-        @if (s.ShowHotline && !string.IsNullOrEmpty(s.Phone))
+        @if (s.ShowFacebook && !string.IsNullOrEmpty(s.Facebook))
         {
-            <a href="tel:@s.Phone"
-               class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform animate-pulse"
-               title="Hotline: @s.Phone" aria-label="Gọi hotline">
-                <i data-lucide="phone" class="w-5 h-5"></i>
+            <a href="@s.Facebook" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+               title="Facebook" aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
             </a>
         }
-        <button id="scroll-top-btn"
-                class="hidden w-12 h-12 bg-gray-600 text-white rounded-full items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                aria-label="Lên đầu trang">
-            <i data-lucide="chevron-up" class="w-5 h-5"></i>
-        </button>
-    </div>
+        @if (s.ShowZalo && !string.IsNullOrEmpty(s.Zalo))
+        {
+            <a href="@s.Zalo" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+               title="Zalo" aria-label="Liên hệ Zalo">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+        }
 
-    @* ===== Live chat widget (SignalR) ===== *@
-    <partial name="_ChatWidget" />
+        @* 3. Nút Chat trực tuyến (Trên cùng) *@
+        <partial name="_ChatWidget" />
+    </div>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>

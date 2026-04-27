@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O5rcJWrRcfE=",
+  "dgSpecHash": "xORUaJXLEEk=",
   "success": true,
   "projectFilePath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,6 @@
     "C:\\Users\\tranc\\.nuget\\packages\\isopoh.cryptography.blake2b\\2.0.0\\isopoh.cryptography.blake2b.2.0.0.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\isopoh.cryptography.securearray\\2.0.0\\isopoh.cryptography.securearray.2.0.0.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\mailkit\\4.16.0\\mailkit.4.16.0.nupkg.sha512",
-    "C:\\Users\\tranc\\.nuget\\packages\\microsoft.aspnetcore.signalr\\1.2.9\\microsoft.aspnetcore.signalr.1.2.9.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\microsoft.build.framework\\17.8.43\\microsoft.build.framework.17.8.43.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\microsoft.build.locator\\1.7.8\\microsoft.build.locator.1.7.8.nupkg.sha512",
@@ -60,18 +59,5 @@
     "C:\\Users\\tranc\\.nuget\\packages\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.0\\system.security.cryptography.pkcs.10.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
-      "libraryId": "Microsoft.AspNetCore.SignalR",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }
