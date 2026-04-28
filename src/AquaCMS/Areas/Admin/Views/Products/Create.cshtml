@@ -1,4 +1,5 @@
 @model Product
+@using System.Text.Json
 @*
     Admin: Form thêm/sửa sản phẩm — dùng chung cho Create và Edit.
     Bao gồm: thông tin cơ bản, SEO fields, content blocks editor.
@@ -7,6 +8,13 @@
     var isEdit = Model.Id != Guid.Empty;
     ViewData["Title"] = isEdit ? $"Sửa: {Model.Name}" : "Thêm sản phẩm mới";
     var categories = ViewData["Categories"] as List<Category> ?? new();
+    
+    // Chuẩn bị JSON an toàn
+    var initialJson = "[]";
+    if (Model.ContentBlocks != null)
+    {
+        initialJson = JsonSerializer.Serialize(Model.ContentBlocks);
+    }
 }
 
 <div class="max-w-4xl space-y-6">
@@ -155,137 +163,151 @@
         </div>
 
         @* ===== CONTENT BLOCKS (visual editor) ===== *@
-        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5"
-             x-data="contentBlocksEditor(@Html.Raw(Json.Serialize(Model.ContentBlocks ?? System.Text.Json.JsonDocument.Parse("[]"))))">
-            <div class="flex items-center justify-between border-b pb-3">
-                <h2 class="font-bold text-gray-800 text-lg">Nội dung chi tiết (Content Blocks)</h2>
-                <button type="button" @@click="toggleRaw()" class="text-xs text-gray-500 hover:text-gray-700">
-                    <span x-show="!showRaw">Xem JSON thô</span>
-                    <span x-show="showRaw">Quay về visual</span>
-                </button>
-            </div>
-
-            <div x-show="!showRaw" class="space-y-2">
-                <template x-for="(block, idx) in blocks" :key="idx">
-                    <div class="cb-block">
-                        <div class="flex items-center gap-2 mb-2">
-                            <select x-model="block.type" class="text-sm border border-gray-200 rounded px-2 py-1">
-                                <option value="heading">Tiêu đề</option>
-                                <option value="paragraph">Đoạn văn</option>
-                                <option value="image">Ảnh</option>
-                                <option value="list">Danh sách</option>
-                                <option value="video">Video</option>
-                            </select>
-                            <span class="text-xs text-gray-400" x-text="'#' + (idx+1)"></span>
-                            <div class="ml-auto flex items-center gap-1">
-                                <button type="button" @@click="move(idx,-1)" :disabled="idx===0" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30"><i data-lucide="arrow-up" class="w-4 h-4"></i></button>
-                                <button type="button" @@click="move(idx,1)" :disabled="idx===blocks.length-1" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30"><i data-lucide="arrow-down" class="w-4 h-4"></i></button>
-                                <button type="button" @@click="remove(idx)" class="p-1 text-red-400 hover:text-red-600"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                            </div>
-                        </div>
-                        <template x-if="block.type==='heading'">
-                            <input type="text" x-model="block.content" placeholder="Tiêu đề" class="w-full text-lg font-bold px-3 py-2 border border-gray-200 rounded" />
-                        </template>
-                        <template x-if="block.type==='paragraph'">
-                            <textarea x-model="block.content" rows="3" placeholder="Nội dung đoạn văn..." class="w-full px-3 py-2 border border-gray-200 rounded text-sm"></textarea>
-                        </template>
-                        <template x-if="block.type==='image'">
-                            <div class="space-y-2">
-                                <input type="url" x-model="block.url" placeholder="URL ảnh" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" />
-                                <input type="text" x-model="block.alt" placeholder="Mô tả (alt)" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" />
-                                <img :src="block.url" x-show="block.url" class="max-h-32 rounded" />
-                            </div>
-                        </template>
-                        <template x-if="block.type==='list'">
-                            <textarea x-model="block.content" rows="4" placeholder="Mỗi dòng một mục" class="w-full px-3 py-2 border border-gray-200 rounded text-sm"></textarea>
-                        </template>
-                        <template x-if="block.type==='video'">
-                            <input type="url" x-model="block.url" placeholder="URL video YouTube/MP4" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" />
-                        </template>
-                    </div>
-                </template>
-                <div class="flex flex-wrap gap-2">
-                    <button type="button" @@click="add('heading')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Tiêu đề</button>
-                    <button type="button" @@click="add('paragraph')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Đoạn văn</button>
-                    <button type="button" @@click="add('image')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Ảnh</button>
-                    <button type="button" @@click="add('list')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Danh sách</button>
-                    <button type="button" @@click="add('video')" class="text-sm px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50">+ Video</button>
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5" id="cb-editor-root">
+            @* Script block chứa data JSON an toàn *@
+            <script id="cb-initial-data" type="application/json">@Html.Raw(initialJson)</script>
+            
+            <div x-data="contentBlocksEditor(JSON.parse(document.getElementById('cb-initial-data').textContent))">
+                <div class="flex items-center justify-between border-b pb-3 mb-5">
+                    <h2 class="font-bold text-gray-800 text-lg">Nội dung chi tiết (Content Blocks)</h2>
                 </div>
+
+                <div class="space-y-4">
+                    <template x-for="(block, idx) in blocks" :key="idx">
+                        <div class="cb-block bg-gray-50/50 p-4 rounded-lg border border-gray-100">
+                            <div class="flex items-center gap-2 mb-3">
+                                <select x-model="block.type" class="text-sm border border-gray-200 rounded px-2 py-1 bg-white">
+                                    <option value="heading">Tiêu đề</option>
+                                    <option value="paragraph">Đoạn văn</option>
+                                    <option value="image">Ảnh</option>
+                                    <option value="list">Danh sách</option>
+                                    <option value="video">Video</option>
+                                </select>
+                                <span class="text-xs text-gray-400 font-mono" x-text="'#' + (idx+1)"></span>
+                                <div class="ml-auto flex items-center gap-1">
+                                    <button type="button" @@click="move(idx,-1)" :disabled="idx===0" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30 transition"><i data-lucide="arrow-up" class="w-4 h-4"></i></button>
+                                    <button type="button" @@click="move(idx,1)" :disabled="idx===blocks.length-1" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30 transition"><i data-lucide="arrow-down" class="w-4 h-4"></i></button>
+                                    <button type="button" @@click="remove(idx)" class="p-1 text-red-400 hover:text-red-600 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                            
+                            <template x-if="block.type==='heading'">
+                                <input type="text" x-model="block.content" placeholder="Nhập tiêu đề..." class="w-full text-lg font-bold px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/30" />
+                            </template>
+                            
+                            <template x-if="block.type==='paragraph'">
+                                <textarea x-model="block.content" rows="3" placeholder="Nhập nội dung đoạn văn..." class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30"></textarea>
+                            </template>
+                            
+                            <template x-if="block.type==='image'">
+                                <div class="space-y-2">
+                                    <input type="url" x-model="block.url" placeholder="URL ảnh (https://...)" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30" />
+                                    <input type="text" x-model="block.alt" placeholder="Mô tả ảnh (alt)" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30" />
+                                    <div x-show="block.url" class="mt-2">
+                                        <img :src="block.url" class="max-h-40 rounded-lg border border-gray-200 object-contain" />
+                                    </div>
+                                </div>
+                            </template>
+                            
+                            <template x-if="block.type==='list'">
+                                <textarea x-model="block.content" rows="4" placeholder="Mỗi dòng một mục..." class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30 font-mono"></textarea>
+                            </template>
+                            
+                            <template x-if="block.type==='video'">
+                                <input type="url" x-model="block.url" placeholder="URL video YouTube..." class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30" />
+                            </template>
+                        </div>
+                    </template>
+
+                    <div class="pt-6 border-t mt-6">
+                        <p class="text-sm font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                            <i data-lucide="plus-circle" class="w-4 h-4"></i> Thêm nội dung mới:
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" @@click="add('heading')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="heading" class="w-4 h-4 text-primary"></i> Tiêu đề
+                            </button>
+                            <button type="button" @@click="add('paragraph')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="align-left" class="w-4 h-4 text-primary"></i> Đoạn văn
+                            </button>
+                            <button type="button" @@click="add('image')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="image" class="w-4 h-4 text-primary"></i> Ảnh
+                            </button>
+                            <button type="button" @@click="add('list')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="list" class="w-4 h-4 text-primary"></i> Danh sách
+                            </button>
+                            <button type="button" @@click="add('video')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
+                                <i data-lucide="video" class="w-4 h-4 text-primary"></i> Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                @* Trường ẩn để submit JSON *@
+                <textarea name="contentBlocksJson" :value="submitJson()" class="hidden"></textarea>
             </div>
-
-            <textarea x-show="showRaw" x-model="rawJson" rows="10"
-                      class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm font-mono"></textarea>
-
-            @* Hidden actual submitted field *@
-            <textarea name="contentBlocksJson" :value="submitJson()" class="hidden"></textarea>
         </div>
 
         @* ===== SUBMIT ===== *@
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 pt-4">
             <button type="submit"
-                    class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow flex items-center gap-2">
+                    class="bg-primary text-white px-10 py-3.5 rounded-xl font-bold hover:opacity-90 transition shadow-lg flex items-center gap-2">
                 <i data-lucide="save" class="w-5 h-5"></i>
-                @(isEdit ? "Cập nhật" : "Thêm sản phẩm")
+                @(isEdit ? "Cập nhật thay đổi" : "Thêm sản phẩm ngay")
             </button>
-            <a href="/admin/products" class="px-6 py-3 text-gray-500 hover:text-gray-700 transition">
-                Hủy
+            <a href="/admin/products" class="px-6 py-3 text-gray-500 hover:text-gray-800 transition font-medium">
+                Hủy bỏ
             </a>
         </div>
     </form>
 </div>
 
-@section Scripts {
-    <script>
-        lucide.createIcons();
+@* Script được đặt trực tiếp để đảm bảo hoạt động khi dùng làm Partial View *@
+<script>
+    (function() {
+        // Khởi tạo icons Lucide
+        if (typeof lucide !== 'undefined') lucide.createIcons();
 
-        // Sync image URL input -> preview when typing
+        // Sync image URL input -> preview
         document.getElementById('img-url')?.addEventListener('input', function (e) {
             var preview = document.getElementById('img-preview');
             if (!preview) return;
-            if (e.target.value) { preview.src = e.target.value; preview.classList.remove('hidden'); }
-            else { preview.classList.add('hidden'); }
+            if (e.target.value) { 
+                preview.src = e.target.value; 
+                preview.classList.remove('hidden'); 
+            } else { 
+                preview.classList.add('hidden'); 
+            }
         });
 
-        // Alpine component for visual content blocks editor
-        function contentBlocksEditor(initial) {
-            var blocks = [];
-            try {
-                if (Array.isArray(initial)) blocks = initial;
-                else if (initial && typeof initial === 'object') blocks = []; // empty doc
-            } catch (e) { blocks = []; }
+        // Alpine component logic
+        window.contentBlocksEditor = function(initialBlocks) {
             return {
-                blocks: blocks,
-                showRaw: false,
-                rawJson: JSON.stringify(blocks, null, 2),
+                blocks: Array.isArray(initialBlocks) ? initialBlocks : [],
                 add(type) {
-                    var b = { type: type, content: '' };
-                    if (type === 'image' || type === 'video') { b.url = ''; b.alt = ''; }
-                    this.blocks.push(b);
-                    this.$nextTick(() => lucide.createIcons());
+                    this.blocks.push({ type: type, content: '', url: '', alt: '' });
+                    this.refreshIcons();
                 },
-                remove(idx) { this.blocks.splice(idx, 1); },
+                remove(idx) {
+                    this.blocks.splice(idx, 1);
+                },
                 move(idx, dir) {
-                    var to = idx + dir;
+                    let to = idx + dir;
                     if (to < 0 || to >= this.blocks.length) return;
-                    var t = this.blocks[idx]; this.blocks[idx] = this.blocks[to]; this.blocks[to] = t;
-                },
-                toggleRaw() {
-                    if (!this.showRaw) {
-                        this.rawJson = JSON.stringify(this.blocks, null, 2);
-                    } else {
-                        try { this.blocks = JSON.parse(this.rawJson); }
-                        catch (e) { alert('JSON không hợp lệ: ' + e.message); return; }
-                    }
-                    this.showRaw = !this.showRaw;
-                    this.$nextTick(() => lucide.createIcons());
+                    let arr = [...this.blocks];
+                    [arr[idx], arr[to]] = [arr[to], arr[idx]];
+                    this.blocks = arr;
+                    this.refreshIcons();
                 },
                 submitJson() {
-                    try {
-                        if (this.showRaw) return this.rawJson || '[]';
-                        return JSON.stringify(this.blocks);
-                    } catch (e) { return '[]'; }
+                    return JSON.stringify(this.blocks);
+                },
+                refreshIcons() {
+                    setTimeout(() => {
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
+                    }, 50);
                 }
             };
-        }
-    </script>
-}
+        };
+    })();
+</script>

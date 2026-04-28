@@ -57,6 +57,8 @@ CREATE TABLE site_settings (
     -- UI
     background_color VARCHAR(20) DEFAULT '#F9F9F9',
     primary_color    VARCHAR(20) DEFAULT '#55B3D9',
+    navbar_color     VARCHAR(20) DEFAULT '#2563eb',
+    footer_color     VARCHAR(20) DEFAULT '#1F2937',
     footer_text      VARCHAR(500),
     show_footer      BOOLEAN NOT NULL DEFAULT true,
     hero_background_image VARCHAR(500),

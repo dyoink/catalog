@@ -1,3 +1,8 @@
+@inject AquaCMS.Services.Interfaces.ISettingsService SettingsService
+@{
+    var siteSettings = await SettingsService.GetSettingsAsync();
+    var primaryColor = !string.IsNullOrEmpty(siteSettings?.PrimaryColor) ? siteSettings.PrimaryColor : "#2563eb";
+}
 @*
     Layout quản trị — sidebar navigation + main content area.
     Chỉ dành cho admin (đã authorize ở controller).
@@ -96,7 +101,7 @@
                       transform -translate-x-full md:translate-x-0 md:relative transition-transform">
             
             @* Logo Area *@
-            <div class="h-16 flex-none flex items-center px-6 border-b border-blue-500 shadow-sm" style="background-color: #2563eb;">
+            <div class="h-16 flex-none flex items-center px-6 border-b border-blue-500 shadow-sm" style="background-color: @primaryColor;">
                 <a href="/admin" class="flex items-center space-x-2 text-white font-bold text-lg">
                     <i data-lucide="settings" class="w-6 h-6"></i>
                     <span>Admin Panel</span>
@@ -184,7 +189,7 @@
         <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
             
             @* Top bar (Mobile only) *@
-            <header class="md:hidden flex-none h-16 text-white flex items-center px-4 shadow-md" style="background-color: #2563eb;">
+            <header class="md:hidden flex-none h-16 text-white flex items-center px-4 shadow-md" style="background-color: @primaryColor;">
                 <button id="sidebar-toggle" class="p-2 hover:bg-white/10 rounded-lg">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>

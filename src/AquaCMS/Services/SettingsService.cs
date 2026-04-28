@@ -33,7 +33,9 @@ public class SettingsService : ISettingsService
             return cached;
 
         // Cache miss — query DB
-        var settings = await _db.SiteSettings.FirstOrDefaultAsync();
+        var settings = await _db.SiteSettings
+            .OrderBy(s => s.Id)
+            .FirstOrDefaultAsync();
 
         // Nếu chưa có settings nào → tạo mới với giá trị mặc định
         if (settings == null)
