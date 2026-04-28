@@ -4,7 +4,29 @@
     SEO: Product JSON-LD, Breadcrumb JSON-LD, meta title/description, Open Graph.
 *@
 
-<div class="max-w-7xl mx-auto px-4 py-8">
+<div class="max-w-7xl mx-auto px-4 py-8" x-data="{ lightbox: { open: false, src: '', alt: '' } }">
+    @* ===== LIGHTBOX MODAL ===== *@
+    <template x-teleport="body">
+        <div x-show="lightbox.open" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+             @@keydown.escape.window="lightbox.open = false"
+             x-cloak>
+            <button @@click="lightbox.open = false" 
+                    class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-10 h-10"></i>
+            </button>
+            <img :src="lightbox.src" :alt="lightbox.alt" 
+                 class="max-w-full max-h-full object-contain rounded shadow-2xl"
+                 @@click.away="lightbox.open = false" />
+        </div>
+    </template>
+
     @* ===== BREADCRUMB ===== *@
     <nav aria-label="Breadcrumb" class="mb-6">
         <ol class="flex items-center space-x-2 text-sm text-gray-500">
@@ -29,11 +51,15 @@
         <div>
             @if (!string.IsNullOrEmpty(Model.Product.Image))
             {
-                <div class="aspect-square rounded-xl overflow-hidden bg-gray-50">
+                <div class="aspect-square rounded-xl overflow-hidden bg-gray-50 cursor-pointer group relative"
+                     @@click="lightbox.open = true; lightbox.src = '@Model.Product.Image'; lightbox.alt = '@Model.Product.Name'">
                     <img src="@Model.Product.Image"
                          alt="@Model.Product.Name"
-                         class="w-full h-full object-cover"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                          loading="eager" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md"></i>
+                    </div>
                 </div>
             }
             else
@@ -243,8 +269,20 @@
                             var img = document.createElement('img');
                             img.src = block.url || '';
                             img.alt = block.caption || '';
-                            img.className = 'rounded-lg my-4 max-w-full';
+                            img.className = 'rounded-lg my-4 max-w-full cursor-pointer hover:opacity-90 transition-opacity shadow-sm';
                             img.loading = 'lazy';
+                            img.onclick = function() {
+                                // Truy cập scope của Alpine.js từ bên ngoài thông qua __x.$data (Alpine 2) hoặc Alpine.data (Alpine 3)
+                                // Tuy nhiên cách đơn giản nhất là dispatch một event hoặc dùng $dispatch nếu có tham chiếu.
+                                // Ở Alpine 3 chúng ta có thể dùng Alpine.store hoặc đơn giản là truy cập element x-data.
+                                var root = document.querySelector('[x-data]');
+                                if (root && root.__x_data_stack) {
+                                    var data = root.__x_data_stack[0];
+                                    data.lightbox.src = this.src;
+                                    data.lightbox.alt = this.alt;
+                                    data.lightbox.open = true;
+                                }
+                            };
                             container.appendChild(img);
                             if (block.caption) {
                                 var cap = document.createElement('p');

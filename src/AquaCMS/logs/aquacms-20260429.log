@@ -1,0 +1,68 @@
+2026-04-29 00:15:27.971 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-29 00:15:28.015 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-29 00:15:28.388 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-29 00:15:28.402 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-29 00:15:28.408 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-29 00:15:28.409 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-29 00:15:28.449 +07:00 [INF] ✅ Admin check completed
+2026-04-29 00:15:28.451 +07:00 [INF] ✅ Admin user already exists
+2026-04-29 00:15:28.452 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-29 00:15:28.505 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-29 00:15:28.520 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-29 00:15:28.530 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-29 00:15:28.531 +07:00 [INF] ⏳ Checking for test data...
+2026-04-29 00:15:28.546 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-29 00:15:28.547 +07:00 [INF] ✅ Test data check completed
+2026-04-29 00:15:28.549 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-29 00:15:38.606 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 509.8775 ms
+2026-04-29 00:15:40.784 +07:00 [INF] HTTP GET /js/site.js responded 200 in 10.1681 ms
+2026-04-29 00:15:40.924 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 151.8601 ms
+2026-04-29 00:15:41.024 +07:00 [INF] HTTP GET / responded 200 in 655.1193 ms
+2026-04-29 00:15:41.195 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 9.4436 ms
+2026-04-29 00:15:41.195 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 7.4321 ms
+2026-04-29 00:15:41.195 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 9.2603 ms
+2026-04-29 00:15:41.216 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 10.3209 ms
+2026-04-29 00:15:49.105 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 263.6935 ms
+2026-04-29 00:34:59.556 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.1723 ms
+2026-04-29 00:34:59.570 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1158164.0244 ms
+2026-04-29 00:35:29.558 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 29996.8709 ms
+2026-04-29 00:44:52.757 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-29 00:44:52.790 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-29 00:44:53.110 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-29 00:44:53.139 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-29 00:44:53.144 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-29 00:44:53.145 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-29 00:44:53.179 +07:00 [INF] ✅ Admin check completed
+2026-04-29 00:44:53.180 +07:00 [INF] ✅ Admin user already exists
+2026-04-29 00:44:53.181 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-29 00:44:53.226 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-29 00:44:53.227 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-29 00:44:53.236 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-29 00:44:53.237 +07:00 [INF] ⏳ Checking for test data...
+2026-04-29 00:44:53.251 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-29 00:44:53.252 +07:00 [INF] ✅ Test data check completed
+2026-04-29 00:44:53.253 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-29 00:44:58.603 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 835.2074 ms
+2026-04-29 00:44:58.630 +07:00 [INF] HTTP GET /css/admin.css responded 200 in 6.2924 ms
+2026-04-29 00:44:58.630 +07:00 [INF] HTTP GET /css/site.css responded 200 in 6.2920 ms
+2026-04-29 00:44:58.846 +07:00 [INF] HTTP GET /favicon.ico responded 200 in 4.4982 ms
+2026-04-29 00:45:02.537 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 100.8363 ms
+2026-04-29 00:45:03.748 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 35.0952 ms
+2026-04-29 00:45:16.245 +07:00 [INF] HTTP GET /admin/products responded 200 in 164.4196 ms
+2026-04-29 00:45:17.195 +07:00 [INF] HTTP GET /admin/categories responded 200 in 18.5926 ms
+2026-04-29 00:45:17.278 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 53.2184 ms
+2026-04-29 00:45:17.278 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 54.5130 ms
+2026-04-29 00:45:17.278 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 62.1582 ms
+2026-04-29 00:45:19.153 +07:00 [INF] HTTP GET /admin/activity responded 200 in 101.3742 ms
+2026-04-29 00:45:25.519 +07:00 [INF] HTTP GET /admin/messages responded 200 in 39.7691 ms
+2026-04-29 00:45:27.134 +07:00 [INF] HTTP GET /admin/messages/detail/183ebbe0-5cbe-4750-a653-74ebd55e2b24 responded 200 in 78.4865 ms
+2026-04-29 00:45:27.279 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 6.8197 ms
+2026-04-29 00:45:36.482 +07:00 [INF] HTTP GET /js/site.js responded 304 in 0.2452 ms
+2026-04-29 00:45:36.612 +07:00 [INF] HTTP GET /san-pham/may-cho-an-thong-minh-iot-4 responded 200 in 232.0034 ms
+2026-04-29 00:45:36.710 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5316 ms
+2026-04-29 00:45:40.246 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3499.4856 ms
+2026-04-29 00:45:41.507 +07:00 [INF] HTTP GET /san-pham/may-cho-tom-an-tu-dong-360-5 responded 200 in 34.0482 ms
+2026-04-29 00:45:41.670 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3445 ms
+2026-04-29 00:48:21.071 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 159368.1436 ms
+2026-04-29 00:48:21.071 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 173786.0958 ms
+2026-04-29 00:48:21.072 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6855 ms
