@@ -23,25 +23,32 @@ public class ActivityController : Controller
     public async Task<IActionResult> Index(
         int page = 1,
         string? entityType = null,
-        string? action = null,
+        string? logAction = null,
         string? severity = null,
         string? search = null)
     {
         ViewData["Title"] = "Nhật ký hoạt động";
+        
+        // Chuyển chuỗi rỗng thành null để Service bỏ qua bộ lọc
+        entityType = string.IsNullOrWhiteSpace(entityType) ? null : entityType;
+        logAction = string.IsNullOrWhiteSpace(logAction) ? null : logAction;
+        severity = string.IsNullOrWhiteSpace(severity) ? null : severity;
+        search = string.IsNullOrWhiteSpace(search) ? null : search;
+
         ViewBag.EntityType = entityType;
-        ViewBag.Action = action;
+        ViewBag.Action = logAction;
         ViewBag.Severity = severity;
         ViewBag.Search = search;
 
-        // Aggregate stats cho mấy chip ở đầu trang
-        var statsQuery = _db.ActivityLogs.AsNoTracking();
-        ViewBag.CountTotal = await statsQuery.CountAsync();
-        ViewBag.CountInfo = await statsQuery.CountAsync(l => l.Severity == "Info" || l.Severity == null);
-        ViewBag.CountSuccess = await statsQuery.CountAsync(l => l.Severity == "Success");
-        ViewBag.CountWarning = await statsQuery.CountAsync(l => l.Severity == "Warning");
-        ViewBag.CountError = await statsQuery.CountAsync(l => l.Severity == "Error");
+        // Stats cards - lấy trực tiếp từ DB
+        ViewBag.CountTotal = await _db.ActivityLogs.CountAsync();
+        ViewBag.CountInfo = await _db.ActivityLogs.CountAsync(l => l.Severity == "Info" || string.IsNullOrEmpty(l.Severity));
+        ViewBag.CountSuccess = await _db.ActivityLogs.CountAsync(l => l.Severity == "Success");
+        ViewBag.CountWarning = await _db.ActivityLogs.CountAsync(l => l.Severity == "Warning");
+        ViewBag.CountError = await _db.ActivityLogs.CountAsync(l => l.Severity == "Error");
 
-        var logs = await _activity.GetLogsAsync(page, 30, entityType, null, action, severity, search);
+        // Lấy danh sách log (kèm phân trang)
+        var logs = await _activity.GetLogsAsync(page, 30, entityType, null, logAction, severity, search);
         return View(logs);
     }
 }

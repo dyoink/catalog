@@ -78,16 +78,16 @@ public class ActivityLogService : IActivityLogService
         var query = _db.ActivityLogs.AsNoTracking().AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(entityType))
-            query = query.Where(l => l.EntityType == entityType);
+            query = query.Where(l => EF.Functions.ILike(l.EntityType, entityType));
 
-        if (userId.HasValue)
+        if (userId.HasValue && userId.Value != Guid.Empty)
             query = query.Where(l => l.UserId == userId);
 
         if (!string.IsNullOrWhiteSpace(action))
-            query = query.Where(l => l.Action == action);
+            query = query.Where(l => EF.Functions.ILike(l.Action, action));
 
         if (!string.IsNullOrWhiteSpace(severity))
-            query = query.Where(l => l.Severity == severity);
+            query = query.Where(l => EF.Functions.ILike(l.Severity, severity));
 
         if (!string.IsNullOrWhiteSpace(search))
         {
