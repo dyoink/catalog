@@ -12,8 +12,6 @@ namespace AquaCMS.Areas.Admin.Controllers;
 
 /// <summary>
 /// Admin import/export sản phẩm dạng Excel (.xlsx).
-/// Cùng 1 format cho export và import — admin có thể edit Excel rồi upload lại để cập nhật hàng loạt.
-/// Bỏ qua cột Image (admin upload ảnh trực tiếp trên web).
 /// </summary>
 [Area("Admin")]
 [Authorize(Policy = "ManagerUp")]
@@ -22,8 +20,6 @@ public class ProductImportExportController : Controller
 {
     private const string MimeXlsx = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-    // Header row chuẩn — đúng format này thì xuất/nhập đều khớp.
-    // Cột Image không nằm trong workflow Excel (admin upload trực tiếp trên web).
     private static readonly string[] Headers = new[]
     {
         "SKU", "Tên sản phẩm", "Slug", "Danh mục (slug)",
@@ -45,7 +41,6 @@ public class ProductImportExportController : Controller
         _logger = logger;
     }
 
-    /// <summary>GET /admin/products-io/export — Tải toàn bộ sản phẩm dạng Excel.</summary>
     [HttpGet("export")]
     public async Task<IActionResult> Export()
     {
@@ -53,6 +48,9 @@ public class ProductImportExportController : Controller
         {
             var rows = await _db.Products
                 .Include(p => p.Category)
+                .Include(p => p.Metadata)
+                .Include(p => p.Finance)
+                .Include(p => p.Content)
                 .OrderBy(p => p.Category != null ? p.Category.Name : "")
                 .ThenBy(p => p.Name)
                 .ToListAsync();
@@ -60,7 +58,6 @@ public class ProductImportExportController : Controller
             using var wb = new XLWorkbook();
             var ws = wb.Worksheets.Add("Sản phẩm");
 
-            // ===== Tiêu đề lớn =====
             ws.Cell(1, 1).Value = "DANH SÁCH SẢN PHẨM — AquaCMS";
             ws.Range(1, 1, 1, Headers.Length).Merge();
             ws.Cell(1, 1).Style
@@ -74,7 +71,6 @@ public class ProductImportExportController : Controller
             ws.Range(2, 1, 2, Headers.Length).Merge();
             ws.Cell(2, 1).Style.Font.SetItalic().Font.SetFontColor(XLColor.Gray);
 
-            // ===== Header row =====
             const int headerRow = 4;
             for (int i = 0; i < Headers.Length; i++)
             {
@@ -89,31 +85,28 @@ public class ProductImportExportController : Controller
             }
             ws.Row(headerRow).Height = 24;
 
-            // ===== Data rows =====
             int r = headerRow + 1;
             foreach (var p in rows)
             {
                 ws.Cell(r, 1).Value = p.Sku ?? "";
                 ws.Cell(r, 2).Value = p.Name;
-                ws.Cell(r, 3).Value = p.Slug;
+                ws.Cell(r, 3).Value = p.Metadata?.Slug ?? "";
                 ws.Cell(r, 4).Value = p.Category?.Slug ?? "";
-                ws.Cell(r, 5).Value = p.Price ?? 0;
+                ws.Cell(r, 5).Value = p.Finance?.Price ?? 0;
                 ws.Cell(r, 5).Style.NumberFormat.Format = "#,##0";
-                ws.Cell(r, 6).Value = p.Description ?? "";
+                ws.Cell(r, 6).Value = p.Content?.Description ?? "";
                 ws.Cell(r, 7).Value = p.Status.ToString();
-                ws.Cell(r, 8).Value = p.IsFeatured ? "Có" : "Không";
-                ws.Cell(r, 9).Value = p.MetaTitle ?? "";
-                ws.Cell(r, 10).Value = p.MetaDesc ?? "";
-                ws.Cell(r, 11).Value = p.VideoUrl ?? "";
+                ws.Cell(r, 8).Value = (p.Finance?.IsFeatured ?? false) ? "Có" : "Không";
+                ws.Cell(r, 9).Value = p.Metadata?.MetaTitle ?? "";
+                ws.Cell(r, 10).Value = p.Metadata?.MetaDesc ?? "";
+                ws.Cell(r, 11).Value = p.Content?.VideoUrl ?? "";
 
-                // Zebra striping cho dễ đọc
                 if ((r - headerRow) % 2 == 0)
                 {
                     ws.Range(r, 1, r, Headers.Length).Style
                         .Fill.SetBackgroundColor(XLColor.FromHtml("#F9FAFB"));
                 }
 
-                // Status color
                 var statusCell = ws.Cell(r, 7);
                 statusCell.Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
                 statusCell.Style.Font.SetBold();
@@ -123,15 +116,14 @@ public class ProductImportExportController : Controller
                     ProductStatus.Hidden => XLColor.FromHtml("#9CA3AF"),
                     _ => XLColor.FromHtml("#DC2626")
                 });
-                // Featured highlight
+                
                 ws.Cell(r, 8).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
-                if (p.IsFeatured)
+                if (p.Finance?.IsFeatured == true)
                     ws.Cell(r, 8).Style.Font.SetFontColor(XLColor.FromHtml("#D97706"));
 
                 r++;
             }
 
-            // ===== Borders + sizing =====
             if (rows.Count > 0)
             {
                 var dataRange = ws.Range(headerRow, 1, r - 1, Headers.Length);
@@ -142,47 +134,19 @@ public class ProductImportExportController : Controller
                 ws.Range(headerRow, 1, r - 1, Headers.Length).SetAutoFilter();
             }
 
-            // Column widths (đẹp mắt, hợp lý, dễ nhìn)
-            ws.Column(1).Width = 12;  // SKU
-            ws.Column(2).Width = 35;  // Name
-            ws.Column(3).Width = 28;  // Slug
-            ws.Column(4).Width = 18;  // Category
-            ws.Column(5).Width = 14;  // Price
-            ws.Column(6).Width = 45;  // Description
-            ws.Column(7).Width = 14;  // Status
-            ws.Column(8).Width = 10;  // Featured
-            ws.Column(9).Width = 28;  // Meta Title
-            ws.Column(10).Width = 40; // Meta Desc
-            ws.Column(11).Width = 30; // Video
+            ws.Column(1).Width = 12;
+            ws.Column(2).Width = 35;
+            ws.Column(3).Width = 28;
+            ws.Column(4).Width = 18;
+            ws.Column(5).Width = 14;
+            ws.Column(6).Width = 45;
+            ws.Column(7).Width = 14;
+            ws.Column(8).Width = 10;
+            ws.Column(9).Width = 28;
+            ws.Column(10).Width = 40;
+            ws.Column(11).Width = 30;
 
-            // Freeze header
             ws.SheetView.FreezeRows(headerRow);
-
-            // ===== Sheet 2: Hướng dẫn =====
-            var ws2 = wb.Worksheets.Add("Hướng dẫn");
-            ws2.Cell(1, 1).Value = "HƯỚNG DẪN NHẬP/XUẤT SẢN PHẨM";
-            ws2.Cell(1, 1).Style.Font.SetBold().Font.SetFontSize(14)
-                .Font.SetFontColor(XLColor.FromHtml("#1F2937"));
-            var lines = new[]
-            {
-                "",
-                "1. File này là format chuẩn — vừa export vừa import đều dùng cùng cấu trúc.",
-                "2. Cột ẢNH (Image) KHÔNG có ở đây — vui lòng upload ảnh trực tiếp trên trang admin.",
-                "3. Quy tắc khi import:",
-                "   • Bắt buộc cột 'Tên sản phẩm'.",
-                "   • Slug bỏ trống → tự sinh từ Tên (loại bỏ dấu tiếng Việt).",
-                "   • Match theo Slug: nếu đã tồn tại → cập nhật, chưa có → tạo mới.",
-                "   • Trạng thái: Available / Hidden / OutOfStock.",
-                "   • Nổi bật: 'Có' / 'Không' / true / false / 1 / 0.",
-                "   • Giá: chỉ nhập số (VD: 1500000).",
-                "4. Đừng xóa hàng tiêu đề (hàng 4) — script đọc từ hàng 5 trở đi.",
-                "5. Có thể chỉnh sửa hàng loạt rồi tải lên lại để cập nhật."
-            };
-            for (int i = 0; i < lines.Length; i++)
-            {
-                ws2.Cell(2 + i, 1).Value = lines[i];
-            }
-            ws2.Column(1).Width = 100;
 
             using var ms = new MemoryStream();
             wb.SaveAs(ms);
@@ -196,14 +160,11 @@ public class ProductImportExportController : Controller
         catch (Exception ex)
         {
             _logger.LogError(ex, "Export products to Excel failed");
-            await _activity.LogAsync("ERROR", "Product", null,
-                "Xuất Excel thất bại: " + ex.Message, "Error");
             TempData["Error"] = "Lỗi xuất Excel: " + ex.Message;
             return RedirectToAction("Index", "Products");
         }
     }
 
-    /// <summary>GET /admin/products-io/template — Tải template Excel mẫu (1 dòng demo).</summary>
     [HttpGet("template")]
     public IActionResult Template()
     {
@@ -273,7 +234,6 @@ public class ProductImportExportController : Controller
         }
     }
 
-    /// <summary>POST /admin/products-io/import — Import từ Excel. Match theo Slug.</summary>
     [HttpPost("import"), ValidateAntiForgeryToken]
     [RequestSizeLimit(20 * 1024 * 1024)]
     public async Task<IActionResult> Import(IFormFile? file)
@@ -281,11 +241,6 @@ public class ProductImportExportController : Controller
         if (file == null || file.Length == 0)
         {
             TempData["Error"] = "Chưa chọn file Excel (.xlsx).";
-            return RedirectToAction("Index", "Products");
-        }
-        if (!file.FileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
-        {
-            TempData["Error"] = "Chỉ chấp nhận file .xlsx.";
             return RedirectToAction("Index", "Products");
         }
 
@@ -301,7 +256,6 @@ public class ProductImportExportController : Controller
             var ws = wb.Worksheets.FirstOrDefault()
                 ?? throw new InvalidOperationException("File Excel không có sheet nào.");
 
-            // Dò header row (tìm hàng có ô đầu tiên = "SKU")
             int headerRow = 4;
             for (int rr = 1; rr <= 10; rr++)
             {
@@ -320,16 +274,7 @@ public class ProductImportExportController : Controller
                 try
                 {
                     var name = ws.Cell(rr, 2).GetString().Trim();
-                    if (string.IsNullOrWhiteSpace(name))
-                    {
-                        // skip row trống hoàn toàn
-                        if (string.IsNullOrWhiteSpace(ws.Cell(rr, 1).GetString())
-                            && string.IsNullOrWhiteSpace(ws.Cell(rr, 3).GetString()))
-                            continue;
-                        skipped++;
-                        errors.Add($"Dòng {rr}: bỏ qua — thiếu Tên sản phẩm");
-                        continue;
-                    }
+                    if (string.IsNullOrWhiteSpace(name)) continue;
 
                     var sku = NullIfEmpty(ws.Cell(rr, 1).GetString());
                     var rawSlug = ws.Cell(rr, 3).GetString().Trim();
@@ -339,8 +284,7 @@ public class ProductImportExportController : Controller
 
                     var catSlug = ws.Cell(rr, 4).GetString().Trim();
                     Guid? catId = null;
-                    if (!string.IsNullOrWhiteSpace(catSlug)
-                        && categories.TryGetValue(catSlug, out var cid))
+                    if (!string.IsNullOrWhiteSpace(catSlug) && categories.TryGetValue(catSlug, out var cid))
                         catId = cid;
 
                     decimal? price = null;
@@ -348,11 +292,9 @@ public class ProductImportExportController : Controller
                         price = pVal;
 
                     var desc = NullIfEmpty(ws.Cell(rr, 6).GetString());
-
                     var statusStr = ws.Cell(rr, 7).GetString().Trim();
                     ProductStatus status = ProductStatus.Available;
-                    if (!string.IsNullOrWhiteSpace(statusStr)
-                        && Enum.TryParse<ProductStatus>(statusStr, true, out var st))
+                    if (!string.IsNullOrWhiteSpace(statusStr) && Enum.TryParse<ProductStatus>(statusStr, true, out var st))
                         status = st;
 
                     var featuredStr = ws.Cell(rr, 8).GetString().Trim().ToLowerInvariant();
@@ -362,43 +304,53 @@ public class ProductImportExportController : Controller
                     var metaDesc = NullIfEmpty(ws.Cell(rr, 10).GetString());
                     var videoUrl = NullIfEmpty(ws.Cell(rr, 11).GetString());
 
-                    var existing = await _db.Products.FirstOrDefaultAsync(p => p.Slug == slug);
+                    var existing = await _db.Products
+                        .Include(p => p.Metadata)
+                        .Include(p => p.Finance)
+                        .Include(p => p.Content)
+                        .FirstOrDefaultAsync(p => p.Metadata != null && p.Metadata.Slug == slug);
+
                     if (existing != null)
                     {
                         existing.Name = name;
                         existing.Sku = sku;
                         existing.CategoryId = catId;
-                        existing.Price = price;
-                        existing.Description = desc;
                         existing.Status = status;
-                        existing.IsFeatured = isFeatured;
-                        existing.MetaTitle = metaTitle;
-                        existing.MetaDesc = metaDesc;
-                        existing.VideoUrl = videoUrl;
                         existing.UpdatedAt = DateTime.UtcNow;
-                        // KHÔNG đụng Image — admin tự upload trên web
+
+                        existing.Metadata ??= new ProductMetadata { ProductId = existing.Id };
+                        existing.Metadata.Slug = slug;
+                        existing.Metadata.MetaTitle = metaTitle;
+                        existing.Metadata.MetaDesc = metaDesc;
+
+                        existing.Finance ??= new ProductFinance { ProductId = existing.Id };
+                        existing.Finance.Price = price;
+                        existing.Finance.IsFeatured = isFeatured;
+
+                        existing.Content ??= new ProductContent { ProductId = existing.Id };
+                        existing.Content.Description = desc;
+                        existing.Content.VideoUrl = videoUrl;
+
                         updated++;
                     }
                     else
                     {
-                        _db.Products.Add(new Product
+                        var productId = Guid.NewGuid();
+                        var product = new Product
                         {
-                            Id = Guid.NewGuid(),
-                            Slug = slug,
+                            Id = productId,
                             Name = name,
                             Sku = sku,
                             CategoryId = catId,
-                            Price = price,
-                            Description = desc,
                             Status = status,
-                            IsFeatured = isFeatured,
-                            MetaTitle = metaTitle,
-                            MetaDesc = metaDesc,
-                            VideoUrl = videoUrl,
-                            ContentBlocks = JsonDocument.Parse("[]"),
                             CreatedAt = DateTime.UtcNow,
-                            UpdatedAt = DateTime.UtcNow
-                        });
+                            UpdatedAt = DateTime.UtcNow,
+                            Metadata = new ProductMetadata { ProductId = productId, Slug = slug, MetaTitle = metaTitle, MetaDesc = metaDesc },
+                            Finance = new ProductFinance { ProductId = productId, Price = price, IsFeatured = isFeatured },
+                            Content = new ProductContent { ProductId = productId, Description = desc, VideoUrl = videoUrl },
+                            Statistic = new ProductStatistic { ProductId = productId, ViewCount = 0 }
+                        };
+                        _db.Products.Add(product);
                         created++;
                     }
                 }
@@ -406,26 +358,15 @@ public class ProductImportExportController : Controller
                 {
                     skipped++;
                     errors.Add($"Dòng {rr}: {ex.Message}");
-                    _logger.LogWarning(ex, "Import row {Row} failed", rr);
                 }
             }
 
             await _db.SaveChangesAsync();
-
-            var summary = $"Tạo {created}, cập nhật {updated}, bỏ qua {skipped}";
-            await _activity.LogAsync("IMPORT", "Product", null, summary,
-                errors.Count > 0 ? "Warning" : "Success");
-
-            TempData["Success"] = $"Import xong: {summary}.";
-            if (errors.Count > 0)
-                TempData["Error"] = string.Join(" | ", errors.Take(5))
-                    + (errors.Count > 5 ? $" ... ({errors.Count - 5} lỗi khác — xem log server)" : "");
+            TempData["Success"] = $"Import xong: Tạo {created}, cập nhật {updated}, bỏ qua {skipped}.";
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Import products from Excel failed");
-            await _activity.LogAsync("ERROR", "Product", null,
-                "Import Excel thất bại: " + ex.Message, "Error");
+            _logger.LogError(ex, "Import products failed");
             TempData["Error"] = "Lỗi đọc Excel: " + ex.Message;
         }
 

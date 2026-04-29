@@ -1,4 +1,4 @@
-﻿using AquaCMS.Helpers;
+using AquaCMS.Helpers;
 using AquaCMS.Models.Entities;
 using AquaCMS.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +9,6 @@ namespace AquaCMS.Areas.Admin.Controllers;
 
 /// <summary>
 /// Admin CRUD sản phẩm — listing, create, edit, delete, bulk action.
-/// Yêu cầu role Editor trở lên.
 /// </summary>
 [Area("Admin")]
 [Authorize(Policy = "EditorUp")]
@@ -35,7 +34,6 @@ public class ProductsController : Controller
         _logger = logger;
     }
 
-    /// <summary>GET /admin/products — Danh sách sản phẩm (admin)</summary>
     public async Task<IActionResult> Index(string? search, string? status, int page = 1)
     {
         ViewData["Title"] = "Quản lý sản phẩm";
@@ -49,15 +47,20 @@ public class ProductsController : Controller
         return View(products);
     }
 
-    /// <summary>GET /admin/products/create — Form thêm sản phẩm</summary>
     public async Task<IActionResult> Create()
     {
         ViewData["Title"] = "Thêm sản phẩm mới";
         ViewData["Categories"] = await _categoryService.GetAllWithCountAsync();
-        return View(new Product());
+        
+        // Khởi tạo các bảng phụ để Tag Helpers hoạt động
+        return View(new Product {
+            Metadata = new ProductMetadata(),
+            Finance = new ProductFinance(),
+            Content = new ProductContent(),
+            Statistic = new ProductStatistic()
+        });
     }
 
-    /// <summary>POST /admin/products/create — Lưu sản phẩm mới</summary>
     [HttpPost]
     [ValidateAntiForgeryToken]
     [RequestSizeLimit(20 * 1024 * 1024)]
@@ -65,17 +68,25 @@ public class ProductsController : Controller
     {
         try
         {
-            if (string.IsNullOrEmpty(product.Slug))
-                product.Slug = SlugHelper.GenerateSlug(product.Name);
+            // Metadata & Slug
+            product.Metadata ??= new ProductMetadata();
+            if (string.IsNullOrEmpty(product.Metadata.Slug))
+                product.Metadata.Slug = SlugHelper.GenerateSlug(product.Name);
 
+            // Image & Content
+            product.Content ??= new ProductContent();
             if (imageFile is { Length: > 0 })
             {
                 var url = await _upload.UploadImageAsync(imageFile, "products");
-                if (!string.IsNullOrEmpty(url)) product.Image = url;
+                if (!string.IsNullOrEmpty(url)) product.Content.Image = url;
             }
 
             if (!string.IsNullOrWhiteSpace(contentBlocksJson))
-                product.ContentBlocks = JsonDocument.Parse(contentBlocksJson);
+                product.Content.ContentBlocks = JsonDocument.Parse(contentBlocksJson);
+
+            // Statistics & Finance
+            product.Statistic ??= new ProductStatistic();
+            product.Finance ??= new ProductFinance();
 
             product.CreatedAt = DateTime.UtcNow;
             product.UpdatedAt = DateTime.UtcNow;
@@ -86,10 +97,6 @@ public class ProductsController : Controller
             TempData["Success"] = $"Đã thêm sản phẩm \"{product.Name}\" thành công!";
             return RedirectToAction(nameof(Index));
         }
-        catch (InvalidOperationException ex)
-        {
-            TempData["Error"] = ex.Message;
-        }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Lỗi tạo sản phẩm");
@@ -99,18 +106,22 @@ public class ProductsController : Controller
         return View(product);
     }
 
-    /// <summary>GET /admin/products/edit/{id} — Form chỉnh sửa sản phẩm</summary>
     public async Task<IActionResult> Edit(Guid id)
     {
         var product = await _productService.GetByIdAsync(id);
         if (product == null) return NotFound();
+
+        // Đảm bảo không bị null
+        product.Metadata ??= new ProductMetadata { ProductId = id };
+        product.Content ??= new ProductContent { ProductId = id };
+        product.Finance ??= new ProductFinance { ProductId = id };
+        product.Statistic ??= new ProductStatistic { ProductId = id };
 
         ViewData["Title"] = $"Sửa: {product.Name}";
         ViewData["Categories"] = await _categoryService.GetAllWithCountAsync();
         return View(product);
     }
 
-    /// <summary>POST /admin/products/edit/{id} — Lưu chỉnh sửa</summary>
     [HttpPost]
     [ValidateAntiForgeryToken]
     [RequestSizeLimit(20 * 1024 * 1024)]
@@ -123,50 +134,53 @@ public class ProductsController : Controller
 
         try
         {
+            // Map Core
             existing.Name = product.Name;
-            existing.Slug = string.IsNullOrEmpty(product.Slug)
-                ? SlugHelper.GenerateSlug(product.Name)
-                : product.Slug;
             existing.Sku = product.Sku;
             existing.CategoryId = product.CategoryId;
-            existing.Price = product.Price;
-            existing.ShowPrice = product.ShowPrice;
-            existing.Description = product.Description;
-            existing.VideoUrl = product.VideoUrl;
             existing.Status = product.Status;
-            existing.IsFeatured = product.IsFeatured;
-            existing.MetaTitle = product.MetaTitle;
-            existing.MetaDesc = product.MetaDesc;
             existing.UpdatedAt = DateTime.UtcNow;
 
-            // Upload ảnh mới (nếu có) — fallback giữ Image cũ
+            // Map Metadata
+            existing.Metadata ??= new ProductMetadata { ProductId = id };
+            existing.Metadata.Slug = string.IsNullOrEmpty(product.Metadata?.Slug)
+                ? SlugHelper.GenerateSlug(product.Name)
+                : product.Metadata.Slug;
+            existing.Metadata.MetaTitle = product.Metadata?.MetaTitle;
+            existing.Metadata.MetaDesc = product.Metadata?.MetaDesc;
+
+            // Map Finance
+            existing.Finance ??= new ProductFinance { ProductId = id };
+            existing.Finance.Price = product.Finance?.Price;
+            existing.Finance.ShowPrice = product.Finance?.ShowPrice ?? true;
+            existing.Finance.IsFeatured = product.Finance?.IsFeatured ?? false;
+
+            // Map Content
+            existing.Content ??= new ProductContent { ProductId = id };
+            existing.Content.Description = product.Content?.Description;
+            existing.Content.VideoUrl = product.Content?.VideoUrl;
+
             if (imageFile is { Length: > 0 })
             {
                 var url = await _upload.UploadImageAsync(imageFile, "products");
                 if (!string.IsNullOrEmpty(url))
                 {
-                    _upload.DeleteFile(existing.Image); // xóa ảnh cũ
-                    existing.Image = url;
+                    _upload.DeleteFile(existing.Content.Image);
+                    existing.Content.Image = url;
                 }
             }
-            else if (!string.IsNullOrEmpty(product.Image))
+            else if (product.Content != null && !string.IsNullOrEmpty(product.Content.Image))
             {
-                existing.Image = product.Image;
+                existing.Content.Image = product.Content.Image;
             }
 
             if (!string.IsNullOrWhiteSpace(contentBlocksJson))
-                existing.ContentBlocks = JsonDocument.Parse(contentBlocksJson);
+                existing.Content.ContentBlocks = JsonDocument.Parse(contentBlocksJson);
 
             await _productService.UpdateAsync(existing);
             await _activity.LogAsync("UPDATE", "Product", existing.Id.ToString(), existing.Name);
 
             TempData["Success"] = $"Đã cập nhật sản phẩm \"{existing.Name}\"!";
-        }
-        catch (InvalidOperationException ex)
-        {
-            TempData["Error"] = ex.Message;
-            ViewData["Categories"] = await _categoryService.GetAllWithCountAsync();
-            return View(existing);
         }
         catch (Exception ex)
         {
@@ -176,7 +190,6 @@ public class ProductsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    /// <summary>POST /admin/products/delete/{id} — Xóa sản phẩm</summary>
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Authorize(Policy = "ManagerUp")]
@@ -187,7 +200,7 @@ public class ProductsController : Controller
 
         try
         {
-            _upload.DeleteFile(existing.Image);
+            if (existing.Content != null) _upload.DeleteFile(existing.Content.Image);
             await _productService.DeleteAsync(id);
             await _activity.LogAsync("DELETE", "Product", id.ToString(), existing.Name);
             TempData["Success"] = "Đã xóa sản phẩm!";
@@ -200,7 +213,6 @@ public class ProductsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    /// <summary>POST /admin/products/bulk — Thao tác hàng loạt (ẩn/hiện/xóa)</summary>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Bulk(List<Guid> ids, string action)
@@ -216,7 +228,6 @@ public class ProductsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    /// <summary>GET /admin/products/bulkedit — Form chỉnh sửa hàng loạt giá + trạng thái</summary>
     public async Task<IActionResult> BulkEdit(List<Guid> ids)
     {
         if (ids.Count == 0)
@@ -230,7 +241,6 @@ public class ProductsController : Controller
         return View(products);
     }
 
-    /// <summary>POST /admin/products/bulkedit — Lưu chỉnh sửa hàng loạt</summary>
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> BulkEdit(List<Guid> ids, List<decimal?> prices, List<ProductStatus> statuses)

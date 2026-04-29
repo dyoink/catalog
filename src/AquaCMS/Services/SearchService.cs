@@ -8,7 +8,6 @@ namespace AquaCMS.Services;
 
 /// <summary>
 /// Implementation tìm kiếm — dùng EF Core + ILIKE (PostgreSQL).
-/// Có thể nâng cấp dùng pg_trgm GIN index để nhanh hơn.
 /// </summary>
 public class SearchService : ISearchService
 {
@@ -25,7 +24,6 @@ public class SearchService : ISearchService
     {
         var result = new SearchSuggestionResult();
 
-        // Null safety
         if (string.IsNullOrWhiteSpace(query) || query.Length < 2)
             return result;
 
@@ -38,24 +36,24 @@ public class SearchService : ISearchService
                 .AsNoTracking()
                 .Where(p => p.Status != ProductStatus.Hidden &&
                            (EF.Functions.ILike(p.Name, pattern) ||
-                            (p.Description != null && EF.Functions.ILike(p.Description, pattern))));
+                            (p.Content != null && p.Content.Description != null && EF.Functions.ILike(p.Content.Description, pattern))));
 
             result.TotalProducts = await productsQ.CountAsync();
             var products = await productsQ
-                .OrderByDescending(p => p.IsFeatured)
-                .ThenByDescending(p => p.ViewCount)
+                .OrderByDescending(p => p.Finance != null && p.Finance.IsFeatured)
+                .ThenByDescending(p => p.Statistic != null ? p.Statistic.ViewCount : 0)
                 .Take(limit)
                 .Select(p => new SearchItem
                 {
                     Title = p.Name,
-                    Url = $"/san-pham/{p.Slug}-{p.ShortId}",
-                    Image = p.Image,
-                    Subtitle = PriceHelper.FormatPrice(p.Price, p.ShowPrice)
+                    Url = p.Metadata != null ? $"/san-pham/{p.Metadata.Slug}-{p.ShortId}" : "#",
+                    Image = p.Content != null ? p.Content.Image : null,
+                    Subtitle = PriceHelper.FormatPrice(p.Finance != null ? p.Finance.Price : null, p.Finance != null ? p.Finance.ShowPrice : true)
                 })
                 .ToListAsync();
             result.Products = products;
 
-            // Search posts
+            // Search posts (stays same)
             var postsQ = _db.Posts
                 .AsNoTracking()
                 .Where(p => p.IsPublished &&

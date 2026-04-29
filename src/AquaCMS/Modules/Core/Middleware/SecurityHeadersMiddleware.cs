@@ -40,6 +40,7 @@ public class SecurityHeadersMiddleware
             "font-src 'self' data: https://fonts.gstatic.com",
             "img-src 'self' data: https:",
             "connect-src 'self' ws: wss: https://unpkg.com https://cdn.jsdelivr.net",
+            "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
             "frame-ancestors 'self'"
         );
 

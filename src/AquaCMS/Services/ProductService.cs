@@ -1,4 +1,4 @@
-﻿using AquaCMS.Data;
+using AquaCMS.Data;
 using AquaCMS.Models.Common;
 using AquaCMS.Models.Entities;
 using AquaCMS.Services.Interfaces;
@@ -29,6 +29,9 @@ public class ProductService : IProductService
         // Bắt đầu từ query base — chỉ lấy sản phẩm không bị ẩn
         var query = _db.Products
             .Include(p => p.Category)
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Content)
             .Where(p => p.Status != ProductStatus.Hidden)
             .AsQueryable();
 
@@ -60,7 +63,11 @@ public class ProductService : IProductService
         if (string.IsNullOrWhiteSpace(slug)) return null;
         return await _db.Products
             .Include(p => p.Category)
-            .FirstOrDefaultAsync(p => p.Slug == slug);
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Content)
+            .Include(p => p.Statistic)
+            .FirstOrDefaultAsync(p => p.Metadata != null && p.Metadata.Slug == slug);
     }
 
     /// <inheritdoc/>
@@ -69,15 +76,19 @@ public class ProductService : IProductService
         if (shortId <= 0) return null;
         return await _db.Products
             .Include(p => p.Category)
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Content)
+            .Include(p => p.Statistic)
             .FirstOrDefaultAsync(p => p.ShortId == shortId);
     }
 
     /// <inheritdoc/>
     public async Task IncrementViewCountAsync(Guid productId)
     {
-        // Dùng raw SQL để tăng atomic, tránh race condition
+        // Dùng raw SQL để tăng atomic trên bảng statistics mới
         await _db.Database.ExecuteSqlInterpolatedAsync(
-            $"UPDATE products SET view_count = view_count + 1 WHERE id = {productId}");
+            $"UPDATE product_statistics SET view_count = view_count + 1 WHERE product_id = {productId}");
     }
 
     /// <inheritdoc/>
@@ -85,7 +96,10 @@ public class ProductService : IProductService
     {
         return await _db.Products
             .Include(p => p.Category)
-            .Where(p => p.Status != ProductStatus.Hidden && p.IsFeatured)
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Content)
+            .Where(p => p.Status != ProductStatus.Hidden && p.Finance != null && p.Finance.IsFeatured)
             .OrderByDescending(p => p.CreatedAt)
             .Take(count)
             .ToListAsync();
@@ -97,10 +111,14 @@ public class ProductService : IProductService
     {
         return await _db.Products
             .Include(p => p.Category)
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Content)
+            .Include(p => p.Statistic)
             .Where(p => p.Id != productId
                      && p.Status != ProductStatus.Hidden
                      && p.CategoryId == categoryId)
-            .OrderByDescending(p => p.ViewCount)
+            .OrderByDescending(p => p.Statistic != null ? p.Statistic.ViewCount : 0)
             .Take(count)
             .ToListAsync();
     }
@@ -114,6 +132,9 @@ public class ProductService : IProductService
     {
         var query = _db.Products
             .Include(p => p.Category)
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Statistic)
             .AsQueryable();
 
         // Admin có thể lọc theo status cụ thể
@@ -140,12 +161,22 @@ public class ProductService : IProductService
     {
         return await _db.Products
             .Include(p => p.Category)
+            .Include(p => p.Metadata)
+            .Include(p => p.Finance)
+            .Include(p => p.Content)
+            .Include(p => p.Statistic)
             .FirstOrDefaultAsync(p => p.Id == id);
     }
 
     /// <inheritdoc/>
     public async Task<Product> CreateAsync(Product product)
     {
+        // Đảm bảo các bảng phụ được khởi tạo nếu chưa có
+        product.Metadata ??= new ProductMetadata { ProductId = product.Id };
+        product.Content ??= new ProductContent { ProductId = product.Id };
+        product.Finance ??= new ProductFinance { ProductId = product.Id };
+        product.Statistic ??= new ProductStatistic { ProductId = product.Id };
+
         _db.Products.Add(product);
         await _db.SaveChangesAsync();
         _logger.LogInformation("Tạo sản phẩm mới: {Name} (ID: {Id})", product.Name, product.Id);
@@ -206,6 +237,7 @@ public class ProductService : IProductService
     {
         return await _db.Products
             .Include(p => p.Category)
+            .Include(p => p.Finance)
             .Where(p => ids.Contains(p.Id))
             .OrderBy(p => p.Name)
             .ToListAsync();
@@ -215,6 +247,7 @@ public class ProductService : IProductService
     public async Task<int> BulkUpdateAsync(List<Guid> ids, List<decimal?> prices, List<ProductStatus> statuses)
     {
         var products = await _db.Products
+            .Include(p => p.Finance)
             .Where(p => ids.Contains(p.Id))
             .ToListAsync();
 
@@ -225,7 +258,10 @@ public class ProductService : IProductService
         {
             if (dict.TryGetValue(ids[i], out var product))
             {
-                product.Price = prices[i];
+                if (product.Finance != null)
+                {
+                    product.Finance.Price = prices[i];
+                }
                 product.Status = statuses[i];
                 product.UpdatedAt = DateTime.UtcNow;
                 count++;

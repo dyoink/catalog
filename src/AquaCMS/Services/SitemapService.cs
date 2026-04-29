@@ -64,9 +64,10 @@ public class SitemapService : ISitemapService
                 // Products
                 var products = await _db.Products.AsNoTracking()
                     .Where(p => p.Status != ProductStatus.Hidden)
-                    .Select(p => new { p.Slug, p.ShortId, p.UpdatedAt }).ToListAsync();
+                    .Select(p => new { Slug = p.Metadata != null ? p.Metadata.Slug : "", p.ShortId, p.UpdatedAt }).ToListAsync();
                 foreach (var p in products)
-                    WriteUrl(w, $"{baseUrl}/san-pham/{p.Slug}-{p.ShortId}", p.UpdatedAt, "weekly", "0.8");
+                    if (!string.IsNullOrEmpty(p.Slug))
+                        WriteUrl(w, $"{baseUrl}/san-pham/{p.Slug}-{p.ShortId}", p.UpdatedAt, "weekly", "0.8");
 
                 // Posts
                 var posts = await _db.Posts.AsNoTracking()

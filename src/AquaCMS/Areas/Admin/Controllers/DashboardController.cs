@@ -1,4 +1,4 @@
-﻿using AquaCMS.Data;
+using AquaCMS.Data;
 using AquaCMS.Models.Entities;
 using AquaCMS.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -70,9 +70,15 @@ public class DashboardController : Controller
         // ===== Sản phẩm xem nhiều nhất =====
         ViewData["TopProducts"] = await _db.Products
             .Where(p => p.Status != ProductStatus.Hidden)
-            .OrderByDescending(p => p.ViewCount)
+            .OrderByDescending(p => p.Statistic != null ? p.Statistic.ViewCount : 0)
             .Take(5)
-            .Select(p => new { p.Name, p.ViewCount, p.Slug, p.Image, p.ShortId })
+            .Select(p => new { 
+                p.Name, 
+                ViewCount = p.Statistic != null ? p.Statistic.ViewCount : 0, 
+                Slug = p.Metadata != null ? p.Metadata.Slug : "", 
+                Image = p.Content != null ? p.Content.Image : null, 
+                p.ShortId 
+            })
             .ToListAsync();
 
         // ===== Bài viết mới nhất =====
@@ -117,7 +123,6 @@ public class DashboardController : Controller
         ViewData["TopPages"] = topPaths;
 
         // ----- Conversion Rate -----
-        // = % unique IPs vào /gio-hang trong tổng unique IPs xem trang.
         var uniqueIps = recentViews
             .Where(v => !string.IsNullOrEmpty(v.IpAddress))
             .Select(v => v.IpAddress!)
@@ -139,7 +144,6 @@ public class DashboardController : Controller
         return View();
     }
 
-    /// <summary>Phân loại referrer thành nhóm hiển thị (Direct / Google / Facebook / ...).</summary>
     private static string ClassifyReferrer(string? referrer)
     {
         if (string.IsNullOrWhiteSpace(referrer)) return "Trực tiếp";
@@ -153,7 +157,6 @@ public class DashboardController : Controller
             if (host.Contains("bing")) return "Bing";
             if (host.Contains("instagram")) return "Instagram";
             if (host.Contains("tiktok")) return "TikTok";
-            // Strip "www."
             return host.StartsWith("www.") ? host[4..] : host;
         }
         catch
@@ -162,7 +165,6 @@ public class DashboardController : Controller
         }
     }
 
-    /// <summary>Detect device từ user-agent: Mobile / Tablet / Desktop.</summary>
     private static string ClassifyDevice(string? ua)
     {
         if (string.IsNullOrWhiteSpace(ua)) return "Khác";

@@ -6,9 +6,9 @@
 <article class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
     @* Ảnh sản phẩm *@
     <a href="@Model.SeoUrl" class="block aspect-[4/3] overflow-hidden relative">
-        @if (!string.IsNullOrEmpty(Model.Image))
+        @if (!string.IsNullOrEmpty(Model.Content?.Image))
         {
-            <img src="@Model.Image"
+            <img src="@Model.Content.Image"
                  alt="@Model.Name"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                  loading="lazy" />
@@ -27,7 +27,7 @@
                 Hết hàng
             </span>
         }
-        @if (Model.IsFeatured)
+        @if (Model.Finance?.IsFeatured == true)
         {
             <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-2 py-1 rounded-full font-medium">
                 Nổi bật
@@ -53,8 +53,8 @@
 
         @* Giá *@
         <div class="mt-auto pt-3 flex items-center justify-between">
-            <span class="font-bold text-lg @(Model.Price.HasValue && Model.ShowPrice ? "text-primary" : "text-gray-500")">
-                @PriceHelper.FormatPrice(Model.Price, Model.ShowPrice)
+            <span class="font-bold text-lg @(Model.Finance?.Price.HasValue == true && Model.Finance.ShowPrice ? "text-primary" : "text-gray-500")">
+                @PriceHelper.FormatPrice(Model.Finance?.Price, Model.Finance?.ShowPrice ?? true)
             </span>
 
             <a href="@Model.SeoUrl"

@@ -42,9 +42,9 @@
                                 <td class="px-4 py-3">
                                     <input type="hidden" name="ids[@i]" value="@p.Id" />
                                     <div class="flex items-center gap-3">
-                                        @if (!string.IsNullOrEmpty(p.Image))
+                                        @if (!string.IsNullOrEmpty(p.Content?.Image))
                                         {
-                                            <img src="@p.Image" alt="" class="w-10 h-10 rounded-lg object-cover" />
+                                            <img src="@p.Content.Image" alt="" class="w-10 h-10 rounded-lg object-cover" />
                                         }
                                         else
                                         {
@@ -58,7 +58,7 @@
                                 <td class="px-4 py-3 text-gray-500">@(p.Sku ?? "—")</td>
                                 <td class="px-4 py-3 text-gray-500">@(p.Category?.Name ?? "—")</td>
                                 <td class="px-4 py-3">
-                                    <input type="number" name="prices[@i]" value="@p.Price" step="1000" min="0"
+                                    <input type="number" name="prices[@i]" value="@p.Finance?.Price" step="1000" min="0"
                                            class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
                                            placeholder="Liên hệ" />
                                 </td>

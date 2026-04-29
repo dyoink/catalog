@@ -1,4 +1,4 @@
-﻿using AquaCMS.Models.ViewModels;
+using AquaCMS.Models.ViewModels;
 using AquaCMS.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,7 +6,6 @@ namespace AquaCMS.Controllers;
 
 /// <summary>
 /// Controller sản phẩm — listing, detail, category filter.
-/// URL scheme: /san-pham, /san-pham/{slug}, /danh-muc/{slug}
 /// </summary>
 public class ProductController : Controller
 {
@@ -24,9 +23,6 @@ public class ProductController : Controller
         _settingsService = settingsService;
     }
 
-    /// <summary>
-    /// GET /san-pham — Danh sách tất cả sản phẩm (có search + phân trang).
-    /// </summary>
     public async Task<IActionResult> Index(string? search, int page = 1)
     {
         var settings = await _settingsService.GetSettingsAsync();
@@ -44,20 +40,14 @@ public class ProductController : Controller
                 : $"Kết quả tìm kiếm: {search}"
         };
 
-        // SEO
         ViewData["Title"] = $"{model.PageTitle} | {settings.CompanyName}";
         ViewData["MetaDescription"] = $"Danh sách sản phẩm thiết bị nuôi trồng thủy sản — {settings.CompanyName}";
-        ViewData["CanonicalUrl"] = Url.RouteUrl("product-list");
 
         return View(model);
     }
 
-    /// <summary>
-    /// GET /danh-muc/{slug} — Sản phẩm theo danh mục.
-    /// </summary>
     public async Task<IActionResult> Category(string slug, int page = 1)
     {
-        // Tìm danh mục theo slug
         var category = await _categoryService.GetBySlugAsync(slug);
         if (category == null)
             return NotFound();
@@ -75,52 +65,38 @@ public class ProductController : Controller
             PageTitle = category.Name
         };
 
-        // SEO
         ViewData["Title"] = $"{category.Name} | {settings.CompanyName}";
         ViewData["MetaDescription"] = $"Sản phẩm {category.Name} — {settings.CompanyName}";
-        ViewData["CanonicalUrl"] = Url.RouteUrl("category-products", new { slug });
 
-        return View("Index", model); // Reuse cùng view
+        return View("Index", model);
     }
 
-    /// <summary>
-    /// GET /san-pham/{slugAndId} — Chi tiết sản phẩm.
-    /// URL pattern: /san-pham/may-cho-tom-an-12345
-    /// - Trích shortId ở cuối URL (sau dấu - cuối cùng)
-    /// - Nếu slug trong URL khác slug DB → 301 redirect (SEO best practice)
-    /// - Tăng ViewCount +1, JSON-LD Product structured data.
-    /// </summary>
     public async Task<IActionResult> Detail(string slugAndId)
     {
         if (string.IsNullOrWhiteSpace(slugAndId))
             return NotFound();
 
-        // Parse: tách shortId (số ở cuối) khỏi slug
         var (urlSlug, shortId) = ParseSlugAndId(slugAndId);
         if (shortId == null)
         {
-            // Fallback: thử coi toàn bộ là slug (backward-compat URL cũ)
             var byOldSlug = await _productService.GetBySlugAsync(slugAndId);
-            if (byOldSlug == null || byOldSlug.Status == Models.Entities.ProductStatus.Hidden)
+            if (byOldSlug == null || byOldSlug.Status == Models.Entities.ProductStatus.Hidden || byOldSlug.Metadata == null)
                 return NotFound();
-            // 301 redirect lên URL mới có shortId
-            return RedirectPermanent($"/san-pham/{byOldSlug.Slug}-{byOldSlug.ShortId}");
+            
+            return RedirectPermanent($"/san-pham/{byOldSlug.Metadata.Slug}-{byOldSlug.ShortId}");
         }
 
         var product = await _productService.GetByShortIdAsync(shortId.Value);
 
-        if (product == null || product.Status == Models.Entities.ProductStatus.Hidden)
+        if (product == null || product.Status == Models.Entities.ProductStatus.Hidden || product.Metadata == null)
             return NotFound();
 
-        // Nếu slug khác (vd: admin đổi tên sản phẩm) → 301 redirect lên URL canonical
-        if (!string.Equals(product.Slug, urlSlug, StringComparison.OrdinalIgnoreCase))
+        if (!string.Equals(product.Metadata.Slug, urlSlug, StringComparison.OrdinalIgnoreCase))
         {
-            return RedirectPermanent($"/san-pham/{product.Slug}-{product.ShortId}");
+            return RedirectPermanent($"/san-pham/{product.Metadata.Slug}-{product.ShortId}");
         }
 
         var settings = await _settingsService.GetSettingsAsync();
-
-        // Tăng lượt xem (phải await để tránh lỗi concurrency DbContext)
         await _productService.IncrementViewCountAsync(product.Id);
 
         var related = await _productService.GetRelatedProductsAsync(
@@ -152,19 +128,15 @@ public class ProductController : Controller
             IsActive = true
         });
 
-        // SEO
-        ViewData["Title"] = product.MetaTitle ?? $"{product.Name} | {settings.CompanyName}";
-        ViewData["MetaDescription"] = product.MetaDesc ?? product.Description ?? "";
-        ViewData["OgImage"] = product.Image;
+        ViewData["Title"] = product.Metadata.MetaTitle ?? $"{product.Name} | {settings.CompanyName}";
+        ViewData["MetaDescription"] = product.Metadata.MetaDesc ?? product.Content?.Description ?? "";
+        ViewData["OgImage"] = product.Content?.Image;
         ViewData["OgType"] = "product";
-        ViewData["CanonicalUrl"] = $"/san-pham/{product.Slug}-{product.ShortId}";
+        ViewData["CanonicalUrl"] = $"/san-pham/{product.Metadata.Slug}-{product.ShortId}";
 
         return View(model);
     }
 
-    /// <summary>
-    /// Tách "may-cho-tom-an-12345" thành ("may-cho-tom-an", 12345).
-    /// </summary>
     private static (string slug, long? shortId) ParseSlugAndId(string slugAndId)
     {
         var lastDash = slugAndId.LastIndexOf('-');

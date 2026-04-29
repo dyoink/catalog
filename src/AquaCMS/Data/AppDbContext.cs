@@ -16,6 +16,10 @@ public class AppDbContext : DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Category> Categories => Set<Category>();
     public DbSet<Product> Products => Set<Product>();
+    public DbSet<ProductMetadata> ProductMetadata => Set<ProductMetadata>();
+    public DbSet<ProductContent> ProductContents => Set<ProductContent>();
+    public DbSet<ProductFinance> ProductFinances => Set<ProductFinance>();
+    public DbSet<ProductStatistic> ProductStatistics => Set<ProductStatistic>();
     public DbSet<KnowledgeCategory> KnowledgeCategories => Set<KnowledgeCategory>();
     public DbSet<Post> Posts => Set<Post>();
     public DbSet<PartnerCategory> PartnerCategories => Set<PartnerCategory>();
@@ -80,7 +84,7 @@ public class AppDbContext : DbContext
         });
 
         // ===================================================
-        // Product
+        // Product (Core)
         // ===================================================
         modelBuilder.Entity<Product>(entity =>
         {
@@ -88,15 +92,9 @@ public class AppDbContext : DbContext
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Id).HasColumnName("id").HasDefaultValueSql("uuid_generate_v4()");
             entity.Property(e => e.ShortId).HasColumnName("short_id").UseSerialColumn();
-            entity.Property(e => e.Slug).HasColumnName("slug").HasMaxLength(200).IsRequired();
             entity.Property(e => e.Name).HasColumnName("name").HasMaxLength(255).IsRequired();
             entity.Property(e => e.Sku).HasColumnName("sku").HasMaxLength(100);
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
-            entity.Property(e => e.Price).HasColumnName("price").HasColumnType("decimal(18,0)");
-            entity.Property(e => e.ShowPrice).HasColumnName("show_price").HasDefaultValue(true);
-            entity.Property(e => e.Description).HasColumnName("description");
-            entity.Property(e => e.Image).HasColumnName("image").HasMaxLength(500);
-            entity.Property(e => e.VideoUrl).HasColumnName("video_url").HasMaxLength(500);
             entity.Property(e => e.Status).HasColumnName("status")
                   .HasConversion(
                       v => v == ProductStatus.Available ? "available" :
@@ -104,17 +102,9 @@ public class AppDbContext : DbContext
                       v => v == "available" ? ProductStatus.Available :
                            v == "out_of_stock" ? ProductStatus.OutOfStock : ProductStatus.Hidden)
                   .IsRequired();
-            // JSONB — EF Core tự serialize/deserialize JsonDocument
-            entity.Property(e => e.ContentBlocks).HasColumnName("content_blocks")
-                  .HasColumnType("jsonb").HasDefaultValueSql("'[]'::jsonb");
-            entity.Property(e => e.ViewCount).HasColumnName("view_count").HasDefaultValue(0);
-            entity.Property(e => e.MetaTitle).HasColumnName("meta_title").HasMaxLength(70);
-            entity.Property(e => e.MetaDesc).HasColumnName("meta_desc").HasMaxLength(160);
-            entity.Property(e => e.IsFeatured).HasColumnName("is_featured").HasDefaultValue(false);
             entity.Property(e => e.CreatedAt).HasColumnName("created_at").HasDefaultValueSql("NOW()");
             entity.Property(e => e.UpdatedAt).HasColumnName("updated_at").HasDefaultValueSql("NOW()");
 
-            entity.HasIndex(e => e.Slug).IsUnique();
             entity.HasIndex(e => e.Sku).IsUnique().HasFilter("sku IS NOT NULL");
             entity.HasIndex(e => e.ShortId).IsUnique();
 
@@ -123,6 +113,71 @@ public class AppDbContext : DbContext
                   .WithMany(c => c.Products)
                   .HasForeignKey(e => e.CategoryId)
                   .OnDelete(DeleteBehavior.SetNull);
+
+            // Relationships (1:1)
+            entity.HasOne(e => e.Metadata)
+                  .WithOne(m => m.Product)
+                  .HasForeignKey<ProductMetadata>(m => m.ProductId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(e => e.Content)
+                  .WithOne(c => c.Product)
+                  .HasForeignKey<ProductContent>(c => c.ProductId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(e => e.Finance)
+                  .WithOne(f => f.Product)
+                  .HasForeignKey<ProductFinance>(f => f.ProductId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(e => e.Statistic)
+                  .WithOne(s => s.Product)
+                  .HasForeignKey<ProductStatistic>(s => s.ProductId)
+                  .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // ===================================================
+        // Product Sub-tables
+        // ===================================================
+        modelBuilder.Entity<ProductMetadata>(entity =>
+        {
+            entity.ToTable("product_metadata");
+            entity.HasKey(e => e.ProductId);
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.Slug).HasColumnName("slug").HasMaxLength(200).IsRequired();
+            entity.Property(e => e.MetaTitle).HasColumnName("meta_title").HasMaxLength(70);
+            entity.Property(e => e.MetaDesc).HasColumnName("meta_desc").HasMaxLength(160);
+            entity.HasIndex(e => e.Slug).IsUnique();
+        });
+
+        modelBuilder.Entity<ProductContent>(entity =>
+        {
+            entity.ToTable("product_contents");
+            entity.HasKey(e => e.ProductId);
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.ContentBlocks).HasColumnName("content_blocks")
+                  .HasColumnType("jsonb").HasDefaultValueSql("'[]'::jsonb");
+            entity.Property(e => e.Image).HasColumnName("image").HasMaxLength(500);
+            entity.Property(e => e.VideoUrl).HasColumnName("video_url").HasMaxLength(500);
+        });
+
+        modelBuilder.Entity<ProductFinance>(entity =>
+        {
+            entity.ToTable("product_finances");
+            entity.HasKey(e => e.ProductId);
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.Price).HasColumnName("price").HasColumnType("decimal(18,0)");
+            entity.Property(e => e.ShowPrice).HasColumnName("show_price").HasDefaultValue(true);
+            entity.Property(e => e.IsFeatured).HasColumnName("is_featured").HasDefaultValue(false);
+        });
+
+        modelBuilder.Entity<ProductStatistic>(entity =>
+        {
+            entity.ToTable("product_statistics");
+            entity.HasKey(e => e.ProductId);
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.ViewCount).HasColumnName("view_count").HasDefaultValue(0);
         });
 
         // ===================================================

@@ -1,8 +1,19 @@
 @model ProductDetailViewModel
+@using System.Text.RegularExpressions
 @*
     Chi tiết sản phẩm (/san-pham/{slug}).
-    SEO: Product JSON-LD, Breadcrumb JSON-LD, meta title/description, Open Graph.
 *@
+@{
+    // Helper function để lấy YouTube ID từ URL
+    string GetYouTubeId(string url)
+    {
+        if (string.IsNullOrEmpty(url)) return "";
+        var reg = new Regex(@"(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^""&?\/\s]{11})", RegexOptions.IgnoreCase);
+        var match = reg.Match(url);
+        return match.Success ? match.Groups[1].Value : "";
+    }
+    var videoId = GetYouTubeId(Model.Product.Content?.VideoUrl ?? "");
+}
 
 <div class="max-w-7xl mx-auto px-4 py-8" x-data="{ lightbox: { open: false, src: '', alt: '' } }">
     @* ===== LIGHTBOX MODAL ===== *@
@@ -49,11 +60,11 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-2xl shadow-sm p-6 lg:p-10">
         @* Ảnh sản phẩm *@
         <div>
-            @if (!string.IsNullOrEmpty(Model.Product.Image))
+            @if (!string.IsNullOrEmpty(Model.Product.Content?.Image))
             {
                 <div class="aspect-square rounded-xl overflow-hidden bg-gray-50 cursor-pointer group relative"
-                     @@click="lightbox.open = true; lightbox.src = '@Model.Product.Image'; lightbox.alt = '@Model.Product.Name'">
-                    <img src="@Model.Product.Image"
+                     @@click="lightbox.open = true; lightbox.src = '@Model.Product.Content.Image'; lightbox.alt = '@Model.Product.Name'">
+                    <img src="@Model.Product.Content.Image"
                          alt="@Model.Product.Name"
                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                          loading="eager" />
@@ -66,18 +77,6 @@
             {
                 <div class="aspect-square rounded-xl bg-gray-100 flex items-center justify-center">
                     <i data-lucide="image-off" class="w-20 h-20 text-gray-300"></i>
-                </div>
-            }
-
-            @* Video nếu có *@
-            @if (!string.IsNullOrEmpty(Model.Product.VideoUrl))
-            {
-                <div class="mt-4">
-                    <a href="@Model.Product.VideoUrl" target="_blank" rel="noopener noreferrer"
-                       class="flex items-center gap-2 text-primary hover:underline font-medium">
-                        <i data-lucide="play-circle" class="w-5 h-5"></i>
-                        Xem video sản phẩm
-                    </a>
                 </div>
             }
         </div>
@@ -113,15 +112,15 @@
             </div>
 
             @* Giá *@
-            <div class="text-3xl font-bold mb-6 @(Model.Product.Price.HasValue && Model.Product.ShowPrice ? "text-primary" : "text-gray-600")">
-                @PriceHelper.FormatPrice(Model.Product.Price, Model.Product.ShowPrice)
+            <div class="text-3xl font-bold mb-6 @(Model.Product.Finance?.Price.HasValue == true && Model.Product.Finance.ShowPrice ? "text-primary" : "text-gray-600")">
+                @PriceHelper.FormatPrice(Model.Product.Finance?.Price, Model.Product.Finance?.ShowPrice ?? true)
             </div>
 
             @* Mô tả ngắn *@
-            @if (!string.IsNullOrEmpty(Model.Product.Description))
+            @if (!string.IsNullOrEmpty(Model.Product.Content?.Description))
             {
                 <div class="prose prose-sm text-gray-600 mb-8 max-w-none">
-                    <p>@Model.Product.Description</p>
+                    <p>@Model.Product.Content.Description</p>
                 </div>
             }
 
@@ -132,8 +131,8 @@
                                hover:opacity-90 transition shadow flex items-center gap-2"
                         data-product-id="@Model.Product.Id"
                         data-product-name="@Model.Product.Name"
-                        data-product-price="@Model.Product.Price"
-                        data-product-image="@Model.Product.Image">
+                        data-product-price="@Model.Product.Finance?.Price"
+                        data-product-image="@Model.Product.Content?.Image">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                     Thêm vào giỏ hàng
                 </button>
@@ -151,7 +150,7 @@
             <div class="flex items-center gap-6 mt-8 pt-6 border-t text-sm text-gray-400">
                 <span class="flex items-center gap-1">
                     <i data-lucide="eye" class="w-4 h-4"></i>
-                    @Model.Product.ViewCount lượt xem
+                    @(Model.Product.Statistic?.ViewCount ?? 0) lượt xem
                 </span>
                 <span class="flex items-center gap-1">
                     <i data-lucide="calendar" class="w-4 h-4"></i>
@@ -161,22 +160,48 @@
         </div>
     </div>
 
-    @* ===== CONTENT BLOCKS (JSONB) ===== *@
-    @if (Model.Product.ContentBlocks != null)
-    {
-        <section class="mt-12 bg-white rounded-2xl shadow-sm p-6 lg:p-10">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Thông tin chi tiết</h2>
-            <div id="content-blocks" class="prose max-w-none">
-                @* Content blocks sẽ được render bằng JS từ JSON *@
-            </div>
-        </section>
-    }
+    @* ===== CONTENT SECTION (Includes Video) ===== *@
+    <section class="mt-12 bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+        @* Tiêu đề căn giữa, màu đen, không nền *@
+        <div class="py-8 px-6 text-center border-b border-gray-50">
+            <h2 class="text-2xl font-bold text-gray-900 uppercase tracking-widest">Thông tin chi tiết</h2>
+        </div>
+        
+        <div class="p-6 lg:p-10 space-y-12">
+            @* Video Nhúng (Nằm trong phần chi tiết) *@
+            @if (!string.IsNullOrEmpty(videoId))
+            {
+                <div class="max-w-3xl mx-auto">
+                    <div class="aspect-video w-full bg-black rounded-xl overflow-hidden shadow-md">
+                        <iframe class="w-full h-full" 
+                                src="https://www.youtube.com/embed/@videoId" 
+                                title="Product Video" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center text-xs text-gray-400 mt-3 flex items-center justify-center gap-1">
+                        <i data-lucide="play-circle" class="w-3 h-3"></i> Video giới thiệu sản phẩm
+                    </p>
+                </div>
+            }
+
+            @* Content Blocks *@
+            @if (Model.Product.Content?.ContentBlocks != null)
+            {
+                <div id="content-blocks" class="prose max-w-none mx-auto">
+                    @* Rendered by JS *@
+                </div>
+            }
+        </div>
+    </section>
 
     @* ===== SẢN PHẨM LIÊN QUAN ===== *@
     @if (Model.RelatedProducts.Count > 0)
     {
         <section class="mt-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Sản phẩm liên quan</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Sản phẩm tương tự</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach (var related in Model.RelatedProducts)
                 {
@@ -187,61 +212,11 @@
     }
 </div>
 
-@* ===== STRUCTURED DATA (SEO) ===== *@
-@section StructuredData {
-    @* Product JSON-LD *@
-    <script type="application/ld+json">
-    {
-        "@@context": "https://schema.org",
-        "@@type": "Product",
-        "name": "@Model.Product.Name",
-        @if (!string.IsNullOrEmpty(Model.Product.Description))
-        {
-            @:"description": "@Html.Raw(Model.Product.Description.Replace("\"", "\\\""))",
-        }
-        @if (!string.IsNullOrEmpty(Model.Product.Image))
-        {
-            @:"image": "@Model.Product.Image",
-        }
-        @if (!string.IsNullOrEmpty(Model.Product.Sku))
-        {
-            @:"sku": "@Model.Product.Sku",
-        }
-        "offers": {
-            "@@type": "Offer",
-            @if (Model.Product.Price.HasValue)
-            {
-                @:"price": "@Model.Product.Price.Value",
-                @:"priceCurrency": "VND",
-            }
-            "availability": "@(Model.Product.Status == ProductStatus.OutOfStock ? "https://schema.org/OutOfStock" : "https://schema.org/InStock")"
-        }
-    }
-    </script>
-
-    @* Breadcrumb JSON-LD *@
-    <script type="application/ld+json">
-    {
-        "@@context": "https://schema.org",
-        "@@type": "BreadcrumbList",
-        "itemListElement": [
-            @for (int i = 0; i < Model.Breadcrumbs.Count; i++)
-            {
-                var b = Model.Breadcrumbs[i];
-                <text>{ "@@type": "ListItem", "position": @(i + 1), "name": "@b.Label"@(b.Url != null ? $", \"item\": \"{Context.Request.Scheme}://{Context.Request.Host}{b.Url}\"" : "") }</text>
-                if (i < Model.Breadcrumbs.Count - 1) { <text>,</text> }
-            }
-        ]
-    }
-    </script>
-}
-
 @* ===== Client-side scripts ===== *@
 @section Scripts {
     <script>
-        // Render content blocks từ JSONB
         (function() {
-            var raw = '@Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Product.ContentBlocks))';
+            var raw = '@Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Product.Content?.ContentBlocks))';
             if (!raw || raw === 'null') return;
 
             try {
@@ -268,13 +243,8 @@
                         case 'image':
                             var img = document.createElement('img');
                             img.src = block.url || '';
-                            img.alt = block.caption || '';
                             img.className = 'rounded-lg my-4 max-w-full cursor-pointer hover:opacity-90 transition-opacity shadow-sm';
-                            img.loading = 'lazy';
                             img.onclick = function() {
-                                // Truy cập scope của Alpine.js từ bên ngoài thông qua __x.$data (Alpine 2) hoặc Alpine.data (Alpine 3)
-                                // Tuy nhiên cách đơn giản nhất là dispatch một event hoặc dùng $dispatch nếu có tham chiếu.
-                                // Ở Alpine 3 chúng ta có thể dùng Alpine.store hoặc đơn giản là truy cập element x-data.
                                 var root = document.querySelector('[x-data]');
                                 if (root && root.__x_data_stack) {
                                     var data = root.__x_data_stack[0];
@@ -284,12 +254,6 @@
                                 }
                             };
                             container.appendChild(img);
-                            if (block.caption) {
-                                var cap = document.createElement('p');
-                                cap.className = 'text-sm text-gray-500 text-center mt-1 mb-4';
-                                cap.textContent = block.caption;
-                                container.appendChild(cap);
-                            }
                             break;
                         case 'list':
                             var ul = document.createElement('ul');
@@ -302,45 +266,10 @@
                             });
                             container.appendChild(ul);
                             break;
-                        case 'table':
-                            var table = document.createElement('table');
-                            table.className = 'w-full border-collapse mb-4';
-                            if (block.headers) {
-                                var thead = document.createElement('thead');
-                                var tr = document.createElement('tr');
-                                block.headers.forEach(function(h) {
-                                    var th = document.createElement('th');
-                                    th.className = 'border border-gray-200 bg-gray-50 px-4 py-2 text-left font-medium text-sm';
-                                    th.textContent = h;
-                                    tr.appendChild(th);
-                                });
-                                thead.appendChild(tr);
-                                table.appendChild(thead);
-                            }
-                            if (block.rows) {
-                                var tbody = document.createElement('tbody');
-                                block.rows.forEach(function(row) {
-                                    var tr = document.createElement('tr');
-                                    row.forEach(function(cell) {
-                                        var td = document.createElement('td');
-                                        td.className = 'border border-gray-200 px-4 py-2 text-sm';
-                                        td.textContent = cell;
-                                        tr.appendChild(td);
-                                    });
-                                    tbody.appendChild(tr);
-                                });
-                                table.appendChild(tbody);
-                            }
-                            container.appendChild(table);
-                            break;
                     }
                 });
-
-                // Re-render lucide icons for dynamic content
                 if (window.lucide) lucide.createIcons();
-            } catch (e) {
-                console.warn('Content blocks parse error:', e);
-            }
+            } catch (e) { console.warn(e); }
         })();
     </script>
 }
