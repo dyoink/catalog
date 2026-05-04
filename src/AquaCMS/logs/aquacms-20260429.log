@@ -2293,3 +2293,226 @@ UPDATE posts SET view_count = view_count + 1 WHERE id = @p0
 2026-04-29 15:09:57.282 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 16205.0825 ms
 2026-04-29 15:09:57.287 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 11075.1362 ms
 2026-04-29 15:10:27.287 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 29998.5917 ms
+2026-04-29 15:36:34.704 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-04-29 15:36:34.746 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-04-29 15:36:35.078 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-04-29 15:36:35.091 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-04-29 15:36:35.095 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-04-29 15:36:35.097 +07:00 [INF] ⏳ Checking for admin user...
+2026-04-29 15:36:35.135 +07:00 [INF] ✅ Admin check completed
+2026-04-29 15:36:35.137 +07:00 [INF] ✅ Admin user already exists
+2026-04-29 15:36:35.138 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-04-29 15:36:35.186 +07:00 [INF] ✅ Placeholder users check completed
+2026-04-29 15:36:35.187 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-04-29 15:36:35.195 +07:00 [INF] ✅ SiteSettings already exists
+2026-04-29 15:36:35.196 +07:00 [INF] ⏳ Checking for test data...
+2026-04-29 15:36:35.207 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-04-29 15:36:35.208 +07:00 [INF] ✅ Test data check completed
+2026-04-29 15:36:35.209 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-04-29 15:39:48.210 +07:00 [INF] HTTP GET /admin/Home responded 404 in 414.1181 ms
+2026-04-29 15:39:48.233 +07:00 [INF] HTTP GET /css/site.css responded 304 in 3.6431 ms
+2026-04-29 15:39:48.233 +07:00 [INF] HTTP GET /js/site.js responded 304 in 3.6232 ms
+2026-04-29 15:39:48.413 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 11.3004 ms
+2026-04-29 15:39:48.425 +07:00 [INF] HTTP GET /favicon.ico responded 304 in 0.2826 ms
+2026-04-29 15:39:50.641 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2216.9014 ms
+2026-04-29 15:39:52.839 +07:00 [INF] HTTP GET /admin/activity responded 302 in 6.5390 ms
+2026-04-29 15:39:52.898 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 51.0838 ms
+2026-04-29 15:39:53.002 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5340 ms
+2026-04-29 15:39:56.082 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-04-29 15:39:56.103 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 1279.8323 ms
+2026-04-29 15:39:56.250 +07:00 [INF] HTTP GET /admin/activity responded 200 in 140.1110 ms
+2026-04-29 15:39:56.256 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3218.3866 ms
+2026-04-29 15:39:56.277 +07:00 [INF] HTTP GET /css/admin.css responded 304 in 0.1814 ms
+2026-04-29 15:40:00.401 +07:00 [INF] HTTP GET /dang-xuat responded 302 in 9.6637 ms
+2026-04-29 15:40:00.410 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 2.2503 ms
+2026-04-29 15:40:00.513 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3923 ms
+2026-04-29 15:40:02.860 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-04-29 15:40:02.894 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 461.5875 ms
+2026-04-29 15:40:03.132 +07:00 [INF] HTTP GET /admin responded 200 in 232.6886 ms
+2026-04-29 15:40:03.139 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2588.6435 ms
+2026-04-29 15:40:05.005 +07:00 [INF] HTTP GET /admin/partners responded 200 in 346.5176 ms
+2026-04-29 15:40:06.371 +07:00 [INF] HTTP GET /dang-xuat responded 302 in 0.8901 ms
+2026-04-29 15:40:06.381 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 2.0671 ms
+2026-04-29 15:40:06.495 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3442 ms
+2026-04-29 15:40:07.507 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-04-29 15:40:07.527 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 446.6523 ms
+2026-04-29 15:40:07.564 +07:00 [INF] HTTP GET /admin responded 200 in 29.3874 ms
+2026-04-29 15:40:07.572 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1041.8648 ms
+2026-04-29 15:40:10.737 +07:00 [INF] HTTP GET /admin/products responded 200 in 169.2411 ms
+2026-04-29 15:40:12.216 +07:00 [INF] HTTP GET /dang-xuat responded 302 in 0.6162 ms
+2026-04-29 15:40:12.225 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 1.1167 ms
+2026-04-29 15:40:12.335 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3309 ms
+2026-04-29 15:40:13.922 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 1.9774 ms
+2026-04-29 15:40:13.931 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1547.4205 ms
+2026-04-29 15:40:14.086 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3686 ms
+2026-04-29 15:40:15.595 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-04-29 15:40:15.615 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 410.4379 ms
+2026-04-29 15:40:15.645 +07:00 [INF] HTTP GET /admin responded 200 in 25.0537 ms
+2026-04-29 15:40:15.651 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1559.8123 ms
+2026-04-29 15:41:50.384 +07:00 [INF] HTTP GET /admin/banners responded 200 in 90.9848 ms
+2026-04-29 15:41:51.705 +07:00 [INF] HTTP GET /admin/banners/create responded 200 in 53.1713 ms
+2026-04-29 15:42:41.426 +07:00 [ERR] Failed executing DbCommand (11ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO banners (color, created_at, description, image, link_url, sort_order, subtitle, title)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id, is_active;
+2026-04-29 15:42:41.453 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "banners" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "banners" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: banners
+    ColumnName: image
+    File: execMain.c
+    Line: 2057
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "banners" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "banners" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: banners
+    ColumnName: image
+    File: execMain.c
+    Line: 2057
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-29 15:42:41.464 +07:00 [ERR] Lỗi tạo banner
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "banners" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "banners" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: banners
+    ColumnName: image
+    File: execMain.c
+    Line: 2057
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AquaCMS.Services.BannerService.CreateAsync(Banner banner) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Services\BannerService.cs:line 35
+   at AquaCMS.Areas.Admin.Controllers.BannersController.Create(Banner banner, IFormFile imageFile) in D:\Source.Net\freelance\CatalogaWeb\src\AquaCMS\Areas\Admin\Controllers\BannersController.cs:line 53
+2026-04-29 15:42:41.482 +07:00 [INF] HTTP POST /admin/banners/create responded 200 in 193.1746 ms
+2026-04-29 15:42:48.099 +07:00 [INF] HTTP GET /admin/banners responded 200 in 9.6973 ms
+2026-04-29 15:42:49.425 +07:00 [INF] HTTP GET /admin/banners responded 200 in 7.7567 ms
+2026-04-29 15:42:50.431 +07:00 [INF] HTTP GET /admin/banners responded 200 in 5.6674 ms
+2026-04-29 15:42:50.756 +07:00 [INF] HTTP GET /admin/banners responded 200 in 5.9978 ms
+2026-04-29 15:42:50.904 +07:00 [INF] HTTP GET /admin/banners responded 200 in 5.0964 ms
+2026-04-29 15:42:51.217 +07:00 [INF] HTTP GET /admin/banners responded 200 in 4.9943 ms
+2026-04-29 15:42:51.517 +07:00 [INF] HTTP GET /admin/banners responded 200 in 5.4208 ms
+2026-04-29 15:42:58.646 +07:00 [INF] HTTP GET /admin/banners/edit/af501759-fb65-429f-985f-d857fe6bd75b responded 200 in 35.6138 ms
+2026-04-29 15:42:59.965 +07:00 [INF] HTTP GET /admin/banners responded 200 in 5.7554 ms
+2026-04-29 15:43:00.773 +07:00 [INF] HTTP GET /admin/products responded 200 in 25.5773 ms
+2026-04-29 15:43:03.091 +07:00 [INF] HTTP GET /admin/categories responded 200 in 24.0069 ms
+2026-04-29 15:43:03.118 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 4.5545 ms
+2026-04-29 15:43:03.123 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 1.1751 ms
+2026-04-29 15:43:03.123 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.9610 ms
+2026-04-29 15:43:03.124 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 1.3357 ms
+2026-04-29 15:43:04.190 +07:00 [INF] HTTP GET /admin/products responded 200 in 10.8406 ms
+2026-04-29 15:43:05.893 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 27.0969 ms
+2026-04-29 15:43:07.710 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.4254 ms
+2026-04-29 15:43:09.683 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.2919 ms
+2026-04-29 15:43:10.422 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.9689 ms
+2026-04-29 15:43:10.750 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.6480 ms
+2026-04-29 15:43:11.061 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.8976 ms
+2026-04-29 15:43:11.391 +07:00 [INF] HTTP GET /admin/activity responded 200 in 15.2792 ms
+2026-04-29 15:43:11.621 +07:00 [INF] HTTP GET /admin/activity responded 200 in 11.1721 ms
+2026-04-29 15:43:12.169 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.1658 ms
+2026-04-29 15:43:13.654 +07:00 [INF] HTTP GET /admin/partners responded 200 in 11.2076 ms
+2026-04-29 15:43:14.410 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 90.6829 ms
+2026-04-29 15:43:15.368 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 53.7649 ms
+2026-04-29 15:43:15.750 +07:00 [INF] HTTP GET /admin/categories responded 200 in 6.0314 ms
+2026-04-29 15:43:15.778 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.1807 ms
+2026-04-29 15:43:15.778 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.5120 ms
+2026-04-29 15:43:15.794 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8323 ms
+2026-04-29 15:43:15.795 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.7841 ms
+2026-04-29 15:43:17.064 +07:00 [INF] HTTP GET /admin/messages responded 200 in 28.7018 ms
+2026-04-29 15:43:17.468 +07:00 [INF] HTTP GET /admin/banners responded 200 in 5.2932 ms
+2026-04-29 15:43:18.450 +07:00 [INF] HTTP GET /admin/banners/create responded 200 in 2.0370 ms
+2026-04-29 15:43:35.052 +07:00 [INF] Upload thành công: /uploads/banners/4d127b9d204a44b7a8770d9c5444fd11.png (209176 bytes)
+2026-04-29 15:43:35.136 +07:00 [INF] HTTP POST /admin/banners/create responded 302 in 111.6985 ms
+2026-04-29 15:43:35.144 +07:00 [INF] HTTP GET /admin/Banners responded 200 in 3.5279 ms
+2026-04-29 15:43:35.178 +07:00 [INF] HTTP GET /uploads/banners/4d127b9d204a44b7a8770d9c5444fd11.png responded 200 in 12.5990 ms
+2026-04-29 15:43:43.086 +07:00 [INF] HTTP GET /css/site.css responded 304 in 0.1980 ms
+2026-04-29 15:43:43.092 +07:00 [INF] HTTP GET /js/site.js responded 304 in 0.2021 ms
+2026-04-29 15:43:43.129 +07:00 [INF] HTTP GET / responded 200 in 180.3355 ms
+2026-04-29 15:43:43.288 +07:00 [INF] HTTP GET /uploads/banners/4d127b9d204a44b7a8770d9c5444fd11.png responded 304 in 0.5238 ms
+2026-04-29 15:43:43.297 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 0.5984 ms
+2026-04-29 15:43:43.297 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 1.0150 ms
+2026-04-29 15:43:43.297 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 0.8250 ms
+2026-04-29 15:43:43.297 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 0.6000 ms
+2026-04-29 15:43:43.304 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6641 ms
+2026-04-29 15:44:01.415 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 18025.6296 ms
