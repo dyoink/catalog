@@ -44,6 +44,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .swiper-pagination-bullet-active { background: white !important; }
+
+        /* Hiệu ứng hover danh mục */
+        .category-swiper { padding: 40px 0 !important; margin: -40px 0 !important; }
+        .category-swiper .swiper-slide { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .category-swiper .swiper-slide:hover { transform: scale(1.15); z-index: 10; }
     </style>
 }
 
@@ -125,35 +130,47 @@ else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.Hero
 @* ===== DANH MỤC SẢN PHẨM ===== *@
 @if (Model.Categories.Count > 0)
 {
-    <section class="max-w-7xl mx-auto px-4 py-12">
+    <section class="max-w-7xl mx-auto px-4 py-12 relative group/catsection">
         <div class="text-center mb-10">
             <h2 class="text-2xl font-bold text-gray-900 mb-2">Danh mục sản phẩm</h2>
-            <div class="w-16 h-1 bg-primary mx-auto rounded-full" style="background-color: #2563eb;"></div>
         </div>
 
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 sm:gap-6">
-            @foreach (var cat in Model.Categories)
-            {
-                <a href="/danh-muc/@cat.Slug"
-                   class="group flex flex-col items-center text-center">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center p-0.5 group-hover:shadow-md transition-all duration-300 overflow-hidden mb-3">
-                        @if (!string.IsNullOrEmpty(cat.Image))
-                        {
-                            <img src="@cat.Image"
-                                 alt="@cat.Name"
-                                 class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
-                                 loading="lazy" />
-                        }
-                        else
-                        {
-                            <div class="w-full h-full flex items-center justify-center bg-white text-primary rounded-full border border-gray-100">
-                                <i data-lucide="package" class="w-8 h-8"></i>
+        @* Thêm px-6 để nút không bị cắt *@
+        <div class="swiper category-swiper !pb-4 !px-10">
+            <div class="swiper-wrapper">
+                @foreach (var cat in Model.Categories)
+                {
+                    <div class="swiper-slide">
+                        <a href="/danh-muc/@cat.Slug"
+                           class="group flex flex-col items-center text-center">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center overflow-hidden mb-3">
+                                @if (!string.IsNullOrEmpty(cat.Image))
+                                {
+                                    <img src="@cat.Image"
+                                         alt="@cat.Name"
+                                         class="w-full h-full object-cover rounded-full"
+                                         loading="lazy" />
+                                }
+                                else
+                                {
+                                    <div class="w-full h-full flex items-center justify-center text-primary">
+                                        <i data-lucide="package" class="w-8 h-8"></i>
+                                    </div>
+                                }
                             </div>
-                        }
+                            <h3 class="text-xs sm:text-sm font-medium text-gray-700 group-hover:text-primary transition-colors line-clamp-2 px-1">@cat.Name</h3>
+                        </a>
                     </div>
-                    <h3 class="text-xs sm:text-sm font-medium text-gray-700 group-hover:text-primary transition-colors line-clamp-2 px-1">@cat.Name</h3>
-                </a>
-            }
+                }
+            </div>
+            
+            <!-- Navigation Custom Icons -->
+            <div class="category-next swiper-button-next !w-10 !h-10 !bg-white !shadow-md !rounded-full !text-gray-600 hover:!text-primary after:!content-none !right-2 transition-all hover:scale-110">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </div>
+            <div class="category-prev swiper-button-prev !w-10 !h-10 !bg-white !shadow-md !rounded-full !text-gray-600 hover:!text-primary after:!content-none !left-2 transition-all hover:scale-110">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </div>
         </div>
     </section>
 }
@@ -161,7 +178,7 @@ else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.Hero
 @* ===== SẢN PHẨM NỔI BẬT ===== *@
 @if (Model.FeaturedProducts.Count > 0)
 {
-    <section class="bg-white py-16">
+    <section class="py-16">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between mb-12">
                 <div>
@@ -176,6 +193,31 @@ else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.Hero
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach (var product in Model.FeaturedProducts)
+                {
+                    <partial name="_ProductCard" model="product" />
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@* ===== SẢN PHẨM THEO DANH MỤC (Tự động cập nhật) ===== *@
+@foreach (var cat in Model.CategoriesWithProducts)
+{
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">@cat.Name</h2>
+                </div>
+                <a href="/danh-muc/@cat.Slug" class="text-sm text-primary hover:underline font-medium flex items-center gap-1">
+                    Xem tất cả @cat.Name
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                @foreach (var product in cat.Products)
                 {
                     <partial name="_ProductCard" model="product" />
                 }
@@ -242,7 +284,7 @@ else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.Hero
 @* ===== ABOUT SECTION (dynamic from settings) ===== *@
 @if (!string.IsNullOrEmpty(Model.Settings.AboutTitle) || !string.IsNullOrEmpty(Model.Settings.AboutContent))
 {
-    <section class="bg-gray-50 py-16">
+    <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             @if (!string.IsNullOrEmpty(Model.Settings.AboutImage))
             {
@@ -288,11 +330,12 @@ else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.Hero
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const swiper = new Swiper('.hero-swiper', {
+            // Hero Swiper
+            new Swiper('.hero-swiper', {
                 loop: true,
                 speed: 800,
                 autoplay: {
-                    delay: 10000, // 10 giây
+                    delay: 10000,
                     disableOnInteraction: false,
                 },
                 pagination: {
@@ -303,9 +346,24 @@ else if (Model.Settings.ShowBanners && !string.IsNullOrEmpty(Model.Settings.Hero
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                // Mặc định là trượt ngang (slide)
                 grabCursor: true,
                 watchSlidesProgress: true,
+            });
+
+            // Category Swiper
+            new Swiper('.category-swiper', {
+                slidesPerView: 3,
+                spaceBetween: 16,
+                navigation: {
+                    nextEl: '.category-next',
+                    prevEl: '.category-prev',
+                },
+                breakpoints: {
+                    640: { slidesPerView: 4, spaceBetween: 20 },
+                    768: { slidesPerView: 6, spaceBetween: 24 },
+                    1024: { slidesPerView: 8, spaceBetween: 24 },
+                },
+                grabCursor: true,
             });
         });
     </script>

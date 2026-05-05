@@ -97,6 +97,16 @@
 <body class="bg-surface min-h-screen flex flex-col text-gray-800">
 
     @* ===== NAVBAR ===== *@
+    @{
+        var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+        var currentPath = Context.Request.Path.Value ?? "/";
+        
+        bool IsActive(string controller, string? path = null) 
+        {
+            if (path != null) return currentPath == path;
+            return currentController == controller;
+        }
+    }
     <header class="sticky top-0 z-50 shadow-md" style="background-color: var(--color-primary) !important;">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="background-color: var(--color-primary) !important;">
             <div class="flex items-center justify-between h-16">
@@ -113,24 +123,24 @@
                 </a>
 
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                    <a href="/" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Home", "/") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
                         @L.T("nav.home")
                     </a>
                     @if (s.ShowNavProducts)
                     {
-                        <a href="/san-pham" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                        <a href="/san-pham" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Product") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
                             @L.T("nav.products")
                         </a>
                     }
                     @if (s.ShowNavKnowledge)
                     {
-                        <a href="/kien-thuc" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                        <a href="/kien-thuc" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Knowledge") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
                             @L.T("nav.knowledge")
                         </a>
                     }
                     @if (s.ShowNavPartners)
                     {
-                        <a href="/doi-tac" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition">
+                        <a href="/doi-tac" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Partner") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
                             @L.T("nav.partners")
                         </a>
                     }

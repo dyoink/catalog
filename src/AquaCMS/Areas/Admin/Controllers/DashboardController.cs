@@ -27,7 +27,7 @@ public class DashboardController : Controller
     /// <summary>GET /admin — Trang dashboard chính</summary>
     public async Task<IActionResult> Index()
     {
-        ViewData["Title"] = "Dashboard";
+        ViewData["Title"] = "Tổng quan";
 
         // ===== Thống kê tổng quan =====
         ViewData["TotalProducts"] = await _db.Products.CountAsync();

@@ -19,6 +19,9 @@ public class HomeViewModel
     /// <summary>Bài viết mới nhất</summary>
     public List<Post> LatestPosts { get; set; } = new();
 
+    /// <summary>Danh sách danh mục sản phẩm kèm sản phẩm bên trong</summary>
+    public List<Category> CategoriesWithProducts { get; set; } = new();
+
     /// <summary>Settings chung (company name, colors...)</summary>
     public SiteSettings Settings { get; set; } = new();
 }

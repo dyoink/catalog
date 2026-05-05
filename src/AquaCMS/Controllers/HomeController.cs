@@ -50,6 +50,22 @@ public class HomeController : Controller
                 ? await _categoryService.GetAllWithCountAsync()
                 : new(),
 
+            CategoriesWithProducts = settings.ShowCategories
+                ? await _db.Categories
+                    .Where(c => c.Products.Any(p => p.Status != ProductStatus.Hidden))
+                    .OrderBy(c => c.SortOrder)
+                    .Include(c => c.Products.Where(p => p.Status != ProductStatus.Hidden)
+                        .OrderByDescending(p => p.CreatedAt).Take(8))
+                        .ThenInclude(p => p.Metadata)
+                    .Include(c => c.Products.Where(p => p.Status != ProductStatus.Hidden)
+                        .OrderByDescending(p => p.CreatedAt).Take(8))
+                        .ThenInclude(p => p.Finance)
+                    .Include(c => c.Products.Where(p => p.Status != ProductStatus.Hidden)
+                        .OrderByDescending(p => p.CreatedAt).Take(8))
+                        .ThenInclude(p => p.Content)
+                    .ToListAsync()
+                : new(),
+
             FeaturedProducts = settings.ShowFeaturedProducts
                 ? await _productService.GetFeaturedProductsAsync(settings.FeaturedProductsCount)
                 : new(),
