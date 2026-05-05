@@ -1,0 +1,61 @@
+2026-05-05 09:45:34.902 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-05-05 09:45:34.938 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-05-05 09:45:35.265 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-05-05 09:45:35.281 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-05-05 09:45:35.287 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-05-05 09:45:35.289 +07:00 [INF] ⏳ Checking for admin user...
+2026-05-05 09:45:35.332 +07:00 [INF] ✅ Admin check completed
+2026-05-05 09:45:35.334 +07:00 [INF] ⏳ Creating admin user...
+2026-05-05 09:45:37.268 +07:00 [INF] ✅ Seed admin: admin@aquacms.com / Admin@123
+2026-05-05 09:45:37.269 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-05-05 09:45:37.726 +07:00 [INF] ✅ Cập nhật password cho: admin@cataloga.com
+2026-05-05 09:45:37.754 +07:00 [INF] ✅ Placeholder users check completed
+2026-05-05 09:45:37.755 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-05-05 09:45:37.764 +07:00 [INF] ✅ SiteSettings already exists
+2026-05-05 09:45:37.765 +07:00 [INF] ⏳ Checking for test data...
+2026-05-05 09:45:37.778 +07:00 [INF] ⏭️  Test data seeding started...
+2026-05-05 09:45:38.160 +07:00 [INF] ✅ Seed test data hoàn tất
+2026-05-05 09:45:38.161 +07:00 [INF] ✅ Test data check completed
+2026-05-05 09:45:38.162 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-05-05 09:45:56.926 +07:00 [INF] HTTP GET /admin responded 302 in 125.8361 ms
+2026-05-05 09:45:57.335 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 387.9592 ms
+2026-05-05 09:45:57.351 +07:00 [INF] HTTP GET /js/site.js responded 200 in 2.5959 ms
+2026-05-05 09:45:57.351 +07:00 [INF] HTTP GET /css/site.css responded 200 in 9.6874 ms
+2026-05-05 09:45:57.715 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 8.2898 ms
+2026-05-05 09:45:57.770 +07:00 [INF] HTTP GET /favicon.ico responded 200 in 8.2653 ms
+2026-05-05 09:46:13.447 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-05-05 09:46:13.476 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 798.8343 ms
+2026-05-05 09:46:13.877 +07:00 [INF] HTTP GET /admin responded 200 in 394.3758 ms
+2026-05-05 09:46:13.890 +07:00 [INF] HTTP GET /css/admin.css responded 200 in 1.3786 ms
+2026-05-05 09:46:13.898 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 16140.8653 ms
+2026-05-05 09:46:24.457 +07:00 [INF] HTTP GET /admin/products responded 200 in 171.7786 ms
+2026-05-05 09:46:26.342 +07:00 [INF] HTTP GET /admin responded 200 in 31.4138 ms
+2026-05-05 09:46:29.906 +07:00 [INF] HTTP GET /admin/banners responded 200 in 46.6619 ms
+2026-05-05 09:46:30.510 +07:00 [INF] HTTP GET /admin/messages responded 200 in 35.1877 ms
+2026-05-05 09:46:31.469 +07:00 [INF] HTTP GET /admin/banners responded 200 in 10.3839 ms
+2026-05-05 09:46:41.786 +07:00 [INF] HTTP GET / responded 200 in 171.9053 ms
+2026-05-05 09:46:41.824 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6048 ms
+2026-05-05 09:46:41.905 +07:00 [INF] HTTP GET /uploads/categories/may-cho-an.jpg responded 404 in 35.7845 ms
+2026-05-05 09:46:41.906 +07:00 [INF] HTTP GET /uploads/categories/phu-kien.jpg responded 404 in 34.7864 ms
+2026-05-05 09:46:41.907 +07:00 [INF] HTTP GET /uploads/categories/khung-ao.jpg responded 404 in 35.5582 ms
+2026-05-05 09:46:41.907 +07:00 [INF] HTTP GET /uploads/categories/may-suc-khi.jpg responded 404 in 36.7602 ms
+2026-05-05 09:46:46.387 +07:00 [INF] HTTP GET /san-pham/may-cho-tom-an-tu-dong-360-3 responded 200 in 129.3522 ms
+2026-05-05 09:46:46.499 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3802 ms
+2026-05-05 09:46:46.522 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4590.6922 ms
+2026-05-05 09:57:04.682 +07:00 [INF] HTTP GET /js/site.js responded 304 in 0.4219 ms
+2026-05-05 09:57:04.682 +07:00 [INF] HTTP GET /css/site.css responded 304 in 1.6698 ms
+2026-05-05 09:57:04.702 +07:00 [INF] HTTP GET /san-pham responded 200 in 114.2346 ms
+2026-05-05 09:57:04.867 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3553 ms
+2026-05-05 09:57:04.888 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 618314.6935 ms
+2026-05-05 09:57:05.657 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 69.7968 ms
+2026-05-05 09:57:05.789 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2694 ms
+2026-05-05 09:57:05.808 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 900.8169 ms
+2026-05-05 09:57:06.621 +07:00 [INF] HTTP GET /doi-tac responded 200 in 68.5495 ms
+2026-05-05 09:57:06.703 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5183 ms
+2026-05-05 09:57:06.720 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 893.1223 ms
+2026-05-05 09:57:07.381 +07:00 [INF] HTTP GET /san-pham responded 200 in 11.3468 ms
+2026-05-05 09:57:07.523 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3790 ms
+2026-05-05 09:57:07.566 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 837.0590 ms
+2026-05-05 09:57:08.184 +07:00 [INF] HTTP GET /san-pham/may-cho-an-mini-180-2 responded 200 in 21.9379 ms
+2026-05-05 09:57:08.279 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5826 ms
+2026-05-05 09:57:08.345 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 763.3251 ms

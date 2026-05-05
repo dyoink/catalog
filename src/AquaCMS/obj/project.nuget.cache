@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xORUaJXLEEk=",
+  "dgSpecHash": "3gyIUyd5jZo=",
   "success": true,
-  "projectFilePath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+  "projectFilePath": "E:\\sourceCode\\catalog\\src\\AquaCMS\\AquaCMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tranc\\.nuget\\packages\\anglesharp\\0.17.1\\anglesharp.0.17.1.nupkg.sha512",
     "C:\\Users\\tranc\\.nuget\\packages\\anglesharp.css\\0.17.0\\anglesharp.css.0.17.0.nupkg.sha512",

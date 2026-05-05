@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj": {}
+    "E:\\sourceCode\\catalog\\src\\AquaCMS\\AquaCMS.csproj": {}
   },
   "projects": {
-    "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj": {
+    "E:\\sourceCode\\catalog\\src\\AquaCMS\\AquaCMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+        "projectUniqueName": "E:\\sourceCode\\catalog\\src\\AquaCMS\\AquaCMS.csproj",
         "projectName": "AquaCMS",
-        "projectPath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\AquaCMS.csproj",
+        "projectPath": "E:\\sourceCode\\catalog\\src\\AquaCMS\\AquaCMS.csproj",
         "packagesPath": "C:\\Users\\tranc\\.nuget\\packages\\",
-        "outputPath": "D:\\Source.Net\\freelance\\CatalogaWeb\\src\\AquaCMS\\obj\\",
+        "outputPath": "E:\\sourceCode\\catalog\\src\\AquaCMS\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tranc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tranc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -106,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
