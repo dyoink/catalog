@@ -72,23 +72,37 @@ lucide.createIcons();
 
     if (typeof signalR === 'undefined') { statusEl.textContent = 'SignalR không khả dụng'; return; }
 
-    var conn = new signalR.HubConnectionBuilder()
-        .withUrl('/hubs/chat')
-        .withAutomaticReconnect([0, 2000, 5000, 10000, 30000])
-        .build();
+    var conn = window.adminChatConnection;
+    
+    function setupHandlers(c) {
+        c.on('ReceiveMessage', function (m) {
+            if (!m || m.guestId !== guestId) return;
+            appendMessage(m.text, !!m.isFromAdmin, m.at);
+        });
+        
+        // Cập nhật trạng thái hiển thị
+        if (c.state === signalR.HubConnectionState.Connected) {
+            statusEl.textContent = 'Đã kết nối';
+        }
 
-    conn.on('ReceiveMessage', function (m) {
-        if (!m || m.guestId !== guestId) return;
-        appendMessage(m.text, !!m.isFromAdmin, m.at);
-    });
-    conn.onreconnecting(function () { statusEl.textContent = 'Kết nối lại...'; });
-    conn.onreconnected(function () { statusEl.textContent = 'Đã kết nối'; conn.invoke('JoinAsAdmin').catch(function(){}); });
-    conn.onclose(function () { statusEl.textContent = 'Mất kết nối'; });
+        c.onreconnecting(function () { statusEl.textContent = 'Kết nối lại...'; });
+        c.onreconnected(function () { statusEl.textContent = 'Đã kết nối'; });
+        c.onclose(function () { statusEl.textContent = 'Mất kết nối'; });
+    }
 
-    conn.start().then(function () {
-        statusEl.textContent = 'Đã kết nối';
-        return conn.invoke('JoinAsAdmin');
-    }).catch(function (err) { statusEl.textContent = 'Lỗi kết nối'; console.warn(err); });
+    if (conn) {
+        setupHandlers(conn);
+    } else {
+        // Fallback nếu vì lý do nào đó global connection chưa sẵn sàng
+        conn = new signalR.HubConnectionBuilder()
+            .withUrl('/hubs/chat')
+            .withAutomaticReconnect([0, 2000, 5000, 10000, 30000])
+            .build();
+        setupHandlers(conn);
+        conn.start().then(function () {
+            return conn.invoke('JoinAsAdmin');
+        }).catch(function (err) { statusEl.textContent = 'Lỗi kết nối'; console.warn(err); });
+    }
 
     form?.addEventListener('submit', function (e) {
         e.preventDefault();

@@ -1,7 +1,6 @@
 using System.Security.Claims;
 using System.Threading.RateLimiting;
 using AquaCMS.Data;
-using AquaCMS.Data.Seed;
 using AquaCMS.Models.Entities;
 using AquaCMS.Modules.Core.Middleware;
 using AquaCMS.Services;
@@ -84,9 +83,6 @@ try
     });
 
     var app = builder.Build();
-
-    // Seed Data
-    await DataSeeder.SeedAsync(app.Services);
 
     app.UseGlobalExceptionHandler();
     app.UseSecurityHeaders();

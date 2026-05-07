@@ -1,6 +1,8 @@
 using AquaCMS.Data;
+using AquaCMS.Hubs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace AquaCMS.Areas.Admin.Controllers;
@@ -13,11 +15,17 @@ namespace AquaCMS.Areas.Admin.Controllers;
 public class MessagesController : Controller
 {
     private readonly AppDbContext _db;
+    private readonly IHubContext<ChatHub> _hubContext;
     private readonly ILogger<MessagesController> _logger;
 
-    public MessagesController(AppDbContext db, ILogger<MessagesController> logger)
+    public MessagesController(
+        AppDbContext db, 
+        IHubContext<ChatHub> hubContext,
+        ILogger<MessagesController> logger)
     {
-        _db = db; _logger = logger;
+        _db = db;
+        _hubContext = hubContext;
+        _logger = logger;
     }
 
     public async Task<IActionResult> Index()
@@ -61,6 +69,10 @@ public class MessagesController : Controller
             await _db.ChatMessages
                 .Where(m => m.SessionId == id && !m.IsRead && !m.IsFromAdmin)
                 .ExecuteUpdateAsync(m => m.SetProperty(x => x.IsRead, true));
+
+            // Notify all admins to update their unread badge
+            var total = await _db.ChatSessions.SumAsync(s => s.UnreadCount);
+            await _hubContext.Clients.Group("admins").SendAsync("UpdateUnreadCount", total);
         }
         catch (Exception ex)
         {

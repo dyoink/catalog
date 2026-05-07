@@ -1,7 +1,9 @@
 @inject AquaCMS.Services.Interfaces.ISettingsService SettingsService
+@inject AquaCMS.Data.AppDbContext DbContext
 @{
     var siteSettings = await SettingsService.GetSettingsAsync();
     var primaryColor = !string.IsNullOrEmpty(siteSettings?.PrimaryColor) ? siteSettings.PrimaryColor : "#2563eb";
+    var totalUnread = await Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.SumAsync(DbContext.ChatSessions, s => s.UnreadCount);
 }
 @*
     Layout quản trị — sidebar navigation + main content area.
@@ -150,8 +152,13 @@
                     <a href="/admin/banners" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
                         <i data-lucide="image" class="w-5 h-5"></i> Banner
                     </a>
-                    <a href="/admin/messages" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
-                        <i data-lucide="message-square" class="w-5 h-5"></i> Tin nhắn
+                    <a href="/admin/messages" class="sidebar-link flex items-center justify-between px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition group/msg">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="message-square" class="w-5 h-5"></i> Tin nhắn
+                        </div>
+                        <span id="sidebar-unread-badge" class="@(totalUnread > 0 ? "" : "hidden") text-red-500 text-sm font-bold">
+                            @totalUnread
+                        </span>
                     </a>
 
                     <div class="border-t border-gray-200 dark:border-gray-800 my-3"></div>
@@ -290,6 +297,42 @@
                 localStorage.setItem('aquacms-theme', isDark ? 'dark' : 'light');
                 lucide.createIcons();
             });
+        })();
+
+        // SignalR Global Admin Notification
+        (function() {
+            if (typeof signalR === 'undefined') return;
+            var badge = document.getElementById('sidebar-unread-badge');
+            
+            var connection = new signalR.HubConnectionBuilder()
+                .withUrl('/hubs/chat')
+                .withAutomaticReconnect([0, 2000, 5000, 10000, 30000])
+                .build();
+
+            connection.on('UpdateUnreadCount', function (count) {
+                if (!badge) return;
+                if (count > 0) {
+                    badge.textContent = count;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            });
+
+            connection.onreconnected(function () {
+                connection.invoke('JoinAsAdmin').catch(function(err){ console.error(err); });
+            });
+
+            connection.start()
+                .then(function () {
+                    return connection.invoke('JoinAsAdmin');
+                })
+                .catch(function (err) {
+                    console.warn('SignalR Admin connection failed: ', err);
+                });
+            
+            // Expose connection for other pages if needed
+            window.adminChatConnection = connection;
         })();
     </script>
     @await RenderSectionAsync("Scripts", required: false)

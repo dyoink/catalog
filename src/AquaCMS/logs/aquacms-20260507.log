@@ -1,0 +1,792 @@
+2026-05-07 11:06:05.560 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-05-07 11:06:05.601 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-05-07 11:06:05.948 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-05-07 11:06:05.969 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-05-07 11:06:05.973 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-05-07 11:06:05.974 +07:00 [INF] ⏳ Checking for admin user...
+2026-05-07 11:06:06.012 +07:00 [INF] ✅ Admin check completed
+2026-05-07 11:06:06.013 +07:00 [INF] ✅ Admin user already exists
+2026-05-07 11:06:06.014 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-05-07 11:06:06.060 +07:00 [INF] ✅ Placeholder users check completed
+2026-05-07 11:06:06.062 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-05-07 11:06:06.074 +07:00 [INF] ✅ SiteSettings already exists
+2026-05-07 11:06:06.075 +07:00 [INF] ⏳ Checking for test data...
+2026-05-07 11:06:06.092 +07:00 [INF] ⏭️ Test data already exists, skipping seeding.
+2026-05-07 11:06:06.094 +07:00 [INF] ✅ Test data check completed
+2026-05-07 11:06:06.095 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-05-07 11:06:18.635 +07:00 [INF] HTTP GET /admin responded 302 in 55.2171 ms
+2026-05-07 11:06:19.078 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 422.1788 ms
+2026-05-07 11:06:19.137 +07:00 [INF] HTTP GET /css/site.css responded 304 in 9.1716 ms
+2026-05-07 11:06:19.137 +07:00 [INF] HTTP GET /js/site.js responded 304 in 8.5049 ms
+2026-05-07 11:06:19.542 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 8.4916 ms
+2026-05-07 11:06:23.341 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-05-07 11:06:23.380 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 1335.7458 ms
+2026-05-07 11:06:23.786 +07:00 [INF] HTTP GET /admin responded 200 in 398.0587 ms
+2026-05-07 11:06:23.806 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4194.7672 ms
+2026-05-07 11:06:23.824 +07:00 [INF] HTTP GET /css/admin.css responded 304 in 0.2894 ms
+2026-05-07 11:07:49.227 +07:00 [INF] HTTP GET /admin/products responded 200 in 245.9217 ms
+2026-05-07 11:07:54.499 +07:00 [INF] HTTP GET /admin/products-io/template responded 200 in 2646.5115 ms
+2026-05-07 11:12:22.007 +07:00 [INF] HTTP GET /admin/products/edit/76f9323c-7c5c-4535-beaf-2539d6ee7c74 responded 200 in 178.5830 ms
+2026-05-07 11:12:58.387 +07:00 [INF] HTTP GET /admin/products-io/export responded 200 in 244.7838 ms
+2026-05-07 11:13:48.627 +07:00 [INF] HTTP GET /admin/products/edit/76f9323c-7c5c-4535-beaf-2539d6ee7c74 responded 200 in 16.4859 ms
+2026-05-07 11:15:28.186 +07:00 [INF] HTTP GET /admin/categories responded 200 in 23.5105 ms
+2026-05-07 11:15:31.181 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 108.9436 ms
+2026-05-07 11:15:32.107 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.7602 ms
+2026-05-07 11:16:11.475 +07:00 [INF] HTTP GET /admin/products responded 200 in 28.7798 ms
+2026-05-07 11:16:14.667 +07:00 [INF] HTTP GET /admin/categories responded 200 in 6.6555 ms
+2026-05-07 11:16:21.990 +07:00 [INF] HTTP GET /admin/products responded 200 in 14.0146 ms
+2026-05-07 11:16:27.423 +07:00 [INF] Bulk action 'delete' trên 3 sản phẩm
+2026-05-07 11:16:27.428 +07:00 [INF] HTTP POST /admin/products/bulk responded 302 in 146.1787 ms
+2026-05-07 11:16:27.444 +07:00 [INF] HTTP GET /admin/Products responded 200 in 9.1237 ms
+2026-05-07 11:16:31.050 +07:00 [INF] HTTP GET /admin/activity responded 200 in 92.3742 ms
+2026-05-07 11:16:37.102 +07:00 [INF] HTTP GET /admin/users responded 200 in 28.7533 ms
+2026-05-07 11:16:38.022 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.0604 ms
+2026-05-07 11:16:55.133 +07:00 [INF] HTTP GET /admin/products responded 200 in 13.6930 ms
+2026-05-07 11:16:58.879 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.5367 ms
+2026-05-07 11:17:02.747 +07:00 [INF] HTTP GET /admin/partners responded 200 in 1237.8882 ms
+2026-05-07 11:17:04.626 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 22.7551 ms
+2026-05-07 11:17:05.546 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.0187 ms
+2026-05-07 11:17:06.950 +07:00 [INF] HTTP GET /admin/activity responded 200 in 15.5198 ms
+2026-05-07 11:17:09.800 +07:00 [INF] HTTP GET /admin/Activity responded 200 in 14.4859 ms
+2026-05-07 11:17:14.577 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.5097 ms
+2026-05-07 11:17:17.028 +07:00 [INF] HTTP POST /admin/categories/delete/c1000000-0000-0000-0000-000000000001 responded 302 in 59.2117 ms
+2026-05-07 11:17:17.038 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.2458 ms
+2026-05-07 11:17:19.385 +07:00 [INF] HTTP POST /admin/categories/delete/37d20867-0826-4665-9459-82d1cec0ad3c responded 302 in 23.3825 ms
+2026-05-07 11:17:19.396 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.8965 ms
+2026-05-07 11:17:20.990 +07:00 [INF] HTTP POST /admin/categories/delete/c1000000-0000-0000-0000-000000000002 responded 302 in 21.2950 ms
+2026-05-07 11:17:21.000 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.1071 ms
+2026-05-07 11:17:22.427 +07:00 [INF] HTTP POST /admin/categories/delete/c1000000-0000-0000-0000-000000000003 responded 302 in 40.1430 ms
+2026-05-07 11:17:22.451 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 17.1002 ms
+2026-05-07 11:17:27.277 +07:00 [INF] HTTP POST /admin/categories/delete/c1000000-0000-0000-0000-000000000004 responded 302 in 8.9680 ms
+2026-05-07 11:17:27.288 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.2973 ms
+2026-05-07 11:17:31.000 +07:00 [INF] HTTP POST /admin/categories/delete/81768084-8118-4583-9bfb-495768255a48 responded 302 in 22.3213 ms
+2026-05-07 11:17:31.011 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.0711 ms
+2026-05-07 11:17:40.200 +07:00 [INF] HTTP POST /admin/categories/delete/acbf0797-7db9-4629-a3bd-3aada62fb782 responded 302 in 25.2102 ms
+2026-05-07 11:17:40.211 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.1760 ms
+2026-05-07 11:17:42.000 +07:00 [INF] HTTP POST /admin/categories/delete/fe0d804a-ea2e-4115-9d10-8c2fb57e3863 responded 302 in 7.9113 ms
+2026-05-07 11:17:42.010 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.4281 ms
+2026-05-07 11:17:44.573 +07:00 [INF] HTTP POST /admin/categories/delete/d9e6947c-645e-4761-9bec-348ae85f71b8 responded 302 in 21.2679 ms
+2026-05-07 11:17:44.583 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.1471 ms
+2026-05-07 11:17:46.772 +07:00 [INF] HTTP GET /admin/activity responded 200 in 17.7584 ms
+2026-05-07 11:17:50.038 +07:00 [INF] HTTP GET /admin/messages responded 200 in 37.0039 ms
+2026-05-07 11:17:50.966 +07:00 [INF] HTTP GET /admin/users responded 200 in 7.0424 ms
+2026-05-07 11:17:54.105 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.5750 ms
+2026-05-07 11:17:57.944 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.0358 ms
+2026-05-07 11:17:58.191 +07:00 [INF] HTTP GET /favicon.ico responded 304 in 0.1775 ms
+2026-05-07 11:17:58.692 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.8929 ms
+2026-05-07 11:17:59.090 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.1186 ms
+2026-05-07 11:17:59.423 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.5829 ms
+2026-05-07 11:17:59.734 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.4935 ms
+2026-05-07 11:18:00.038 +07:00 [INF] HTTP GET /admin/activity responded 200 in 11.8240 ms
+2026-05-07 11:18:00.361 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.0393 ms
+2026-05-07 11:18:00.677 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.4709 ms
+2026-05-07 11:18:00.992 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.2507 ms
+2026-05-07 11:18:01.355 +07:00 [INF] HTTP GET /admin/activity responded 200 in 11.8206 ms
+2026-05-07 11:18:01.794 +07:00 [INF] HTTP GET /admin/activity responded 200 in 11.6827 ms
+2026-05-07 11:19:03.345 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 8.0603 ms
+2026-05-07 11:19:07.530 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 6.1009 ms
+2026-05-07 11:19:08.798 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 4.0086 ms
+2026-05-07 11:19:13.009 +07:00 [INF] HTTP POST /admin/knowledgecategories/delete/f8ad96d2-97ca-40aa-8bcf-1c2dbf5526e0 responded 302 in 51.3138 ms
+2026-05-07 11:19:13.019 +07:00 [INF] HTTP GET /admin/KnowledgeCategories responded 200 in 3.5770 ms
+2026-05-07 11:19:14.149 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.8424 ms
+2026-05-07 11:19:22.559 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 8.0585 ms
+2026-05-07 11:19:27.056 +07:00 [INF] HTTP POST /admin/partnercategories/delete/2de84afe-8f4e-44b5-84de-5af6139f974b responded 302 in 31.9047 ms
+2026-05-07 11:19:27.067 +07:00 [INF] HTTP GET /admin/PartnerCategories responded 200 in 4.9564 ms
+2026-05-07 11:19:28.405 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.8265 ms
+2026-05-07 11:19:30.472 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.5564 ms
+2026-05-07 11:19:31.920 +07:00 [INF] HTTP GET /admin/products responded 200 in 10.1847 ms
+2026-05-07 11:19:33.755 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.4167 ms
+2026-05-07 11:19:34.907 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 31.0062 ms
+2026-05-07 11:19:39.039 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 28.1529 ms
+2026-05-07 11:19:39.049 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.7014 ms
+2026-05-07 11:19:40.953 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.9151 ms
+2026-05-07 11:19:42.909 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.4295 ms
+2026-05-07 11:19:47.498 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 3.5447 ms
+2026-05-07 11:19:48.665 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.3056 ms
+2026-05-07 11:19:51.043 +07:00 [INF] HTTP POST /admin/categories/delete/d56ccc07-179f-45d4-98ae-2c057baed49b responded 302 in 8.0480 ms
+2026-05-07 11:19:51.053 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.3120 ms
+2026-05-07 11:19:53.892 +07:00 [INF] HTTP GET /admin/users responded 200 in 3.6636 ms
+2026-05-07 11:19:54.751 +07:00 [INF] HTTP GET /admin/activity responded 200 in 11.8783 ms
+2026-05-07 11:20:08.361 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.5096 ms
+2026-05-07 11:20:09.966 +07:00 [INF] HTTP GET /admin/products responded 200 in 8.8602 ms
+2026-05-07 11:20:12.827 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 12.8230 ms
+2026-05-07 11:20:21.183 +07:00 [INF] Tạo sản phẩm mới: 1 (ID: "880b988a-91f0-426c-b670-f7622180a61a")
+2026-05-07 11:20:21.190 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 81.7608 ms
+2026-05-07 11:20:21.203 +07:00 [INF] HTTP GET /admin/Products responded 200 in 7.7306 ms
+2026-05-07 11:20:25.489 +07:00 [INF] HTTP GET /admin/products responded 200 in 10.5349 ms
+2026-05-07 11:20:29.302 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.4059 ms
+2026-05-07 11:20:38.413 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.0057 ms
+2026-05-07 11:20:39.796 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 53.3823 ms
+2026-05-07 11:20:40.940 +07:00 [INF] HTTP GET /admin/products responded 200 in 9.5112 ms
+2026-05-07 11:20:43.557 +07:00 [INF] Xóa sản phẩm: 1 (ID: "880b988a-91f0-426c-b670-f7622180a61a")
+2026-05-07 11:20:43.563 +07:00 [INF] HTTP POST /admin/products/delete/880b988a-91f0-426c-b670-f7622180a61a responded 302 in 37.1864 ms
+2026-05-07 11:20:43.578 +07:00 [INF] HTTP GET /admin/Products responded 200 in 7.8767 ms
+2026-05-07 11:20:45.938 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.6707 ms
+2026-05-07 11:21:11.584 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.4029 ms
+2026-05-07 11:21:12.578 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 3.2117 ms
+2026-05-07 11:21:17.184 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.6778 ms
+2026-05-07 11:21:19.567 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.7904 ms
+2026-05-07 11:25:40.400 +07:00 [INF] HTTP GET /admin/products responded 200 in 39.6600 ms
+2026-05-07 11:25:43.174 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 4.8195 ms
+2026-05-07 11:25:50.337 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 5.4997 ms
+2026-05-07 11:25:51.687 +07:00 [INF] HTTP GET /admin/partnercategories/create responded 200 in 25.1638 ms
+2026-05-07 11:25:58.289 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 6.4128 ms
+2026-05-07 11:25:59.829 +07:00 [INF] HTTP GET /admin/knowledgecategories/create responded 200 in 18.8755 ms
+2026-05-07 11:26:01.481 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.4826 ms
+2026-05-07 11:26:02.991 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.5734 ms
+2026-05-07 11:30:41.261 +07:00 [INF] ✅ Kết nối Database thành công.
+2026-05-07 11:30:41.297 +07:00 [INF] ⏳ Đang kiểm tra cấu trúc Database...
+2026-05-07 11:30:41.614 +07:00 [INF] ✅ Cấu trúc Database đã sẵn sàng.
+2026-05-07 11:30:41.643 +07:00 [INF] ✅ Checked/Created implicit cast for user_role
+2026-05-07 11:30:41.647 +07:00 [INF] ✅ Checked/Created implicit cast for product_status
+2026-05-07 11:30:41.649 +07:00 [INF] ⏳ Checking for admin user...
+2026-05-07 11:30:41.683 +07:00 [INF] ✅ Admin check completed
+2026-05-07 11:30:41.685 +07:00 [INF] ✅ Admin user already exists
+2026-05-07 11:30:41.687 +07:00 [INF] ⏳ Checking for placeholder users...
+2026-05-07 11:30:41.730 +07:00 [INF] ✅ Placeholder users check completed
+2026-05-07 11:30:41.732 +07:00 [INF] ⏳ Checking SiteSettings...
+2026-05-07 11:30:41.740 +07:00 [INF] ✅ SiteSettings already exists
+2026-05-07 11:30:41.742 +07:00 [INF] ⏳ Checking for test data...
+2026-05-07 11:30:41.754 +07:00 [INF] ⏭️  Test data seeding started...
+2026-05-07 11:30:42.161 +07:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO knowledge_categories (created_at, name, slug, sort_order)
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING id;
+INSERT INTO knowledge_categories (created_at, name, slug, sort_order)
+VALUES (@p4, @p5, @p6, @p7)
+RETURNING id;
+INSERT INTO knowledge_categories (created_at, name, slug, sort_order)
+VALUES (@p8, @p9, @p10, @p11)
+RETURNING id;
+2026-05-07 11:30:42.196 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'AquaCMS.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "knowledge_categories_slug_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "knowledge_categories_slug_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: knowledge_categories
+    ConstraintName: knowledge_categories_slug_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "knowledge_categories_slug_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "knowledge_categories_slug_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: knowledge_categories
+    ConstraintName: knowledge_categories_slug_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-05-07 11:30:42.205 +07:00 [WRN] ⚠️ Failed to seed test data: An error occurred while saving the entity changes. See the inner exception for details.
+2026-05-07 11:30:42.206 +07:00 [INF] ✅ Database seeding completed successfully!
+2026-05-07 11:40:18.950 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1524.3992 ms
+2026-05-07 11:40:43.945 +07:00 [INF] HTTP GET /admin responded 200 in 481.0048 ms
+2026-05-07 11:40:44.840 +07:00 [INF] HTTP GET /admin/products responded 200 in 308.9154 ms
+2026-05-07 11:40:57.500 +07:00 [INF] HTTP GET /admin/banners responded 200 in 53.0546 ms
+2026-05-07 11:41:34.952 +07:00 [INF] HTTP GET /admin/categories responded 200 in 23.7340 ms
+2026-05-07 11:41:36.314 +07:00 [INF] HTTP GET /admin/activity responded 200 in 104.2869 ms
+2026-05-07 11:41:41.188 +07:00 [INF] HTTP GET /admin/products responded 200 in 12.6553 ms
+2026-05-07 11:41:45.805 +07:00 [INF] HTTP GET /admin/products responded 200 in 12.9525 ms
+2026-05-07 11:41:46.768 +07:00 [INF] HTTP GET /admin/products responded 200 in 14.6317 ms
+2026-05-07 11:41:50.602 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.4669 ms
+2026-05-07 11:41:53.005 +07:00 [INF] HTTP GET /admin/products responded 200 in 12.6124 ms
+2026-05-07 11:42:10.954 +07:00 [INF] Bulk action 'delete' trên 3 sản phẩm
+2026-05-07 11:42:10.958 +07:00 [INF] HTTP POST /admin/products/bulk responded 302 in 235.8672 ms
+2026-05-07 11:42:10.975 +07:00 [INF] HTTP GET /admin/Products responded 200 in 8.8652 ms
+2026-05-07 11:42:12.841 +07:00 [INF] HTTP GET /admin/activity responded 200 in 15.9744 ms
+2026-05-07 11:42:18.397 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.5960 ms
+2026-05-07 11:42:20.932 +07:00 [INF] HTTP POST /admin/categories/delete/85ccf61e-cdb3-42e9-8cdf-210d275111fc responded 302 in 50.0781 ms
+2026-05-07 11:42:20.945 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.9974 ms
+2026-05-07 11:42:22.606 +07:00 [INF] HTTP POST /admin/categories/delete/883974e5-7d00-474f-9e97-89ba7f89ddc9 responded 302 in 33.3571 ms
+2026-05-07 11:42:22.618 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.6995 ms
+2026-05-07 11:42:24.001 +07:00 [INF] HTTP POST /admin/categories/delete/2ec59941-02b6-4139-8632-b17e44782a34 responded 302 in 21.2429 ms
+2026-05-07 11:42:24.012 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.7262 ms
+2026-05-07 11:42:25.651 +07:00 [INF] HTTP POST /admin/categories/delete/8ea9085d-9b91-4200-a4ec-84003037d8c9 responded 302 in 22.7865 ms
+2026-05-07 11:42:25.663 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.6344 ms
+2026-05-07 11:42:27.042 +07:00 [INF] HTTP POST /admin/categories/delete/ed41a3e3-8da3-4a89-be9d-7aea041de234 responded 302 in 8.8197 ms
+2026-05-07 11:42:27.053 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.7341 ms
+2026-05-07 11:42:28.722 +07:00 [INF] HTTP POST /admin/categories/delete/a6202c68-512a-433e-9da2-4f4b6f7b65cf responded 302 in 22.4371 ms
+2026-05-07 11:42:28.734 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.3562 ms
+2026-05-07 11:42:29.779 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.5099 ms
+2026-05-07 11:42:31.326 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.8682 ms
+2026-05-07 11:42:31.943 +07:00 [INF] HTTP GET /admin/products responded 200 in 9.8968 ms
+2026-05-07 11:42:50.209 +07:00 [INF] HTTP GET /admin/products responded 200 in 1766.1916 ms
+2026-05-07 11:42:51.697 +07:00 [INF] HTTP GET /admin/categories responded 200 in 90.3698 ms
+2026-05-07 11:42:53.263 +07:00 [INF] HTTP GET /admin/activity responded 200 in 139.0234 ms
+2026-05-07 11:43:00.981 +07:00 [INF] HTTP GET /admin/categories responded 200 in 7.1345 ms
+2026-05-07 11:43:01.820 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 36.0957 ms
+2026-05-07 11:43:58.088 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 179.4314 ms
+2026-05-07 11:43:58.106 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 11.1661 ms
+2026-05-07 11:44:01.234 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 3.3212 ms
+2026-05-07 11:44:15.548 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 12.1001 ms
+2026-05-07 11:44:15.558 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.4935 ms
+2026-05-07 11:44:23.479 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 2.1613 ms
+2026-05-07 11:44:47.141 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 7.6387 ms
+2026-05-07 11:44:47.152 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.5447 ms
+2026-05-07 11:44:52.610 +07:00 [INF] HTTP GET /admin/products responded 200 in 17.8610 ms
+2026-05-07 11:44:54.730 +07:00 [INF] HTTP GET /admin/banners responded 200 in 50.4111 ms
+2026-05-07 11:44:55.854 +07:00 [INF] HTTP GET /admin/banners/create responded 200 in 30.0768 ms
+2026-05-07 11:45:03.050 +07:00 [INF] HTTP GET /admin/banners responded 200 in 8.8188 ms
+2026-05-07 11:45:07.403 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 103.0565 ms
+2026-05-07 11:50:38.858 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 1692.6451 ms
+2026-05-07 11:50:42.739 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 80.8727 ms
+2026-05-07 11:50:44.570 +07:00 [INF] HTTP GET /admin/categories responded 200 in 90.8070 ms
+2026-05-07 11:50:50.431 +07:00 [INF] HTTP GET /admin/products responded 200 in 167.3815 ms
+2026-05-07 11:50:51.359 +07:00 [INF] HTTP GET /admin/categories responded 200 in 8.7374 ms
+2026-05-07 11:50:54.791 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 35.5136 ms
+2026-05-07 11:51:24.940 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 178.6329 ms
+2026-05-07 11:51:24.953 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 5.6477 ms
+2026-05-07 11:51:31.192 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 3.8492 ms
+2026-05-07 11:51:36.878 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 26.3777 ms
+2026-05-07 11:51:36.889 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.6946 ms
+2026-05-07 11:51:38.339 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.9895 ms
+2026-05-07 11:51:46.910 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 6.6351 ms
+2026-05-07 11:51:46.921 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.0551 ms
+2026-05-07 11:51:48.930 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.5568 ms
+2026-05-07 11:52:03.481 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 9.7478 ms
+2026-05-07 11:52:03.492 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.7026 ms
+2026-05-07 11:52:05.390 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 2.6253 ms
+2026-05-07 11:52:11.941 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 13.6331 ms
+2026-05-07 11:52:11.952 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.8568 ms
+2026-05-07 11:52:19.038 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.4933 ms
+2026-05-07 11:52:22.568 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 28.1860 ms
+2026-05-07 11:52:22.578 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.3855 ms
+2026-05-07 11:52:26.675 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.4610 ms
+2026-05-07 11:52:31.710 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 6.6142 ms
+2026-05-07 11:52:31.720 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.1885 ms
+2026-05-07 11:52:38.934 +07:00 [INF] HTTP GET /admin/activity responded 200 in 109.6473 ms
+2026-05-07 11:52:41.257 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.1899 ms
+2026-05-07 11:52:43.937 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.7426 ms
+2026-05-07 11:52:44.589 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.6064 ms
+2026-05-07 11:52:44.926 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.4297 ms
+2026-05-07 11:52:45.436 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.4310 ms
+2026-05-07 11:52:45.769 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.8064 ms
+2026-05-07 11:52:46.107 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.6363 ms
+2026-05-07 11:52:46.436 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.7576 ms
+2026-05-07 11:52:46.751 +07:00 [INF] HTTP GET /admin/activity responded 200 in 14.9673 ms
+2026-05-07 11:52:47.080 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.8663 ms
+2026-05-07 11:52:47.398 +07:00 [INF] HTTP GET /admin/activity responded 200 in 15.4451 ms
+2026-05-07 11:52:47.713 +07:00 [INF] HTTP GET /admin/activity responded 200 in 16.1876 ms
+2026-05-07 11:52:48.028 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.7960 ms
+2026-05-07 11:52:48.308 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.1585 ms
+2026-05-07 11:52:48.616 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.6155 ms
+2026-05-07 11:52:48.912 +07:00 [INF] HTTP GET /admin/activity responded 200 in 11.7945 ms
+2026-05-07 11:52:50.399 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.1623 ms
+2026-05-07 11:52:52.382 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.0798 ms
+2026-05-07 11:52:54.391 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 9.5864 ms
+2026-05-07 11:52:54.401 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.2748 ms
+2026-05-07 11:52:56.545 +07:00 [INF] HTTP GET /admin/activity responded 200 in 14.0891 ms
+2026-05-07 11:52:58.357 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.3711 ms
+2026-05-07 11:53:02.846 +07:00 [INF] HTTP POST /admin/categories/delete/f185f068-61ad-4b9d-aaed-59f3aa8ed7e0 responded 302 in 68.6990 ms
+2026-05-07 11:53:02.857 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.2497 ms
+2026-05-07 11:53:04.381 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.2454 ms
+2026-05-07 11:53:17.865 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 6.7107 ms
+2026-05-07 11:53:18.993 +07:00 [INF] HTTP GET /admin/knowledgecategories/create responded 200 in 25.6344 ms
+2026-05-07 11:53:20.789 +07:00 [INF] HTTP POST /admin/knowledgecategories/create responded 302 in 79.3041 ms
+2026-05-07 11:53:20.799 +07:00 [INF] HTTP GET /admin/KnowledgeCategories responded 200 in 3.5287 ms
+2026-05-07 11:53:22.259 +07:00 [INF] HTTP GET /admin/activity responded 200 in 13.3585 ms
+2026-05-07 11:53:24.555 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 4.5741 ms
+2026-05-07 11:53:28.972 +07:00 [INF] HTTP POST /admin/knowledgecategories/delete/0e2ec0d8-7b3f-4c17-9945-92d48135414b responded 302 in 27.7855 ms
+2026-05-07 11:53:28.982 +07:00 [INF] HTTP GET /admin/KnowledgeCategories responded 200 in 3.6089 ms
+2026-05-07 11:53:30.373 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.8413 ms
+2026-05-07 11:53:32.929 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.3085 ms
+2026-05-07 11:53:34.777 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 1.0257 ms
+2026-05-07 11:53:36.135 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 13.4962 ms
+2026-05-07 11:53:36.145 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.3611 ms
+2026-05-07 11:53:37.169 +07:00 [INF] HTTP GET /admin/activity responded 200 in 14.3758 ms
+2026-05-07 11:53:39.237 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.7117 ms
+2026-05-07 11:53:41.216 +07:00 [INF] HTTP POST /admin/categories/delete/e6d4f670-a149-4426-80e2-d324b8d5f09d responded 302 in 8.5409 ms
+2026-05-07 11:53:41.227 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.9715 ms
+2026-05-07 11:53:42.351 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.4063 ms
+2026-05-07 11:54:27.179 +07:00 [INF] HTTP GET /admin/categories responded 200 in 4.7997 ms
+2026-05-07 11:54:28.054 +07:00 [INF] HTTP GET /admin/products responded 200 in 9.2694 ms
+2026-05-07 11:54:29.465 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 80.6567 ms
+2026-05-07 11:54:37.274 +07:00 [INF] Tạo sản phẩm mới: 1 (ID: "c3bd10f7-522b-4804-8dae-086ad58c3724")
+2026-05-07 11:54:37.280 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 192.0329 ms
+2026-05-07 11:54:37.299 +07:00 [INF] HTTP GET /admin/Products responded 200 in 12.6601 ms
+2026-05-07 11:54:38.969 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.5444 ms
+2026-05-07 11:54:45.234 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.5519 ms
+2026-05-07 11:54:48.849 +07:00 [INF] HTTP POST /admin/categories/delete/8e92021b-c138-409b-aa45-853dee5798b5 responded 302 in 20.8336 ms
+2026-05-07 11:54:48.860 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 4.1179 ms
+2026-05-07 11:54:49.949 +07:00 [INF] HTTP GET /admin/activity responded 200 in 12.2485 ms
+2026-05-07 11:54:52.828 +07:00 [INF] HTTP GET /admin/categories responded 200 in 3.7114 ms
+2026-05-07 11:54:54.257 +07:00 [INF] HTTP GET /admin/categories/create responded 200 in 0.8829 ms
+2026-05-07 11:55:05.274 +07:00 [INF] HTTP POST /admin/categories/create responded 302 in 26.4610 ms
+2026-05-07 11:55:05.284 +07:00 [INF] HTTP GET /admin/Categories responded 200 in 3.7469 ms
+2026-05-07 11:55:07.371 +07:00 [INF] HTTP GET /admin/activity responded 200 in 30.9511 ms
+2026-05-07 11:55:34.315 +07:00 [INF] HTTP GET /admin/products responded 200 in 11.5097 ms
+2026-05-07 11:55:37.777 +07:00 [INF] Xóa sản phẩm: 1 (ID: "c3bd10f7-522b-4804-8dae-086ad58c3724")
+2026-05-07 11:55:37.787 +07:00 [INF] HTTP POST /admin/products/delete/c3bd10f7-522b-4804-8dae-086ad58c3724 responded 302 in 96.8551 ms
+2026-05-07 11:55:37.809 +07:00 [INF] HTTP GET /admin/Products responded 200 in 11.2255 ms
+2026-05-07 11:55:38.931 +07:00 [INF] HTTP GET /admin/activity responded 200 in 38.9393 ms
+2026-05-07 11:55:44.339 +07:00 [INF] HTTP GET /admin/activity responded 200 in 61.0554 ms
+2026-05-07 11:55:46.279 +07:00 [INF] HTTP GET /admin/categories responded 200 in 8.7274 ms
+2026-05-07 11:55:49.471 +07:00 [INF] HTTP GET /admin/products responded 200 in 10.5499 ms
+2026-05-07 11:55:51.850 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 5.7700 ms
+2026-05-07 11:58:16.742 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 1767.5395 ms
+2026-05-07 12:15:44.506 +07:00 [INF] Tạo sản phẩm mới: Máy trộn cám FANTO 1B\50L (ID: "3dbe43c6-efda-47ce-af8c-de4c41934ce4")
+2026-05-07 12:15:44.581 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 531.2803 ms
+2026-05-07 12:15:44.806 +07:00 [INF] HTTP GET /admin/Products responded 200 in 217.6143 ms
+2026-05-07 12:15:46.657 +07:00 [INF] HTTP GET /admin/categories responded 200 in 35.3983 ms
+2026-05-07 12:15:49.011 +07:00 [INF] HTTP GET /admin/products responded 200 in 14.3050 ms
+2026-05-07 12:15:53.025 +07:00 [INF] HTTP GET / responded 200 in 310.3405 ms
+2026-05-07 12:15:53.295 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 4.9162 ms
+2026-05-07 12:15:56.816 +07:00 [INF] HTTP GET /admin/activity responded 200 in 97.3005 ms
+2026-05-07 12:16:05.064 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 114.8831 ms
+2026-05-07 12:16:05.269 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8289 ms
+2026-05-07 12:16:05.300 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 11878.8508 ms
+2026-05-07 12:16:11.317 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 42.6911 ms
+2026-05-07 12:16:11.324 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5999.4882 ms
+2026-05-07 12:16:11.512 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4902 ms
+2026-05-07 12:16:17.981 +07:00 [INF] HTTP GET /admin/products responded 200 in 12.6135 ms
+2026-05-07 12:16:20.921 +07:00 [INF] HTTP GET /admin/products/edit/3dbe43c6-efda-47ce-af8c-de4c41934ce4 responded 200 in 52.7472 ms
+2026-05-07 12:20:17.758 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 246171.4063 ms
+2026-05-07 12:20:17.761 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3855 ms
+2026-05-07 12:20:43.341 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 10.6607 ms
+2026-05-07 12:20:43.342 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 2213.8526 ms
+2026-05-07 12:21:30.110 +07:00 [INF] Cập nhật sản phẩm: Máy trộn cám FANTO 1B\50L (ID: "3dbe43c6-efda-47ce-af8c-de4c41934ce4")
+2026-05-07 12:21:30.215 +07:00 [INF] HTTP POST /admin/products/edit/3dbe43c6-efda-47ce-af8c-de4c41934ce4 responded 302 in 319.5458 ms
+2026-05-07 12:21:30.440 +07:00 [INF] HTTP GET /admin/Products responded 200 in 218.1527 ms
+2026-05-07 12:21:32.986 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 40.0922 ms
+2026-05-07 12:21:33.001 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 49613.6019 ms
+2026-05-07 12:21:33.213 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8643 ms
+2026-05-07 12:21:42.987 +07:00 [INF] HTTP GET /admin/products/edit/3dbe43c6-efda-47ce-af8c-de4c41934ce4 responded 200 in 134.6358 ms
+2026-05-07 12:21:47.761 +07:00 [INF] Cập nhật sản phẩm: Máy trộn cám FANTO 1B\50L (ID: "3dbe43c6-efda-47ce-af8c-de4c41934ce4")
+2026-05-07 12:21:47.769 +07:00 [INF] HTTP POST /admin/products/edit/3dbe43c6-efda-47ce-af8c-de4c41934ce4 responded 302 in 22.1058 ms
+2026-05-07 12:21:47.788 +07:00 [INF] HTTP GET /admin/Products responded 200 in 12.1931 ms
+2026-05-07 12:21:51.051 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 48.0108 ms
+2026-05-07 12:21:51.065 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 17770.9549 ms
+2026-05-07 12:21:51.222 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4028 ms
+2026-05-07 12:23:34.910 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 17.5931 ms
+2026-05-07 12:23:34.918 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 103629.4623 ms
+2026-05-07 12:23:35.110 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4402 ms
+2026-05-07 12:23:35.757 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 30.1203 ms
+2026-05-07 12:23:35.764 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 592.2490 ms
+2026-05-07 12:23:35.930 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3818 ms
+2026-05-07 12:23:36.510 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-1b-50l-9 responded 200 in 19.9224 ms
+2026-05-07 12:23:36.519 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 526.4071 ms
+2026-05-07 12:23:36.692 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4954 ms
+2026-05-07 12:23:41.884 +07:00 [INF] HTTP GET /admin/Products responded 200 in 11.6813 ms
+2026-05-07 12:23:47.265 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 15.0021 ms
+2026-05-07 12:27:29.631 +07:00 [INF] Tạo sản phẩm mới: Máy trộn cám FANTO 2B\75L (ID: "b7e4b5dd-c224-4850-aa29-acd6ac6d9583")
+2026-05-07 12:27:29.640 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 93.3353 ms
+2026-05-07 12:27:29.676 +07:00 [INF] HTTP GET /admin/Products responded 200 in 29.7564 ms
+2026-05-07 12:27:32.034 +07:00 [INF] HTTP GET / responded 200 in 244.9632 ms
+2026-05-07 12:27:32.211 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3753 ms
+2026-05-07 12:27:32.247 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 235496.5467 ms
+2026-05-07 12:27:35.182 +07:00 [INF] HTTP GET /danh-muc/may-tron-cam responded 200 in 73.5840 ms
+2026-05-07 12:27:35.295 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6049 ms
+2026-05-07 12:27:35.321 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3018.2873 ms
+2026-05-07 12:27:38.575 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5718 ms
+2026-05-07 12:27:38.604 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3267.5902 ms
+2026-05-07 12:27:39.805 +07:00 [INF] HTTP GET /danh-muc/may-tron-cam responded 200 in 13.3622 ms
+2026-05-07 12:27:39.931 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3687 ms
+2026-05-07 12:27:39.956 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1338.8378 ms
+2026-05-07 12:27:41.615 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4811 ms
+2026-05-07 12:27:41.652 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1682.1378 ms
+2026-05-07 12:27:42.307 +07:00 [INF] HTTP GET /danh-muc/may-tron-cam responded 200 in 14.1724 ms
+2026-05-07 12:27:42.498 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2888 ms
+2026-05-07 12:27:42.519 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 849.4981 ms
+2026-05-07 12:27:43.775 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3026 ms
+2026-05-07 12:27:43.806 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1271.5791 ms
+2026-05-07 12:27:45.757 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-2b-75l-10 responded 200 in 38.6130 ms
+2026-05-07 12:27:45.893 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2071.9533 ms
+2026-05-07 12:27:45.899 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2772 ms
+2026-05-07 12:27:47.683 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4331 ms
+2026-05-07 12:27:47.713 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1732.4750 ms
+2026-05-07 12:27:48.429 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-2b-75l-10 responded 200 in 16.2151 ms
+2026-05-07 12:27:48.623 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 856.6626 ms
+2026-05-07 12:27:48.628 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4380 ms
+2026-05-07 12:28:02.090 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 5.4837 ms
+2026-05-07 12:29:38.534 +07:00 [INF] Tạo sản phẩm mới: Máy trộn cám FANTO 3B\100L (ID: "bd6721df-0e0a-48db-92ec-7c43c5d07a8f")
+2026-05-07 12:29:38.541 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 19.6779 ms
+2026-05-07 12:29:38.557 +07:00 [INF] HTTP GET /admin/Products responded 200 in 9.8675 ms
+2026-05-07 12:29:40.753 +07:00 [INF] HTTP GET /admin/products/edit/b7e4b5dd-c224-4850-aa29-acd6ac6d9583 responded 200 in 10.2224 ms
+2026-05-07 12:29:54.014 +07:00 [INF] Cập nhật sản phẩm: Máy trộn cám FANTO 2B\75L (ID: "b7e4b5dd-c224-4850-aa29-acd6ac6d9583")
+2026-05-07 12:29:54.020 +07:00 [INF] HTTP POST /admin/products/edit/b7e4b5dd-c224-4850-aa29-acd6ac6d9583 responded 302 in 18.9293 ms
+2026-05-07 12:29:54.036 +07:00 [INF] HTTP GET /admin/Products responded 200 in 9.7877 ms
+2026-05-07 12:29:57.079 +07:00 [INF] HTTP GET / responded 200 in 41.2257 ms
+2026-05-07 12:29:57.334 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2103 ms
+2026-05-07 12:29:57.365 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 128670.6825 ms
+2026-05-07 12:30:06.230 +07:00 [INF] HTTP GET /admin/Products responded 200 in 10.3767 ms
+2026-05-07 12:30:09.371 +07:00 [INF] HTTP GET / responded 200 in 16.7782 ms
+2026-05-07 12:30:09.378 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 11961.3258 ms
+2026-05-07 12:30:09.579 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1908 ms
+2026-05-07 12:30:11.913 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-3b-100l-11 responded 200 in 19.7731 ms
+2026-05-07 12:30:12.056 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2410.9980 ms
+2026-05-07 12:30:12.062 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2920 ms
+2026-05-07 12:30:59.701 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 6.6500 ms
+2026-05-07 12:32:05.996 +07:00 [INF] Tạo sản phẩm mới: Máy trộn cám FANTO 4B\150L (ID: "a32266ef-95dc-456c-b3b8-592a6bd7fd4f")
+2026-05-07 12:32:06.002 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 29.9647 ms
+2026-05-07 12:32:06.017 +07:00 [INF] HTTP GET /admin/Products responded 200 in 8.7769 ms
+2026-05-07 12:32:13.098 +07:00 [INF] HTTP GET /admin/activity responded 200 in 93.1614 ms
+2026-05-07 12:32:15.481 +07:00 [INF] HTTP GET /admin/products responded 200 in 8.9780 ms
+2026-05-07 12:34:53.377 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 33.5288 ms
+2026-05-07 12:41:20.390 +07:00 [INF] Tạo sản phẩm mới: Máy cho cá ăn 2 bao nhựa FANTO (ID: "6ad5fa9a-afdf-44e7-8d94-7355dc7207f5")
+2026-05-07 12:41:20.398 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 46.6510 ms
+2026-05-07 12:41:20.431 +07:00 [INF] HTTP GET /admin/Products responded 200 in 26.8041 ms
+2026-05-07 12:41:22.080 +07:00 [INF] HTTP GET / responded 200 in 19.6136 ms
+2026-05-07 12:41:22.336 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3083 ms
+2026-05-07 12:41:22.366 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 670231.9333 ms
+2026-05-07 12:41:28.673 +07:00 [INF] HTTP GET /san-pham/may-cho-ca-an-2-bao-nhua-fanto-13 responded 200 in 21.0163 ms
+2026-05-07 12:41:28.901 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6479.8476 ms
+2026-05-07 12:41:28.907 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2301 ms
+2026-05-07 12:41:43.204 +07:00 [INF] HTTP GET /admin/products/create responded 200 in 5.5721 ms
+2026-05-07 12:45:27.318 +07:00 [INF] Tạo sản phẩm mới: Máy cho cá ăn 3 bao nhựa FANTO (ID: "6d84884f-7db5-4167-85f1-4d8d9b0a97cd")
+2026-05-07 12:45:27.325 +07:00 [INF] HTTP POST /admin/products/create responded 302 in 19.2788 ms
+2026-05-07 12:45:27.340 +07:00 [INF] HTTP GET /admin/Products responded 200 in 9.4116 ms
+2026-05-07 13:27:00.047 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2731062.8685 ms
+2026-05-07 13:27:58.950 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 47.4808 ms
+2026-05-07 13:29:27.111 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 88156.0970 ms
+2026-05-07 13:29:27.337 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6506 ms
+2026-05-07 13:29:27.352 +07:00 [INF] HTTP GET /san-pham/may-cho-ca-an-2-bao-nhua-fanto-13 responded 200 in 2076.6102 ms
+2026-05-07 13:29:32.237 +07:00 [INF] HTTP GET /admin/Products responded 200 in 220.4503 ms
+2026-05-07 13:29:44.618 +07:00 [INF] HTTP GET /admin/products-io/export responded 200 in 1844.2171 ms
+2026-05-07 13:34:59.291 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 331877.1133 ms
+2026-05-07 13:35:24.956 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 47.0109 ms
+2026-05-07 13:35:40.345 +07:00 [INF] HTTP GET /admin/Products responded 200 in 1883.4937 ms
+2026-05-07 13:35:45.422 +07:00 [INF] HTTP GET /admin/products-io/export responded 200 in 979.8156 ms
+2026-05-07 13:45:30.421 +07:00 [INF] HTTP GET /admin/products-io/template responded 200 in 22.5373 ms
+2026-05-07 13:46:10.212 +07:00 [INF] HTTP POST /admin/products-io/import responded 302 in 1520.2667 ms
+2026-05-07 13:46:10.251 +07:00 [INF] HTTP GET /admin/Products responded 200 in 31.2967 ms
+2026-05-07 13:46:12.862 +07:00 [INF] HTTP GET /admin/Products responded 200 in 16.3902 ms
+2026-05-07 13:47:25.467 +07:00 [INF] HTTP GET /admin/categories responded 200 in 27.1854 ms
+2026-05-07 13:47:37.774 +07:00 [INF] HTTP GET /admin/products responded 200 in 16.5545 ms
+2026-05-07 13:47:40.794 +07:00 [INF] HTTP GET /admin/products responded 200 in 40.2507 ms
+2026-05-07 13:47:45.512 +07:00 [INF] HTTP GET /admin/products responded 200 in 14.3000 ms
+2026-05-07 13:47:59.112 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.9949 ms
+2026-05-07 13:48:08.358 +07:00 [INF] HTTP GET /admin/products responded 200 in 13.2997 ms
+2026-05-07 13:48:14.591 +07:00 [INF] HTTP GET /admin/products/edit/7eefff53-8079-4ec3-a756-b49ca1157a74 responded 200 in 115.4544 ms
+2026-05-07 13:48:19.341 +07:00 [INF] Cập nhật sản phẩm: Quạt biến tần Tam Hoa FANTO 2.200W (ID: "7eefff53-8079-4ec3-a756-b49ca1157a74")
+2026-05-07 13:48:19.354 +07:00 [INF] HTTP POST /admin/products/edit/7eefff53-8079-4ec3-a756-b49ca1157a74 responded 302 in 61.2699 ms
+2026-05-07 13:48:19.372 +07:00 [INF] HTTP GET /admin/Products responded 200 in 10.8920 ms
+2026-05-07 13:48:22.599 +07:00 [INF] HTTP GET /admin/products/edit/e6489dd6-926a-4f4b-9976-08e6252822b4 responded 200 in 13.9046 ms
+2026-05-07 13:48:35.699 +07:00 [INF] Cập nhật sản phẩm: Quạt biến tần Tam Hoa FANTO 1.500W (ID: "e6489dd6-926a-4f4b-9976-08e6252822b4")
+2026-05-07 13:48:35.705 +07:00 [INF] HTTP POST /admin/products/edit/e6489dd6-926a-4f4b-9976-08e6252822b4 responded 302 in 32.3615 ms
+2026-05-07 13:48:35.721 +07:00 [INF] HTTP GET /admin/Products responded 200 in 10.0854 ms
+2026-05-07 13:48:39.656 +07:00 [INF] HTTP GET /admin/products/edit/8fe19fa8-e4a7-4317-861c-cad29f35168c responded 200 in 10.8829 ms
+2026-05-07 13:48:48.892 +07:00 [INF] Cập nhật sản phẩm: Quạt biến tần Tam Hoa FANTO 1.100W (ID: "8fe19fa8-e4a7-4317-861c-cad29f35168c")
+2026-05-07 13:48:48.898 +07:00 [INF] HTTP POST /admin/products/edit/8fe19fa8-e4a7-4317-861c-cad29f35168c responded 302 in 17.1192 ms
+2026-05-07 13:48:48.913 +07:00 [INF] HTTP GET /admin/Products responded 200 in 9.3988 ms
+2026-05-07 13:49:33.547 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.8779 ms
+2026-05-07 13:49:41.057 +07:00 [INF] HTTP GET /admin/categories responded 200 in 5.6478 ms
+2026-05-07 13:49:42.843 +07:00 [INF] HTTP GET /admin/products responded 200 in 12.4051 ms
+2026-05-07 13:49:43.683 +07:00 [INF] HTTP GET /admin/products responded 200 in 10.6414 ms
+2026-05-07 13:49:52.188 +07:00 [INF] HTTP GET / responded 200 in 302.8412 ms
+2026-05-07 13:49:52.342 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5166 ms
+2026-05-07 13:49:52.402 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 867441.4815 ms
+2026-05-07 13:50:04.052 +07:00 [INF] HTTP GET /san-pham/may-sieu-oxy-fanto-10-canh-2200w-380v-40 responded 200 in 127.8380 ms
+2026-05-07 13:50:04.222 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 11753.1797 ms
+2026-05-07 13:50:04.227 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4094 ms
+2026-05-07 13:51:20.573 +07:00 [INF] HTTP GET / responded 200 in 55.7369 ms
+2026-05-07 13:51:20.775 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3187 ms
+2026-05-07 13:51:20.810 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 76511.6576 ms
+2026-05-07 13:52:16.644 +07:00 [INF] HTTP GET /san-pham responded 200 in 64.6909 ms
+2026-05-07 13:52:16.868 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4962 ms
+2026-05-07 13:52:16.897 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 56021.3700 ms
+2026-05-07 13:52:18.467 +07:00 [INF] HTTP GET /san-pham/bom-mua-fanto-sc15-220v-22 responded 200 in 25.0159 ms
+2026-05-07 13:52:18.646 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1722.9888 ms
+2026-05-07 13:52:18.652 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3874 ms
+2026-05-07 13:52:24.277 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2985 ms
+2026-05-07 13:52:24.301 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5585.7026 ms
+2026-05-07 13:52:25.666 +07:00 [INF] HTTP GET /danh-muc/may-thoi-khi responded 200 in 59.7018 ms
+2026-05-07 13:52:25.839 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2307 ms
+2026-05-07 13:52:25.862 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1543.6904 ms
+2026-05-07 13:52:26.682 +07:00 [INF] HTTP GET /san-pham/may-thoi-khi-duoi-nuoc-fanto-hre65l-16 responded 200 in 31.8961 ms
+2026-05-07 13:52:26.865 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 987.3732 ms
+2026-05-07 13:52:26.871 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3456 ms
+2026-05-07 13:52:29.482 +07:00 [INF] HTTP GET /san-pham/may-thoi-khi-duoi-nuoc-fanto-hre50l-48 responded 200 in 20.3644 ms
+2026-05-07 13:52:29.612 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2664.1355 ms
+2026-05-07 13:52:29.618 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3003 ms
+2026-05-07 13:53:24.505 +07:00 [INF] HTTP GET / responded 200 in 19.4925 ms
+2026-05-07 13:53:24.730 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3303 ms
+2026-05-07 13:53:24.784 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 55102.2316 ms
+2026-05-07 13:53:29.977 +07:00 [INF] HTTP GET /api/search/suggest responded 200 in 71.3472 ms
+2026-05-07 13:53:30.244 +07:00 [INF] HTTP GET /api/search/suggest responded 200 in 13.8774 ms
+2026-05-07 13:53:31.118 +07:00 [INF] HTTP GET /api/search/suggest responded 200 in 13.1808 ms
+2026-05-07 13:53:31.921 +07:00 [INF] HTTP GET /api/search/suggest responded 200 in 12.3057 ms
+2026-05-07 13:53:38.516 +07:00 [INF] HTTP GET /api/search/suggest responded 200 in 13.0327 ms
+2026-05-07 13:53:50.184 +07:00 [INF] HTTP GET /admin/messages responded 200 in 25.7760 ms
+2026-05-07 13:53:52.036 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 70.4118 ms
+2026-05-07 13:53:52.193 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2445 ms
+2026-05-07 13:54:11.285 +07:00 [INF] HTTP GET /admin/banners responded 200 in 44.8568 ms
+2026-05-07 13:54:11.500 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 19294.5169 ms
+2026-05-07 13:54:11.845 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.5140 ms
+2026-05-07 13:54:16.820 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 14.9936 ms
+2026-05-07 13:54:16.962 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2315 ms
+2026-05-07 13:54:18.616 +07:00 [INF] HTTP GET /admin/messages responded 200 in 4.0535 ms
+2026-05-07 13:54:18.758 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1787.7036 ms
+2026-05-07 13:54:20.420 +07:00 [INF] HTTP GET /admin responded 200 in 201.7472 ms
+2026-05-07 13:54:22.422 +07:00 [INF] HTTP GET /admin/products responded 200 in 13.1083 ms
+2026-05-07 13:54:23.067 +07:00 [INF] HTTP GET /admin responded 200 in 30.5350 ms
+2026-05-07 13:54:23.854 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.1108 ms
+2026-05-07 13:54:25.661 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 11.8779 ms
+2026-05-07 13:54:25.893 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2346 ms
+2026-05-07 13:54:27.882 +07:00 [INF] HTTP GET /admin responded 200 in 31.4169 ms
+2026-05-07 13:54:28.156 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2249.8750 ms
+2026-05-07 13:54:36.778 +07:00 [INF] HTTP GET /admin/messages responded 200 in 3.5898 ms
+2026-05-07 13:55:56.681 +07:00 [INF] HTTP GET /admin/products responded 200 in 12.2197 ms
+2026-05-07 13:55:58.796 +07:00 [INF] HTTP GET /admin/products/edit/1e669665-12bb-48bb-bc5c-b50edb50611d responded 200 in 10.5001 ms
+2026-05-07 13:56:14.037 +07:00 [INF] HTTP GET /admin/products responded 200 in 11.8229 ms
+2026-05-07 14:15:20.216 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1315369.1595 ms
+2026-05-07 14:15:45.950 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 48.4021 ms
+2026-05-07 14:16:03.417 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 17452.0092 ms
+2026-05-07 14:16:03.661 +07:00 [INF] HTTP GET / responded 200 in 2586.1260 ms
+2026-05-07 14:16:03.678 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8898 ms
+2026-05-07 14:16:09.860 +07:00 [INF] HTTP GET / responded 200 in 50.6154 ms
+2026-05-07 14:16:09.867 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6053.9793 ms
+2026-05-07 14:16:10.066 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5832 ms
+2026-05-07 14:16:14.271 +07:00 [INF] HTTP GET / responded 200 in 32.9488 ms
+2026-05-07 14:16:14.279 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4099.8070 ms
+2026-05-07 14:16:14.472 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5261 ms
+2026-05-07 14:16:15.315 +07:00 [INF] HTTP GET / responded 200 in 24.1437 ms
+2026-05-07 14:16:15.323 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 733.0124 ms
+2026-05-07 14:16:15.522 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5713 ms
+2026-05-07 14:16:15.824 +07:00 [INF] HTTP GET / responded 200 in 22.4614 ms
+2026-05-07 14:16:15.836 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 190.7712 ms
+2026-05-07 14:16:16.028 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4994 ms
+2026-05-07 14:16:23.975 +07:00 [INF] HTTP GET /admin/messages responded 200 in 65.8725 ms
+2026-05-07 14:16:25.684 +07:00 [INF] HTTP GET /admin responded 200 in 249.5429 ms
+2026-05-07 14:16:26.601 +07:00 [INF] HTTP GET /admin/messages responded 200 in 13.0576 ms
+2026-05-07 14:16:27.849 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 102.6603 ms
+2026-05-07 14:16:28.004 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4603 ms
+2026-05-07 14:16:30.848 +07:00 [INF] HTTP GET /admin responded 200 in 35.7010 ms
+2026-05-07 14:16:31.038 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3026.7295 ms
+2026-05-07 16:06:06.430 +07:00 [INF] HTTP GET /admin responded 200 in 1891.4236 ms
+2026-05-07 16:06:06.686 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 9.1428 ms
+2026-05-07 16:06:13.898 +07:00 [INF] HTTP GET / responded 200 in 753.7629 ms
+2026-05-07 16:06:14.072 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8666 ms
+2026-05-07 16:06:17.269 +07:00 [INF] HTTP GET /admin/messages responded 200 in 36.8091 ms
+2026-05-07 16:06:17.502 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4369 ms
+2026-05-07 16:06:17.536 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 10807.6593 ms
+2026-05-07 16:06:18.354 +07:00 [INF] HTTP GET /admin/banners responded 200 in 60.1867 ms
+2026-05-07 16:06:18.577 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6033 ms
+2026-05-07 16:06:18.609 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1072.8281 ms
+2026-05-07 16:06:19.239 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 84.5563 ms
+2026-05-07 16:06:19.246 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 632.4640 ms
+2026-05-07 16:06:19.431 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 1.0875 ms
+2026-05-07 16:06:20.023 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 534.4470 ms
+2026-05-07 16:06:20.023 +07:00 [INF] HTTP GET /admin/products responded 200 in 95.9276 ms
+2026-05-07 16:06:20.218 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3795 ms
+2026-05-07 16:06:20.541 +07:00 [INF] HTTP GET /admin responded 200 in 37.6374 ms
+2026-05-07 16:06:20.548 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 265.9337 ms
+2026-05-07 16:06:20.733 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4628 ms
+2026-05-07 16:06:43.864 +07:00 [INF] HTTP GET /admin/products responded 200 in 18.5627 ms
+2026-05-07 16:06:44.034 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.7158 ms
+2026-05-07 16:06:44.073 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 23274.4492 ms
+2026-05-07 16:06:44.602 +07:00 [INF] HTTP GET /admin responded 200 in 34.2701 ms
+2026-05-07 16:06:44.610 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 504.7883 ms
+2026-05-07 16:06:44.781 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3746 ms
+2026-05-07 16:06:47.391 +07:00 [INF] HTTP GET /admin/messages responded 200 in 6.2313 ms
+2026-05-07 16:06:47.531 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4980 ms
+2026-05-07 16:06:47.565 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2721.6895 ms
+2026-05-07 16:06:50.474 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 119.3854 ms
+2026-05-07 16:06:50.691 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4756 ms
+2026-05-07 16:06:50.722 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3150.8654 ms
+2026-05-07 16:07:00.120 +07:00 [INF] HTTP GET /admin/users responded 200 in 61.2957 ms
+2026-05-07 16:07:00.310 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8561 ms
+2026-05-07 16:07:00.334 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 9603.2046 ms
+2026-05-07 16:07:01.275 +07:00 [INF] HTTP GET /admin/messages responded 200 in 6.0387 ms
+2026-05-07 16:07:01.282 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 941.4928 ms
+2026-05-07 16:07:01.472 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4532 ms
+2026-05-07 16:07:09.538 +07:00 [INF] HTTP GET /admin/users responded 200 in 7.1122 ms
+2026-05-07 16:07:09.567 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 8061.4352 ms
+2026-05-07 16:07:09.760 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3335 ms
+2026-05-07 16:07:22.457 +07:00 [INF] HTTP GET /admin/messages responded 200 in 5.3173 ms
+2026-05-07 16:07:22.466 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 12674.9764 ms
+2026-05-07 16:07:22.679 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3555 ms
+2026-05-07 16:07:24.738 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 30.8744 ms
+2026-05-07 16:07:24.893 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3028 ms
+2026-05-07 16:07:24.919 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2210.0279 ms
+2026-05-07 16:07:29.367 +07:00 [INF] HTTP GET /admin/messages responded 200 in 5.2199 ms
+2026-05-07 16:07:29.573 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3324 ms
+2026-05-07 16:07:29.602 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4675.5273 ms
+2026-05-07 16:07:33.039 +07:00 [INF] HTTP GET /admin responded 200 in 35.1928 ms
+2026-05-07 16:07:33.252 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1882 ms
+2026-05-07 16:07:33.305 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3695.4979 ms
+2026-05-07 16:07:44.379 +07:00 [INF] HTTP GET /san-pham/may-tao-song-1-tac-dung-fanto-sc075-380v-41 responded 200 in 92.9404 ms
+2026-05-07 16:07:44.654 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 90389.1675 ms
+2026-05-07 16:07:44.660 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3495 ms
+2026-05-07 16:07:47.392 +07:00 [INF] HTTP GET /gio-hang responded 200 in 32.3762 ms
+2026-05-07 16:07:47.514 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3581 ms
+2026-05-07 16:07:47.560 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2839.6412 ms
+2026-05-07 16:08:03.518 +07:00 [INF] HTTP GET /admin/messages responded 200 in 6.5703 ms
+2026-05-07 16:08:03.746 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2066 ms
+2026-05-07 16:08:03.776 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 30453.1882 ms
+2026-05-07 16:08:50.892 +07:00 [INF] HTTP GET /gio-hang responded 200 in 1.0482 ms
+2026-05-07 16:08:50.901 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 63316.5032 ms
+2026-05-07 16:08:50.929 +07:00 [INF] HTTP GET /css/site.css responded 304 in 3.5124 ms
+2026-05-07 16:08:50.929 +07:00 [INF] HTTP GET /js/site.js responded 304 in 2.6171 ms
+2026-05-07 16:08:51.114 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3823 ms
+2026-05-07 16:08:58.762 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 66.6190 ms
+2026-05-07 16:08:58.964 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2644 ms
+2026-05-07 16:08:58.987 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 7822.0992 ms
+2026-05-07 16:09:00.032 +07:00 [INF] HTTP GET /kien-thuc/5-buoc-chuan-bi-ao-nuoi-tom-dat-chuan-1 responded 200 in 47.8695 ms
+2026-05-07 16:09:00.202 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3175 ms
+2026-05-07 16:09:00.217 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1194.8520 ms
+2026-05-07 16:09:04.218 +07:00 [INF] HTTP GET / responded 200 in 22.8247 ms
+2026-05-07 16:09:04.448 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2682 ms
+2026-05-07 16:09:04.478 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4223.2430 ms
+2026-05-07 16:09:06.724 +07:00 [INF] HTTP GET /san-pham responded 200 in 71.8380 ms
+2026-05-07 16:09:06.907 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 2.1276 ms
+2026-05-07 16:09:06.950 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2362.9487 ms
+2026-05-07 16:09:13.302 +07:00 [INF] HTTP GET /danh-muc/may-cho-ca-an responded 200 in 55.0052 ms
+2026-05-07 16:09:13.415 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2549 ms
+2026-05-07 16:09:13.435 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6440.5090 ms
+2026-05-07 16:09:14.813 +07:00 [INF] HTTP GET /danh-muc/quat-nuoc-tao-dong responded 200 in 18.8099 ms
+2026-05-07 16:09:14.969 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8032 ms
+2026-05-07 16:09:14.987 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1513.2806 ms
+2026-05-07 16:09:18.449 +07:00 [INF] HTTP GET /kien-thuc responded 200 in 9.7568 ms
+2026-05-07 16:09:18.581 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2344 ms
+2026-05-07 16:09:18.595 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3575.4055 ms
+2026-05-07 16:09:18.960 +07:00 [INF] HTTP GET / responded 200 in 18.1902 ms
+2026-05-07 16:09:19.160 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2321 ms
+2026-05-07 16:09:19.185 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 557.3385 ms
+2026-05-07 16:11:18.554 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 194773.7506 ms
+2026-05-07 16:11:18.554 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 119277.0349 ms
+2026-05-07 16:11:18.558 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2973 ms
+2026-05-07 16:11:32.989 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 53.8838 ms
+2026-05-07 16:11:40.294 +07:00 [INF] HTTP GET /admin/messages responded 200 in 1551.0432 ms
+2026-05-07 16:11:40.308 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 7314.1290 ms
+2026-05-07 16:11:40.324 +07:00 [INF] HTTP GET /css/admin.css responded 304 in 4.1155 ms
+2026-05-07 16:11:40.324 +07:00 [INF] HTTP GET /css/site.css responded 304 in 3.2910 ms
+2026-05-07 16:11:40.506 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5675 ms
+2026-05-07 16:11:40.593 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3053 ms
+2026-05-07 16:11:46.485 +07:00 [INF] HTTP GET /admin/banners responded 200 in 95.0969 ms
+2026-05-07 16:11:46.676 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6111 ms
+2026-05-07 16:11:46.702 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 6168.2921 ms
+2026-05-07 16:11:47.781 +07:00 [INF] HTTP GET /admin/messages responded 200 in 9.0709 ms
+2026-05-07 16:11:47.789 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1080.8273 ms
+2026-05-07 16:11:47.955 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3880 ms
+2026-05-07 16:11:53.624 +07:00 [INF] HTTP GET /admin/messages/detail/9eaeb236-0374-4adc-afa9-3e377cbe98fc responded 200 in 162.0339 ms
+2026-05-07 16:11:53.750 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3334 ms
+2026-05-07 16:11:53.771 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5792.3729 ms
+2026-05-07 16:11:55.421 +07:00 [INF] HTTP GET /admin responded 200 in 280.4108 ms
+2026-05-07 16:11:55.610 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3518 ms
+2026-05-07 16:11:55.668 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1890.3795 ms
+2026-05-07 16:11:57.855 +07:00 [INF] HTTP GET /admin/activity responded 200 in 114.8197 ms
+2026-05-07 16:11:58.001 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3420 ms
+2026-05-07 16:11:58.033 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2349.5033 ms
+2026-05-07 16:11:58.722 +07:00 [INF] HTTP GET /admin/profile responded 200 in 35.0768 ms
+2026-05-07 16:11:58.842 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4475 ms
+2026-05-07 16:11:58.865 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 823.5950 ms
+2026-05-07 16:11:59.538 +07:00 [INF] HTTP GET /admin/users responded 200 in 56.0765 ms
+2026-05-07 16:11:59.545 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 670.9143 ms
+2026-05-07 16:11:59.689 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5286 ms
+2026-05-07 16:12:01.321 +07:00 [INF] HTTP GET /admin/profile responded 200 in 8.4171 ms
+2026-05-07 16:12:01.328 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1611.7372 ms
+2026-05-07 16:12:01.481 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5955 ms
+2026-05-07 16:12:22.155 +07:00 [INF] HTTP POST /admin/profile/changepassword responded 302 in 1485.5584 ms
+2026-05-07 16:12:22.167 +07:00 [INF] HTTP GET /admin/Profile responded 200 in 6.0856 ms
+2026-05-07 16:12:22.173 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 20663.2021 ms
+2026-05-07 16:12:22.331 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4334 ms
+2026-05-07 16:12:27.109 +07:00 [INF] HTTP GET /dang-xuat responded 302 in 10.7698 ms
+2026-05-07 16:12:27.177 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 62.1503 ms
+2026-05-07 16:12:27.183 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4789.1863 ms
+2026-05-07 16:12:27.306 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3193 ms
+2026-05-07 16:12:29.023 +07:00 [WRN] Đăng nhập thất bại — sai mật khẩu: admin@aquacms.com
+2026-05-07 16:12:29.027 +07:00 [INF] HTTP POST /dang-nhap responded 200 in 480.7523 ms
+2026-05-07 16:12:29.033 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1670.1120 ms
+2026-05-07 16:12:29.135 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1568 ms
+2026-05-07 16:12:33.669 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-05-07 16:12:33.684 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 449.3499 ms
+2026-05-07 16:12:33.725 +07:00 [INF] HTTP GET /admin responded 200 in 35.7268 ms
+2026-05-07 16:12:33.732 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4567.0405 ms
+2026-05-07 16:12:33.884 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1887 ms
+2026-05-07 16:12:38.941 +07:00 [INF] HTTP GET /admin/settings responded 200 in 1708.5351 ms
+2026-05-07 16:12:39.051 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1874 ms
+2026-05-07 16:12:39.079 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5138.3565 ms
+2026-05-07 16:13:15.781 +07:00 [INF] HTTP GET /admin/activity responded 200 in 27.9873 ms
+2026-05-07 16:13:15.782 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 36667.2623 ms
+2026-05-07 16:13:16.031 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3778 ms
+2026-05-07 16:13:16.462 +07:00 [INF] HTTP GET /admin/users responded 200 in 6.7085 ms
+2026-05-07 16:13:16.576 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2477 ms
+2026-05-07 16:13:16.595 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 516.6460 ms
+2026-05-07 16:13:17.041 +07:00 [INF] HTTP GET /admin/messages responded 200 in 6.1627 ms
+2026-05-07 16:13:17.048 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 436.8359 ms
+2026-05-07 16:13:17.169 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3174 ms
+2026-05-07 16:13:17.719 +07:00 [INF] HTTP GET /admin/banners responded 200 in 10.0156 ms
+2026-05-07 16:13:17.925 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3381 ms
+2026-05-07 16:13:17.956 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 762.5281 ms
+2026-05-07 16:13:18.650 +07:00 [INF] HTTP GET /admin/partnercategories responded 200 in 109.6720 ms
+2026-05-07 16:13:18.656 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 692.4117 ms
+2026-05-07 16:13:18.832 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3834 ms
+2026-05-07 16:13:20.098 +07:00 [INF] HTTP GET /admin/partners responded 200 in 52.7695 ms
+2026-05-07 16:13:20.103 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1244.2455 ms
+2026-05-07 16:13:20.275 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4679 ms
+2026-05-07 16:13:21.563 +07:00 [INF] HTTP GET /admin/knowledgecategories responded 200 in 95.9039 ms
+2026-05-07 16:13:21.569 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1260.8640 ms
+2026-05-07 16:13:21.731 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2937 ms
+2026-05-07 16:13:22.612 +07:00 [INF] HTTP GET /admin/knowledge responded 200 in 51.3824 ms
+2026-05-07 16:13:22.619 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 861.1370 ms
+2026-05-07 16:13:22.788 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2340 ms
+2026-05-07 16:13:23.599 +07:00 [INF] HTTP GET /admin/categories responded 200 in 93.1665 ms
+2026-05-07 16:13:23.605 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 783.3016 ms
+2026-05-07 16:13:23.773 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2502 ms
+2026-05-07 16:13:27.523 +07:00 [INF] HTTP GET /admin/products responded 200 in 155.3649 ms
+2026-05-07 16:13:27.527 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3714.8839 ms
+2026-05-07 16:13:27.699 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1786 ms
+2026-05-07 16:14:20.691 +07:00 [INF] HTTP GET /admin/settings responded 200 in 6.7955 ms
+2026-05-07 16:14:20.699 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 52950.7064 ms
+2026-05-07 16:14:20.923 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2071 ms
+2026-05-07 16:14:22.206 +07:00 [INF] HTTP GET /admin/activity responded 200 in 17.7459 ms
+2026-05-07 16:14:22.213 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1240.6221 ms
+2026-05-07 16:14:22.392 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2611 ms
+2026-05-07 16:14:23.508 +07:00 [INF] HTTP GET /admin/messages responded 200 in 5.5351 ms
+2026-05-07 16:14:23.649 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5215 ms
+2026-05-07 16:14:23.673 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1234.1235 ms
+2026-05-07 16:14:24.168 +07:00 [INF] HTTP GET /admin/settings responded 200 in 5.1428 ms
+2026-05-07 16:14:24.363 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.1852 ms
+2026-05-07 16:14:24.402 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 717.2117 ms

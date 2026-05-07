@@ -107,6 +107,7 @@ public class ChatHub : Hub
             var payload = new { session = session.Id, guestId, text, isFromAdmin = false, at = msg.CreatedAt };
             await Clients.Group(GuestGroup(guestId)).SendAsync("ReceiveMessage", payload);
             await Clients.Group(AdminGroup).SendAsync("ReceiveMessage", payload);
+            await BroadcastUnreadCount();
 
             // Notify admin qua email
             _ = Task.Run(async () =>
@@ -135,7 +136,7 @@ public class ChatHub : Hub
                         SenderId = "admin",
                         IsFromAdmin = true,
                         Text = settings.ChatAutoReplyMessage,
-                        IsRead = false,
+                        IsRead = true,
                         CreatedAt = DateTime.UtcNow
                     };
                     _db.ChatMessages.Add(replyMsg);
@@ -175,7 +176,7 @@ public class ChatHub : Hub
                 SenderId = "admin",
                 IsFromAdmin = true,
                 Text = text,
-                IsRead = false,
+                IsRead = true,
                 CreatedAt = DateTime.UtcNow
             };
             _db.ChatMessages.Add(msg);
@@ -189,10 +190,21 @@ public class ChatHub : Hub
             var payload = new { session = session.Id, guestId, text, isFromAdmin = true, at = msg.CreatedAt };
             await Clients.Group(GuestGroup(guestId)).SendAsync("ReceiveMessage", payload);
             await Clients.Group(AdminGroup).SendAsync("ReceiveMessage", payload);
+            await BroadcastUnreadCount();
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "SendFromAdmin failed");
         }
+    }
+
+    private async Task BroadcastUnreadCount()
+    {
+        try
+        {
+            var total = await _db.ChatSessions.SumAsync(s => s.UnreadCount);
+            await Clients.Group(AdminGroup).SendAsync("UpdateUnreadCount", total);
+        }
+        catch (Exception ex) { _logger.LogError(ex, "BroadcastUnreadCount failed"); }
     }
 }

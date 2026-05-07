@@ -24,7 +24,7 @@ public class ProductImportExportController : Controller
     {
         "SKU", "Tên sản phẩm", "Slug", "Danh mục (slug)",
         "Giá (VNĐ)", "Mô tả ngắn", "Trạng thái", "Nổi bật",
-        "Meta Title (SEO)", "Meta Description (SEO)", "Video URL"
+        "Meta Title (SEO)", "Meta Description (SEO)", "Video URL", "Thông tin chi tiết"
     };
 
     private readonly AppDbContext _db;
@@ -100,6 +100,7 @@ public class ProductImportExportController : Controller
                 ws.Cell(r, 9).Value = p.Metadata?.MetaTitle ?? "";
                 ws.Cell(r, 10).Value = p.Metadata?.MetaDesc ?? "";
                 ws.Cell(r, 11).Value = p.Content?.VideoUrl ?? "";
+                ws.Cell(r, 12).Value = FormatContentBlocksForExcel(p.Content?.ContentBlocks);
 
                 if ((r - headerRow) % 2 == 0)
                 {
@@ -145,6 +146,7 @@ public class ProductImportExportController : Controller
             ws.Column(9).Width = 28;
             ws.Column(10).Width = 40;
             ws.Column(11).Width = 30;
+            ws.Column(12).Width = 60;
 
             ws.SheetView.FreezeRows(headerRow);
 
@@ -165,6 +167,51 @@ public class ProductImportExportController : Controller
         }
     }
 
+    private string FormatContentBlocksForExcel(JsonDocument? doc)
+    {
+        if (doc == null) return "";
+        try
+        {
+            var root = doc.RootElement;
+            if (root.ValueKind != JsonValueKind.Array) return "";
+
+            var sb = new System.Text.StringBuilder();
+            foreach (var block in root.EnumerateArray())
+            {
+                var type = block.TryGetProperty("type", out var t) ? t.GetString() : "";
+                var content = block.TryGetProperty("content", out var c) ? c.GetString() : "";
+
+                switch (type)
+                {
+                    case "heading":
+                        sb.AppendLine($"[H] {content}");
+                        break;
+                    case "paragraph":
+                        sb.AppendLine(content);
+                        break;
+                    case "image":
+                        var url = block.TryGetProperty("url", out var u) ? u.GetString() : "";
+                        var alt = block.TryGetProperty("alt", out var a) ? a.GetString() : "";
+                        sb.AppendLine($"[IMG] {url} {(string.IsNullOrEmpty(alt) ? "" : "| " + alt)}");
+                        break;
+                    case "list":
+                        var items = block.TryGetProperty("items", out var its) && its.ValueKind == JsonValueKind.Array 
+                            ? its.EnumerateArray().Select(x => x.GetString()) 
+                            : (content ?? "").Split('\n', StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var item in items) sb.AppendLine($"- {item?.Trim()}");
+                        break;
+                    case "video":
+                        var vUrl = block.TryGetProperty("url", out var vu) ? vu.GetString() : "";
+                        sb.AppendLine($"[VIDEO] {vUrl}");
+                        break;
+                }
+                sb.AppendLine();
+            }
+            return sb.ToString().Trim();
+        }
+        catch { return ""; }
+    }
+
     [HttpGet("template")]
     public IActionResult Template()
     {
@@ -181,7 +228,7 @@ public class ProductImportExportController : Controller
                 .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             ws.Row(1).Height = 28;
 
-            ws.Cell(2, 1).Value = "Điền dữ liệu từ hàng 5 trở xuống. Đừng sửa hàng tiêu đề (4).";
+            ws.Cell(2, 1).Value = "Điền dữ liệu từ hàng 5 trở xuống. Đừng sửa hàng tiêu đề (4). Quy ước: [H] Tiêu đề, [IMG] Link ảnh, [VIDEO] Link YouTube, - Mục danh sách.";
             ws.Range(2, 1, 2, Headers.Length).Merge();
             ws.Cell(2, 1).Style.Font.SetItalic().Font.SetFontColor(XLColor.Gray);
 
@@ -211,6 +258,7 @@ public class ProductImportExportController : Controller
             ws.Cell(5, 9).Value = "Sản phẩm mẫu | AquaCMS";
             ws.Cell(5, 10).Value = "Mô tả SEO";
             ws.Cell(5, 11).Value = "";
+            ws.Cell(5, 12).Value = "[H] Thông số kỹ thuật\n\n- Công suất: 150W\n- Điện áp: 220V\n\n[H] Tính năng\n\nĐây là đoạn văn bản mô tả chi tiết sản phẩm mẫu.";
 
             ws.Range(headerRow, 1, 5, Headers.Length).Style
                 .Border.SetInsideBorder(XLBorderStyleValues.Thin)
@@ -219,7 +267,7 @@ public class ProductImportExportController : Controller
             ws.Column(1).Width = 12; ws.Column(2).Width = 35; ws.Column(3).Width = 28;
             ws.Column(4).Width = 18; ws.Column(5).Width = 14; ws.Column(6).Width = 45;
             ws.Column(7).Width = 14; ws.Column(8).Width = 10; ws.Column(9).Width = 28;
-            ws.Column(10).Width = 40; ws.Column(11).Width = 30;
+            ws.Column(10).Width = 40; ws.Column(11).Width = 30; ws.Column(12).Width = 60;
             ws.SheetView.FreezeRows(headerRow);
 
             using var ms = new MemoryStream();
@@ -303,6 +351,7 @@ public class ProductImportExportController : Controller
                     var metaTitle = NullIfEmpty(ws.Cell(rr, 9).GetString());
                     var metaDesc = NullIfEmpty(ws.Cell(rr, 10).GetString());
                     var videoUrl = NullIfEmpty(ws.Cell(rr, 11).GetString());
+                    var contentText = ws.Cell(rr, 12).GetString();
 
                     var existing = await _db.Products
                         .Include(p => p.Metadata)
@@ -330,6 +379,8 @@ public class ProductImportExportController : Controller
                         existing.Content ??= new ProductContent { ProductId = existing.Id };
                         existing.Content.Description = desc;
                         existing.Content.VideoUrl = videoUrl;
+                        if (!string.IsNullOrWhiteSpace(contentText))
+                            existing.Content.ContentBlocks = ParseExcelContentToBlocks(contentText);
 
                         updated++;
                     }
@@ -347,7 +398,12 @@ public class ProductImportExportController : Controller
                             UpdatedAt = DateTime.UtcNow,
                             Metadata = new ProductMetadata { ProductId = productId, Slug = slug, MetaTitle = metaTitle, MetaDesc = metaDesc },
                             Finance = new ProductFinance { ProductId = productId, Price = price, IsFeatured = isFeatured },
-                            Content = new ProductContent { ProductId = productId, Description = desc, VideoUrl = videoUrl },
+                            Content = new ProductContent { 
+                                ProductId = productId, 
+                                Description = desc, 
+                                VideoUrl = videoUrl,
+                                ContentBlocks = ParseExcelContentToBlocks(contentText)
+                            },
                             Statistic = new ProductStatistic { ProductId = productId, ViewCount = 0 }
                         };
                         _db.Products.Add(product);
@@ -371,6 +427,72 @@ public class ProductImportExportController : Controller
         }
 
         return RedirectToAction("Index", "Products");
+    }
+
+    private JsonDocument ParseExcelContentToBlocks(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text)) return JsonDocument.Parse("[]");
+        
+        // Vẫn hỗ trợ JSON nếu người dùng dán vào
+        if (text.Trim().StartsWith("[") && text.Trim().EndsWith("]")) 
+        {
+            try { return JsonDocument.Parse(text); } catch { }
+        }
+
+        var lines = text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+        var blocks = new List<object>();
+        var currentPara = new System.Text.StringBuilder();
+
+        foreach (var line in lines)
+        {
+            var trimmed = line.Trim();
+            if (string.IsNullOrWhiteSpace(trimmed)) 
+            {
+                FlushPara(blocks, currentPara);
+                continue;
+            }
+
+            if (trimmed.StartsWith("[H] "))
+            {
+                FlushPara(blocks, currentPara);
+                blocks.Add(new { type = "heading", content = trimmed[4..].Trim() });
+            }
+            else if (trimmed.StartsWith("[IMG] "))
+            {
+                FlushPara(blocks, currentPara);
+                var parts = trimmed[6..].Split('|');
+                blocks.Add(new { type = "image", url = parts[0].Trim(), alt = parts.Length > 1 ? parts[1].Trim() : "" });
+            }
+            else if (trimmed.StartsWith("[VIDEO] "))
+            {
+                FlushPara(blocks, currentPara);
+                blocks.Add(new { type = "video", url = trimmed[8..].Trim() });
+            }
+            else if (trimmed.StartsWith("- "))
+            {
+                FlushPara(blocks, currentPara);
+                // Tìm block list cuối cùng để gom nhóm, nhưng để đơn giản ta cứ tạo list block mới 
+                // hoặc gom thành paragraph nếu không muốn phức tạp logic import
+                blocks.Add(new { type = "list", content = trimmed[2..].Trim() });
+            }
+            else
+            {
+                currentPara.AppendLine(line);
+            }
+        }
+        FlushPara(blocks, currentPara);
+
+        return JsonDocument.Parse(JsonSerializer.Serialize(blocks));
+    }
+
+    private void FlushPara(List<object> blocks, System.Text.StringBuilder sb)
+    {
+        var content = sb.ToString().Trim();
+        if (content.Length > 0)
+        {
+            blocks.Add(new { type = "paragraph", content = content });
+            sb.Clear();
+        }
     }
 
     private static string? NullIfEmpty(string? s) => string.IsNullOrWhiteSpace(s) ? null : s.Trim();

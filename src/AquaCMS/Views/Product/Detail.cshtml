@@ -190,8 +190,13 @@
             @* Content Blocks *@
             @if (Model.Product.Content?.ContentBlocks != null)
             {
+                @* Script block chứa data JSON an toàn để JS đọc *@
+                <script id="product-content-data" type="application/json">
+                    @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Product.Content.ContentBlocks))
+                </script>
+
                 <div id="content-blocks" class="prose max-w-none mx-auto">
-                    @* Rendered by JS *@
+                    @* Rendered by JS below *@
                 </div>
             }
         </div>
@@ -216,34 +221,45 @@
 @section Scripts {
     <script>
         (function() {
-            var raw = '@Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Product.Content?.ContentBlocks))';
-            if (!raw || raw === 'null') return;
+            var dataElem = document.getElementById('product-content-data');
+            if (!dataElem) return;
 
             try {
-                var blocks = JSON.parse(raw);
+                var blocks = JSON.parse(dataElem.textContent);
                 if (!Array.isArray(blocks)) return;
 
                 var container = document.getElementById('content-blocks');
                 if (!container) return;
 
                 blocks.forEach(function(block) {
+                    if (!block || !block.type) return;
+
                     switch (block.type) {
                         case 'heading':
+                            if (!block.content) break;
                             var h = document.createElement('h3');
-                            h.className = 'text-xl font-bold mt-6 mb-3';
-                            h.textContent = block.content || '';
+                            h.className = 'text-xl font-bold mt-8 mb-4 text-gray-900 border-l-4 border-primary pl-4';
+                            h.textContent = block.content;
                             container.appendChild(h);
                             break;
+
                         case 'paragraph':
+                            if (!block.content) break;
                             var p = document.createElement('p');
-                            p.className = 'mb-4 text-gray-700 leading-relaxed';
-                            p.textContent = block.content || '';
+                            p.className = 'mb-4 text-gray-700 leading-relaxed whitespace-pre-line';
+                            p.textContent = block.content;
                             container.appendChild(p);
                             break;
+
                         case 'image':
+                            if (!block.url) break;
+                            var imgContainer = document.createElement('div');
+                            imgContainer.className = 'my-8';
+                            
                             var img = document.createElement('img');
-                            img.src = block.url || '';
-                            img.className = 'rounded-lg my-4 max-w-full cursor-pointer hover:opacity-90 transition-opacity shadow-sm';
+                            img.src = block.url;
+                            img.alt = block.alt || '';
+                            img.className = 'rounded-xl max-w-full mx-auto cursor-zoom-in hover:opacity-95 transition-all shadow-md border border-gray-100';
                             img.onclick = function() {
                                 var root = document.querySelector('[x-data]');
                                 if (root && root.__x_data_stack) {
@@ -253,23 +269,53 @@
                                     data.lightbox.open = true;
                                 }
                             };
-                            container.appendChild(img);
+                            imgContainer.appendChild(img);
+                            
+                            if (block.alt) {
+                                var caption = document.createElement('p');
+                                caption.className = 'text-center text-sm text-gray-400 mt-2 italic';
+                                caption.textContent = block.alt;
+                                imgContainer.appendChild(caption);
+                            }
+                            
+                            container.appendChild(imgContainer);
                             break;
+
                         case 'list':
+                            if (!block.content) break;
                             var ul = document.createElement('ul');
-                            ul.className = 'list-disc pl-6 mb-4 space-y-1';
-                            (block.items || []).forEach(function(item) {
+                            ul.className = 'list-disc pl-6 mb-6 space-y-2 text-gray-700';
+                            
+                            // Hỗ trợ cả mảng items hoặc chuỗi content tách bằng dòng mới
+                            var items = Array.isArray(block.items) ? block.items : 
+                                        (typeof block.content === 'string' ? block.content.split('\n') : []);
+                            
+                            items.forEach(function(item) {
+                                if (!item.trim()) return;
                                 var li = document.createElement('li');
-                                li.className = 'text-gray-700';
-                                li.textContent = item;
+                                li.textContent = item.trim();
                                 ul.appendChild(li);
                             });
-                            container.appendChild(ul);
+                            
+                            if (ul.children.length > 0) container.appendChild(ul);
+                            break;
+
+                        case 'video':
+                            if (!block.url) break;
+                            // Helper to extract YT ID
+                            var reg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^"&?\/\s]{11})/;
+                            var match = block.url.match(reg);
+                            if (match && match[1]) {
+                                var vDiv = document.createElement('div');
+                                vDiv.className = 'my-8 aspect-video w-full rounded-xl overflow-hidden shadow-lg bg-black';
+                                vDiv.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + match[1] + '" frameborder="0" allowfullscreen></iframe>';
+                                container.appendChild(vDiv);
+                            }
                             break;
                     }
                 });
                 if (window.lucide) lucide.createIcons();
-            } catch (e) { console.warn(e); }
+            } catch (e) { console.warn('Lỗi hiển thị nội dung chi tiết:', e); }
         })();
     </script>
 }

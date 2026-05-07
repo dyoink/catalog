@@ -40,7 +40,7 @@ public class DashboardController : Controller
         ViewData["TotalPartners"] = await _db.Partners.CountAsync(p => p.IsActive);
         ViewData["TotalBanners"] = await _db.Banners.CountAsync(b => b.IsActive);
         ViewData["TotalUsers"] = await _db.Users.CountAsync(u => u.IsActive);
-        ViewData["TotalMessages"] = await _db.ChatMessages.CountAsync(m => !m.IsRead);
+        ViewData["TotalMessages"] = await _db.ChatSessions.SumAsync(s => s.UnreadCount);
         ViewData["TotalCategories"] = await _db.Categories.CountAsync();
 
         // ===== Lượt xem =====
