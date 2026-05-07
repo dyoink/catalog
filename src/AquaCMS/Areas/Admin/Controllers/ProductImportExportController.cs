@@ -418,6 +418,12 @@ public class ProductImportExportController : Controller
             }
 
             await _db.SaveChangesAsync();
+            
+            // Ghi nhật ký hoạt động
+            await _activity.LogAsync("IMPORT", "Product", null, 
+                $"Import Excel từ file '{file.FileName}': Tạo {created}, Cập nhật {updated}, Bỏ qua {skipped}", 
+                "Success");
+
             TempData["Success"] = $"Import xong: Tạo {created}, cập nhật {updated}, bỏ qua {skipped}.";
         }
         catch (Exception ex)
