@@ -10,7 +10,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 COPY ["src/AquaCMS/AquaCMS.csproj", "src/AquaCMS/"]
 RUN dotnet restore "src/AquaCMS/AquaCMS.csproj"
 
-# Copy code (đã có .dockerignore loại bỏ node_modules cũ)
+# Copy code
 COPY . .
 WORKDIR "/source/src/AquaCMS"
 
@@ -27,7 +27,15 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app/publish .
 
+# CÀI ĐẶT MÚI GIỜ VIỆT NAM (Quan trọng)
+USER root
+RUN apt-get update && apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata && \
+    apt-get clean
+
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
+ENV TZ=Asia/Ho_Chi_Minh
 
 ENTRYPOINT ["dotnet", "AquaCMS.dll"]
