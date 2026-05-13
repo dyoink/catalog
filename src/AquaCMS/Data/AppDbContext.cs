@@ -54,6 +54,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Email).HasColumnName("email").HasMaxLength(255).IsRequired();
             entity.Property(e => e.PasswordHash).HasColumnName("password_hash").HasMaxLength(255).IsRequired();
             entity.Property(e => e.Role).HasColumnName("role")
+                  .HasColumnType("text")
                   .HasConversion<string>()
                   .IsRequired();
             entity.Property(e => e.Avatar).HasColumnName("avatar").HasMaxLength(500);
