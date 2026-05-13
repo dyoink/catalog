@@ -22,6 +22,13 @@
         </div>
     }
 
+    @if (TempData["Error"] != null)
+    {
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center gap-2 shadow-sm">
+            <i data-lucide="alert-circle" class="w-5 h-5"></i> @TempData["Error"]
+        </div>
+    }
+
     @* Banner grid *@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach (var banner in Model.Items)

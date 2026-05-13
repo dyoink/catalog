@@ -9,7 +9,7 @@ public class SiteSettings
     public Guid Id { get; set; }
 
     // ===== Thông tin doanh nghiệp =====
-    public string CompanyName { get; set; } = "AquaCMS";
+    public string CompanyName { get; set; } = "Fanto";
     public string? Logo { get; set; }
     public string? Address { get; set; }
     public string? Phone { get; set; }

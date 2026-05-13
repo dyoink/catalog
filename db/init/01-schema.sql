@@ -34,8 +34,8 @@ CREATE TABLE users (
 -- 3.2 Site Settings (singleton - Bao gồm SMTP từ migration 02)
 CREATE TABLE site_settings (
     id               UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    company_name     VARCHAR(255) NOT NULL DEFAULT 'AquaCMS',
-    logo             VARCHAR(500),
+    company_name     VARCHAR(255) NOT NULL DEFAULT 'Fanto',
+    logo             VARCHAR(500) DEFAULT '/logoFanto.png',
     address          TEXT,
     phone            VARCHAR(30),
     email            VARCHAR(255),
@@ -326,8 +326,8 @@ CREATE TRIGGER trg_chat_sessions_updated BEFORE UPDATE ON chat_sessions FOR EACH
 INSERT INTO users (name, email, password_hash, role) VALUES
 ('System Admin', 'admin@cataloga.com', 'PLACEHOLDER_WILL_BE_SEEDED_BY_APP', 'SUPER_ADMIN');
 
-INSERT INTO site_settings (company_name, phone, email, primary_color, background_color, footer_text, show_footer) VALUES
-('CatalogaWeb', '0353785710', 'contact@cataloga.com', '#55B3D9', '#F9F9F9', 'Precision Engineering.', true);
+INSERT INTO site_settings (company_name, logo, phone, email, primary_color, background_color, footer_text, show_footer) VALUES
+('Fanto', '/logoFanto.png', '0353785710', 'contact@cataloga.com', '#55B3D9', '#F9F9F9', 'Precision Engineering.', true);
 
 -- Categories
 INSERT INTO categories (id, name, slug, image, sort_order) VALUES

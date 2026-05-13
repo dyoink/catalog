@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] — Admin AquaCMS</title>
+    <title>@ViewData["Title"] — Admin Fanto</title>
     <meta name="robots" content="noindex, nofollow" />
 
     <script>
@@ -273,7 +273,7 @@
             }
         });
 
-        // Quill & Cropper Logic (Giữ nguyên như cũ)
+        // Quill Logic
         (function () {
             if (typeof Quill === 'undefined') return;
             document.querySelectorAll('textarea.rich-editor').forEach(function (ta) {
@@ -282,9 +282,142 @@
                 ta.style.display = 'none';
                 ta.parentNode.insertBefore(holder, ta.nextSibling);
                 var quill = new Quill(holder, { theme: 'snow' });
+                
+                // Custom Image Handler for Quill
+                quill.getModule('toolbar').addHandler('image', function() {
+                    var input = document.createElement('input');
+                    input.setAttribute('type', 'file');
+                    input.setAttribute('accept', 'image/*');
+                    input.click();
+
+                    input.onchange = async function() {
+                        var file = input.files[0];
+                        if (!file) return;
+
+                        var formData = new FormData();
+                        formData.append('file', file);
+                        formData.append('folder', 'content');
+
+                        var token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+                        try {
+                            var response = await fetch('/admin/api/upload', {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'RequestVerificationToken': token }
+                            });
+                            if (response.ok) {
+                                var result = await response.json();
+                                var range = quill.getSelection();
+                                quill.insertEmbed(range.index, 'image', result.url);
+                            } else {
+                                var err = await response.json();
+                                alert(err.message || 'Lỗi upload ảnh vào trình soạn thảo');
+                            }
+                        } catch (e) {
+                            console.error('Quill upload error:', e);
+                            alert('Không thể upload ảnh');
+                        }
+                    };
+                });
+
                 if (ta.value) { quill.clipboard.dangerouslyPasteHTML(ta.value); }
                 var form = ta.closest('form');
                 if (form) { form.addEventListener('submit', function () { ta.value = quill.root.innerHTML; }); }
+            });
+        })();
+
+        // Image Handling (Preview & Crop)
+        (function () {
+            // 1. URL input preview sync
+            document.querySelectorAll('input[data-preview]:not([type="file"])').forEach(function (input) {
+                input.addEventListener('input', function () {
+                    var preview = document.querySelector(input.dataset.preview);
+                    if (!preview) return;
+                    if (input.value) {
+                        preview.src = input.value;
+                        preview.classList.remove('hidden');
+                    } else {
+                        preview.classList.add('hidden');
+                    }
+                });
+            });
+
+            // 2. File input handling (Preview & Crop)
+            var cropper = null;
+            var currentInput = null;
+            var modal = document.getElementById('crop-modal');
+            var cropImg = document.getElementById('crop-image');
+
+            document.querySelectorAll('input[type="file"][data-preview]').forEach(function (input) {
+                input.addEventListener('change', function (e) {
+                    var file = e.target.files[0];
+                    if (!file) return;
+
+                    var reader = new FileReader();
+                    reader.onload = function (event) {
+                        var preview = document.querySelector(input.dataset.preview);
+                        var cropRatio = input.dataset.crop;
+
+                        if (cropRatio && typeof Cropper !== 'undefined') {
+                            currentInput = input;
+                            cropImg.src = event.target.result;
+                            modal.classList.remove('hidden');
+
+                            var ratioParts = cropRatio.split(':');
+                            var aspectRatio = ratioParts.length === 2 ? parseInt(ratioParts[0]) / parseInt(ratioParts[1]) : NaN;
+
+                            if (cropper) cropper.destroy();
+                            cropper = new Cropper(cropImg, {
+                                aspectRatio: aspectRatio,
+                                viewMode: 1,
+                                background: false
+                            });
+                        } else if (preview) {
+                            preview.src = event.target.result;
+                            preview.classList.remove('hidden');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            document.getElementById('crop-close')?.addEventListener('click', closeCrop);
+            document.getElementById('crop-cancel')?.addEventListener('click', closeCrop);
+
+            function closeCrop() {
+                modal.classList.add('hidden');
+                if (cropper) cropper.destroy();
+                cropper = null;
+                if (currentInput) currentInput.value = '';
+            }
+
+            document.querySelectorAll('[data-crop-rot]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    if (cropper) cropper.rotate(parseInt(btn.dataset.cropRot));
+                });
+            });
+
+            document.getElementById('crop-apply')?.addEventListener('click', function () {
+                if (!cropper || !currentInput) return;
+
+                var canvas = cropper.getCroppedCanvas();
+                canvas.toBlob(function (blob) {
+                    var preview = document.querySelector(currentInput.dataset.preview);
+                    if (preview) {
+                        preview.src = URL.createObjectURL(blob);
+                        preview.classList.remove('hidden');
+                    }
+
+                    var file = new File([blob], "cropped-" + Date.now() + ".jpg", { type: 'image/jpeg' });
+                    var container = new DataTransfer();
+                    container.items.add(file);
+                    currentInput.files = container.files;
+
+                    modal.classList.add('hidden');
+                    cropper.destroy();
+                    cropper = null;
+                }, 'image/jpeg', 0.9);
             });
         })();
 
