@@ -13,6 +13,10 @@ services:
       - ConnectionStrings__DefaultConnection=Host=aquacms-db;Port=5432;Database=aquacms;Username=aquacms;Password=${DB_PASSWORD:-AquaCMS@2025}
       - ASPNETCORE_ENVIRONMENT=Production
       - Site__Url=${SITE_URL:-http://localhost:8080}
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     depends_on:
       postgres:
         condition: service_healthy
@@ -27,9 +31,12 @@ services:
       POSTGRES_DB: aquacms
       POSTGRES_USER: aquacms
       POSTGRES_PASSWORD: ${DB_PASSWORD:-AquaCMS@2025}
+      TZ: Asia/Ho_Chi_Minh
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./db/init:/docker-entrypoint-initdb.d
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U aquacms"]
       interval: 5s
