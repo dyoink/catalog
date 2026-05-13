@@ -155,7 +155,7 @@
                                    @@input.debounce.300ms="if(query.length >= 2) { $refs.results.classList.remove('hidden'); htmx.ajax('GET', '/api/search/suggest?q=' + encodeURIComponent(query), {target: '#search-results'}); open = true } else { open = false }"
                                    @@keydown.enter="if(query.length >= 2) window.location.href = '/san-pham?search=' + encodeURIComponent(query)"
                                    placeholder="@L.T("nav.search.placeholder")"
-                                   class="bg-transparent text-white placeholder-white/60 text-sm ml-2 w-40 focus:w-56 transition-all outline-none" />
+                                   class="bg-transparent text-white placeholder-white/60 text-sm ml-2 w-40 focus:w-56 transition-all outline-none border-none focus:ring-0" />
                         </div>
                         <div x-ref="results" x-show="open" x-cloak
                              id="search-results"
