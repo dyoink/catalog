@@ -249,3 +249,8 @@
 2026-05-13 18:53:31.274 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 94035.2471 ms
 2026-05-13 18:53:31.275 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4065 ms
 2026-05-13 18:54:01.274 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 29995.2726 ms
+2026-05-13 18:54:16.222 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 50.6050 ms
+2026-05-13 18:54:33.728 +07:00 [INF] HTTP GET /admin/activity responded 200 in 1654.8123 ms
+2026-05-13 18:54:33.732 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 17507.0112 ms
+2026-05-13 18:54:33.931 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6504 ms
+2026-05-13 18:54:39.646 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5668.2353 ms

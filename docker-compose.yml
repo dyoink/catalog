@@ -14,9 +14,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - Site__Url=${SITE_URL:-http://localhost:8080}
       - TZ=Asia/Ho_Chi_Minh
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
     depends_on:
       postgres:
         condition: service_healthy
@@ -35,8 +32,6 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./db/init:/docker-entrypoint-initdb.d
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U aquacms"]
       interval: 5s
