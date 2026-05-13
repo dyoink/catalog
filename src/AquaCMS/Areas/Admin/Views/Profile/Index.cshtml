@@ -13,8 +13,7 @@
             <div><span class="text-gray-500">Họ tên:</span> <span class="font-medium">@Model.Name</span></div>
             <div><span class="text-gray-500">Email:</span> <span class="font-medium">@Model.Email</span></div>
             <div><span class="text-gray-500">Vai trò:</span> <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded font-medium">@Model.Role</span></div>
-            <div><span class="text-gray-500">Đăng nhập gần nhất:</span> <span>@(Model.LastLoginAt?.ToString("dd/MM/yyyy HH:mm") ?? "—")</span></div>
-        </div>
+            <div><span class="text-gray-500">Đăng nhập gần nhất:</span> <span>@(Model.LastLoginAt?.ToLocalTime().ToString("dd/MM/yyyy HH:mm") ?? "—")</span></div>        </div>
     </div>
 
     <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">

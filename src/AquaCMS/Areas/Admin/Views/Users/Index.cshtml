@@ -96,8 +96,7 @@
                                 }
                             </td>
                             <td class="px-4 py-3 text-gray-400 text-sm hidden lg:table-cell">
-                                @(user.LastLoginAt?.ToString("dd/MM/yyyy HH:mm") ?? "Chưa đăng nhập")
-                            </td>
+                                @(user.LastLoginAt?.ToLocalTime().ToString("dd/MM/yyyy HH:mm") ?? "Chưa đăng nhập")                            </td>
                             <td class="px-4 py-3 text-right">
                                 <div class="flex items-center justify-end gap-1">
                                     @if (!isSelf)
