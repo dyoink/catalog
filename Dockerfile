@@ -10,11 +10,12 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 COPY ["src/AquaCMS/AquaCMS.csproj", "src/AquaCMS/"]
 RUN dotnet restore "src/AquaCMS/AquaCMS.csproj"
 
-# Copy toàn bộ code và build
+# Copy toàn bộ code (loại trừ các file trong .dockerignore)
 COPY . .
 WORKDIR "/source/src/AquaCMS"
 
-# Cài đặt npm và Build CSS Tailwind (Sửa lỗi thiếu style trên VPS)
+# Cài đặt npm và Build CSS Tailwind
+# Việc thêm .dockerignore giúp đảm bảo không bị lỗi "Permission denied" do copy node_modules từ Windows
 RUN npm install
 RUN npm run build:css
 
