@@ -1,6 +1,22 @@
 version: "3.9"
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aquacms-app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=aquacms-db;Port=5432;Database=aquacms;Username=aquacms;Password=${DB_PASSWORD:-AquaCMS@2025}
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Site__Url=${SITE_URL:-http://localhost:8080}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   postgres:
     image: postgres:16-alpine
     container_name: aquacms-db
@@ -10,7 +26,7 @@ services:
     environment:
       POSTGRES_DB: aquacms
       POSTGRES_USER: aquacms
-      POSTGRES_PASSWORD: AquaCMS@2025
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-AquaCMS@2025}
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./db/init:/docker-entrypoint-initdb.d

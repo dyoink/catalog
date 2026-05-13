@@ -80,6 +80,7 @@ try
 
     var app = builder.Build();
 
+    app.UseForwardedHeaders();
     app.UseGlobalExceptionHandler();
     app.UseSecurityHeaders();
     app.UseSerilogRequestLogging();
@@ -115,6 +116,16 @@ try
     app.MapControllerRoute(name: "robots", pattern: "robots.txt", defaults: new { controller = "Seo", action = "Robots" });
     app.MapControllerRoute(name: "error-status", pattern: "loi/{code:int}", defaults: new { controller = "Home", action = "Error" });
     app.MapControllerRoute(name: "api-search", pattern: "api/search/{action}", defaults: new { controller = "SearchApi" });
+
+    // 5. Default
+    app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+    app.MapHub<AquaCMS.Hubs.ChatHub>("/hubs/chat");
+
+    app.Run();
+}
+catch (Exception ex) { Log.Fatal(ex, "Terminated"); }
+finally { Log.CloseAndFlush(); }
+ler = "SearchApi" });
 
     // 5. Default
     app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
