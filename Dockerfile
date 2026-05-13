@@ -13,7 +13,12 @@ RUN dotnet restore "src/AquaCMS/AquaCMS.csproj"
 # Copy toàn bộ code và build
 COPY . .
 WORKDIR "/source/src/AquaCMS"
+
+# Cài đặt npm và Build CSS Tailwind (Sửa lỗi thiếu style trên VPS)
 RUN npm install
+RUN npm run build:css
+
+# Publish ứng dụng .NET
 RUN dotnet publish "AquaCMS.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Giai đoạn Chạy (Runtime)
