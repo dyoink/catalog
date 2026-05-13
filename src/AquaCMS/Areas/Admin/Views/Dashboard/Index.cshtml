@@ -352,7 +352,7 @@
                             <div class="flex-1 min-w-0">
                                 <a href="/admin/knowledge/edit/@post.Id" class="text-sm font-medium text-gray-700 hover:text-primary truncate block">@post.Title</a>
                                 <p class="text-xs text-gray-400 mt-0.5">
-                                    @(((DateTime)post.CreatedAt).ToString("dd/MM/yyyy HH:mm"))
+                                    @(((DateTime)post.CreatedAt).ToLocalTime().ToString("dd/MM/yyyy HH:mm"))
                                 </p>
                             </div>
                             @if ((bool)post.IsPublished)

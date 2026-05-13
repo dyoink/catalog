@@ -232,3 +232,20 @@
 2026-05-13 18:01:21.866 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 198.6544 ms
 2026-05-13 18:01:21.990 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3144 ms
 2026-05-13 18:28:47.514 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1645410.4678 ms
+2026-05-13 18:51:48.996 +07:00 [INF] HTTP GET /admin responded 200 in 2010.6409 ms
+2026-05-13 18:51:49.240 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 10.0014 ms
+2026-05-13 18:51:51.543 +07:00 [INF] HTTP GET /admin/settings responded 200 in 447.6190 ms
+2026-05-13 18:51:51.554 +07:00 [INF] HTTP GET /uploads/settings/99e9ccb32dfb4d0cbabcdbde47afb399.png responded 304 in 4.2294 ms
+2026-05-13 18:51:51.674 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5953 ms
+2026-05-13 18:51:51.733 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 2402.6762 ms
+2026-05-13 18:51:55.413 +07:00 [INF] Cập nhật SiteSettings
+2026-05-13 18:51:55.570 +07:00 [INF] HTTP POST /admin/settings responded 302 in 346.6921 ms
+2026-05-13 18:51:55.595 +07:00 [INF] HTTP GET /admin/Settings responded 200 in 18.6098 ms
+2026-05-13 18:51:55.601 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3863.5472 ms
+2026-05-13 18:51:55.699 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4425 ms
+2026-05-13 18:51:57.073 +07:00 [INF] HTTP GET /admin/activity responded 200 in 121.9941 ms
+2026-05-13 18:51:57.078 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1336.8765 ms
+2026-05-13 18:51:57.181 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3694 ms
+2026-05-13 18:53:31.274 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 94035.2471 ms
+2026-05-13 18:53:31.275 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4065 ms
+2026-05-13 18:54:01.274 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 29995.2726 ms
