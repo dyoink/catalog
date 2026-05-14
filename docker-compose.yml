@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: aquacms-db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME:-aquacms}
+      POSTGRES_USER: ${DB_USER:-aquacms}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-AquaCMS@2025}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    networks:
+      - aquacms-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aquacms-app
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=${DB_NAME:-aquacms};Username=${DB_USER:-aquacms};Password=${DB_PASSWORD:-AquaCMS@2025}
+      - Site__Url=${SITE_URL:-http://localhost}
+    ports:
+      - "${PORT:-8080}:8080"
+    volumes:
+      - ./src/AquaCMS/wwwroot/uploads:/app/wwwroot/uploads
+    networks:
+      - aquacms-network
+
+networks:
+  aquacms-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

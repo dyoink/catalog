@@ -91,6 +91,7 @@ try
 
     var app = builder.Build();
 
+
     app.UseForwardedHeaders();
     app.UseGlobalExceptionHandler();
     app.UseSecurityHeaders();
