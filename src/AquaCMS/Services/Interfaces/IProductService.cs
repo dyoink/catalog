@@ -33,7 +33,7 @@ public interface IProductService
 
     /// <summary>Lấy tất cả sản phẩm cho admin (kể cả hidden)</summary>
     Task<PaginatedList<Product>> GetAdminProductsAsync(
-        string? search = null, string? status = null,
+        string? search = null, string? status = null, Guid? categoryId = null,
         int page = 1, int pageSize = 20);
 
     Task<Product?> GetByIdAsync(Guid id);

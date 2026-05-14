@@ -127,7 +127,7 @@ public class ProductService : IProductService
 
     /// <inheritdoc/>
     public async Task<PaginatedList<Product>> GetAdminProductsAsync(
-        string? search = null, string? status = null,
+        string? search = null, string? status = null, Guid? categoryId = null,
         int page = 1, int pageSize = 20)
     {
         var query = _db.Products
@@ -141,6 +141,12 @@ public class ProductService : IProductService
         if (!string.IsNullOrWhiteSpace(status) && Enum.TryParse<ProductStatus>(status, true, out var statusEnum))
         {
             query = query.Where(p => p.Status == statusEnum);
+        }
+
+        // Lọc theo categoryId
+        if (categoryId.HasValue)
+        {
+            query = query.Where(p => p.CategoryId == categoryId.Value);
         }
 
         if (!string.IsNullOrWhiteSpace(search))

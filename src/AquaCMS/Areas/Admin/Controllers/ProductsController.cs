@@ -34,15 +34,16 @@ public class ProductsController : Controller
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index(string? search, string? status, int page = 1)
+    public async Task<IActionResult> Index(string? search, string? status, Guid? categoryId, int page = 1)
     {
         ViewData["Title"] = "Quản lý sản phẩm";
         ViewData["Categories"] = await _categoryService.GetAllWithCountAsync();
         ViewBag.Search = search;
         ViewBag.Status = status;
+        ViewBag.CategoryId = categoryId;
 
         var products = await _productService.GetAdminProductsAsync(
-            search: search, status: status, page: page, pageSize: 20);
+            search: search, status: status, categoryId: categoryId, page: page, pageSize: 20);
 
         return View(products);
     }

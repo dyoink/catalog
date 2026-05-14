@@ -131,26 +131,41 @@
                     <a href="/admin" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
                         <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Tổng quan
                     </a>
-                    <a href="/admin/products" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
-                        <i data-lucide="package" class="w-5 h-5"></i> Sản phẩm
-                    </a>
-                    <a href="/admin/categories" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition pl-10">
-                        <i data-lucide="folder" class="w-4 h-4"></i> Danh mục SP
-                    </a>
-                    <a href="/admin/knowledge" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
-                        <i data-lucide="book-open" class="w-5 h-5"></i> Kiến thức
-                    </a>
-                    <a href="/admin/knowledgecategories" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition pl-10">
-                        <i data-lucide="folder" class="w-4 h-4"></i> Danh mục KT
-                    </a>
-                    <a href="/admin/partners" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
-                        <i data-lucide="handshake" class="w-5 h-5"></i> Đối tác
-                    </a>
-                    <a href="/admin/partnercategories" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition pl-10">
-                        <i data-lucide="folder" class="w-4 h-4"></i> Danh mục ĐT
-                    </a>
+                    <div x-data="{ open: (currentPath.includes('/products') || currentPath.includes('/categories')) }">
+                        <button @@click="open = !open" class="sidebar-link flex items-center justify-between w-full gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+                            <div class="flex items-center gap-3"><i data-lucide="package" class="w-5 h-5"></i> Sản phẩm</div>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                        </button>
+                        <div x-show="open" x-cloak class="mt-1 space-y-1 pl-4 border-l-2 border-gray-200 dark:border-gray-700 ml-3">
+                            <a href="/admin/products" class="sidebar-link block px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition">Danh sách</a>
+                            <a href="/admin/categories" class="sidebar-link block px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition">Danh mục</a>
+                        </div>
+                    </div>
+                    <div x-data="{ open: (currentPath.includes('/knowledge')) }">
+                        <button @@click="open = !open" class="sidebar-link flex items-center justify-between w-full gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+                            <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5"></i> Kiến thức</div>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                        </button>
+                        <div x-show="open" x-cloak class="mt-1 space-y-1 pl-4 border-l-2 border-gray-200 dark:border-gray-700 ml-3">
+                            <a href="/admin/knowledge" class="sidebar-link block px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition">Bài viết</a>
+                            <a href="/admin/knowledgecategories" class="sidebar-link block px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition">Danh mục</a>
+                        </div>
+                    </div>
+                    <div x-data="{ open: (currentPath.includes('/partner')) }">
+                        <button @@click="open = !open" class="sidebar-link flex items-center justify-between w-full gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+                            <div class="flex items-center gap-3"><i data-lucide="handshake" class="w-5 h-5"></i> Đối tác</div>
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                        </button>
+                        <div x-show="open" x-cloak class="mt-1 space-y-1 pl-4 border-l-2 border-gray-200 dark:border-gray-700 ml-3">
+                            <a href="/admin/partners" class="sidebar-link block px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition">Danh sách</a>
+                            <a href="/admin/partnercategories" class="sidebar-link block px-3 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition">Danh mục</a>
+                        </div>
+                    </div>
                     <a href="/admin/banners" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
                         <i data-lucide="image" class="w-5 h-5"></i> Banner
+                    </a>
+                    <a href="/admin/about" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+                        <i data-lucide="info" class="w-5 h-5"></i> Giới thiệu
                     </a>
                     <a href="/admin/messages" class="sidebar-link flex items-center justify-between px-3 py-2.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition group/msg">
                         <div class="flex items-center gap-3">
@@ -267,9 +282,12 @@
 
         var currentPath = window.location.pathname;
         document.querySelectorAll('.sidebar-link').forEach(function(link) {
+            // Check if link is exact path or parent path
             if (currentPath === link.getAttribute('href') || (link.getAttribute('href') !== '/admin' && currentPath.startsWith(link.getAttribute('href')))) {
                 link.classList.add('bg-primary', 'text-white');
-                link.classList.remove('text-gray-600', 'dark:text-gray-300');
+                // Use a lighter hover state if active
+                link.classList.remove('hover:bg-gray-100', 'dark:hover:bg-gray-800');
+                link.classList.add('hover:bg-primary', 'hover:brightness-110');
             }
         });
 
@@ -281,7 +299,19 @@
                 holder.style.minHeight = '300px';
                 ta.style.display = 'none';
                 ta.parentNode.insertBefore(holder, ta.nextSibling);
-                var quill = new Quill(holder, { theme: 'snow' });
+                var quill = new Quill(holder, { 
+                    theme: 'snow',
+                    modules: {
+                        toolbar: [
+                            [{ 'header': [1, 2, 3, false] }],
+                            ['bold', 'italic', 'underline', 'strike'],
+                            ['link', 'image', 'blockquote', 'code-block'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{ 'align': [] }],
+                            ['clean']
+                        ]
+                    }
+                });
                 
                 // Custom Image Handler for Quill
                 quill.getModule('toolbar').addHandler('image', function() {

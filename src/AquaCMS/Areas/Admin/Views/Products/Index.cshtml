@@ -66,6 +66,13 @@
             <option value="Hidden" selected="@(ViewBag.Status == "Hidden")">Ẩn</option>
             <option value="OutOfStock" selected="@(ViewBag.Status == "OutOfStock")">Hết hàng</option>
         </select>
+        <select name="categoryId" class="px-4 py-2 border border-gray-200 rounded-lg text-sm">
+            <option value="">Tất cả danh mục</option>
+            @foreach (var cat in categories)
+            {
+                <option value="@cat.Id" selected="@(ViewBag.CategoryId == cat.Id)">@cat.Name</option>
+            }
+        </select>
         <button type="submit" class="px-5 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition">
             Lọc
         </button>
@@ -190,7 +197,7 @@
                 <div class="flex items-center space-x-1">
                     @for (int i = 1; i <= Model.TotalPages; i++)
                     {
-                        <a href="?page=@i&search=@ViewBag.Search&status=@ViewBag.Status"
+                        <a href="?page=@i&search=@ViewBag.Search&status=@ViewBag.Status&categoryId=@ViewBag.CategoryId"
                            class="px-3 py-1.5 rounded text-sm @(i == Model.PageIndex ? "bg-primary text-white" : "text-gray-600 hover:bg-gray-100")">
                             @i
                         </a>

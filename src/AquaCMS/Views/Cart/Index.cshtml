@@ -4,6 +4,7 @@
 *@
 @{
     ViewData["Title"] = "Giỏ hàng";
+    var s = await SettingsService.GetSettingsAsync();
     ViewData["MetaDescription"] = "Giỏ hàng sản phẩm";
 }
 
@@ -41,7 +42,7 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-3">
-                <a href="https://zalo.me/0353785710" target="_blank" rel="noopener noreferrer"
+                <a href="@s.ZaloUrl" target="_blank" rel="noopener noreferrer"
                    class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold text-center
                           hover:bg-blue-700 transition flex items-center justify-center gap-2">
                     <i data-lucide="message-circle" class="w-5 h-5"></i>

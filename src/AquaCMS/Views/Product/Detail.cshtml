@@ -4,6 +4,7 @@
     Chi tiết sản phẩm (/san-pham/{slug}).
 *@
 @{
+    var s = await SettingsService.GetSettingsAsync();
     // Helper function để lấy YouTube ID từ URL
     string GetYouTubeId(string url)
     {
@@ -137,7 +138,7 @@
                     Thêm vào giỏ hàng
                 </button>
 
-                <a href="https://zalo.me/0353785710"
+                <a href="@s.ZaloUrl"
                    target="_blank" rel="noopener noreferrer"
                    class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold
                           hover:bg-blue-700 transition shadow flex items-center gap-2">

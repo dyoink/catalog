@@ -92,12 +92,6 @@ public class SettingsController : Controller
             existing.ShowNavPartners = settings.ShowNavPartners;
             existing.ShowNavCart = settings.ShowNavCart;
 
-            existing.HeroTitle = settings.HeroTitle;
-            existing.HeroSubtitle = settings.HeroSubtitle;
-            existing.HeroDescription = _sanitizer.Sanitize(settings.HeroDescription);
-            existing.HeroButtonText = settings.HeroButtonText;
-            existing.HeroButtonUrl = settings.HeroButtonUrl;
-
             existing.AboutTitle = settings.AboutTitle;
             existing.AboutContent = _sanitizer.Sanitize(settings.AboutContent);
 
@@ -127,9 +121,6 @@ public class SettingsController : Controller
             // Files
             if (logoFile is { Length: > 0 })
                 existing.Logo = await _upload.UploadImageAsync(logoFile, "settings") ?? existing.Logo;
-
-            if (heroImageFile is { Length: > 0 })
-                existing.HeroBackgroundImage = await _upload.UploadImageAsync(heroImageFile, "settings") ?? existing.HeroBackgroundImage;
 
             if (aboutImageFile is { Length: > 0 })
                 existing.AboutImage = await _upload.UploadImageAsync(aboutImageFile, "settings") ?? existing.AboutImage;

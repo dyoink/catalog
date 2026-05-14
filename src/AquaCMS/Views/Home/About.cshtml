@@ -1,0 +1,21 @@
+@model AquaCMS.Models.Entities.SiteSettings
+
+@{
+    ViewData["Title"] = "Giới thiệu";
+}
+
+<div class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">@Model.AboutTitle</h1>
+    
+    <div class="space-y-8">
+        @if (!string.IsNullOrEmpty(Model.AboutImage))
+        {
+            <div class="overflow-hidden rounded-2xl shadow-lg w-full">
+                <img src="@Model.AboutImage" alt="@Model.AboutTitle" class="w-full h-auto object-cover" />
+            </div>
+        }
+        <div class="prose max-w-none text-gray-700">
+            @Html.Raw(Model.AboutContent)
+        </div>
+    </div>
+</div>

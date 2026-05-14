@@ -1,5 +1,3 @@
-@using AquaCMS.Services.Interfaces
-@inject ISettingsService SettingsService
 @{
     var s = await SettingsService.GetSettingsAsync();
     var pageTitle = ViewData["Title"]?.ToString() ?? s.DefaultMetaTitle ?? s.CompanyName ?? "Trang chủ";
@@ -119,7 +117,6 @@
                     {
                         <i data-lucide="box" class="w-7 h-7"></i>
                     }
-                    <span>@s.CompanyName</span>
                 </a>
 
                 <div class="hidden md:flex items-center space-x-1">
@@ -142,6 +139,12 @@
                     {
                         <a href="/doi-tac" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Partner") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
                             @L.T("nav.partners")
+                        </a>
+                    }
+                    @if (s.ShowNavAbout)
+                    {
+                        <a href="/Home/About" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Home", "/Home/About") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
+                            Giới thiệu
                         </a>
                     }
                 </div>
@@ -210,6 +213,10 @@
                 @if (s.ShowNavCart)
                 {
                     <a href="/gio-hang" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@L.T("nav.cart")</a>
+                }
+                @if (s.ShowNavAbout)
+                {
+                    <a href="/Home/About" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">Giới thiệu</a>
                 }
                 @{
                     var otherLangM = L.CurrentCulture == "vi" ? "en" : "vi";
@@ -294,14 +301,14 @@
                             }
                             @if (s.ShowYoutube && !string.IsNullOrEmpty(s.Youtube))
                             {
-                                <a href="@s.Youtube" target="_blank" rel="noopener" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" title="YouTube">
-                                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                                <a href="@s.Youtube" target="_blank" rel="noopener" class="w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80 transition" title="YouTube">
+                                    <img src="/uploads/icons/youtube.png" alt="YouTube" class="w-full h-full object-contain" />
                                 </a>
                             }
                             @if (s.ShowTiktok && !string.IsNullOrEmpty(s.Tiktok))
                             {
-                                <a href="@s.Tiktok" target="_blank" rel="noopener" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" title="TikTok">
-                                    <i data-lucide="music" class="w-4 h-4"></i>
+                                <a href="@s.Tiktok" target="_blank" rel="noopener" class="w-8 h-8 rounded-full flex items-center justify-center hover:opacity-80 transition" title="TikTok">
+                                    <img src="/uploads/icons/tik-tok.png" alt="TikTok" class="w-full h-full object-contain" />
                                 </a>
                             }
                         </div>
@@ -336,9 +343,9 @@
         @if (s.ShowTelegram && !string.IsNullOrEmpty(s.Telegram))
         {
             <a href="@s.Telegram" target="_blank" rel="noopener"
-               class="w-12 h-12 bg-[#0088cc] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+               class="w-12 h-12 bg-[#0088cc] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform overflow-hidden"
                title="Telegram" aria-label="Telegram">
-                <i data-lucide="send" class="w-5 h-5"></i>
+                <img src="/uploads/icons/telegram.png" alt="Telegram" class="w-8 h-8 object-contain" />
             </a>
         }
         @if (s.ShowFacebook && !string.IsNullOrEmpty(s.Facebook))
@@ -346,15 +353,23 @@
             <a href="@s.Facebook" target="_blank" rel="noopener"
                class="w-12 h-12 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
                title="Facebook" aria-label="Facebook">
-                <i data-lucide="facebook" class="w-5 h-5"></i>
+                <i data-lucide="facebook" class="w-8 h-8"></i>
+            </a>
+        }
+        @if (s.ShowYoutube && !string.IsNullOrEmpty(s.Youtube))
+        {
+            <a href="@s.Youtube" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-[#FF0000] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform overflow-hidden"
+               title="YouTube" aria-label="YouTube">
+                <img src="/uploads/icons/youtube.png" alt="YouTube" class="w-8 h-8 object-contain" />
             </a>
         }
         @if (s.ShowZalo && !string.IsNullOrEmpty(s.Zalo))
         {
-            <a href="@s.Zalo" target="_blank" rel="noopener"
-               class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+            <a href="@s.ZaloUrl" target="_blank" rel="noopener"
+               class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform overflow-hidden border border-gray-100"
                title="Zalo" aria-label="Liên hệ Zalo">
-                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <img src="/uploads/icons/zalo.png" alt="Zalo" class="w-8 h-8 object-contain" />
             </a>
         }
 

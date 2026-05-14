@@ -85,6 +85,16 @@ public class HomeController : Controller
     }
 
     /// <summary>
+    /// GET /gioi-thieu — Trang giới thiệu công ty.
+    /// </summary>
+    public async Task<IActionResult> About()
+    {
+        var settings = await _settingsService.GetSettingsAsync();
+        ViewData["Title"] = "Giới thiệu";
+        return View(settings);
+    }
+
+    /// <summary>
     /// GET /loi/{code} — Trang lỗi (404, 500...) hoặc /Home/Error fallback.
     /// </summary>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

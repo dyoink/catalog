@@ -1,4 +1,6 @@
-﻿namespace AquaCMS.Models.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AquaCMS.Models.Entities;
 
 /// <summary>
 /// Cấu hình hệ thống — singleton, chỉ có 1 row duy nhất.
@@ -20,12 +22,25 @@ public class SiteSettings
     public bool ShowFacebook { get; set; } = true;
     public string? Zalo { get; set; }
     public bool ShowZalo { get; set; } = true;
+
+    [NotMapped]
+    public string ZaloUrl
+    {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(Zalo)) return "#";
+            if (Zalo.StartsWith("http", StringComparison.OrdinalIgnoreCase)) return Zalo;
+            var cleanPhone = new string(Zalo.Where(char.IsDigit).ToArray());
+            return !string.IsNullOrEmpty(cleanPhone) ? $"https://zalo.me/{cleanPhone}" : Zalo;
+        }
+    }
+
     public string? Youtube { get; set; }
-    public bool ShowYoutube { get; set; }
+    public bool ShowYoutube { get; set; } = true;
     public string? Tiktok { get; set; }
     public bool ShowTiktok { get; set; }
     public string? Telegram { get; set; }
-    public bool ShowTelegram { get; set; }
+    public bool ShowTelegram { get; set; } = true;
     public bool ShowHotline { get; set; } = true;
 
     // ===== Thanh toán =====
@@ -38,7 +53,6 @@ public class SiteSettings
     public string PrimaryColor { get; set; } = "#55B3D9";
     public string? FooterText { get; set; }
     public bool ShowFooter { get; set; } = true;
-    public string? HeroBackgroundImage { get; set; }
 
     // ===== CMS — Homepage module toggles =====
     public bool ShowBanners { get; set; } = true;
@@ -54,13 +68,7 @@ public class SiteSettings
     public bool ShowNavKnowledge { get; set; } = true;
     public bool ShowNavPartners { get; set; } = true;
     public bool ShowNavCart { get; set; } = true;
-
-    // ===== CMS — Hero / Intro section (chỉnh sửa từ admin) =====
-    public string? HeroTitle { get; set; }
-    public string? HeroSubtitle { get; set; }
-    public string? HeroDescription { get; set; }
-    public string? HeroButtonText { get; set; }
-    public string? HeroButtonUrl { get; set; }
+    public bool ShowNavAbout { get; set; } = true;
 
     // ===== CMS — Giới thiệu (about/intro) =====
     public string? AboutTitle { get; set; }

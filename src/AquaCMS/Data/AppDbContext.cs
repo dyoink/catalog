@@ -336,7 +336,6 @@ public class AppDbContext : DbContext
             entity.Property(e => e.PrimaryColor).HasColumnName("primary_color").HasMaxLength(20);
             entity.Property(e => e.FooterText).HasColumnName("footer_text").HasMaxLength(500);
             entity.Property(e => e.ShowFooter).HasColumnName("show_footer").HasDefaultValue(true);
-            entity.Property(e => e.HeroBackgroundImage).HasColumnName("hero_background_image").HasMaxLength(500);
             // CMS module toggles
             entity.Property(e => e.ShowBanners).HasColumnName("show_banners").HasDefaultValue(true);
             entity.Property(e => e.ShowCategories).HasColumnName("show_categories").HasDefaultValue(true);
@@ -350,12 +349,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.ShowNavKnowledge).HasColumnName("show_nav_knowledge").HasDefaultValue(true);
             entity.Property(e => e.ShowNavPartners).HasColumnName("show_nav_partners").HasDefaultValue(true);
             entity.Property(e => e.ShowNavCart).HasColumnName("show_nav_cart").HasDefaultValue(true);
-            // Hero / Intro
-            entity.Property(e => e.HeroTitle).HasColumnName("hero_title").HasMaxLength(255);
-            entity.Property(e => e.HeroSubtitle).HasColumnName("hero_subtitle").HasMaxLength(255);
-            entity.Property(e => e.HeroDescription).HasColumnName("hero_description");
-            entity.Property(e => e.HeroButtonText).HasColumnName("hero_button_text").HasMaxLength(100);
-            entity.Property(e => e.HeroButtonUrl).HasColumnName("hero_button_url").HasMaxLength(500);
+            entity.Property(e => e.ShowNavAbout).HasColumnName("show_nav_about").HasDefaultValue(true);
             // About
             entity.Property(e => e.AboutTitle).HasColumnName("about_title").HasMaxLength(255);
             entity.Property(e => e.AboutContent).HasColumnName("about_content");
