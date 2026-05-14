@@ -5390,3 +5390,12 @@ POSITION: 618
 2026-05-14 17:21:20.329 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 20206.4262 ms
 2026-05-14 17:21:20.329 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 24753.0102 ms
 2026-05-14 17:21:20.330 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4122 ms
+2026-05-14 17:59:18.643 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
