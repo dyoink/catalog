@@ -12,6 +12,7 @@
 
     <title>@pageTitle</title>
     <meta name="description" content="@pageDesc" />
+    <link rel="icon" type="image/png" href="@(s.Logo ?? "/logoFanto.png")" />
     @if (ViewData["CanonicalUrl"] != null)
     {
         <link rel="canonical" href="@ViewData["CanonicalUrl"]" />
