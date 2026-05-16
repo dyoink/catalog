@@ -90,6 +90,8 @@ Hubs/ChatHub.cs
 Migrations/
  20260514105922_UpdateDbStructure.cs
  20260514105922_UpdateDbStructure.Designer.cs
+ 20260516085721_AddDiscountPriceToProductFinance.cs
+ 20260516085721_AddDiscountPriceToProductFinance.Designer.cs
  AppDbContextModelSnapshot.cs
 Models/
  Common/PaginatedList.cs

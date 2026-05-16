@@ -62,14 +62,17 @@ var Cart = {
     add: function(product) {
         var items = this.getItems();
         var existing = items.find(function(item) { return item.id === product.id; });
+        var price = product.price ? parseFloat(product.price) : null;
 
         if (existing) {
             existing.quantity += 1;
+            // Cập nhật lại giá nếu có thay đổi (vd: hết hạn giảm giá)
+            existing.price = price; 
         } else {
             items.push({
                 id: product.id,
                 name: product.name,
-                price: product.price,
+                price: price,
                 image: product.image,
                 quantity: 1
             });

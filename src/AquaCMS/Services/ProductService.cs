@@ -250,7 +250,7 @@ public class ProductService : IProductService
     }
 
     /// <inheritdoc/>
-    public async Task<int> BulkUpdateAsync(List<Guid> ids, List<decimal?> prices, List<ProductStatus> statuses)
+    public async Task<int> BulkUpdateAsync(List<Guid> ids, List<decimal?> prices, List<decimal?> discountPrices, List<ProductStatus> statuses)
     {
         var products = await _db.Products
             .Include(p => p.Finance)
@@ -267,6 +267,7 @@ public class ProductService : IProductService
                 if (product.Finance != null)
                 {
                     product.Finance.Price = prices[i];
+                    product.Finance.DiscountPrice = discountPrices[i];
                 }
                 product.Status = statuses[i];
                 product.UpdatedAt = DateTime.UtcNow;

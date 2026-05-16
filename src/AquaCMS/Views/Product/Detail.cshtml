@@ -113,8 +113,31 @@
             </div>
 
             @* Giá *@
-            <div class="text-3xl font-bold mb-6 @(Model.Product.Finance?.Price.HasValue == true && Model.Product.Finance.ShowPrice ? "text-primary" : "text-gray-600")">
-                @PriceHelper.FormatPrice(Model.Product.Finance?.Price, Model.Product.Finance?.ShowPrice ?? true)
+            <div class="mb-6">
+                @if (Model.Product.Finance?.DiscountPrice.HasValue == true && Model.Product.Finance.Price > Model.Product.Finance.DiscountPrice && Model.Product.Finance.ShowPrice)
+                {
+                    <div class="flex items-baseline gap-3">
+                        <span class="text-3xl font-bold text-red-600">
+                            @PriceHelper.FormatPrice(Model.Product.Finance.Price, Model.Product.Finance.DiscountPrice, true)
+                        </span>
+                        <span class="text-lg text-gray-400 line-through">
+                            @PriceHelper.FormatPrice(Model.Product.Finance.Price, null, true)
+                        </span>
+                        @{
+                            var percent = PriceHelper.GetDiscountPercentage(Model.Product.Finance.Price, Model.Product.Finance.DiscountPrice);
+                        }
+                        @if (percent > 0)
+                        {
+                            <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded text-sm font-bold">-@percent%</span>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="text-3xl font-bold @(Model.Product.Finance?.Price.HasValue == true && Model.Product.Finance.ShowPrice ? "text-primary" : "text-gray-600")">
+                        @PriceHelper.FormatPrice(Model.Product.Finance?.Price, null, Model.Product.Finance?.ShowPrice ?? true)
+                    </div>
+                }
             </div>
 
             @* Mô tả ngắn *@
@@ -127,12 +150,17 @@
 
             @* Nút hành động *@
             <div class="flex flex-wrap gap-3 mt-auto">
+                @{
+                    var finalPriceDetail = (Model.Product.Finance?.DiscountPrice.HasValue == true && Model.Product.Finance.Price > Model.Product.Finance.DiscountPrice && Model.Product.Finance.ShowPrice)
+                                           ? Model.Product.Finance.DiscountPrice
+                                           : Model.Product.Finance?.Price;
+                }
                 <button type="button"
                         class="add-to-cart-btn bg-primary text-white px-8 py-3 rounded-lg font-semibold
                                hover:opacity-90 transition shadow flex items-center gap-2"
                         data-product-id="@Model.Product.Id"
                         data-product-name="@Model.Product.Name"
-                        data-product-price="@Model.Product.Finance?.Price"
+                        data-product-price="@(Model.Product.Finance?.ShowPrice == true ? finalPriceDetail : "")"
                         data-product-image="@Model.Product.Content?.Image">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                     Thêm vào giỏ hàng

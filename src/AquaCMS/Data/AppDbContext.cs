@@ -169,6 +169,7 @@ public class AppDbContext : DbContext
             entity.HasKey(e => e.ProductId);
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Price).HasColumnName("price").HasColumnType("decimal(18,0)");
+            entity.Property(e => e.DiscountPrice).HasColumnName("discount_price").HasColumnType("decimal(18,0)");
             entity.Property(e => e.ShowPrice).HasColumnName("show_price").HasDefaultValue(true);
             entity.Property(e => e.IsFeatured).HasColumnName("is_featured").HasDefaultValue(false);
         });

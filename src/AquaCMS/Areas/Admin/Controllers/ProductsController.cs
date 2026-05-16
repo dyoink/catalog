@@ -153,6 +153,7 @@ public class ProductsController : Controller
             // Map Finance
             existing.Finance ??= new ProductFinance { ProductId = id };
             existing.Finance.Price = product.Finance?.Price;
+            existing.Finance.DiscountPrice = product.Finance?.DiscountPrice;
             existing.Finance.ShowPrice = product.Finance?.ShowPrice ?? true;
             existing.Finance.IsFeatured = product.Finance?.IsFeatured ?? false;
 
@@ -244,7 +245,7 @@ public class ProductsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> BulkEdit(List<Guid> ids, List<decimal?> prices, List<ProductStatus> statuses)
+    public async Task<IActionResult> BulkEdit(List<Guid> ids, List<decimal?> prices, List<decimal?> discountPrices, List<ProductStatus> statuses)
     {
         if (ids.Count == 0)
         {
@@ -252,7 +253,7 @@ public class ProductsController : Controller
             return RedirectToAction(nameof(Index));
         }
 
-        var affected = await _productService.BulkUpdateAsync(ids, prices, statuses);
+        var affected = await _productService.BulkUpdateAsync(ids, prices, discountPrices, statuses);
         TempData["Success"] = $"Đã cập nhật {affected} sản phẩm!";
         return RedirectToAction(nameof(Index));
     }

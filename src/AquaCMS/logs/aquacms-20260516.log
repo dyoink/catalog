@@ -1,0 +1,261 @@
+2026-05-16 15:37:08.481 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:37:36.199 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:46:15.589 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:47:52.349 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:48:19.658 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:49:12.948 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:50:11.672 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:50:42.217 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:52:38.483 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:53:50.215 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:54:03.691 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:54:16.882 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:56:26.321 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:57:05.142 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:57:19.811 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 15:58:32.839 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:00:37.784 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:01:48.563 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:02:02.287 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:02:50.640 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:04:27.650 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:04:59.437 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:05:52.843 +07:00 [FTL] Terminated
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\sourceCode\catalog\src\AquaCMS\Program.cs:line 92
+2026-05-16 16:06:30.804 +07:00 [INF] HTTP GET /admin responded 302 in 54.4655 ms
+2026-05-16 16:06:32.504 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 1645.2914 ms
+2026-05-16 16:06:32.520 +07:00 [INF] HTTP GET /uploads/icons/youtube.png responded 304 in 4.7164 ms
+2026-05-16 16:06:32.520 +07:00 [INF] HTTP GET /uploads/settings/85eddb21b13c4e56a70ab970ffd354f5.png responded 304 in 7.9788 ms
+2026-05-16 16:06:32.524 +07:00 [INF] HTTP GET /css/site.css responded 304 in 0.4604 ms
+2026-05-16 16:06:32.530 +07:00 [INF] HTTP GET /uploads/icons/zalo.png responded 304 in 0.2279 ms
+2026-05-16 16:06:32.545 +07:00 [INF] HTTP GET /js/site.js responded 304 in 0.1800 ms
+2026-05-16 16:06:32.822 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 6.3809 ms
+2026-05-16 16:06:36.225 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3374.3329 ms
+2026-05-16 16:06:36.349 +07:00 [INF] HTTP GET /uploads/banners/67f34fbb474a40cc917dbf8aff09e10a.jpg responded 304 in 0.2990 ms
+2026-05-16 16:06:36.404 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5507 ms
+2026-05-16 16:06:36.419 +07:00 [INF] HTTP GET / responded 200 in 858.6531 ms
+2026-05-16 16:06:39.797 +07:00 [INF] HTTP GET /san-pham/may-tron-cam-fanto-2b-75l-10 responded 200 in 163.1021 ms
+2026-05-16 16:06:39.932 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 3401.5041 ms
+2026-05-16 16:06:39.937 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4231 ms
+2026-05-16 16:06:44.182 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2805 ms
+2026-05-16 16:06:44.208 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4183.0655 ms
+2026-05-16 16:06:48.749 +07:00 [INF] HTTP GET /admin responded 302 in 2.8364 ms
+2026-05-16 16:06:48.765 +07:00 [INF] HTTP GET /dang-nhap responded 200 in 5.9963 ms
+2026-05-16 16:06:48.889 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 4592.9590 ms
+2026-05-16 16:06:48.895 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2477 ms
+2026-05-16 16:07:03.687 +07:00 [INF] Đăng nhập thành công: admin@aquacms.com (Role: "SUPER_ADMIN")
+2026-05-16 16:07:03.726 +07:00 [INF] HTTP POST /dang-nhap responded 302 in 1711.9249 ms
+2026-05-16 16:07:04.014 +07:00 [INF] HTTP GET /admin responded 200 in 280.3884 ms
+2026-05-16 16:07:04.020 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 15088.5644 ms
+2026-05-16 16:07:04.026 +07:00 [INF] HTTP GET /css/admin.css responded 304 in 0.2077 ms
+2026-05-16 16:07:04.241 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.6426 ms
+2026-05-16 16:07:12.999 +07:00 [INF] HTTP GET /admin/products responded 200 in 103.6815 ms
+2026-05-16 16:07:13.181 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.5246 ms
+2026-05-16 16:07:13.251 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 8927.1190 ms
+2026-05-16 16:07:18.877 +07:00 [INF] HTTP GET /admin/products/edit/41fc5308-7aa8-4e52-83e2-95e355739baf responded 200 in 118.8551 ms
+2026-05-16 16:07:18.882 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 5614.3418 ms
+2026-05-16 16:07:19.033 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3060 ms
+2026-05-16 16:07:34.079 +07:00 [INF] Cập nhật sản phẩm: Bơm mưa FANTO SC-1,5 220V (ID: "41fc5308-7aa8-4e52-83e2-95e355739baf")
+2026-05-16 16:07:34.150 +07:00 [INF] HTTP POST /admin/products/edit/41fc5308-7aa8-4e52-83e2-95e355739baf responded 302 in 206.2390 ms
+2026-05-16 16:07:34.171 +07:00 [INF] HTTP GET /admin/Products responded 200 in 14.8274 ms
+2026-05-16 16:07:34.177 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 15080.7091 ms
+2026-05-16 16:07:34.288 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3289 ms
+2026-05-16 16:07:37.622 +07:00 [INF] HTTP GET / responded 200 in 46.4116 ms
+2026-05-16 16:07:37.905 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3103 ms
+2026-05-16 16:08:00.359 +07:00 [INF] HTTP GET /danh-muc/bom-mua responded 200 in 87.5843 ms
+2026-05-16 16:08:00.596 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4273 ms
+2026-05-16 16:08:00.620 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 22513.6837 ms
+2026-05-16 16:08:01.501 +07:00 [INF] HTTP GET /san-pham/bom-mua-fanto-sc15-220v-22 responded 200 in 50.3917 ms
+2026-05-16 16:08:01.615 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3861 ms
+2026-05-16 16:08:01.637 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 990.7633 ms
+2026-05-16 16:08:38.080 +07:00 [INF] HTTP GET /gio-hang responded 200 in 22.4409 ms
+2026-05-16 16:08:38.172 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2760 ms
+2026-05-16 16:08:38.192 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 36483.9822 ms
+2026-05-16 16:14:27.691 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 349453.7835 ms
+2026-05-16 16:14:27.692 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.4400 ms
+2026-05-16 16:14:27.693 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 413343.4972 ms
+2026-05-16 16:14:27.694 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3353 ms
+2026-05-16 16:14:52.314 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 24617.4989 ms

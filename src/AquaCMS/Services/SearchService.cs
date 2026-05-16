@@ -48,7 +48,7 @@ public class SearchService : ISearchService
                     Title = p.Name,
                     Url = p.Metadata != null ? $"/san-pham/{p.Metadata.Slug}-{p.ShortId}" : "#",
                     Image = p.Content != null ? p.Content.Image : null,
-                    Subtitle = PriceHelper.FormatPrice(p.Finance != null ? p.Finance.Price : null, p.Finance != null ? p.Finance.ShowPrice : true)
+                    Subtitle = PriceHelper.FormatPrice(p.Finance != null ? p.Finance.Price : null, p.Finance != null ? p.Finance.DiscountPrice : null, p.Finance != null ? p.Finance.ShowPrice : true)
                 })
                 .ToListAsync();
             result.Products = products;

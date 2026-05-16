@@ -13,14 +13,32 @@ public static class PriceHelper
     /// <summary>
     /// Format giá tiền theo chuẩn VNĐ.
     /// </summary>
-    /// <param name="price">Giá — null nghĩa là "Liên hệ"</param>
+    /// <param name="price">Giá gốc</param>
+    /// <param name="discountPrice">Giá sau giảm</param>
     /// <param name="showPrice">Nếu false -> luôn hiện "Liên hệ"</param>
     /// <returns>Chuỗi hiển thị (ví dụ: "5.000.000 ₫" hoặc "Liên hệ báo giá")</returns>
-    public static string FormatPrice(decimal? price, bool showPrice = true)
+    public static string FormatPrice(decimal? price, decimal? discountPrice = null, bool showPrice = true)
     {
-        if (!showPrice || price is null or 0)
+        if (!showPrice)
             return "Liên hệ";
 
-        return price.Value.ToString("N0", ViCulture) + " ₫";
+        var finalPrice = discountPrice ?? price;
+
+        if (finalPrice is null or 0)
+            return "Liên hệ";
+
+        return finalPrice.Value.ToString("N0", ViCulture) + " ₫";
+    }
+
+    /// <summary>
+    /// Tính phần trăm giảm giá.
+    /// </summary>
+    public static int GetDiscountPercentage(decimal? originalPrice, decimal? discountPrice)
+    {
+        if (originalPrice is null or <= 0 || discountPrice is null or <= 0 || discountPrice >= originalPrice)
+            return 0;
+
+        var percentage = (originalPrice.Value - discountPrice.Value) / originalPrice.Value * 100;
+        return (int)Math.Round(percentage);
     }
 }

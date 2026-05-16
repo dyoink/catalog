@@ -48,5 +48,5 @@ public interface IProductService
     Task<List<Product>> GetByIdsAsync(List<Guid> ids);
 
     /// <summary>Cập nhật giá và trạng thái hàng loạt</summary>
-    Task<int> BulkUpdateAsync(List<Guid> ids, List<decimal?> prices, List<ProductStatus> statuses);
+    Task<int> BulkUpdateAsync(List<Guid> ids, List<decimal?> prices, List<decimal?> discountPrices, List<ProductStatus> statuses);
 }

@@ -13,6 +13,9 @@ public class ProductFinance
     /// <summary>Giá sản phẩm — NULL nghĩa là "Liên hệ báo giá"</summary>
     public decimal? Price { get; set; }
 
+    /// <summary>Giá sau khi giảm (nếu có)</summary>
+    public decimal? DiscountPrice { get; set; }
+
     /// <summary>Có hiển thị giá ra ngoài hay không</summary>
     public bool ShowPrice { get; set; } = true;
 

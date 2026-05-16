@@ -27,6 +27,17 @@
                 Hết hàng
             </span>
         }
+        else if (Model.Finance?.DiscountPrice.HasValue == true && Model.Finance.Price > Model.Finance.DiscountPrice)
+        {
+            var percent = PriceHelper.GetDiscountPercentage(Model.Finance.Price, Model.Finance.DiscountPrice);
+            if (percent > 0)
+            {
+                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                    -@percent%
+                </span>
+            }
+        }
+        
         @if (Model.Finance?.IsFeatured == true)
         {
             <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs px-2 py-1 rounded-full font-medium">
@@ -52,16 +63,33 @@
         </h3>
 
         @* Giá *@
-        <div class="mt-auto pt-3 flex items-center justify-between">
-            <span class="font-bold text-lg @(Model.Finance?.Price.HasValue == true && Model.Finance.ShowPrice ? "text-primary" : "text-gray-500")">
-                @PriceHelper.FormatPrice(Model.Finance?.Price, Model.Finance?.ShowPrice ?? true)
-            </span>
+        <div class="mt-auto pt-3 flex flex-col gap-1">
+            <div class="flex items-center gap-2">
+                @if (Model.Finance?.DiscountPrice.HasValue == true && Model.Finance.Price > Model.Finance.DiscountPrice && Model.Finance.ShowPrice)
+                {
+                    <span class="font-bold text-lg text-red-600">
+                        @PriceHelper.FormatPrice(Model.Finance.Price, Model.Finance.DiscountPrice, true)
+                    </span>
+                    <span class="text-sm text-gray-400 line-through">
+                        @PriceHelper.FormatPrice(Model.Finance.Price, null, true)
+                    </span>
+                }
+                else
+                {
+                    <span class="font-bold text-lg @(Model.Finance?.Price.HasValue == true && Model.Finance.ShowPrice ? "text-primary" : "text-gray-500")">
+                        @PriceHelper.FormatPrice(Model.Finance?.Price, null, Model.Finance?.ShowPrice ?? true)
+                    </span>
+                }
+            </div>
 
-            <a href="@Model.SeoUrl"
-               class="text-sm text-primary hover:underline font-medium flex items-center gap-1">
-                Chi tiết
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-            </a>
+            <div class="flex items-center justify-between">
+                <div></div> @* Spacer *@
+                <a href="@Model.SeoUrl"
+                   class="text-sm text-primary hover:underline font-medium flex items-center gap-1">
+                    Chi tiết
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </a>
+            </div>
         </div>
     </div>
 </article>
