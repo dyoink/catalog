@@ -67,13 +67,15 @@ var Cart = {
         if (existing) {
             existing.quantity += 1;
             // Cập nhật lại giá nếu có thay đổi (vd: hết hạn giảm giá)
-            existing.price = price; 
+            existing.price = price;
+            existing.url = product.url; 
         } else {
             items.push({
                 id: product.id,
                 name: product.name,
                 price: price,
                 image: product.image,
+                url: product.url,
                 quantity: 1
             });
         }
@@ -143,7 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
             id: btn.dataset.productId,
             name: btn.dataset.productName,
             price: btn.dataset.productPrice ? parseFloat(btn.dataset.productPrice) : null,
-            image: btn.dataset.productImage || ''
+            image: btn.dataset.productImage || '',
+            url: btn.dataset.productUrl || '#'
         });
     });
 });

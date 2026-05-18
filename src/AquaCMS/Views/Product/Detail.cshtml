@@ -161,7 +161,8 @@
                         data-product-id="@Model.Product.Id"
                         data-product-name="@Model.Product.Name"
                         data-product-price="@(Model.Product.Finance?.ShowPrice == true ? finalPriceDetail : "")"
-                        data-product-image="@Model.Product.Content?.Image">
+                        data-product-image="@Model.Product.Content?.Image"
+                        data-product-url="@Model.Product.SeoUrl">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                     Thêm vào giỏ hàng
                 </button>

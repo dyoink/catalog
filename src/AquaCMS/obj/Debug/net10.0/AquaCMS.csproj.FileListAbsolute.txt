@@ -433,4 +433,4 @@ E:\sourceCode\catalog\src\AquaCMS\obj\Debug\net10.0\refint\AquaCMS.dll
 E:\sourceCode\catalog\src\AquaCMS\obj\Debug\net10.0\AquaCMS.pdb
 E:\sourceCode\catalog\src\AquaCMS\obj\Debug\net10.0\AquaCMS.genruntimeconfig.cache
 E:\sourceCode\catalog\src\AquaCMS\obj\Debug\net10.0\ref\AquaCMS.dll
-E:\sourceCode\catalog\src\AquaCMS\obj\Debug\net10.0\compressed\5kifgubm1b-{0}-zt6r0rj7dw-zt6r0rj7dw.gz
+E:\sourceCode\catalog\src\AquaCMS\obj\Debug\net10.0\compressed\5kifgubm1b-{0}-cm6rovqie7-cm6rovqie7.gz

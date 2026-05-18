@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AquaCMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4eba3d956d4b6232b4c449fb87b066523b5242e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+194d6aa2b567261036cbafaa80ae28599d1837ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("AquaCMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AquaCMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -95,12 +95,14 @@
                     var div = document.createElement('div');
                     div.className = 'bg-white rounded-xl shadow-sm p-4 flex items-center gap-4';
                     div.innerHTML =
-                        '<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-gray-100">' +
+                        '<a href="' + (item.url || '#') + '" class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-gray-100 hover:opacity-80 transition">' +
                             (item.image ? '<img src="' + item.image + '" class="w-full h-full object-cover" />' :
                             '<div class="w-full h-full flex items-center justify-center"><i data-lucide="image-off" class="w-6 h-6 text-gray-300"></i></div>') +
-                        '</div>' +
+                        '</a>' +
                         '<div class="flex-1 min-w-0">' +
-                            '<h3 class="font-medium text-gray-800 truncate">' + item.name + '</h3>' +
+                            '<h3 class="font-medium text-gray-800 truncate hover:text-primary transition">' +
+                                '<a href="' + (item.url || '#') + '">' + item.name + '</a>' +
+                            '</h3>' +
                             '<p class="text-sm text-primary font-medium">' + formatPrice(item.price) + '</p>' +
                         '</div>' +
                         '<div class="flex items-center gap-2">' +
