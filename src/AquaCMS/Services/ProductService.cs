@@ -134,6 +134,7 @@ public class ProductService : IProductService
             .Include(p => p.Category)
             .Include(p => p.Metadata)
             .Include(p => p.Finance)
+            .Include(p => p.Content)
             .Include(p => p.Statistic)
             .AsQueryable();
 
@@ -244,6 +245,7 @@ public class ProductService : IProductService
         return await _db.Products
             .Include(p => p.Category)
             .Include(p => p.Finance)
+            .Include(p => p.Content)
             .Where(p => ids.Contains(p.Id))
             .OrderBy(p => p.Name)
             .ToListAsync();

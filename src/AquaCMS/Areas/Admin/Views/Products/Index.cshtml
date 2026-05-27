@@ -115,7 +115,7 @@
                                         </div>
                                     }
                                     <div>
-                                        <a href="/admin/products/edit/@product.Id" class="font-medium text-gray-800 hover:text-primary">
+                                        <a href="/admin/products/edit/@product.Id?page=@Model.PageIndex&search=@ViewBag.Search&status=@ViewBag.Status&categoryId=@ViewBag.CategoryId" class="font-medium text-gray-800 hover:text-primary">
                                             @product.Name
                                         </a>
                                         @if (!string.IsNullOrEmpty(product.Sku))
@@ -164,7 +164,7 @@
                                        class="p-1.5 text-gray-400 hover:text-primary rounded transition" title="Xem">
                                         <i data-lucide="external-link" class="w-4 h-4"></i>
                                     </a>
-                                    <a href="/admin/products/edit/@product.Id"
+                                    <a href="/admin/products/edit/@product.Id?page=@Model.PageIndex&search=@ViewBag.Search&status=@ViewBag.Status&categoryId=@ViewBag.CategoryId"
                                        class="p-1.5 text-gray-400 hover:text-primary rounded transition" title="Sửa">
                                         <i data-lucide="pencil" class="w-4 h-4"></i>
                                     </a>
@@ -172,6 +172,10 @@
                                           onsubmit="return confirm('Xóa sản phẩm này?');"
                                           class="inline">
                                         @Html.AntiForgeryToken()
+                                        <input type="hidden" name="returnPage" value="@Model.PageIndex" />
+                                        <input type="hidden" name="returnSearch" value="@ViewBag.Search" />
+                                        <input type="hidden" name="returnStatus" value="@ViewBag.Status" />
+                                        <input type="hidden" name="returnCategoryId" value="@ViewBag.CategoryId" />
                                         <button type="submit" class="p-1.5 text-gray-400 hover:text-red-500 rounded transition" title="Xóa">
                                             <i data-lucide="trash-2" class="w-4 h-4"></i>
                                         </button>

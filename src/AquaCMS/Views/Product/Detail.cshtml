@@ -255,95 +255,107 @@
             if (!dataElem) return;
 
             try {
-                var blocks = JSON.parse(dataElem.textContent);
-                if (!Array.isArray(blocks)) return;
-
+                var data = JSON.parse(dataElem.textContent);
                 var container = document.getElementById('content-blocks');
                 if (!container) return;
 
-                blocks.forEach(function(block) {
-                    if (!block || !block.type) return;
+                // Format mới: Lưu trực tiếp chuỗi HTML
+                if (typeof data === 'string') {
+                    container.innerHTML = data;
+                    
+                    // Fix iframe videos from Quill
+                    container.querySelectorAll('iframe.ql-video').forEach(function(f) {
+                        f.classList.add('w-full', 'aspect-video', 'rounded-xl', 'my-8', 'shadow-lg');
+                    });
+                    
+                    if (window.lucide) lucide.createIcons();
+                    return;
+                }
 
-                    switch (block.type) {
-                        case 'heading':
-                            if (!block.content) break;
-                            var h = document.createElement('h3');
-                            h.className = 'text-xl font-bold mt-8 mb-4 text-gray-900 border-l-4 border-primary pl-4';
-                            h.textContent = block.content;
-                            container.appendChild(h);
-                            break;
+                // Format cũ: Mảng các blocks
+                if (Array.isArray(data)) {
+                    data.forEach(function(block) {
+                        if (!block || !block.type) return;
 
-                        case 'paragraph':
-                            if (!block.content) break;
-                            var p = document.createElement('p');
-                            p.className = 'mb-4 text-gray-700 leading-relaxed whitespace-pre-line';
-                            p.textContent = block.content;
-                            container.appendChild(p);
-                            break;
+                        switch (block.type) {
+                            case 'heading':
+                                if (!block.content) break;
+                                var h = document.createElement('h3');
+                                h.className = 'text-xl font-bold mt-8 mb-4 text-gray-900 border-l-4 border-primary pl-4';
+                                h.textContent = block.content;
+                                container.appendChild(h);
+                                break;
 
-                        case 'image':
-                            if (!block.url) break;
-                            var imgContainer = document.createElement('div');
-                            imgContainer.className = 'my-8';
-                            
-                            var img = document.createElement('img');
-                            img.src = block.url;
-                            img.alt = block.alt || '';
-                            img.className = 'rounded-xl max-w-full mx-auto cursor-zoom-in hover:opacity-95 transition-all shadow-md border border-gray-100';
-                            img.onclick = function() {
-                                var root = document.querySelector('[x-data]');
-                                if (root && root.__x_data_stack) {
-                                    var data = root.__x_data_stack[0];
-                                    data.lightbox.src = this.src;
-                                    data.lightbox.alt = this.alt;
-                                    data.lightbox.open = true;
+                            case 'paragraph':
+                                if (!block.content) break;
+                                var p = document.createElement('p');
+                                p.className = 'mb-4 text-gray-700 leading-relaxed whitespace-pre-line';
+                                p.textContent = block.content;
+                                container.appendChild(p);
+                                break;
+
+                            case 'image':
+                                if (!block.url) break;
+                                var imgContainer = document.createElement('div');
+                                imgContainer.className = 'my-8';
+                                
+                                var img = document.createElement('img');
+                                img.src = block.url;
+                                img.alt = block.alt || '';
+                                img.className = 'rounded-xl max-w-full mx-auto cursor-zoom-in hover:opacity-95 transition-all shadow-md border border-gray-100';
+                                img.onclick = function() {
+                                    var root = document.querySelector('[x-data]');
+                                    if (root && root.__x_data_stack) {
+                                        var data = root.__x_data_stack[0];
+                                        data.lightbox.src = this.src;
+                                        data.lightbox.alt = this.alt;
+                                        data.lightbox.open = true;
+                                    }
+                                };
+                                imgContainer.appendChild(img);
+                                
+                                if (block.alt) {
+                                    var caption = document.createElement('p');
+                                    caption.className = 'text-center text-sm text-gray-400 mt-2 italic';
+                                    caption.textContent = block.alt;
+                                    imgContainer.appendChild(caption);
                                 }
-                            };
-                            imgContainer.appendChild(img);
-                            
-                            if (block.alt) {
-                                var caption = document.createElement('p');
-                                caption.className = 'text-center text-sm text-gray-400 mt-2 italic';
-                                caption.textContent = block.alt;
-                                imgContainer.appendChild(caption);
-                            }
-                            
-                            container.appendChild(imgContainer);
-                            break;
+                                
+                                container.appendChild(imgContainer);
+                                break;
 
-                        case 'list':
-                            if (!block.content) break;
-                            var ul = document.createElement('ul');
-                            ul.className = 'list-disc pl-6 mb-6 space-y-2 text-gray-700';
-                            
-                            // Hỗ trợ cả mảng items hoặc chuỗi content tách bằng dòng mới
-                            var items = Array.isArray(block.items) ? block.items : 
-                                        (typeof block.content === 'string' ? block.content.split('\n') : []);
-                            
-                            items.forEach(function(item) {
-                                if (!item.trim()) return;
-                                var li = document.createElement('li');
-                                li.textContent = item.trim();
-                                ul.appendChild(li);
-                            });
-                            
-                            if (ul.children.length > 0) container.appendChild(ul);
-                            break;
+                            case 'list':
+                                if (!block.content) break;
+                                var ul = document.createElement('ul');
+                                ul.className = 'list-disc pl-6 mb-6 space-y-2 text-gray-700';
+                                
+                                var items = Array.isArray(block.items) ? block.items : 
+                                            (typeof block.content === 'string' ? block.content.split('\n') : []);
+                                
+                                items.forEach(function(item) {
+                                    if (!item.trim()) return;
+                                    var li = document.createElement('li');
+                                    li.textContent = item.trim();
+                                    ul.appendChild(li);
+                                });
+                                
+                                if (ul.children.length > 0) container.appendChild(ul);
+                                break;
 
-                        case 'video':
-                            if (!block.url) break;
-                            // Helper to extract YT ID
-                            var reg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^"&?\/\s]{11})/;
-                            var match = block.url.match(reg);
-                            if (match && match[1]) {
-                                var vDiv = document.createElement('div');
-                                vDiv.className = 'my-8 aspect-video w-full rounded-xl overflow-hidden shadow-lg bg-black';
-                                vDiv.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + match[1] + '" frameborder="0" allowfullscreen></iframe>';
-                                container.appendChild(vDiv);
-                            }
-                            break;
-                    }
-                });
+                            case 'video':
+                                if (!block.url) break;
+                                var reg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^"&?\/\s]{11})/;
+                                var match = block.url.match(reg);
+                                if (match && match[1]) {
+                                    var vDiv = document.createElement('div');
+                                    vDiv.className = 'my-8 aspect-video w-full rounded-xl overflow-hidden shadow-lg bg-black';
+                                    vDiv.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + match[1] + '" frameborder="0" allowfullscreen></iframe>';
+                                    container.appendChild(vDiv);
+                                }
+                                break;
+                        }
+                    });
+                }
                 if (window.lucide) lucide.createIcons();
             } catch (e) { console.warn('Lỗi hiển thị nội dung chi tiết:', e); }
         })();

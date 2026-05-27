@@ -65,7 +65,7 @@ public class ProductsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     [RequestSizeLimit(20 * 1024 * 1024)]
-    public async Task<IActionResult> Create(Product product, string? contentBlocksJson, IFormFile? imageFile)
+    public async Task<IActionResult> Create(Product product, string? detailsHtml, IFormFile? imageFile)
     {
         try
         {
@@ -82,8 +82,9 @@ public class ProductsController : Controller
                 if (!string.IsNullOrEmpty(url)) product.Content.Image = url;
             }
 
-            if (!string.IsNullOrWhiteSpace(contentBlocksJson))
-                product.Content.ContentBlocks = JsonDocument.Parse(contentBlocksJson);
+            // Save HTML as JSON string
+            if (!string.IsNullOrWhiteSpace(detailsHtml))
+                product.Content.ContentBlocks = JsonDocument.Parse(JsonSerializer.Serialize(detailsHtml));
 
             // Statistics & Finance
             product.Statistic ??= new ProductStatistic();
@@ -107,7 +108,7 @@ public class ProductsController : Controller
         return View(product);
     }
 
-    public async Task<IActionResult> Edit(Guid id)
+    public async Task<IActionResult> Edit(Guid id, int page = 1, string? search = null, string? status = null, Guid? categoryId = null)
     {
         var product = await _productService.GetByIdAsync(id);
         if (product == null) return NotFound();
@@ -118,15 +119,74 @@ public class ProductsController : Controller
         product.Finance ??= new ProductFinance { ProductId = id };
         product.Statistic ??= new ProductStatistic { ProductId = id };
 
+        ViewBag.ReturnPage = page;
+        ViewBag.ReturnSearch = search;
+        ViewBag.ReturnStatus = status;
+        ViewBag.ReturnCategoryId = categoryId;
+
+        // Chuyển đổi ContentBlocks (JSON) sang HTML cho Rich Editor
+        ViewBag.InitialHtml = ConvertBlocksToHtml(product.Content.ContentBlocks);
+
         ViewData["Title"] = $"Sửa: {product.Name}";
         ViewData["Categories"] = await _categoryService.GetAllWithCountAsync();
         return View(product);
     }
 
+    private string ConvertBlocksToHtml(JsonDocument? doc)
+    {
+        if (doc == null) return "";
+        try
+        {
+            var root = doc.RootElement;
+            // Nếu data lưu là string (format mới), trả về luôn
+            if (root.ValueKind == JsonValueKind.String) return root.GetString() ?? "";
+            
+            // Nếu là array (format cũ), convert sang HTML
+            if (root.ValueKind != JsonValueKind.Array) return "";
+
+            var sb = new System.Text.StringBuilder();
+            foreach (var block in root.EnumerateArray())
+            {
+                var type = block.TryGetProperty("type", out var t) ? t.GetString() : "";
+                var content = block.TryGetProperty("content", out var c) ? c.GetString() : "";
+
+                switch (type)
+                {
+                    case "heading":
+                        sb.Append($"<h3>{content}</h3>");
+                        break;
+                    case "paragraph":
+                        sb.Append($"<p>{content?.Replace("\n", "<br>")}</p>");
+                        break;
+                    case "image":
+                        var url = block.TryGetProperty("url", out var u) ? u.GetString() : "";
+                        var alt = block.TryGetProperty("alt", out var a) ? a.GetString() : "";
+                        sb.Append($"<img src=\"{url}\" alt=\"{alt}\">");
+                        break;
+                    case "list":
+                        sb.Append("<ul>");
+                        var items = block.TryGetProperty("items", out var its) && its.ValueKind == JsonValueKind.Array 
+                            ? its.EnumerateArray().Select(x => x.GetString()) 
+                            : (content ?? "").Split('\n', StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var item in items) sb.Append($"<li>{item}</li>");
+                        sb.Append("</ul>");
+                        break;
+                    case "video":
+                        var vUrl = block.TryGetProperty("url", out var vu) ? vu.GetString() : "";
+                        // Quill video uses iframe
+                        sb.Append($"<iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"{vUrl}\"></iframe>");
+                        break;
+                }
+            }
+            return sb.ToString();
+        }
+        catch { return ""; }
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     [RequestSizeLimit(20 * 1024 * 1024)]
-    public async Task<IActionResult> Edit(Guid id, Product product, string? contentBlocksJson, IFormFile? imageFile)
+    public async Task<IActionResult> Edit(Guid id, Product product, string? detailsHtml, IFormFile? imageFile, int returnPage = 1, string? returnSearch = null, string? returnStatus = null, Guid? returnCategoryId = null)
     {
         if (id != product.Id) return BadRequest();
 
@@ -176,8 +236,9 @@ public class ProductsController : Controller
                 existing.Content.Image = product.Content.Image;
             }
 
-            if (!string.IsNullOrWhiteSpace(contentBlocksJson))
-                existing.Content.ContentBlocks = JsonDocument.Parse(contentBlocksJson);
+            // Save HTML as JSON string to preserve compatibility
+            if (!string.IsNullOrWhiteSpace(detailsHtml))
+                existing.Content.ContentBlocks = JsonDocument.Parse(JsonSerializer.Serialize(detailsHtml));
 
             await _productService.UpdateAsync(existing);
             await _activity.LogAsync("UPDATE", "Product", existing.Id.ToString(), existing.Name);
@@ -189,13 +250,13 @@ public class ProductsController : Controller
             _logger.LogError(ex, "Lỗi cập nhật sản phẩm {Id}", id);
             TempData["Error"] = "Không thể cập nhật sản phẩm. Vui lòng thử lại.";
         }
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(Index), new { page = returnPage, search = returnSearch, status = returnStatus, categoryId = returnCategoryId });
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Authorize(Policy = "ManagerUp")]
-    public async Task<IActionResult> Delete(Guid id)
+    public async Task<IActionResult> Delete(Guid id, int returnPage = 1, string? returnSearch = null, string? returnStatus = null, Guid? returnCategoryId = null)
     {
         var existing = await _productService.GetByIdAsync(id);
         if (existing == null) return NotFound();
@@ -212,7 +273,7 @@ public class ProductsController : Controller
             _logger.LogError(ex, "Lỗi xóa sản phẩm {Id}", id);
             TempData["Error"] = "Không thể xóa sản phẩm.";
         }
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(Index), new { page = returnPage, search = returnSearch, status = returnStatus, categoryId = returnCategoryId });
     }
 
     [HttpPost]

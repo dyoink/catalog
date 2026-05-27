@@ -146,21 +146,19 @@
                     <h3 class="font-bold text-gray-800 border-b pb-3">Ảnh đại diện</h3>
                     <div>
                         <label asp-for="Image" class="block text-sm font-medium text-gray-700 mb-1">URL ảnh</label>
-                        <input asp-for="Image" data-preview="#kn-preview"
+                        <input asp-for="Image" data-preview="#kn-preview-container"
                                class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
                                placeholder="https://... hoặc /uploads/..." />
                     </div>
-                    @if (!string.IsNullOrEmpty(Model.Image))
-                    {
-                        <img id="kn-preview" src="@Model.Image" alt="Preview" class="w-full h-32 rounded-lg object-cover" />
-                    }
-                    else
-                    {
-                        <img id="kn-preview" src="" alt="Preview" class="w-full h-32 rounded-lg object-cover hidden" />
-                    }
+                    
+                    <div id="kn-preview-container" class="@(string.IsNullOrEmpty(Model.Image) ? "hidden" : "")">
+                        <img src="@(Model.Image ?? "")" alt="Preview" class="w-full h-32 rounded-lg object-cover border border-gray-200 shadow-sm" />
+                        <p class="text-[10px] text-center text-gray-400 mt-1">Xem trước</p>
+                    </div>
+
                     <div>
                         <label class="block text-xs text-gray-500 mb-1">Hoặc upload trực tiếp:</label>
-                        <input type="file" name="imageFile" accept="image/*" data-preview="#kn-preview" data-crop="16:9"
+                        <input type="file" name="imageFile" accept="image/*" data-preview="#kn-preview-container" data-crop="16:9"
                                class="block w-full text-sm text-gray-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
                     </div>
                 </div>

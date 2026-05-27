@@ -26,7 +26,7 @@ public class Product
     public Guid? CategoryId { get; set; }
 
     /// <summary>Trạng thái: available / out_of_stock / hidden</summary>
-    public ProductStatus Status { get; set; } = ProductStatus.Hidden;
+    public ProductStatus Status { get; set; } = ProductStatus.Available;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;

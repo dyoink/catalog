@@ -32,6 +32,12 @@
           class="space-y-6">
         @Html.AntiForgeryToken()
         <input type="hidden" asp-for="Id" />
+        
+        @* Return parameters to preserve list state *@
+        <input type="hidden" name="returnPage" value="@ViewBag.ReturnPage" />
+        <input type="hidden" name="returnSearch" value="@ViewBag.ReturnSearch" />
+        <input type="hidden" name="returnStatus" value="@ViewBag.ReturnStatus" />
+        <input type="hidden" name="returnCategoryId" value="@ViewBag.ReturnCategoryId" />
 
         @* ===== THÔNG TIN CƠ BẢN ===== *@
         <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
@@ -134,14 +140,23 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                     <label asp-for="Content.Image" class="block text-sm font-medium text-gray-700 mb-1">URL ảnh đại diện</label>
-                    <input asp-for="Content.Image" data-preview="#img-preview"
+                    <input asp-for="Content.Image" data-preview="#productImagePreview"
                            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/50"
                            placeholder="https://... hoặc /uploads/..." />
-                    <img id="img-preview" src="@(Model.Content?.Image ?? "")" alt="Preview"
-                         class="mt-2 w-32 h-32 rounded-lg object-cover border @(string.IsNullOrEmpty(Model.Content?.Image) ? "hidden" : "")" />
-                    <label class="block text-xs text-gray-500 mt-2">Hoặc upload trực tiếp (≤ 20MB):</label>
-                    <input type="file" name="imageFile" accept="image/*" data-preview="#img-preview" data-crop="1:1"
-                           class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+                    
+                    <div class="mt-4 flex items-start gap-4">
+                        <div class="flex-1 space-y-3">
+                            <label class="block text-xs text-gray-500">Hoặc upload trực tiếp (≤ 20MB):</label>
+                            <input type="file" name="imageFile" accept="image/*" data-preview="#productImagePreview" data-crop="1:1"
+                                   class="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+                        </div>
+
+                        <div id="productImagePreview" class="@(string.IsNullOrEmpty(Model.Content?.Image) ? "hidden" : "") flex-shrink-0">
+                            <img src="@(Model.Content?.Image ?? "")" alt="Preview"
+                                 class="w-32 h-32 rounded-lg object-cover border border-gray-200 shadow-sm" />
+                            <p class="text-[10px] text-center text-gray-400 mt-1">Xem trước</p>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <label asp-for="Content.VideoUrl" class="block text-sm font-medium text-gray-700 mb-1">URL video (YouTube)</label>
@@ -170,100 +185,16 @@
             </div>
         </div>
 
-        @* ===== CONTENT BLOCKS (visual editor) ===== *@
-        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5" id="cb-editor-root">
-            @* Script block chứa data JSON an toàn *@
-            <script id="cb-initial-data" type="application/json">@Html.Raw(initialJson)</script>
-            
-            <div x-data="contentBlocksEditor(JSON.parse(document.getElementById('cb-initial-data').textContent))">
-                <div class="flex items-center justify-between border-b pb-3 mb-5">
-                    <h2 class="font-bold text-gray-800 text-lg">Nội dung chi tiết (Content Blocks)</h2>
-                </div>
-
-                <div class="space-y-4">
-                    <template x-for="(block, idx) in blocks" :key="idx">
-                        <div class="cb-block bg-gray-50/50 p-4 rounded-lg border border-gray-100">
-                            <div class="flex items-center gap-2 mb-3">
-                                <select x-model="block.type" class="text-sm border border-gray-200 rounded px-2 py-1 bg-white">
-                                    <option value="heading">Tiêu đề</option>
-                                    <option value="paragraph">Đoạn văn</option>
-                                    <option value="image">Ảnh</option>
-                                    <option value="list">Danh sách</option>
-                                    <option value="video">Video</option>
-                                </select>
-                                <span class="text-xs text-gray-400 font-mono" x-text="'#' + (idx+1)"></span>
-                                <div class="ml-auto flex items-center gap-1">
-                                    <button type="button" @@click="move(idx,-1)" :disabled="idx===0" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30 transition"><i data-lucide="arrow-up" class="w-4 h-4"></i></button>
-                                    <button type="button" @@click="move(idx,1)" :disabled="idx===blocks.length-1" class="p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30 transition"><i data-lucide="arrow-down" class="w-4 h-4"></i></button>
-                                    <button type="button" @@click="remove(idx)" class="p-1 text-red-400 hover:text-red-600 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                                </div>
-                            </div>
-                            
-                            <template x-if="block.type==='heading'">
-                                <input type="text" x-model="block.content" placeholder="Nhập tiêu đề..." class="w-full text-lg font-bold px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/30" />
-                            </template>
-                            
-                            <template x-if="block.type==='paragraph'">
-                                <textarea x-model="block.content" rows="3" placeholder="Nhập nội dung đoạn văn..." class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30"></textarea>
-                            </template>
-                            
-                            <template x-if="block.type==='image'">
-                                <div class="space-y-2">
-                                    <div class="flex gap-2">
-                                        <input type="text" x-model="block.url" placeholder="URL ảnh (https://... hoặc /uploads/...)" class="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30" />
-                                        <label class="shrink-0 cursor-pointer px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg text-sm flex items-center gap-2 transition">
-                                            <i data-lucide="upload" class="w-4 h-4"></i>
-                                            <span x-text="block.uploading ? 'Đang tải...' : 'Tải lên'"></span>
-                                            <input type="file" accept="image/*" class="hidden" @@change="uploadImage($event, idx)" :disabled="block.uploading" />
-                                        </label>
-                                    </div>
-                                    <input type="text" x-model="block.alt" placeholder="Mô tả ảnh (alt)" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30" />
-                                    <div x-show="block.url" class="mt-2 relative inline-block group">
-                                        <img :src="block.url" class="max-h-40 rounded-lg border border-gray-200 object-contain" />
-                                        <button type="button" @@click="block.url = ''" class="absolute -top-2 -right-2 bg-red-500 text-white p-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition">
-                                            <i data-lucide="x" class="w-3 h-3"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </template>
-                            
-                            <template x-if="block.type==='list'">
-                                <textarea x-model="block.content" rows="4" placeholder="Mỗi dòng một mục..." class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30 font-mono"></textarea>
-                            </template>
-                            
-                            <template x-if="block.type==='video'">
-                                <input type="text" x-model="block.url" placeholder="URL video YouTube..." class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/30" />
-                            </template>
-                        </div>
-                    </template>
-
-                    <div class="pt-6 border-t mt-6">
-                        <p class="text-sm font-semibold text-gray-700 mb-4 flex items-center gap-2">
-                            <i data-lucide="plus-circle" class="w-4 h-4"></i> Thêm nội dung mới:
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <button type="button" @@click="add('heading')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
-                                <i data-lucide="heading" class="w-4 h-4 text-primary"></i> Tiêu đề
-                            </button>
-                            <button type="button" @@click="add('paragraph')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
-                                <i data-lucide="align-left" class="w-4 h-4 text-primary"></i> Đoạn văn
-                            </button>
-                            <button type="button" @@click="add('image')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
-                                <i data-lucide="image" class="w-4 h-4 text-primary"></i> Ảnh
-                            </button>
-                            <button type="button" @@click="add('list')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
-                                <i data-lucide="list" class="w-4 h-4 text-primary"></i> Danh sách
-                            </button>
-                            <button type="button" @@click="add('video')" class="text-sm px-4 py-2.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition flex items-center gap-2 shadow-sm">
-                                <i data-lucide="video" class="w-4 h-4 text-primary"></i> Video
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                @* Trường ẩn để submit JSON *@
-                <textarea name="contentBlocksJson" :value="submitJson()" class="hidden"></textarea>
+        @* ===== THÔNG TIN CHI TIẾT (Rich Editor) ===== *@
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-4">
+            <div class="flex items-center justify-between border-b pb-3 mb-5">
+                <h2 class="font-bold text-gray-800 text-lg">Thông tin chi tiết</h2>
             </div>
+            
+            <textarea name="detailsHtml" class="rich-editor hidden">@ViewBag.InitialHtml</textarea>
+            <p class="text-xs text-gray-400 mt-2">
+                * Hỗ trợ định dạng văn bản, chèn ảnh và chèn video từ URL (YouTube, Vimeo...).
+            </p>
         </div>
 
         @* ===== SUBMIT ===== *@
