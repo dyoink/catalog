@@ -1,0 +1,27 @@
+# .gitignore
+
+# Dependencies
+node_modules/
+bin/
+obj/
+
+# User-uploaded files (Quan trọng: Bỏ qua thư mục uploads)
+src/AquaCMS/wwwroot/uploads/
+
+# Build artifacts
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+
+# Logs and databases
+*.log
+*.db
+*.sqlite
+*.sdf
+
+# Temporary files
+*.tmp
+*.bak
+.DS_Store
