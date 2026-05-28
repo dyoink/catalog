@@ -87,6 +87,7 @@ public class HomeController : Controller
     /// <summary>
     /// GET /gioi-thieu — Trang giới thiệu công ty.
     /// </summary>
+    [Route("gioi-thieu")]
     public async Task<IActionResult> About()
     {
         var settings = await _settingsService.GetSettingsAsync();

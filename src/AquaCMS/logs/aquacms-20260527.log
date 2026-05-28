@@ -541,3 +541,19 @@
 2026-05-27 17:55:50.962 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2207 ms
 2026-05-27 18:01:18.372 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 327356.7601 ms
 2026-05-27 18:01:18.374 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.2789 ms
+2026-05-27 18:01:44.879 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 49.6908 ms
+2026-05-27 18:02:49.126 +07:00 [INF] HTTP GET /admin/products/edit/41fc5308-7aa8-4e52-83e2-95e355739baf responded 200 in 1869.7185 ms
+2026-05-27 18:02:49.138 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 64254.2337 ms
+2026-05-27 18:02:49.144 +07:00 [INF] HTTP GET /uploads/products/a3fd234687c34a1ea6ee886a8ff9b826.png responded 304 in 3.9163 ms
+2026-05-27 18:02:49.400 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.8649 ms
+2026-05-27 18:04:16.057 +07:00 [INF] Cập nhật sản phẩm: Bơm mưa FANTO SC-1,5 220V (ID: "41fc5308-7aa8-4e52-83e2-95e355739baf")
+2026-05-27 18:04:16.162 +07:00 [INF] HTTP POST /admin/products/edit/41fc5308-7aa8-4e52-83e2-95e355739baf responded 302 in 381.7527 ms
+2026-05-27 18:04:16.333 +07:00 [INF] HTTP GET /admin/Products responded 200 in 163.4928 ms
+2026-05-27 18:04:16.342 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 86894.2054 ms
+2026-05-27 18:04:16.348 +07:00 [INF] HTTP GET /uploads/products/0436329f711843809208cf39c674fe5c.png responded 304 in 0.5695 ms
+2026-05-27 18:04:16.348 +07:00 [INF] HTTP GET /uploads/products/b7892d4672864dccb7fba7cbde5a0784.png responded 304 in 0.5622 ms
+2026-05-27 18:04:16.362 +07:00 [INF] HTTP GET /uploads/products/8502915186fb4c1ab5e2c01608688aaa.jpg responded 304 in 0.1554 ms
+2026-05-27 18:04:16.363 +07:00 [INF] HTTP GET /uploads/products/bfbac361eef54bf8b1437397ad1948d2.jpg responded 304 in 0.1497 ms
+2026-05-27 18:04:16.370 +07:00 [INF] HTTP GET /uploads/products/537f8ef47e18410a83fd4c7f90ba4b15.png responded 304 in 0.2023 ms
+2026-05-27 18:04:16.557 +07:00 [INF] HTTP POST /hubs/chat/negotiate responded 200 in 0.3413 ms
+2026-05-27 18:24:07.159 +07:00 [INF] HTTP GET /hubs/chat responded 101 in 1190535.9501 ms

@@ -21,41 +21,27 @@
 @* ===== BANNER SLIDER ===== *@
 @if (Model.Settings.ShowBanners && Model.Banners.Count > 0)
 {
-    <section class="relative group overflow-hidden">
-        <div class="swiper hero-swiper">
-            <div class="swiper-wrapper">
-                @foreach (var banner in Model.Banners)
-                {
-                    <div class="swiper-slide relative bg-gray-100 overflow-hidden min-h-[550px] flex items-center" 
-                         style="@(!string.IsNullOrEmpty(banner.Image) ? $"background-image: url('{banner.Image}'); background-size: cover; background-position: center;" : "")">
-                        
-                        @if (!string.IsNullOrEmpty(banner.Image))
-                        {
-                            <div class="absolute inset-0 bg-black/30"></div>
-                        }
-
-                        <div class="relative max-w-7xl mx-auto px-4 py-20 w-full">
-                            <div class="max-w-2xl">
-                                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">@banner.Title</h2>
-                                @if (!string.IsNullOrEmpty(banner.Description))
+    <section class="max-w-7xl mx-auto px-4 mt-8">
+        <div class="relative group overflow-hidden">
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    @foreach (var banner in Model.Banners)
+                    {
+                        <div class="swiper-slide relative bg-gray-100 overflow-hidden flex items-center justify-center">
+                            <a href="@(banner.LinkUrl ?? "#")" class="block w-full">
+                                @if (!string.IsNullOrEmpty(banner.Image))
                                 {
-                                    <div class="text-white/90 mb-8">@Html.Raw(banner.Description)</div>
+                                    <img src="@banner.Image" alt="@banner.Title" class="w-full h-auto object-contain" />
                                 }
-                                <a href="@(banner.LinkUrl ?? "/san-pham")" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition">
-                                    Khám phá ngay
-                                </a>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
         </div>
     </section>
 }
-
 @* ===== DANH MỤC SẢN PHẨM ===== *@
 @if (Model.Categories.Count > 0)
 {
@@ -120,7 +106,7 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 @foreach (var product in Model.FeaturedProducts)
                 {
                     <partial name="_ProductCard" model="product" />
@@ -145,7 +131,7 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 @foreach (var product in cat.Products)
                 {
                     <partial name="_ProductCard" model="product" />
@@ -247,18 +233,14 @@
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
                 grabCursor: true,
             });
 
             // Category Swiper
             new Swiper('.category-swiper', {
                 loop: true,
-                slidesPerView: 3,
-                spaceBetween: 16,
+                slidesPerView: 4,
+                spaceBetween: 12,
                 navigation: {
                     nextEl: '.category-next',
                     prevEl: '.category-prev',

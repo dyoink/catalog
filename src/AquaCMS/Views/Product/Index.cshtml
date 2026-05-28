@@ -24,19 +24,8 @@
     </nav>
 
     <div class="flex flex-col lg:flex-row gap-8">
-        @* ===== SIDEBAR — Danh mục + Tìm kiếm ===== *@
+        @* ===== SIDEBAR — Danh mục ===== *@
         <aside class="lg:w-64 shrink-0">
-            @* Search box *@
-            <form action="/san-pham" method="get" class="mb-6">
-                <div class="relative">
-                    <input type="text" name="search" value="@Model.SearchQuery"
-                           placeholder="Tìm kiếm sản phẩm..."
-                           class="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg
-                                  text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" />
-                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-                </div>
-            </form>
-
             @* Danh mục filter *@
             <div class="bg-white rounded-xl shadow-sm p-5">
                 <h3 class="font-bold text-gray-800 mb-4">Danh mục</h3>
@@ -87,7 +76,7 @@
             else
             {
                 @* Product Grid *@
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     @foreach (var product in Model.Products.Items)
                     {
                         <partial name="_ProductCard" model="product" />

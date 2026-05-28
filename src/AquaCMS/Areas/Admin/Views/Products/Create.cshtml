@@ -134,7 +134,7 @@
         </div>
 
         @* ===== HÌNH ẢNH & VIDEO ===== *@
-        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5">
+        <div class="bg-white rounded-xl shadow-sm p-6 space-y-5" x-data="{ lightbox: { open: false, src: '' } }">
             <h2 class="font-bold text-gray-800 text-lg border-b pb-3">Hình ảnh & Video</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -151,13 +151,29 @@
                                    class="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
                         </div>
 
-                        <div id="productImagePreview" class="@(string.IsNullOrEmpty(Model.Content?.Image) ? "hidden" : "") flex-shrink-0">
+                        <div id="productImagePreview" class="@(string.IsNullOrEmpty(Model.Content?.Image) ? "hidden" : "") flex-shrink-0 cursor-zoom-in"
+                             @@click="lightbox.open = true; lightbox.src = document.querySelector('#productImagePreview img').src">
                             <img src="@(Model.Content?.Image ?? "")" alt="Preview"
                                  class="w-32 h-32 rounded-lg object-cover border border-gray-200 shadow-sm" />
                             <p class="text-[10px] text-center text-gray-400 mt-1">Xem trước</p>
                         </div>
                     </div>
                 </div>
+
+                @* Lightbox Modal *@
+                <template x-teleport="body">
+                    <div x-show="lightbox.open" 
+                         class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+                         @@click.self="lightbox.open = false"
+                         @@keydown.escape.window="lightbox.open = false" x-cloak>
+                        <button @@click="lightbox.open = false" class="absolute top-6 right-6 text-white/70 hover:text-white z-50">
+                            <i data-lucide="x" class="w-10 h-10"></i>
+                        </button>
+                        <div class="relative max-w-full max-h-full flex items-center justify-center">
+                            <img :src="lightbox.src" class="max-w-full max-h-screen object-contain" />
+                        </div>
+                    </div>
+                </template>
                 <div>
                     <label asp-for="Content.VideoUrl" class="block text-sm font-medium text-gray-700 mb-1">URL video (YouTube)</label>
                     <input asp-for="Content.VideoUrl" type="text"

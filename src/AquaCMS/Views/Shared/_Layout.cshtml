@@ -144,14 +144,14 @@
                     }
                     @if (s.ShowNavAbout)
                     {
-                        <a href="/Home/About" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Home", "/Home/About") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
-                            Giới thiệu
+                        <a href="/gioi-thieu" class="px-3 py-2 rounded-md text-[15px] font-medium transition @(IsActive("Home", "/gioi-thieu") ? "text-white" : "text-white/75 hover:text-white hover:bg-white/10")">
+                            @(L.CurrentCulture == "vi" ? "Giới thiệu" : "About")
                         </a>
                     }
                 </div>
 
                 <div class="flex items-center space-x-3">
-                    <div x-data="{ open: false, query: '' }" class="relative hidden md:block" @@click.outside="open = false">
+                    <div x-data="{ open: false, query: '' }" class="relative" @@click.outside="open = false">
                         <div class="flex items-center bg-white/15 rounded-full px-3 py-1.5 focus-within:bg-white/25 transition">
                             <i data-lucide="search" class="w-4 h-4 text-white/70"></i>
                             <input type="text"
@@ -159,11 +159,11 @@
                                    @@input.debounce.300ms="if(query.length >= 2) { $refs.results.classList.remove('hidden'); htmx.ajax('GET', '/api/search/suggest?q=' + encodeURIComponent(query), {target: '#search-results'}); open = true } else { open = false }"
                                    @@keydown.enter="if(query.length >= 2) window.location.href = '/san-pham?search=' + encodeURIComponent(query)"
                                    placeholder="@L.T("nav.search.placeholder")"
-                                   class="bg-transparent text-white placeholder-white/60 text-sm ml-2 w-40 focus:w-56 transition-all outline-none border-none focus:ring-0" />
+                                   class="bg-transparent text-white placeholder-white/60 text-sm ml-2 w-28 sm:w-40 focus:w-48 sm:focus:w-56 transition-all outline-none border-none focus:ring-0" />
                         </div>
                         <div x-ref="results" x-show="open" x-cloak
                              id="search-results"
-                             class="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                             class="absolute right-0 mt-2 w-72 sm:w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
                             <div class="p-3 text-sm text-gray-500">@L.T("nav.search.hint")</div>
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                 }
                 @if (s.ShowNavAbout)
                 {
-                    <a href="/Home/About" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">Giới thiệu</a>
+                    <a href="/gioi-thieu" class="block px-3 py-2 rounded-md text-white/90 hover:bg-white/10">@(L.CurrentCulture == "vi" ? "Giới thiệu" : "About")</a>
                 }
                 @{
                     var otherLangM = L.CurrentCulture == "vi" ? "en" : "vi";
