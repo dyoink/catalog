@@ -50,6 +50,9 @@ public class LocalizationService : ILocalizationService
 
     private static readonly ConcurrentDictionary<string, string> _vi = new(new Dictionary<string, string>
     {
+        // Topbar
+        ["topbar.workingHours"] = "Hỗ trợ 24/7",
+
         // Navigation
         ["nav.home"] = "Trang chủ",
         ["nav.products"] = "Sản phẩm",
@@ -102,6 +105,9 @@ public class LocalizationService : ILocalizationService
 
     private static readonly ConcurrentDictionary<string, string> _en = new(new Dictionary<string, string>
     {
+        // Topbar
+        ["topbar.workingHours"] = "Hỗ trợ 24/7",
+
         ["nav.home"] = "Home",
         ["nav.products"] = "Products",
         ["nav.knowledge"] = "Knowledge",

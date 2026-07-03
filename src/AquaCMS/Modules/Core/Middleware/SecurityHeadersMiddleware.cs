@@ -32,14 +32,14 @@ public class SecurityHeadersMiddleware
         // Permissions policy — tắt camera, micro, geolocation trừ khi cần
         headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()";
 
-        // Content-Security-Policy — cho phép Tailwind CDN, Lucide, HTMX, Alpine.js
+        // Content-Security-Policy — cho phép Tailwind CDN, Lucide, HTMX, Alpine.js và Google Analytics
         headers["Content-Security-Policy"] = string.Join("; ",
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net https://www.googletagmanager.com",
             "style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com https://cdn.jsdelivr.net",
             "font-src 'self' data: https://fonts.gstatic.com",
-            "img-src 'self' data: https:",
-            "connect-src 'self' ws: wss: https://unpkg.com https://cdn.jsdelivr.net",
+            "img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com",
+            "connect-src 'self' ws: wss: https://unpkg.com https://cdn.jsdelivr.net https://www.google-analytics.com https://stats.g.doubleclick.net",
             "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
             "frame-ancestors 'self'"
         );
