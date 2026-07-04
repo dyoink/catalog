@@ -66,3 +66,42 @@
 .toast-success { background-color: #22c55e; }
 .toast-error { background-color: #ef4444; }
 .toast-info { background-color: #55B3D9; }
+
+/* ===== MOBILE RESPONSIVE: TOPBAR MARQUEE ===== */
+@media (max-width: 767px) {
+    /* Container chính: ẩn phần tràn, hiển thị 1 dòng */
+    .mobile-marquee-container {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    /* Content: trượt ngang liên tục */
+    .mobile-marquee-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        width: max-content;
+        gap: 3.5rem; 
+        animation: mobileMarquee 18s linear infinite;
+    }
+    /* Chạm/di chuột vào để tạm dừng giúp dễ đọc */
+    .mobile-marquee-content:hover,
+    .mobile-marquee-content:active {
+        animation-play-state: paused;
+    }
+    @keyframes mobileMarquee {
+        0% { transform: translateX(100vw); }
+        100% { transform: translateX(-100%); }
+    }
+}
+/* ===== DESKTOP/TABLET: RESET MARQUEE ===== */
+@media (min-width: 768px) {
+    .mobile-marquee-content {
+        animation: none !important;
+        transform: none !important;
+        width: 100% !important;
+        justify-content: center;
+    }
+}

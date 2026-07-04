@@ -107,27 +107,31 @@
         }
     }
     <header class="sticky top-0 z-50 shadow-md" style="background-color: var(--color-primary) !important;">
-        @* ===== TOP BAR ===== *@
+        @* ===== TOP BAR (Responsive: Marquee on mobile) ===== *@
         <div class="bg-[#1B3A4B] text-[#F4C95D] text-sm py-2 border-b border-[#F4C95D]/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-center">
-                @if (!string.IsNullOrEmpty(s.Phone))
-                {
-                    <a href="tel:@s.Phone" class="flex items-center gap-1.5 hover:text-white transition">
-                        <i data-lucide="phone" class="w-4 h-4 shrink-0"></i>
-                        <span class="font-semibold">@s.Phone</span>
-                    </a>
-                }
-                @if (!string.IsNullOrEmpty(s.Address))
-                {
+            @* Container cuộn cho mobile *@
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mobile-marquee-container">
+                @* Content trượt trên mobile, tĩnh trên desktop *@
+                <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-center mobile-marquee-content w-full">
+                    @if (!string.IsNullOrEmpty(s.Phone))
+                    {
+                        <a href="tel:@s.Phone" class="flex items-center gap-1.5 hover:text-white transition">
+                            <i data-lucide="phone" class="w-4 h-4 shrink-0"></i>
+                            <span class="font-semibold">@s.Phone</span>
+                        </a>
+                    }
+                    @if (!string.IsNullOrEmpty(s.Address))
+                    {
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
+                            <span>@s.Address</span>
+                        </span>
+                    }
                     <span class="flex items-center gap-1.5">
-                        <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
-                        <span>@s.Address</span>
+                        <i data-lucide="clock" class="w-4 h-4 shrink-0"></i>
+                        <span>@L.T("topbar.workingHours")</span>
                     </span>
-                }
-                <span class="flex items-center gap-1.5">
-                    <i data-lucide="clock" class="w-4 h-4 shrink-0"></i>
-                    <span>@L.T("topbar.workingHours")</span>
-                </span>
+                </div>
             </div>
         </div>
 
